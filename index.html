@@ -6,8 +6,9 @@
   <meta name="description" content="GradStudio — dịch vụ chụp kỷ yếu lớp, tốt nghiệp và chân dung; xem ảnh mẫu và hội thoại tư vấn lịch chụp.">
   <title>Dịch vụ và chat | GradStudio</title>
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/services.css">
 </head>
-<body>
+<body class="services-page">
   <a class="button button--secondary services-skip-link" href="#main-content">Đến nội dung chính</a>
 
   <header class="services-header">
@@ -26,7 +27,7 @@
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
     <section class="services-hero" aria-labelledby="hero-title">
       <div class="container services-hero-content">
         <p class="services-eyebrow">Studio ảnh tốt nghiệp &amp; chân dung</p>
@@ -43,8 +44,8 @@
         </ul>
       </div>
 
-      <!-- Step 8: use checked radio siblings to select slides with CSS only.
-           Until page CSS exists, all five decorative images remain visible. -->
+      <!-- Native radios retain keyboard navigation; CSS selects one slide.
+           No autoplay: the visitor chooses when the background changes. -->
       <fieldset class="services-hero-slideshow">
         <legend>Ảnh giới thiệu GradStudio</legend>
         <input class="services-hero-selector" type="radio" name="hero-slide" id="hero-slide-1" checked>
@@ -272,31 +273,40 @@
       <a class="button" href="#chat">Chat với studio</a>
     </section>
 
-    <section id="chat" class="container services-chat" aria-labelledby="chat-title">
-      <header class="services-chat-header">
-        <img src="assets/images/avatar-studio.avif" alt="" width="96" height="96" loading="lazy">
-        <h2 id="chat-title">Chat với GradStudio</h2>
-        <p class="text-muted">Đang hoạt động — trạng thái minh họa trong hội thoại mẫu</p>
-      </header>
-      <p class="services-chat-context">Đang hỏi về: <strong>Gói Tốt nghiệp</strong></p>
-      <p class="services-chat-customer">Khách hàng: Nguyễn Thùy Linh</p>
-      <ol class="services-chat-messages" aria-label="Hội thoại mẫu giữa Linh và GradStudio">
-        <li class="services-chat-message services-chat-message-customer">
-          <p><strong>Linh</strong> <time datetime="17:20">17:20</time></p>
-          <p>Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?</p>
-        </li>
-        <li class="services-chat-message services-chat-message-studio">
-          <p><strong>GradStudio</strong> <time datetime="17:21">17:21</time></p>
-          <p>Để mình kiểm tra lịch cho bạn nhé</p>
-        </li>
-      </ol>
-      <p id="chat-not-connected" class="text-muted">Đây là hội thoại mẫu của PA02. Bạn có thể nhập nháp; gửi tin nhắn thật chưa kết nối. Các link tư vấn đều dẫn đến hội thoại này, chưa đổi nội dung theo từng gói.</p>
-      <div class="services-chat-compose">
-        <label class="form-label" for="chat-message">Tin nhắn cho studio</label>
-        <input class="form-control" id="chat-message" name="message" type="text" placeholder="Nhập tin nhắn…" aria-describedby="chat-not-connected">
-        <button class="button" type="button" disabled>Gửi tin nhắn — chưa kết nối</button>
-      </div>
-    </section>
+    <details class="services-chat" open>
+      <summary class="services-chat-toggle" aria-label="Chat với GradStudio — mở hoặc thu gọn hội thoại">
+        <img src="assets/images/avatar-studio.avif" alt="" width="96" height="96">
+        <span class="services-chat-heading">
+          <span class="services-chat-title">GradStudio</span>
+          <span class="services-chat-status">Đang hoạt động</span>
+        </span>
+        <span class="services-chat-toggle-icon" aria-hidden="true"></span>
+      </summary>
+      <!-- A fragment target inside details lets chat links reveal the conversation. -->
+      <section id="chat" class="services-chat-content" aria-labelledby="chat-title">
+        <h2 id="chat-title" class="services-chat-conversation-title">Chat với GradStudio</h2>
+        <div class="services-chat-thread">
+          <p class="services-chat-context">Đang hỏi về: <strong>Gói Tốt nghiệp</strong></p>
+          <p class="services-chat-customer">Khách hàng: Nguyễn Thùy Linh</p>
+          <ol class="services-chat-messages" aria-label="Hội thoại mẫu giữa Linh và GradStudio">
+            <li class="services-chat-message services-chat-message-customer">
+              <p><strong>Linh</strong> <time datetime="17:20">17:20</time></p>
+              <p>Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?</p>
+            </li>
+            <li class="services-chat-message services-chat-message-studio">
+              <p><strong>GradStudio</strong> <time datetime="17:21">17:21</time></p>
+              <p>Để mình kiểm tra lịch cho bạn nhé</p>
+            </li>
+          </ol>
+          <p id="chat-not-connected" class="text-muted">Đây là hội thoại mẫu của PA02. Bạn có thể nhập nháp; gửi tin nhắn thật chưa kết nối. Các link tư vấn đều dẫn đến hội thoại này, chưa đổi nội dung theo từng gói.</p>
+        </div>
+        <div class="services-chat-compose">
+          <label class="form-label" for="chat-message">Tin nhắn cho studio</label>
+          <input class="form-control" id="chat-message" name="message" type="text" placeholder="Nhập tin nhắn…" aria-describedby="chat-not-connected">
+          <button class="button" type="button" disabled>Gửi tin nhắn — chưa kết nối</button>
+        </div>
+      </section>
+    </details>
   </main>
 
   <footer class="services-footer">

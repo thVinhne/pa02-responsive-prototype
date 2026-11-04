@@ -89,3 +89,62 @@ Sau khi làm, báo nội dung đã dựng, phần nguồn còn thiếu,
 kiểm tra đã chạy và phần chưa kiểm tra.
 Không tuyên bố đạt responsive hoặc W3C nếu chưa kiểm tra.
 ```
+
+## 05/11/2026 — Hoàn thiện CSS riêng màn 1
+
+Prompt nguyên văn:
+
+```text
+Đọc và tuân thủ AGENTS.md. Thực hiện bước 8: hoàn thiện CSS
+riêng cho màn 1 — Dịch vụ và chat.
+
+Trước khi sửa:
+- Đọc index.html, css/common.css và README.md.
+- Xem ảnh chính và ảnh bổ sung màn 1 trong docs/pa1/.
+- Kiểm tra các class services-* và tài nguyên đang sử dụng.
+
+Nhiệm vụ:
+1. Tạo css/services.css và nạp sau common.css trong index.html.
+   Viết CSS mobile first, dùng tokens và quy ước ở mục 7 AGENTS.md.
+
+2. Hoàn thiện header, menu, avatar, hero, gói dịch vụ, gallery,
+   quy trình, các phần giới thiệu, chat, footer và điều hướng demo.
+   Bám ảnh nguồn, giữ đầy đủ nội dung HTML đã có.
+
+3. Giữ slideshow hero với năm ảnh hiện có. Sử dụng radio :checked
+   và CSS để chọn ảnh, không JavaScript.
+   Có trạng thái ảnh đang chọn và focus rõ ràng.
+   Không làm mất khả năng thao tác radio bằng bàn phím.
+   Chưa thêm tự động chuyển ảnh; ưu tiên bộ chọn ảnh hoạt động tốt.
+
+4. Ở màn nhỏ, chat nằm trong luồng trang và không che nội dung.
+   Menu, nội dung chính và liên kết luôn sử dụng được khi tắt JS.
+   Skip link cần hiện rõ khi được focus.
+
+5. Kiểm tra bố cục tại 360, 768 và 1280 px.
+   Không cuộn ngang toàn trang hoặc dùng overflow-x:hidden để che lỗi.
+   Ảnh giữ tỉ lệ/cắt ảnh có chủ đích; tên dài xuống dòng.
+   Chữ nội dung tối thiểu 16px, vùng bấm đứng riêng tối thiểu 44px.
+   Kiểm tra tương phản chữ trên từng ảnh hero.
+
+6. Chỉ sửa cấu trúc HTML tối thiểu nếu CSS thực sự cần;
+   giữ heading, label, alt, nội dung và đích liên kết.
+   Không sửa common.css hoặc trang của thành viên khác.
+
+7. Lưu nguyên văn prompt này vào cuối brief.md, giữ prompt cũ.
+
+Chỉ tạo/sửa css/services.css, index.html và brief.md.
+Không thêm dependency hoặc JavaScript.
+
+Sau khi làm:
+- Giải thích các quyết định bố cục và slideshow.
+- Báo kiểm tra đã chạy, kết quả và phần chưa kiểm tra.
+- Nếu không mở được trình duyệt, ghi rõ chưa kiểm tra trực quan;
+  không tuyên bố đạt responsive chỉ từ việc đọc CSS.
+```
+
+## 05/11/2026 — Khôi phục khung chat nổi có thể thu gọn
+
+```text
+Tôi muốn giữ phần chat như trong prototupe, hãy chỉnh sửa lại các file cần thiết
+```
