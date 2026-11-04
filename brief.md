@@ -42,3 +42,50 @@ mục 7 của AGENTS.md và phần bảng màu của README.md.
 ```text
 Cập nhật các file quy định về màu theo bảng màu trên
 ```
+
+## 05/11/2026 — Dựng cấu trúc HTML màn 1
+
+Prompt nguyên văn:
+
+```text
+Đọc và tuân thủ AGENTS.md. Thực hiện bước 7: dựng cấu trúc
+HTML cho màn 1 — Dịch vụ và chat.
+
+Trước khi sửa, đọc README.md, docs/pa1/PROPOSAL.md,
+docs/pa1/LINK.md; xem ảnh chính màn 1 và các ảnh bổ sung trong
+docs/pa1/reference/screen-1/. Kiểm tra assets/images/ hiện có.
+
+Yêu cầu:
+1. Tạo index.html ở gốc repository, đủ các phần của màn nguồn:
+   header, hero, gói dịch vụ, gallery, quy trình, chat và footer.
+   Đối chiếu tài liệu để xác định nội dung; nêu rõ nếu nguồn thiếu.
+
+2. Giữ slideshow hero, dùng hero-01.avif đến hero-05.avif.
+   Chuẩn bị cấu trúc HTML để triển khai bằng CSS thuần ở bước 8.
+   Lượt này chưa cần hiệu ứng chuyển ảnh.
+
+3. Dùng HTML semantic: doctype, lang="vi", UTF-8, viewport,
+   một h1, heading đúng cấp, landmark phù hợp, label hiển thị
+   cho input và alt phù hợp cho ảnh.
+
+4. Nạp css/common.css và sử dụng các class chung trong README.
+   Chưa tạo hoặc nạp css/services.css; chưa viết CSS inline,
+   thẻ style hoặc JavaScript.
+
+5. Thực hiện hành vi tĩnh theo mục Chuẩn bị màn 1 trong README:
+   #packages, #chat, my-appointments.html và
+   admin-scheduling.html. Ghi rõ chuyển sang góc nhìn Admin.
+   Chat mẫu hiển thị sẵn; gửi tin nhắn thật chưa kết nối.
+
+6. Dữ liệu viết trực tiếp trong HTML; có nội dung dài để kiểm tra
+   xuống dòng. Giữ nội dung quan trọng của PA01.
+
+7. Lưu nguyên văn prompt này vào cuối brief.md, giữ prompt cũ.
+
+Chỉ tạo/sửa index.html và brief.md.
+Không tạo trang của thành viên khác hoặc sửa CSS chung.
+
+Sau khi làm, báo nội dung đã dựng, phần nguồn còn thiếu,
+kiểm tra đã chạy và phần chưa kiểm tra.
+Không tuyên bố đạt responsive hoặc W3C nếu chưa kiểm tra.
+```
