@@ -39,11 +39,57 @@ Dữ liệu được viết sẵn trong HTML. Không triển khai backend,
 
 Đã chuẩn bị quy tắc dự án và tài liệu tham chiếu.
 Đã bổ sung nền tảng `css/common.css`, `.gitignore` và prompt nhiệm vụ
-trong `brief.md`. Ba trang HTML và CSS riêng đang chờ triển khai.
-Chưa có HTML để kiểm tra responsive, điều hướng hoặc W3C.
+trong `brief.md`. Màn 1 đã có `index.html` và `css/services.css`,
+bao gồm slideshow CSS và khung chat nổi có thể thu gọn.
+Các màn còn lại chờ tích hợp; kết quả W3C cần cập nhật sau khi sửa HTML.
 
-Sau khi hoàn thành, mở trực tiếp index.html trong trình duyệt.
-Hướng dẫn mở và nhu cầu kết nối mạng sẽ được cập nhật theo bản cuối.
+Mở trực tiếp `index.html` trong trình duyệt để xem màn 1.
+Ảnh và CSS của màn này được nạp từ repository, không cần bước build.
+
+## Chuẩn bị màn 1
+
+Giữ slideshow hero của PA01 và triển khai bằng HTML/CSS thuần,
+không phụ thuộc JavaScript. Slideshow sử dụng năm ảnh cục bộ:
+`assets/images/hero-01.avif`, `assets/images/hero-02.avif`,
+`assets/images/hero-03.avif`, `assets/images/hero-04.avif` và
+`assets/images/hero-05.avif`. Tiêu đề, mô tả và các link chính phải
+đọc và sử dụng được khi JavaScript tắt.
+
+Ảnh dịch vụ, gallery và avatar nằm trong `assets/images/`.
+Nguồn ảnh được cung cấp ban đầu nằm trong
+[IMAGE_SOURCES.md](docs/pa1/IMAGE_SOURCES.md); các ảnh bổ sung cần
+được đối chiếu và ghi nguồn theo đúng file thực tế sử dụng.
+Ảnh chụp bổ sung của màn nguồn nằm trong
+`docs/pa1/reference/screen-1/`, phục vụ đối chiếu nội dung PA01;
+chúng không thay thế ảnh minh chứng PA02 trong `screenshots/`.
+
+Hành vi tĩnh dự kiến cho màn 1:
+
+| Thành phần | Hành vi |
+|---|---|
+| Xem gói chụp | Link `#packages` tới khu vực có `id="packages"` |
+| Chat với studio / Tư vấn gói này | Link `#chat` tới hội thoại trong khung chat nổi; không tự đổi nội dung hội thoại theo gói |
+| Gửi tin nhắn | Chưa kết nối; hiển thị trạng thái rõ ràng, không giả lập đã gửi thành công |
+| Lịch chụp của tôi | Link tương đối `my-appointments.html` |
+| Điều hướng demo sang màn 2 | Link tương đối `admin-scheduling.html`, ghi rõ chuyển sang góc nhìn Admin |
+
+Nút gửi tin nhắn của khách không được dùng để mở trang quản trị.
+Khung chat nổi ở góc phải phía dưới, dùng `details`/`summary` để
+thu gọn và mở lại bằng chuột hoặc bàn phím khi JavaScript tắt.
+Chat mở sẵn khi tải trang; vị trí `#chat` nằm bên trong hội thoại
+để trình duyệt có thể mở lại khung khi đi theo link tư vấn.
+Khung co theo chiều rộng màn hình; hội thoại dài cuộn bên trong,
+thanh thu gọn và ô nhập vẫn nằm ngoài vùng cuộn của tin nhắn.
+Ở cửa sổ thấp, toàn bộ phần nội dung chat cuộn để vẫn tới được ô nhập.
+Người xem có thể thu gọn chat để đọc nội dung phía sau khung nổi.
+Gửi tin nhắn vẫn chưa kết nối; trạng thái hoạt động là dữ liệu mẫu.
+Khi triển khai, ghi các thay đổi tương tác so với PA01 và các chức
+năng chưa kết nối vào `PROTOTYPE.md` để Người 3 tổng hợp.
+
+Đây là các quy ước triển khai màn 1. Khi thay đổi HTML/CSS của chat,
+cần kiểm tra lại mở/thu gọn, link tư vấn, bàn phím và ba độ rộng;
+chạy W3C lại vì cấu trúc HTML đã thay đổi. Kiểm tra cũ không thay
+thế minh chứng cho phiên bản mới.
 
 ## CSS dùng chung cho ba thành viên
 
