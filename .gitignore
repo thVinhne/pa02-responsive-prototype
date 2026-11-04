@@ -1,0 +1,18 @@
+# Dependencies and temporary working directories.
+node_modules/
+/tmp/
+/temp/
+
+# Editor swap files, temporary files and Word lock files.
+*.swp
+*.swo
+*.tmp
+*.temp
+~$*
+
+# Operating system metadata.
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Keep HTML, CSS, assets, documents, screenshots and checks tracked.

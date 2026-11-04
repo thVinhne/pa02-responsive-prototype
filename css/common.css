@@ -1,0 +1,234 @@
+/* Shared foundation only. Load before each page's own stylesheet. */
+:root {
+  color-scheme: light;
+
+  /* Team palette: see AGENTS.md section 7 for roles and allowed pairings. */
+  --color-background: #faf7f2;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f2e9dc;
+  --color-text: #30291f;
+  --color-text-muted: #655a4e;
+  --color-border: #9c8a75;
+  --color-brand: #82551f;
+  --color-brand-hover: #684318;
+  --color-on-brand: #ffffff;
+  /* Pale gold is decorative only, not text or functional indicators. */
+  --color-accent: #c6a267;
+  /* Status foregrounds on light surfaces; always include a text label. */
+  --color-success: #166534;
+  --color-warning: #92400e;
+  --color-danger: #b42318;
+  --color-focus: #005fcc;
+  --color-disabled-background: #e9e1d7;
+  --color-disabled-text: #655a4e;
+
+  /* System fonts need no network request or downloaded font files. */
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-size-body: 1rem;
+  --line-height-body: 1.6;
+  --line-height-heading: 1.2;
+
+  /* 4, 8, 12, 16, 24, 32, 48, 64 px at a 16 px root font size. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --container-max: 75rem;
+  --control-min-size: 2.75rem;
+  --radius-control: 0.5rem;
+  --border-width: 1px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  overflow-wrap: anywhere;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  margin-block: 0 var(--space-4);
+  font-family: var(--font-heading);
+  line-height: var(--line-height-heading);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+:where(h4, h5, h6) {
+  font-size: 1.125rem;
+}
+
+:where(p, ul, ol, dl) {
+  margin-block: 0 var(--space-4);
+}
+
+:where(ul, ol) {
+  padding-inline-start: var(--space-5);
+}
+
+:where(img, video) {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:where(button, input, select, textarea) {
+  font: inherit;
+}
+
+a {
+  color: var(--color-brand);
+  text-underline-offset: 0.2em;
+}
+
+/* Keep native focus as a fallback; never remove outlines globally. */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.container {
+  inline-size: 100%;
+  max-inline-size: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* Use on <button> for actions and <a href="..."> for navigation. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-inline-size: var(--control-min-size);
+  min-block-size: var(--control-min-size);
+  max-inline-size: 100%;
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--color-brand);
+  border-radius: var(--radius-control);
+  background-color: var(--color-brand);
+  color: var(--color-on-brand);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.button--secondary {
+  background-color: var(--color-surface);
+  color: var(--color-brand);
+}
+
+.form-label {
+  display: block;
+  margin-block-end: var(--space-2);
+  font-weight: 600;
+}
+
+/* Text-like inputs, select and textarea; not checkbox/radio inputs. */
+.form-control {
+  display: block;
+  inline-size: 100%;
+  min-inline-size: 0;
+  min-block-size: var(--control-min-size);
+  max-inline-size: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-control);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.form-control::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+/* Hover does not carry information that is unavailable on touch screens. */
+@media (hover: hover) {
+  a:hover {
+    color: var(--color-brand-hover);
+  }
+
+  .button:not(:disabled):not([aria-disabled="true"]):hover {
+    border-color: var(--color-brand-hover);
+    background-color: var(--color-brand-hover);
+    color: var(--color-on-brand);
+  }
+
+  .button--secondary:not(:disabled):not([aria-disabled="true"]):hover {
+    background-color: var(--color-surface-soft);
+    color: var(--color-brand-hover);
+  }
+
+  .form-control:not(:disabled):hover {
+    border-color: var(--color-brand);
+  }
+}
+
+/* aria-disabled styles appearance only; see README for link semantics. */
+.button:disabled,
+.button[aria-disabled="true"],
+.form-control:disabled {
+  border-color: var(--color-border);
+  background-color: var(--color-disabled-background);
+  color: var(--color-disabled-text);
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+/* Literal media queries: CSS custom properties cannot define breakpoints here. */
+@media (min-width: 48rem) {
+  .container {
+    padding-inline: var(--space-5);
+  }
+}
+
+@media (min-width: 64rem) {
+  .container {
+    padding-inline: var(--space-6);
+  }
+}

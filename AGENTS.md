@@ -152,6 +152,44 @@ không tuyên bố thao tác đã thành công khi chưa có xử lý.
 Nạp css/common.css trước CSS riêng của trang.
 
 Dùng CSS custom properties cho màu, font và spacing dùng chung.
+
+### Bảng màu thống nhất
+
+Ba trang dùng bảng kem–nâu ấm của GradStudio, hướng đến cảm giác
+gần gũi, lưu giữ kỷ niệm và chỉn chu. Đây là định hướng thiết kế
+của nhóm, không phải kết luận rằng mọi người cảm nhận màu giống nhau.
+
+| Vai trò | Token trong common.css | Màu |
+|---|---|---|
+| Nền chính | `--color-background` | `#FAF7F2` |
+| Bề mặt thẻ, form, booking | `--color-surface` | `#FFFFFF` |
+| Chữ chính | `--color-text` | `#30291F` |
+| Chữ phụ | `--color-text-muted` | `#655A4E` |
+| Nút chính, liên kết | `--color-brand` | `#82551F` |
+| Hover nút chính, liên kết | `--color-brand-hover` | `#684318` |
+| Vàng đồng trang trí tùy chọn | `--color-accent` | `#C6A267` |
+| Đã đặt lịch | `--color-success` | `#166534` |
+| Chờ cọc | `--color-warning` | `#92400E` |
+| Trùng lịch, lỗi | `--color-danger` | `#B42318` |
+| Focus bàn phím | `--color-focus` | `#005FCC` |
+
+- CSS riêng dùng `var(--color-...)` từ common.css; không tự đổi bảng
+  màu hoặc chép mã hex sang từng trang. Đổi token chung phải thống
+  nhất cả nhóm và kiểm tra lại các trang bị ảnh hưởng.
+- Vàng đồng nhạt chỉ dùng chi tiết trang trí không mang thông tin;
+  không dùng cho chữ nhỏ, trạng thái, viền input hoặc focus trên nền sáng.
+- Chữ trắng trên nút chính dùng `--color-on-brand`. Giữ các token
+  nền phụ, viền và disabled đã có trong common.css cho đúng vai trò.
+- Các màu success/warning/danger dùng làm chữ hoặc biểu tượng trên
+  nền sáng. Không tự coi chúng là màu nền của thẻ/nút; đổi cách phối
+  phải đo tương phản lại. Trạng thái luôn kèm chữ hoặc dấu hiệu khác.
+- Trang dịch vụ ưu tiên ảnh; Admin ưu tiên thông tin; lịch chụp ưu
+  tiên thời gian, trạng thái và đặt cọc. Cả ba giữ cùng bảng màu.
+- Chữ nội dung/nút phải đạt 4.5:1 trên nền thực tế, kể cả hover.
+  Chữ trên ảnh phải kiểm tra riêng; không suy từ tương phản nền trơn.
+
+### Khoảng cách và kích thước
+
 Thang khoảng cách khởi đầu: 4, 8, 12, 16, 24, 32, 48, 64 px.
 
 Breakpoint khởi đầu: 48rem và 64rem; điều chỉnh theo nội dung.
