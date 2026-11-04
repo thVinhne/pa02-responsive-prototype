@@ -45,6 +45,41 @@ Chưa có HTML để kiểm tra responsive, điều hướng hoặc W3C.
 Sau khi hoàn thành, mở trực tiếp index.html trong trình duyệt.
 Hướng dẫn mở và nhu cầu kết nối mạng sẽ được cập nhật theo bản cuối.
 
+## Chuẩn bị màn 1
+
+Giữ slideshow hero của PA01 và triển khai bằng HTML/CSS thuần,
+không phụ thuộc JavaScript. Slideshow sử dụng năm ảnh cục bộ:
+`assets/images/hero-01.avif`, `assets/images/hero-02.avif`,
+`assets/images/hero-03.avif`, `assets/images/hero-04.avif` và
+`assets/images/hero-05.avif`. Tiêu đề, mô tả và các link chính phải
+đọc và sử dụng được khi JavaScript tắt.
+
+Ảnh dịch vụ, gallery và avatar nằm trong `assets/images/`.
+Nguồn ảnh được cung cấp ban đầu nằm trong
+[IMAGE_SOURCES.md](docs/pa1/IMAGE_SOURCES.md); các ảnh bổ sung cần
+được đối chiếu và ghi nguồn theo đúng file thực tế sử dụng.
+Ảnh chụp bổ sung của màn nguồn nằm trong
+`docs/pa1/reference/screen-1/`, phục vụ đối chiếu nội dung PA01;
+chúng không thay thế ảnh minh chứng PA02 trong `screenshots/`.
+
+Hành vi tĩnh dự kiến cho màn 1:
+
+| Thành phần | Hành vi |
+|---|---|
+| Xem gói chụp | Link `#packages` tới khu vực có `id="packages"` |
+| Chat với studio / Tư vấn gói này | Link `#chat` tới hội thoại mẫu hiển thị sẵn; không tự đổi nội dung hội thoại theo gói |
+| Gửi tin nhắn | Chưa kết nối; hiển thị trạng thái rõ ràng, không giả lập đã gửi thành công |
+| Lịch chụp của tôi | Link tương đối `my-appointments.html` |
+| Điều hướng demo sang màn 2 | Link tương đối `admin-scheduling.html`, ghi rõ chuyển sang góc nhìn Admin |
+
+Nút gửi tin nhắn của khách không được dùng để mở trang quản trị.
+Khi triển khai, ghi các thay đổi tương tác so với PA01 và các chức
+năng chưa kết nối vào `PROTOTYPE.md` để Người 3 tổng hợp.
+
+Phần này ghi quyết định chuẩn bị ở bước 6, không khẳng định đã dựng
+hoặc kiểm tra slideshow. Chưa có HTML nên chưa kiểm tra slideshow,
+responsive, điều hướng hoặc W3C trong trình duyệt.
+
 ## CSS dùng chung cho ba thành viên
 
 Nạp `css/common.css` trước CSS riêng, bằng hai thẻ
