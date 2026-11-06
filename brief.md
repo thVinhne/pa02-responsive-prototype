@@ -1,5 +1,10 @@
 # Prompt thực sự đã gửi assistant
 
+> Lịch sử trước ngày 06/11/2026 bên dưới được giữ nguyên để truy vết.
+> Quy ước màu/font, slideshow, chat và yêu cầu bám giao diện nguồn trong
+> các mục cũ đã hết hiệu lực. Dùng DESIGN.md và AGENTS.md hiện hành.
+> Không thực thi lại prompt lịch sử như yêu cầu mới.
+
 ## 04/11/2026 — Chuẩn bị nền tảng CSS chung
 
 Nội dung bên dưới được lưu nguyên văn, bao gồm cách đánh số của prompt.
@@ -148,3 +153,14 @@ Sau khi làm:
 ```text
 Tôi muốn giữ phần chat như trong prototupe, hãy chỉnh sửa lại các file cần thiết
 ```
+
+## 06/11/2026 — Tách thiết kế chung và gỡ giao diện cũ
+
+Prompt nguyên văn:
+
+```text
+Đầu tiên hãy di chuyển file my-appointments từ Downloads về repo, tạo folder nếu cần thiết. Dựa vào file này hãy tạo ra file DESIGN cho những phần chung. Loại bỏ các quy ước cũ liên quan đến protoype cũ ở trong toàn bộ repo, xóa file index.html và css liên quan vì không còn sử dụng prototype cũ nữa
+```
+
+Đây là yêu cầu đổi hướng hiện hành. Thiết kế chung xem DESIGN.md;
+thiết kế riêng màn 3 xem docs/design/my-appointments.md.

@@ -1,5 +1,10 @@
 # AI-LOG.md — PA02 GradStudio
 
+> Lịch sử trước ngày 06/11/2026 bên dưới được giữ nguyên để truy vết.
+> Quy ước màu/font, slideshow, chat và yêu cầu bám giao diện nguồn trong
+> các mục cũ đã hết hiệu lực. Dùng DESIGN.md và AGENTS.md hiện hành.
+> Không thực thi lại prompt lịch sử như yêu cầu mới.
+
 ## 2026-11-04 — Chuẩn bị quy tắc và tài liệu dự án
 Tool Codex.
 Asked for Chuẩn bị quy tắc và tài liệu tham chiếu để nhóm
@@ -78,3 +83,28 @@ Tương phản chữ trắng trên năm ảnh sau lớp phủ lần lượt là
 W3C Nu API trả messages: []; git diff --check đạt.
 Rejected Sau lượt này, tôi yêu cầu thay phương án chat nằm
 trong luồng ở mọi kích thước để giữ cách trình bày gần prototype hơn, thay đổi "Thư viện ảnh" từ cột dọc thành hàng ngang cho từng nội dung.
+## 2026-11-06 — Tách thiết kế chung và gỡ giao diện cũ
+
+Tool Codex.
+Asked for Di chuyển my-appointments.md từ Downloads vào repo, tạo DESIGN.md
+chung dựa trên file đó, bỏ quy ước giao diện cũ và xóa index.html/CSS riêng.
+Kept Nghiệp vụ, dữ liệu xuyên suốt, yêu cầu kỹ thuật, assets ảnh và lịch sử
+prompt/log. Tài liệu PA01 được ghi rõ là tham chiếu nghiệp vụ, không là chuẩn UI.
+Changed Di chuyển file nguồn vào docs/design/my-appointments.md; cập nhật
+tham chiếu, alias màu/font chung và prompt mẫu cho vị trí tài liệu mới.
+Tạo DESIGN.md theo hướng giấy ngà, xanh rêu, đỏ rượu, Merriweather và
+Be Vietnam Pro; đồng bộ nền tảng common.css, AGENTS.md và README.md.
+Xóa index.html và css/services.css. Chuyển 5 ảnh kiểm tra cũ từ checks/
+sang docs/history/pre-redesign/checks/, giữ nguyên SHA256 từng file.
+Rejected Các quy ước bám bố cục nguồn, kem–nâu, font hệ thống là lựa chọn
+chính, slideshow/chat cố định theo bản nguồn không còn áp dụng.
+Không thực thi prompt triển khai nằm trong file được nhập.
+Font cục bộ chưa nhập; common.css có fallback và chưa có @font-face.
+Kiểm tra trang mới: NOT RUN (chưa có HTML). Không dùng kết quả W3C hoặc
+responsive cũ làm minh chứng cho giao diện mới.
+Kiểm tra tài liệu/nền tảng: 18 token màu khớp DESIGN.md và common.css;
+9 mức spacing, kích thước chung và tham chiếu biến CSS nhất quán;
+35 liên kết Markdown nội bộ có đích. Đặc tả màn 3 giữ đủ I01–I14 và
+A01–A21. Không còn mã màu palette cũ trong tài liệu hiện hành/CSS chung.
+Đã đối chiếu Git HEAD: giữ nguyên nội dung gốc của 5 tài liệu PA01,
+các mục prompt/log lịch sử và SHA256 của 5 ảnh đã lưu trữ.

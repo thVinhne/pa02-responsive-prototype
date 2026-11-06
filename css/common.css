@@ -2,34 +2,37 @@
 :root {
   color-scheme: light;
 
-  /* Team palette: see AGENTS.md section 7 for roles and allowed pairings. */
-  --color-background: #faf7f2;
-  --color-surface: #ffffff;
-  --color-surface-soft: #f2e9dc;
-  --color-text: #30291f;
-  --color-text-muted: #655a4e;
-  --color-border: #9c8a75;
-  --color-brand: #82551f;
-  --color-brand-hover: #684318;
-  --color-on-brand: #ffffff;
+  /* Shared film-journal palette: see DESIGN.md for roles and pairings. */
+  --color-background: #f5f0e6;
+  --color-surface: #fffcf5;
+  --color-surface-soft: var(--color-background);
+  --color-text: #262b28;
+  --color-text-muted: #62655b;
+  --color-border: #d3c9b9;
+  --color-control-border: #8a8171;
+  --color-brand: #284c3f;
+  --color-brand-hover: #1b392f;
+  --color-on-brand: var(--color-surface);
+  --color-wine: #7a3734;
   /* Pale gold is decorative only, not text or functional indicators. */
-  --color-accent: #c6a267;
+  --color-accent: #b59157;
   /* Status foregrounds on light surfaces; always include a text label. */
-  --color-success: #166534;
-  --color-warning: #92400e;
-  --color-danger: #b42318;
-  --color-focus: #005fcc;
-  --color-disabled-background: #e9e1d7;
-  --color-disabled-text: #655a4e;
+  --color-success: var(--color-brand);
+  --color-warning: var(--color-wine);
+  --color-danger: var(--color-wine);
+  --color-focus: #175e92;
+  --color-disabled-background: var(--color-border);
+  --color-disabled-text: var(--color-text);
 
-  /* System fonts need no network request or downloaded font files. */
-  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-heading: Georgia, "Times New Roman", serif;
+  /* Local GS font faces are pending import; use these fallbacks until then.
+     Add @font-face only after the shared font files and OFL licenses exist. */
+  --font-body: "GS Be Vietnam", "Segoe UI", Arial, sans-serif;
+  --font-heading: "GS Merriweather", "Times New Roman", serif;
   --font-size-body: 1rem;
   --line-height-body: 1.6;
-  --line-height-heading: 1.2;
+  --line-height-heading: 1.25;
 
-  /* 4, 8, 12, 16, 24, 32, 48, 64 px at a 16 px root font size. */
+  /* 4, 8, 12, 16, 24, 32, 48, 64, 96 px at a 16 px root font size. */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -38,10 +41,16 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4rem;
+  --space-9: 6rem;
 
-  --container-max: 75rem;
+  --container-max: 74rem;
   --control-min-size: 2.75rem;
-  --radius-control: 0.5rem;
+  --button-min-size: 3rem;
+  --radius-image: 0.375rem;
+  --radius-control: 0.625rem;
+  --radius-card: 1rem;
+  --shadow-paper: 0 2px 8px rgb(38 43 40 / 8%);
+  --shadow-raised: 0 8px 24px rgb(38 43 40 / 12%);
   --border-width: 1px;
 }
 
@@ -68,15 +77,17 @@ body {
 :where(h1, h2, h3, h4, h5, h6) {
   margin-block: 0 var(--space-4);
   font-family: var(--font-heading);
+  font-weight: 400;
   line-height: var(--line-height-heading);
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 1rem + 3vw, 3.5rem);
+  line-height: 1.18;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 1rem + 1.25vw, 2rem);
 }
 
 h3 {
@@ -134,7 +145,7 @@ a {
   justify-content: center;
   gap: var(--space-2);
   min-inline-size: var(--control-min-size);
-  min-block-size: var(--control-min-size);
+  min-block-size: var(--button-min-size);
   max-inline-size: 100%;
   padding: var(--space-2) var(--space-4);
   border: var(--border-width) solid var(--color-brand);
@@ -171,7 +182,7 @@ a {
   min-block-size: var(--control-min-size);
   max-inline-size: 100%;
   padding: var(--space-2) var(--space-3);
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid var(--color-control-border);
   border-radius: var(--radius-control);
   background-color: var(--color-surface);
   color: var(--color-text);
@@ -209,7 +220,7 @@ textarea.form-control {
   }
 }
 
-/* aria-disabled styles appearance only; see README for link semantics. */
+/* aria-disabled styles appearance only; see DESIGN.md for link semantics. */
 .button:disabled,
 .button[aria-disabled="true"],
 .form-control:disabled {
@@ -229,6 +240,6 @@ textarea.form-control {
 
 @media (min-width: 64rem) {
   .container {
-    padding-inline: var(--space-6);
+    padding-inline: var(--space-7);
   }
 }

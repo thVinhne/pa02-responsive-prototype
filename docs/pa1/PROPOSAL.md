@@ -1,3 +1,7 @@
+> Tài liệu nguồn PA01, chỉ dùng để tham khảo chức năng, dữ liệu và nguồn tài nguyên.
+> Bố cục, màu, font và cách tương tác trong bản nguồn không phải quy ước UI PA02.
+> Quy ước hiện hành: DESIGN.md và AGENTS.md ở gốc repo.
+
 # GradStudio – Hệ thống đặt lịch và quản lý buổi chụp từ lúc tư vấn đến khi giao ảnh
 
 ## Nhóm thực hiện
