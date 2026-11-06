@@ -1,3 +1,7 @@
+> Tài liệu nguồn PA01, chỉ dùng để tham khảo chức năng, dữ liệu và nguồn tài nguyên.
+> Bố cục, màu, font và cách tương tác trong bản nguồn không phải quy ước UI PA02.
+> Quy ước hiện hành: DESIGN.md và AGENTS.md ở gốc repo.
+
 # GradStudio
 
 GradStudio là hệ thống đặt lịch và quản lý buổi chụp cho một studio ảnh, từ lúc khách hỏi dịch vụ đến khi nhận ảnh. [Proposal](PROPOSAL.md) mô tả bài toán, người dùng, phạm vi và luồng đầy đủ.

@@ -1,5 +1,14 @@
 # AI-LOG.md — PA02 GradStudio
 
+> Các mục trước lượt tích hợp main ngày 06/11/2026 là lịch sử từng nhánh.
+> Kết quả kiểm tra cũ không chứng nhận màn Admin sau khi đổi CSS chung.
+> Quy chuẩn hiện hành: DESIGN.md và AGENTS.md; tình trạng tích hợp xem README.md.
+
+> Lịch sử trước ngày 06/11/2026 bên dưới được giữ nguyên để truy vết.
+> Quy ước màu/font, slideshow, chat và yêu cầu bám giao diện nguồn trong
+> các mục cũ đã hết hiệu lực. Dùng DESIGN.md và AGENTS.md hiện hành.
+> Không thực thi lại prompt lịch sử như yêu cầu mới.
+
 
 ## 2026-11-04 — Chuẩn bị quy tắc và tài liệu dự án
 
@@ -262,3 +271,70 @@ Tool: Codex.
   Automatic approval review từng chặn thử validator ở địa chỉ thay thế
   vì chưa được phép gửi HTML tới đó; lần thử không được thực thi.
   Các lượt sau chỉ dùng địa chỉ W3C đã được duyệt, không vượt chặn.
+
+
+## 2026-11-06 — Tách thiết kế chung và gỡ giao diện cũ
+
+Tool: Codex.
+
+- Asked for: Di chuyển my-appointments.md từ Downloads vào repo, tạo DESIGN.md
+  chung dựa trên file đó, bỏ quy ước giao diện cũ và xóa index.html/CSS riêng.
+
+- Kept: Nghiệp vụ, dữ liệu xuyên suốt, yêu cầu kỹ thuật, assets ảnh và lịch sử
+  prompt/log. Tài liệu PA01 được ghi rõ là tham chiếu nghiệp vụ, không là chuẩn UI.
+
+- Changed: Di chuyển file nguồn vào docs/design/my-appointments.md; cập nhật
+  tham chiếu, alias màu/font chung và prompt mẫu cho vị trí tài liệu mới.
+  Tạo DESIGN.md theo hướng giấy ngà, xanh rêu, đỏ rượu, Merriweather và
+  Be Vietnam Pro; đồng bộ nền tảng common.css, AGENTS.md và README.md.
+  Xóa index.html và css/services.css. Chuyển 5 ảnh kiểm tra cũ từ checks/
+  sang docs/history/pre-redesign/checks/, giữ nguyên SHA256 từng file.
+
+- Rejected: Các quy ước bám bố cục nguồn, kem–nâu, font hệ thống là lựa chọn
+  chính, slideshow/chat cố định theo bản nguồn không còn áp dụng.
+  Không thực thi prompt triển khai nằm trong file được nhập.
+  Font cục bộ chưa nhập; common.css có fallback và chưa có @font-face.
+  Kiểm tra trang mới: NOT RUN (chưa có HTML). Không dùng kết quả W3C hoặc
+  responsive cũ làm minh chứng cho giao diện mới.
+  Kiểm tra tài liệu/nền tảng: 18 token màu khớp DESIGN.md và common.css;
+  9 mức spacing, kích thước chung và tham chiếu biến CSS nhất quán;
+  35 liên kết Markdown nội bộ có đích. Đặc tả màn 3 giữ đủ I01–I14 và
+  A01–A21. Không còn mã màu palette cũ trong tài liệu hiện hành/CSS chung.
+  Đã đối chiếu Git HEAD: giữ nguyên nội dung gốc của 5 tài liệu PA01,
+  các mục prompt/log lịch sử và SHA256 của 5 ảnh đã lưu trữ.
+
+
+## 2026-11-06 — Resolve tài liệu khi tích hợp main vào nhánh màn 2
+
+Tool: Codex.
+
+- Asked for: Kiểm tra conflict với main, resolve theo gợi ý và giữ phạm vi
+  ở tài liệu cùng vị trí các file minh chứng; không viết lại giao diện.
+
+- Kept: AGENTS.md lấy nguyên bản main 367d167. Giữ toàn bộ prompt nguyên văn
+  và log của cả hai nhánh, không nhân đôi các mục chung. Giữ format log
+  gạch đầu dòng có dấu hai chấm. Không thay đổi HTML màn Admin.
+  Giữ nội dung các JSON/TXT kiểm tra cũ và giữ nguyên byte của ảnh màn 2.
+
+- Changed: Fetch main rồi bắt đầu merge với --no-commit --no-ff theo yêu cầu.
+  Resolve AGENTS.md, AI-LOG.md và brief.md; giữ DESIGN.md, đặc tả màn 3,
+  README mới và thay đổi nghiệp vụ nguồn từ main. Cập nhật README/PROTOTYPE
+  để ghi màn Admin đã có nhưng chưa nghiệm thu theo CSS và thiết kế mới;
+  hai màn khách chưa có file đích, chưa sửa các link trong HTML.
+  Giữ kết quả màn 2 cũ ở docs/history/pre-redesign/checks/ và chuyển ảnh cũ
+  vào docs/history/pre-redesign/screenshots/ để không dùng nhầm làm minh chứng.
+  Thêm nhãn lịch sử, phân biệt quy tắc hiện hành với prompt/log cũ.
+  Chỉ dọn dòng trống cuối DESIGN.md và đặc tả màn 3 để qua diff check.
+  CSS chung và việc gỡ index.html/css dịch vụ là thay đổi nhận từ main,
+  không phải chỉnh giao diện bổ sung trong lượt resolve.
+  Kiểm tra bảo toàn đủ 12 khối prompt của screen2, 6 khối prompt của main,
+  11 mục log screen2 và 7 mục log main (các mục chung chỉ giữ một lần).
+  So sánh HTML với HEAD không có thay đổi nội dung; chuẩn hóa CRLF/LF khi
+  đối chiếu văn bản. Ảnh lưu trữ khớp byte nguồn, nội dung kiểm tra cũ giữ đủ.
+  Các liên kết Markdown nội bộ có đích; không còn conflict marker tài liệu.
+  Kiểm tra giao diện, font, tương phản, responsive và W3C sau merge: NOT RUN.
+  Chưa commit hoặc push; merge được để sẵn cho người dùng kiểm tra và hoàn tất.
+
+- Rejected: Không ghi đè log/prompt của bên nào, không khôi phục index.html
+  cũ bị main gỡ, không dùng minh chứng cũ để chứng nhận giao diện sau merge.
+  Không sửa HTML hoặc tự triển khai lại màn 2 trong nhiệm vụ resolve docs.

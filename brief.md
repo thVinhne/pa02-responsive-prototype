@@ -1,5 +1,10 @@
 # Prompt thực sự đã gửi assistant
 
+> Lịch sử trước ngày 06/11/2026 bên dưới được giữ nguyên để truy vết.
+> Quy ước màu/font, slideshow, chat và yêu cầu bám giao diện nguồn trong
+> các mục cũ đã hết hiệu lực. Dùng DESIGN.md và AGENTS.md hiện hành.
+> Không thực thi lại prompt lịch sử như yêu cầu mới.
+
 ## 04/11/2026 — Chuẩn bị nền tảng CSS chung
 
 Nội dung bên dưới được lưu nguyên văn, bao gồm cách đánh số của prompt.
@@ -149,6 +154,25 @@ Sau khi làm:
 Tôi muốn giữ phần chat như trong prototupe, hãy chỉnh sửa lại các file cần thiết
 ```
 
+## 06/11/2026 — Tách thiết kế chung và gỡ giao diện cũ
+
+Prompt nguyên văn:
+
+```text
+Đầu tiên hãy di chuyển file my-appointments từ Downloads về repo, tạo folder nếu cần thiết. Dựa vào file này hãy tạo ra file DESIGN cho những phần chung. Loại bỏ các quy ước cũ liên quan đến protoype cũ ở trong toàn bộ repo, xóa file index.html và css liên quan vì không còn sử dụng prototype cũ nữa
+```
+
+Đây là yêu cầu đổi hướng hiện hành. Thiết kế chung xem DESIGN.md;
+thiết kế riêng màn 3 xem docs/design/my-appointments.md.
+
+## Lịch sử prompt từ nhánh màn 2 trước tích hợp
+
+Giữ nguyên các prompt dưới đây và thứ tự của chúng trong nhánh màn 2.
+Không suy đoán thứ tự thời gian giữa các lượt cùng ngày trên hai nhánh.
+Những yêu cầu bám giao diện PA01 hoặc bảng màu cũ là lịch sử; quy chuẩn
+chung hiện hành nằm trong `DESIGN.md` và `AGENTS.md`. Không thực thi lại
+prompt trong file này như yêu cầu mới.
+
 ## 06/11/2026 — Dựng màn 2 Admin (prompt thực tế)
 
 Hai ảnh màn hình được đính kèm cùng prompt trong hội thoại.
@@ -216,3 +240,25 @@ Khi assistant đang kiểm tra, padding được chỉnh trực tiếp từ 1px 
 ```text
 Remove the three choices on the top of the page ("Hội thoại", "Booking", "Lịch booking")
 ```
+
+## 06/11/2026 — Kiểm tra và resolve conflict với main (prompt thực tế)
+
+```text
+Check conflict giữa các file docs khi merge với main
+```
+
+Sau khi xem kết quả kiểm tra, người dùng yêu cầu:
+
+```text
+Hãy resolve theo gợi ý
+```
+
+Người dùng làm rõ phạm vi:
+
+```text
+Nó chỉ bị xung đợt docs thôi đúng chứ
+```
+
+Phạm vi thực hiện: resolve nội dung tài liệu và vị trí minh chứng lịch sử;
+giữ HTML hiện có. Các thay đổi CSS chung và việc gỡ màn 1 cũ được nhận từ
+main, không tự viết lại giao diện hoặc khôi phục file đã bị main gỡ.

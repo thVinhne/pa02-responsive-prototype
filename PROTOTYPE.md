@@ -1,5 +1,18 @@
 # Ghi chú prototype PA02
 
+## Trạng thái sau tích hợp main ngày 06/11/2026
+
+Quy tắc hiện hành lấy từ `AGENTS.md` và `DESIGN.md` trên main. Các mô tả
+màn 2 dưới đây ghi lại bản HTML từ nhánh `prototype/screen2`; không phải
+quy chuẩn thiết kế chung. HTML chưa được sửa trong lượt resolve tài liệu.
+CSS chung đã đổi theo main, nên các ảnh/kết quả kiểm tra cũ được lưu lịch
+sử; responsive, font, tương phản và W3C sau merge là **NOT RUN**.
+
+`index.html` cũ đã gỡ theo main; `my-appointments.html` chưa triển khai.
+Các link tới hai file này trong màn 2 chưa hoàn chỉnh, cần xử lý ở lượt
+tích hợp giao diện. Không tự khôi phục trang cũ hoặc giả định có đồng bộ
+trạng thái giữa các HTML. Font cục bộ mới chưa nhập, CSS đang dùng fallback.
+
 ## Màn 2 — Admin tư vấn và xử lý lịch (06/11/2026)
 
 Phạm vi ghi chú này chỉ là màn 2; không thay thế tài liệu tích hợp của các thành viên khác.
