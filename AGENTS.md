@@ -186,7 +186,7 @@ của nhóm, không phải kết luận rằng mọi người cảm nhận màu 
 - Trang dịch vụ ưu tiên ảnh; Admin ưu tiên thông tin; lịch chụp ưu
   tiên thời gian, trạng thái và đặt cọc. Cả ba giữ cùng bảng màu.
 - Chữ nội dung/nút phải đạt 4.5:1 trên nền thực tế, kể cả hover.
-  Chữ trên ảnh phải kiểm tra riêng; không suy từ tương phản nền trơn.
+  Chữ trên ảnh phải ki1ểm tra riêng; không suy từ tương phản nền trơn.
 
 ### Khoảng cách và kích thước
 

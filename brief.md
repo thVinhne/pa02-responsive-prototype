@@ -148,3 +148,71 @@ Sau khi làm:
 ```text
 Tôi muốn giữ phần chat như trong prototupe, hãy chỉnh sửa lại các file cần thiết
 ```
+
+## 06/11/2026 — Dựng màn 2 Admin (prompt thực tế)
+
+Hai ảnh màn hình được đính kèm cùng prompt trong hội thoại.
+
+```text
+Đây là màn hình 2 mà tôi cần bạn dựng lại. Hãy đọc [AGENTS.md](AGENTS.md) trước để biết quy tắc. Tạo một file html mới nối với endpoint admin-scheduling.html.&#x20;
+
+
+
+Yêu cầu:&#x20;
+
+- Leftbar cần tái tạo lại searchbar để tìm kiếm khách hàng theo tên. Có 4 trạng thái cho một cuộc hội thoại là "Chưa trả lời", "Đang tư vấn" và "Đã xác nhận". Và có các button hỗ trợ việc lọc theo các trạng thái của cuộc hội thoại này.
+- Ở giữa là màn hình chat chưa cuộc hội thoại chung. Ảnh thứ 2 tôi gửi ngay sau là khi scroll xuống dưới hẳn, là một functional booking setting. Tôi muốn bạn bưng phần booking này xuống góc dưới bên trái, để phần giữa màn hình dedicated to chat messages.&#x20;
+- Rightbar bên trên sẽ bao gồm Lịch nhân sự, cũng như một đoạn gợi ý giờ trống để hỗ trợ booking cho khách hàng. Bên dưới là một fully functional booking setting như đã đề cập bên trên.&#x20;
+- Hãy chỉ tạo 1 file html, đồng thời hỗ trợ việc chat, lựa chọn lịch booking, thay đổi trạng thái sau khi đồng ý hoặc từ chối lịch.
+- Sau khi hoàn thành, hãy viết lại đoạn prompt này vào hần dưới của [brief.md](brief.md) , không xóa phần đã có sẵn
+```
+
+### Làm rõ phạm vi trong hội thoại
+
+Assistant hỏi có cho phép dùng JavaScript thuần trong HTML để mô phỏng tương tác hay không. Người dùng trả lời nguyên văn:
+
+```text
+Giữ HTML/CSS thuần, chỉ dựng bản tĩnh
+```
+
+Sau khi lượt làm bị ngắt, người dùng yêu cầu:
+
+```text
+Continue
+```
+
+Quyết định triển khai: form booking đầy đủ dưới rightbar; góc dưới bên trái là tóm tắt booking. Trạng thái thứ tư dùng “Hoàn thành” theo ảnh tham khảo; đây là cách giải quyết phần prompt chỉ liệt kê ba tên trạng thái. Không thêm JavaScript hoặc backend.
+
+## 06/11/2026 — Cho phép JavaScript và chỉnh bố cục màn 2 (prompt thực tế)
+
+```text
+Cho phép javascript. Leftbar, màn hình giữa và rightbar sử dụng 3 scrollbar khác nhau. Thanh trạng thái hội thoại nằm trên cùng một dòng và sẽ có dropbox để chọn trạng thái khác. div chứa lịch đã thống nhất (bên leftbar) là không cần thiết, và div đó nên được coi là trạng thái khác của div booking mới (bên rightbar). Tăng phần không gian cho chat
+```
+
+Yêu cầu này thay lựa chọn giữ bản tĩnh ở lượt trước: cho phép JavaScript thuần để mô phỏng trong phiên xem, vẫn giữ nội dung và điều hướng dùng được khi JavaScript tắt. Không thêm backend, dependency hoặc framework.
+
+## 06/11/2026 — Thu gọn hội thoại và chia đôi rightbar (prompt thực tế)
+
+Ảnh mục hội thoại cũ được đính kèm trong hội thoại.
+
+```text
+Giảm padding ở một box chọn hội thoại. Hỗ trợ đổi sang các cuộc hội thoại khác nữa. Cụm div chứa hội thoại và phần lọc sẽ giữ cố định, không chạy theo scroll bar. Với một box chọn hội thoại:&#x20;
+
+- Tên người dùng hiển thị ngay trên ngang hàng với top của avatar.
+- Bên dưới chứa đoạn chat và thời gian cùng nằm trên một hàng, cắt bớt đoạn chat (để ...) để phù hợp với width của box, không bị xuống dòng.&#x20;
+- Height của box fit với height của avatar, padding 1px.
+
+Phần lịch chỉ hiển thị xem khoảng thời gian đó đã có booking hay chưa, bỏ luôn cột tài nguyên. Đồng thời thu nhỏ để upper half của right bar sẽ chứa lịch, còn lowerhalf sẽ chứa bảng booking setting. Bỏ gợi ý khung giờ chụp. Cố định upper half (không chạy theo scrollbar). Lowerhalf sài scrollbar của riêng nó
+```
+
+Khi assistant đang kiểm tra, padding được chỉnh trực tiếp từ 1px thành 10px. Assistant hỏi giá trị cần giữ; người dùng xác nhận nguyên văn:
+
+```text
+10px như chỉnh sửa trực tiếp hiện tại
+```
+
+## 06/11/2026 — Bỏ ba liên kết trên header (prompt thực tế)
+
+```text
+Remove the three choices on the top of the page ("Hội thoại", "Booking", "Lịch booking")
+```
