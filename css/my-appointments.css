@@ -1,0 +1,591 @@
+@font-face {
+  font-family: "AP Playfair";
+  src: url("../assets/fonts/appointments/PlayfairDisplay-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AP Playfair";
+  src: url("../assets/fonts/appointments/PlayfairDisplay-Italic-Variable.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AP Be Vietnam";
+  src: url("../assets/fonts/appointments/BeVietnamPro-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AP Be Vietnam";
+  src: url("../assets/fonts/appointments/BeVietnamPro-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* This palette, type system and shared-component aliases belong to screen 3 only. */
+body.appointments-page {
+  --ap-paper: #f5f0e6;
+  --ap-card: #fffcf5;
+  --ap-ink: #262b28;
+  --ap-muted: #62655b;
+  --ap-forest: #284c3f;
+  --ap-forest-hover: #1b392f;
+  --ap-wine: #7a3734;
+  --ap-gold: #b59157;
+  --ap-line: #d3c9b9;
+  --ap-control-border: #8a8171;
+  --ap-focus: #175e92;
+  --ap-body: "AP Be Vietnam", "Segoe UI", Arial, sans-serif;
+  --ap-display: "AP Playfair", "Times New Roman", serif;
+  --ap-1: 0.25rem;
+  --ap-2: 0.5rem;
+  --ap-3: 0.75rem;
+  --ap-4: 1rem;
+  --ap-5: 1.5rem;
+  --ap-6: 2rem;
+  --ap-7: 3rem;
+  --ap-8: 4rem;
+  --ap-9: 6rem;
+  --ap-shadow: 0 4px 16px color-mix(in srgb, var(--ap-ink) 9%, transparent);
+  --ap-shadow-raised: 0 10px 30px color-mix(in srgb, var(--ap-ink) 15%, transparent);
+  --color-background: var(--ap-paper);
+  --color-surface: var(--ap-card);
+  --color-text: var(--ap-ink);
+  --color-text-muted: var(--ap-muted);
+  --color-brand: var(--ap-forest);
+  --color-brand-hover: var(--ap-forest-hover);
+  --color-focus: var(--ap-focus);
+  --font-body: var(--ap-body);
+  --font-heading: var(--ap-display);
+  position: relative;
+  isolation: isolate;
+  background: var(--ap-paper);
+  color: var(--ap-ink);
+  font-family: var(--ap-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  font-synthesis: none;
+  font-optical-sizing: auto;
+}
+.appointments-page::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: radial-gradient(var(--ap-ink) 0.5px, transparent 0.5px);
+  background-size: 4px 4px;
+  opacity: 0.025;
+  pointer-events: none;
+  content: "";
+}
+.appointments-page [hidden] { display: none; }
+.appointments-page :where(main, section, article, aside, nav, div, fieldset, figure, p, h1, h2, h3, dd, label, span) { min-inline-size: 0; }
+.appointments-page :where(h1, h2, h3) {
+  font-family: var(--ap-display);
+  font-weight: 500;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
+.appointments-page h1 { font-size: clamp(2rem, 5.5vw, 3.5rem); line-height: 1.18; }
+.appointments-page h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; }
+.appointments-page h3 { font-size: 1.5rem; line-height: 1.3; }
+.appointments-section-heading h2,
+.appointments-journal > h2,
+.appointments-preparation > h2,
+.appointments-faq h2 { font-style: italic; font-weight: 500; }
+.appointments-page :where(strong, b) { font-weight: 600; }
+.appointments-page :where(a, button, summary, input):focus-visible,
+.appointments-page [tabindex="-1"]:focus {
+  outline: 3px solid var(--ap-focus);
+  outline-offset: 4px;
+}
+.appointments-page :where(section[id], main[id]) { scroll-margin-block-start: var(--ap-5); }
+.appointments-page main[tabindex="-1"]:focus { outline-offset: -4px; }
+.appointments-shell {
+  inline-size: 100%;
+  max-inline-size: 74rem;
+  margin-inline: auto;
+  padding-inline: var(--ap-4);
+}
+.appointments-icon-library {
+  position: absolute;
+  inline-size: 0;
+  block-size: 0;
+  overflow: hidden;
+}
+.appointments-icon {
+  flex-shrink: 0;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+.appointments-sr-only,
+.appointments-filter-input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.appointments-skip {
+  position: fixed;
+  z-index: 10;
+  inset-block-start: var(--ap-3);
+  inset-inline-start: var(--ap-3);
+  max-inline-size: calc(100% - var(--ap-5));
+  transform: translateY(calc(-100% - var(--ap-5)));
+}
+.appointments-skip:focus { transform: none; }
+.appointments-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ap-2);
+  min-block-size: 3.25rem;
+  max-inline-size: 100%;
+  padding: var(--ap-3) var(--ap-5);
+  border: 1px solid var(--ap-forest);
+  border-radius: 0.625rem;
+  background: var(--ap-forest);
+  color: var(--ap-card);
+  font-family: var(--ap-body);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: background-color 160ms, color 160ms, transform 160ms;
+}
+.appointments-button-secondary {
+  min-block-size: 2.75rem;
+  background: var(--ap-card);
+  color: var(--ap-forest);
+}
+.appointments-text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--ap-2);
+  min-block-size: 2.75rem;
+  max-inline-size: 100%;
+  padding: var(--ap-2) 0;
+  border: 0;
+  background: transparent;
+  color: var(--ap-forest);
+  font: inherit;
+  font-weight: 600;
+  text-align: start;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  cursor: pointer;
+}
+.appointments-header { border-block-end: 1px solid var(--ap-line); }
+.appointments-header-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--ap-2) var(--ap-4);
+  padding-block: var(--ap-4);
+}
+.appointments-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ap-3);
+  min-block-size: 2.75rem;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  color: var(--ap-forest);
+  font-family: var(--ap-display);
+  font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+  font-weight: 600;
+  line-height: 1.18;
+  text-decoration: none;
+}
+.appointments-brand-icon { flex-shrink: 0; inline-size: 2.75rem; block-size: 2.75rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.appointments-brand-halo { stroke: var(--ap-gold); stroke-width: 0.8; }
+.appointments-brand-cap { fill: var(--ap-paper); }
+.appointments-brand-lens { fill: var(--ap-card); }
+.appointments-brand-iris { stroke-width: 0.8; }
+.appointments-wordmark { display: inline-block; letter-spacing: -0.045em; overflow-wrap: anywhere; }
+.appointments-wordmark > span:last-child { font-style: italic; font-weight: 500; }
+.appointments-nav {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ap-2) var(--ap-5);
+}
+.appointments-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  padding-block: var(--ap-2);
+  border-block-end: 2px solid transparent;
+  color: var(--ap-muted);
+  text-decoration: none;
+}
+.appointments-nav a[aria-current="page"] { border-block-end-color: var(--ap-forest); color: var(--ap-forest); font-weight: 600; }
+.appointments-account { display: flex; align-items: center; gap: var(--ap-2); margin: 0; }
+.appointments-account img { inline-size: 2.5rem; block-size: 2.5rem; border-radius: 50%; object-fit: cover; border: 1px solid var(--ap-control-border); }
+.appointments-hero { display: grid; gap: var(--ap-5); padding-block: var(--ap-5) var(--ap-6); }
+.appointments-kicker { margin-block-end: var(--ap-3); color: var(--ap-forest); font-size: 1rem; letter-spacing: 0.04em; }
+.appointments-hero h1 { max-inline-size: 100%; margin-block-end: var(--ap-6); font-size: clamp(2.75rem, 6vw, 4.5rem); font-weight: 500; line-height: 1.16; letter-spacing: -0.035em; }
+.appointments-title-line { display: block; }
+.appointments-title-script { position: relative; display: inline-block; max-inline-size: 100%; color: var(--ap-forest); font-style: italic; font-weight: 500; padding-inline-end: 0.1em; }
+.appointments-title-flourish { position: absolute; inset-inline: 0; inset-block-end: -0.14em; inline-size: 100%; block-size: 0.22em; fill: none; stroke: var(--ap-gold); stroke-width: 1.3; stroke-linecap: round; pointer-events: none; }
+.appointments-hero-greeting { font-weight: 600; }
+.appointments-hero-description { max-inline-size: 42ch; color: var(--ap-muted); margin-block-end: var(--ap-4); }
+.appointments-hero-note { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--ap-4); max-inline-size: 30rem; margin-block-start: var(--ap-5); padding: var(--ap-4); border: 1px solid var(--ap-line); border-radius: 0.25rem 1rem 0.25rem 0.25rem; background: var(--ap-card); box-shadow: var(--ap-shadow); }
+.appointments-hero-note::before { position: absolute; inset-block-start: -0.5rem; inset-inline-start: 40%; inline-size: 3rem; block-size: 1rem; background: color-mix(in srgb, var(--ap-gold) 25%, var(--ap-paper)); transform: rotate(-4deg); content: ""; }
+.appointments-note-day { display: grid; align-content: center; min-inline-size: 3.5rem; padding-inline-end: var(--ap-4); border-inline-end: 1px dashed var(--ap-control-border); color: var(--ap-wine); font-family: var(--ap-display); font-size: 3rem; line-height: 1.05; text-align: center; }
+.appointments-note-day > span { margin-block-start: var(--ap-2); color: var(--ap-muted); font-family: var(--ap-body); font-size: 1rem; line-height: 1.4; }
+.appointments-hero-note p { margin: 0; font-size: 1rem; overflow-wrap: anywhere; }
+.appointments-hero-note .appointments-note-kicker { color: var(--ap-muted); }
+.appointments-hero-note .appointments-note-date { margin-block: var(--ap-1); color: var(--ap-forest); font-family: var(--ap-display); font-size: 1.25rem; font-weight: 500; }
+.appointments-studio-column { display: grid; align-content: start; gap: var(--ap-4); inline-size: 100%; max-inline-size: 32rem; justify-self: center; }
+.appointments-crew h2 { margin: 0 0 var(--ap-3); color: var(--ap-forest); font-size: 1.25rem; font-weight: 500; font-style: italic; }
+.appointments-crew-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr)); gap: var(--ap-2); margin: 0; padding: 0; list-style: none; }
+.appointments-crew-list > li { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--ap-2); min-inline-size: 0; padding: var(--ap-3); border: 1px solid var(--ap-line); border-radius: 0.5rem; background: var(--ap-card); }
+.appointments-crew-initial { display: inline-flex; align-items: center; justify-content: center; inline-size: 2rem; block-size: 2rem; border: 1px solid var(--ap-control-border); border-radius: 50%; background: var(--ap-paper); color: var(--ap-forest); font-family: var(--ap-display); font-size: 1.25rem; font-style: italic; }
+.appointments-crew-list strong,
+.appointments-crew-list div > span { display: block; overflow-wrap: anywhere; }
+.appointments-crew-list div > span { color: var(--ap-muted); }
+.appointments-crew-list p { grid-column: 1 / -1; margin: 0; padding-block-start: var(--ap-2); border-block-start: 1px dashed var(--ap-line); color: var(--ap-forest); font-size: 1rem; overflow-wrap: anywhere; }
+.appointments-film-nav { position: relative; grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--ap-2); padding-block: var(--ap-4); }
+.appointments-film-nav::before,
+.appointments-film-nav::after { position: absolute; inset-inline: 0; block-size: var(--ap-1); background: repeating-linear-gradient(90deg, var(--ap-control-border) 0 6px, transparent 6px 16px); opacity: 0.55; content: ""; }
+.appointments-film-nav::before { inset-block-start: 0; }
+.appointments-film-nav::after { inset-block-end: 0; }
+.appointments-film-nav a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--ap-1); min-inline-size: 0; min-block-size: 2.75rem; padding: var(--ap-3) var(--ap-2); border: 1px solid var(--ap-line); border-radius: 0.25rem; background: var(--ap-card); color: var(--ap-forest); text-align: center; text-decoration: none; overflow-wrap: anywhere; }
+.appointments-film-index { color: var(--ap-wine); font-family: var(--ap-display); font-size: 1.5rem; font-style: italic; line-height: 1.1; }
+.appointments-film-nav .appointments-icon { display: none; }
+.appointments-studio { --ap-card-width: 26%; display: grid; gap: var(--ap-2); inline-size: 100%; max-inline-size: 32rem; justify-self: center; }
+.appointments-studio-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--ap-1) var(--ap-3); margin: 0; color: var(--ap-forest); font-weight: 600; }
+.appointments-studio-heading span { color: var(--ap-muted); font-family: var(--ap-display); font-weight: 400; }
+.appointments-studio-stage { position: relative; isolation: isolate; block-size: 340px; inline-size: 100%; border-block-end: 1px solid var(--ap-control-border); background: radial-gradient(ellipse at 62% 68%, color-mix(in srgb, var(--ap-gold) 10%, transparent), transparent 65%); }
+.appointments-studio-rope { position: absolute; z-index: 3; inset-block-start: var(--ap-2); inset-inline: 0; inline-size: 100%; block-size: 3.5rem; overflow: visible; fill: var(--ap-control-border); stroke: var(--ap-control-border); stroke-width: 3; }
+.appointments-studio-rope path { fill: none; }
+.appointments-studio-softbox { position: absolute; z-index: 0; inset-block-end: 1.75rem; inset-inline-start: 2%; inline-size: 26%; block-size: 9rem; fill: none; stroke: var(--ap-forest); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.3; }
+.appointments-studio-softbox > path:first-child { fill: var(--ap-card); }
+.appointments-studio-table { position: absolute; z-index: 0; inset-inline: 2%; inset-block-end: 0.5rem; block-size: 56%; border-block: 1px solid var(--ap-control-border); border-radius: 50% 50% 0.5rem 0.5rem / 10% 10% 0.5rem 0.5rem; background: linear-gradient(var(--ap-paper), color-mix(in srgb, var(--ap-line) 65%, var(--ap-paper))); transform: skewY(-1deg); }
+.appointments-studio-table span { position: absolute; inset-inline-end: var(--ap-3); inset-block-end: var(--ap-1); color: var(--ap-forest); font-family: var(--ap-display); font-size: 1rem; }
+.appointments-studio-prop { padding: 0; border: 0; border-radius: 2px; background: transparent; color: var(--ap-ink); font: inherit; cursor: pointer; }
+.appointments-studio-film { position: absolute; z-index: 6; inset-inline-start: 45%; inset-block-end: 0.75rem; inline-size: 44px; block-size: 44px; fill: var(--ap-paper); stroke: var(--ap-forest); stroke-width: 2; transform: rotate(-9deg); }
+.appointments-studio-film svg { display: block; inline-size: 100%; block-size: 100%; overflow: visible; }
+.appointments-studio-film > path:nth-child(4),
+.appointments-studio-film svg > path:nth-child(4) { fill: var(--ap-gold); }
+.appointments-studio-clip { position: absolute; z-index: 7; inline-size: 44px; block-size: 44px; transform: translateX(-50%); }
+.appointments-studio-clip-1 { inset-inline-start: 18%; inset-block-start: 0.25rem; }
+.appointments-studio-clip-2 { inset-inline-start: 50%; inset-block-start: 1.25rem; }
+.appointments-studio-clip-3 { inset-inline-start: 82%; inset-block-start: 0.25rem; }
+.appointments-studio-clip > span,
+.appointments-studio-clip button > span { position: absolute; inset-inline-start: 15px; inset-block-start: 6px; inline-size: 14px; block-size: 38px; border: 1px solid var(--ap-control-border); border-radius: 2px; background: linear-gradient(90deg, var(--ap-gold) 0 42%, var(--ap-line) 42% 58%, var(--ap-gold) 58%); box-shadow: 2px 2px 3px color-mix(in srgb, var(--ap-ink) 12%, transparent); transform: rotate(-4deg); pointer-events: none; }
+.appointments-studio-clip > span::after,
+.appointments-studio-clip button > span::after { position: absolute; inset-inline: -2px; inset-block-start: 11px; block-size: 4px; border-block: 1px solid var(--ap-muted); content: ""; }
+.appointments-studio-clip button { position: absolute; inset: 0; inline-size: 44px; block-size: 44px; padding: 0; border: 0; border-radius: var(--ap-1); background: transparent; cursor: pointer; }
+.appointments-studio-clip button:focus-visible { outline-offset: 1px; }
+.appointments-studio-card { position: absolute; z-index: 5; inline-size: var(--ap-card-width); margin: 0; transform: rotate(var(--ap-card-angle)); transform-origin: 50% 50%; }
+.appointments-studio-card-1 { --ap-card-angle: -2deg; left: 5%; top: 48px; }
+.appointments-studio-card-2 { --ap-card-angle: 1deg; left: 37%; top: 64px; }
+.appointments-studio-card-3 { --ap-card-angle: 2deg; left: 69%; top: 48px; }
+.appointments-studio-card:focus-within { z-index: 9; }
+.appointments-studio-card[data-ap-placement="dragging"] { z-index: 12; }
+.appointments-studio-swing { transform-origin: 50% 0; }
+.appointments-studio-photo { display: block; inline-size: 100%; min-block-size: 44px; margin: 0; padding: 6px 6px 16px; border: 1px solid var(--ap-line); border-radius: 2px; background: var(--ap-card); color: var(--ap-forest); box-shadow: 2px 5px 8px color-mix(in srgb, var(--ap-ink) 14%, transparent); }
+.appointments-studio-card img { inline-size: 100%; block-size: 56px; object-fit: cover; object-position: 50% 35%; }
+.appointments-studio-object { cursor: pointer; touch-action: none; user-select: none; }
+.appointments-studio-card[data-ap-placement="dragging"] .appointments-studio-object { cursor: grabbing; }
+.appointments-studio-card[data-ap-placement="dragging"] .appointments-studio-photo { box-shadow: var(--ap-shadow-raised); }
+.appointments-photo-flipper { display: grid; transform-style: preserve-3d; }
+.appointments-photo-front,
+.appointments-photo-back { grid-area: 1 / 1; min-inline-size: 0; backface-visibility: hidden; overflow-wrap: anywhere; }
+.appointments-photo-front { display: block; }
+.appointments-photo-caption { display: block; margin-block-start: var(--ap-1); font-size: 1rem; line-height: 1.25; }
+.appointments-photo-back { display: flex; align-items: center; justify-content: center; padding: var(--ap-1); background: var(--ap-paper); color: var(--ap-ink); font-family: var(--ap-display); font-size: 1rem; line-height: 1.3; transform: rotateY(180deg); }
+.appointments-studio-card[data-ap-face="back"] .appointments-photo-flipper { transform: rotateY(180deg); }
+.appointments-studio-card[data-ap-tone="vintage"] .appointments-photo-front img { filter: sepia(0.3) saturate(0.75) contrast(0.95); }
+.appointments-studio-card[data-ap-tone="mono"] .appointments-photo-front img { filter: grayscale(1); }
+.appointments-studio-card .appointments-studio-object { padding-block-end: var(--ap-2); perspective: 600px; }
+.appointments-studio[data-ap-enhanced="true"] .appointments-studio-stage { block-size: 560px; }
+.appointments-studio[data-ap-enhanced="true"] .appointments-studio-camera { inset-block-end: calc(50% + var(--ap-4)); inline-size: 32%; }
+.appointments-studio[data-ap-enhanced="true"] .appointments-studio-film { inset-block-end: calc(50% + var(--ap-3)); inset-inline-start: 6%; }
+.appointments-studio[data-ap-enhanced="true"] .appointments-studio-softbox { inset-block-end: 52%; block-size: 10rem; }
+.appointments-studio[data-ap-enhanced="true"] .appointments-studio-table { inset-block-end: 50%; block-size: 24%; }
+.appointments-studio-clip button:disabled { cursor: default; }
+.appointments-studio-basket { position: absolute; z-index: 0; inset-inline: var(--ap-2); inset-block-end: var(--ap-1); block-size: 52%; padding: var(--ap-3); border: 1px solid var(--ap-control-border); border-block-end-width: 3px; border-radius: 0.5rem; background: color-mix(in srgb, var(--ap-card) 80%, var(--ap-paper)); box-shadow: inset 0 0 0 5px var(--ap-paper); pointer-events: none; }
+.appointments-studio-basket p { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--ap-1) var(--ap-2); margin: 0; color: var(--ap-forest); font-size: 1rem; line-height: 1.4; }
+.appointments-studio-basket p > span:last-child { color: var(--ap-muted); }
+.appointments-studio-camera { position: absolute; z-index: 6; inset-inline-end: 2%; inset-block-end: 1.25rem; inline-size: 37%; min-block-size: 44px; max-inline-size: 14rem; transform: rotate(3deg); filter: drop-shadow(0 5px 4px color-mix(in srgb, var(--ap-ink) 12%, transparent)); }
+.appointments-studio-camera svg { display: block; inline-size: 100%; block-size: auto; overflow: visible; stroke-linejoin: round; }
+.appointments-camera-strap { fill: none; stroke: var(--ap-control-border); stroke-width: 5; }
+.appointments-camera-shutter { fill: var(--ap-wine); stroke: var(--ap-ink); stroke-width: 2; }
+.appointments-camera-top { fill: var(--ap-line); stroke: var(--ap-ink); stroke-width: 2; }
+.appointments-camera-body { fill: var(--ap-card); stroke: var(--ap-ink); stroke-width: 2; }
+.appointments-camera-leather { fill: var(--ap-forest); stroke: var(--ap-forest-hover); stroke-width: 2; }
+.appointments-camera-trim { fill: none; stroke: var(--ap-control-border); stroke-width: 2; }
+.appointments-camera-viewfinder { fill: var(--ap-ink); stroke: var(--ap-muted); stroke-width: 3; }
+.appointments-camera-flash { fill: var(--ap-paper); stroke: var(--ap-control-border); stroke-width: 2; }
+.appointments-camera-flash-lines { stroke: var(--ap-line); stroke-width: 1.5; }
+.appointments-camera-lens { fill: var(--ap-ink); stroke: var(--ap-control-border); stroke-width: 2; transform-box: fill-box; transform-origin: center; }
+.appointments-camera-lens > circle:nth-child(2) { fill: var(--ap-muted); stroke: var(--ap-line); }
+.appointments-camera-lens > circle:nth-child(3) { fill: var(--ap-forest-hover); stroke: var(--ap-ink); }
+.appointments-camera-lens > circle:nth-child(4) { fill: var(--ap-ink); stroke: var(--ap-forest); stroke-width: 4; }
+.appointments-camera-lens > path { fill: var(--ap-forest-hover); stroke: var(--ap-forest); }
+.appointments-camera-lens > ellipse { fill: var(--ap-card); stroke: none; opacity: 0.2; }
+.appointments-camera-indicator { fill: var(--ap-wine); stroke: var(--ap-card); stroke-width: 1.5; }
+.appointments-camera-slot { fill: var(--ap-ink); stroke: var(--ap-control-border); stroke-width: 2; }
+.appointments-camera-screws { fill: none; stroke: var(--ap-control-border); stroke-width: 2; }
+.appointments-polaroid {
+  min-inline-size: 0;
+  margin: 0;
+  padding: var(--ap-2) var(--ap-2) var(--ap-4);
+  border: 1px solid var(--ap-line);
+  border-radius: 0.375rem;
+  background: var(--ap-card);
+  box-shadow: var(--ap-shadow);
+}
+.appointments-polaroid img { inline-size: 100%; object-fit: cover; border-radius: 0.375rem; }
+.appointments-polaroid figcaption { padding: var(--ap-3) var(--ap-1) 0; color: var(--ap-ink); font-size: 1rem; }
+.appointments-section-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--ap-4) var(--ap-6); margin-block-end: var(--ap-5); }
+.appointments-section-heading h2 { margin: 0; }
+.appointments-section-note { margin: 0; color: var(--ap-muted); }
+.appointments-section-note span { display: block; }
+.appointments-collection { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ap-2); min-inline-size: 0; margin: 0; padding: 0; border: 0; }
+.appointments-filter { display: flex; align-items: center; justify-content: center; gap: var(--ap-2); min-block-size: 2.75rem; padding: var(--ap-2); border: 1px solid transparent; border-block-end-color: var(--ap-line); border-radius: 0.625rem 0.625rem 0 0; color: var(--ap-muted); cursor: pointer; transition: background-color 160ms, color 160ms; }
+.appointments-filter span { display: inline-flex; justify-content: center; min-inline-size: 1.5rem; padding-inline: var(--ap-1); font-variant-numeric: tabular-nums; }
+.appointments-filter-input:checked + .appointments-filter { border-color: var(--ap-forest); background: var(--ap-forest); color: var(--ap-card); font-weight: 600; }
+.appointments-filter-input:focus-visible + .appointments-filter { outline: 3px solid var(--ap-focus); outline-offset: 3px; }
+.appointments-dates,
+.appointments-result,
+.appointments-empty,
+.appointments-notebook-grid { grid-column: 1 / -1; }
+.appointments-dates { margin-block: var(--ap-4) var(--ap-5); padding-block: var(--ap-4); border-block: 1px solid var(--ap-line); }
+.appointments-week { display: grid; grid-template-columns: repeat(auto-fit, minmax(2.75rem, 1fr)); gap: 0; margin: 0; padding: 0; list-style: none; }
+.appointments-week > :where(li, button) { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-block-size: 5rem; padding: var(--ap-2) 0 var(--ap-4); border: 1px solid transparent; border-radius: 0.625rem; color: var(--ap-muted); }
+.appointments-week :where(time, button > span:nth-child(2)) { color: var(--ap-ink); font-family: var(--ap-display); font-size: 1.5rem; line-height: 1.4; }
+.appointments-week abbr { text-decoration: none; }
+.appointments-week button { inline-size: 100%; background: transparent; font: inherit; cursor: pointer; transition: background-color 160ms, color 160ms; }
+.appointments-week .appointments-day-selected,
+.appointments-week button[aria-pressed="true"] { background: var(--ap-forest); color: var(--ap-card); }
+.appointments-week .appointments-day-selected time,
+.appointments-week button[aria-pressed="true"] > span { color: var(--ap-card); }
+.appointments-day-dot { position: absolute; inset-block-end: var(--ap-2); inline-size: 5px; block-size: 5px; border-radius: 50%; background: currentColor; }
+.appointments-date-caption { margin: var(--ap-3) 0 0; color: var(--ap-muted); }
+.appointments-ticket { display: grid; border: 1px solid var(--ap-line); border-radius: 1.125rem; background: var(--ap-card); box-shadow: var(--ap-shadow); }
+.appointments-ticket-date { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--ap-2) var(--ap-4); padding: var(--ap-5); border-block-end: 1px dashed var(--ap-control-border); color: var(--ap-forest); }
+.appointments-ticket-date time { display: flex; align-items: center; gap: var(--ap-3); }
+.appointments-ticket-date time > span:last-child { max-inline-size: 6rem; }
+.appointments-date-number { font-family: var(--ap-display); font-size: 3rem; font-weight: 500; line-height: 1.05; }
+.appointments-ticket-date p { margin: 0; }
+.appointments-ticket-code { font-weight: 600; font-variant-numeric: tabular-nums; }
+.appointments-ticket-bars { display: none; }
+.appointments-ticket-info,
+.appointments-ticket-payment { padding: var(--ap-5) var(--ap-4); }
+.appointments-ticket-info h3 { margin-block-end: var(--ap-3); }
+.appointments-package { margin-block-end: var(--ap-4); font-weight: 600; }
+.appointments-package > span { display: block; color: var(--ap-muted); font-weight: 400; }
+.appointments-stamp { display: inline-block; max-inline-size: 100%; margin-block-end: var(--ap-3); padding: var(--ap-1) var(--ap-3); border: 1px solid currentColor; border-radius: 0.375rem; color: var(--ap-wine); }
+.appointments-stamp > span { display: flex; align-items: center; gap: var(--ap-2); font-weight: 600; }
+.appointments-collection[data-ap-status="booked"] .appointments-stamp { color: var(--ap-forest); }
+.appointments-agreement { margin-block-end: var(--ap-4); color: var(--ap-muted); }
+.appointments-ticket-times { display: grid; gap: var(--ap-2); margin-block-end: var(--ap-4); }
+.appointments-ticket-times > div { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.6fr); gap: var(--ap-3); align-items: baseline; }
+.appointments-ticket-times dt { color: var(--ap-muted); }
+.appointments-ticket-times dd { margin: 0; }
+.appointments-ticket-payment { border-block-start: 1px solid var(--ap-line); }
+.appointments-prices { display: grid; gap: var(--ap-3); margin-block-end: var(--ap-3); }
+.appointments-prices > div { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--ap-1) var(--ap-3); }
+.appointments-prices dt { color: var(--ap-muted); }
+.appointments-prices dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.appointments-deposit { padding-block: var(--ap-3); border-block: 1px solid var(--ap-line); }
+.appointments-deposit dd { color: var(--ap-wine); font-size: 1.5rem; }
+.appointments-collection[data-ap-status="booked"] .appointments-deposit dd { color: var(--ap-forest); }
+.appointments-balance-note { margin-block-end: var(--ap-5); color: var(--ap-muted); }
+.appointments-pay-button,
+.appointments-payment-fallback > summary { inline-size: 100%; }
+.appointments-payment-fallback > summary { list-style: none; }
+.appointments-payment-fallback > summary::-webkit-details-marker { display: none; }
+.appointments-payment-fallback[open] > summary { background: var(--ap-forest-hover); }
+.appointments-fallback-copy { padding-block-start: var(--ap-4); }
+.appointments-fallback-copy > :last-child { margin: 0; }
+.appointments-paid-confirm { padding: var(--ap-3); border-inline-start: 3px solid var(--ap-forest); color: var(--ap-forest); }
+.appointments-paid-confirm p { margin-block-end: var(--ap-2); }
+.appointments-paid-confirm p:last-child { margin: 0; color: var(--ap-ink); }
+.appointments-print-button { margin-block-start: var(--ap-3); }
+.appointments-empty { display: none; padding: var(--ap-7) var(--ap-5); border-block: 1px dashed var(--ap-control-border); text-align: center; }
+.appointments-empty > .appointments-icon { inline-size: var(--ap-7); block-size: var(--ap-7); margin-block-end: var(--ap-4); color: var(--ap-forest); }
+.appointments-empty p { max-inline-size: 50ch; margin-inline: auto; color: var(--ap-muted); }
+.appointments-notebook-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--ap-6); margin-block-start: var(--ap-7); }
+.appointments-journal { padding-block: var(--ap-4); }
+.appointments-journal-date { color: var(--ap-muted); }
+.appointments-journal-list { margin: var(--ap-6) 0 0; padding: 0; list-style: none; }
+.appointments-journal-list li { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: var(--ap-4); margin-block-end: var(--ap-5); padding-block-end: var(--ap-5); border-block-end: 1px solid var(--ap-line); }
+.appointments-step { color: var(--ap-forest); padding-block-start: var(--ap-2); font-variant-numeric: tabular-nums; }
+.appointments-journal-time { margin-block-end: var(--ap-2); color: var(--ap-forest); font-family: var(--ap-display); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.3; }
+.appointments-journal-list h3 { margin-block-end: var(--ap-2); font-family: var(--ap-body); font-size: 1rem; font-weight: 600; line-height: 1.6; }
+.appointments-journal-list li p:last-child { margin: 0; color: var(--ap-muted); }
+.appointments-details { border-block-end: 1px solid var(--ap-line); }
+.appointments-details > summary { position: relative; display: flex; align-items: center; gap: var(--ap-2); min-block-size: 2.75rem; padding: var(--ap-3) var(--ap-6) var(--ap-3) 0; color: var(--ap-forest); font-weight: 600; list-style: none; cursor: pointer; }
+.appointments-details > summary::-webkit-details-marker { display: none; }
+.appointments-details > summary::after { position: absolute; inset-inline-end: var(--ap-2); inline-size: var(--ap-2); block-size: var(--ap-2); border-inline-end: 1.75px solid currentColor; border-block-end: 1.75px solid currentColor; transform: rotate(45deg); content: ""; }
+.appointments-details[open] > summary::after { transform: rotate(225deg); }
+.appointments-details > div { padding-block: var(--ap-2) var(--ap-4); }
+.appointments-details > div > :last-child { margin: 0; }
+.appointments-preparation { align-self: start; padding: var(--ap-5); border-block-start: var(--ap-2) solid var(--ap-gold); background: var(--ap-card); box-shadow: var(--ap-shadow); }
+.appointments-preparation > p:not(.appointments-kicker) { color: var(--ap-muted); }
+.appointments-checklist { min-inline-size: 0; margin: var(--ap-4) 0 var(--ap-5); padding: 0; border: 0; }
+.appointments-checklist label { display: flex; align-items: flex-start; gap: var(--ap-3); min-block-size: 2.75rem; padding-block: var(--ap-3); border-block-end: 1px solid var(--ap-line); cursor: pointer; }
+.appointments-checklist input { flex-shrink: 0; inline-size: 1.25rem; block-size: 1.25rem; margin: var(--ap-1) 0 0; accent-color: var(--ap-forest); }
+.appointments-checklist input:checked + span { color: var(--ap-muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+.appointments-progress p { margin-block-end: var(--ap-2); color: var(--ap-forest); }
+.appointments-progress progress { inline-size: 100%; block-size: var(--ap-2); accent-color: var(--ap-forest); }
+.appointments-progress progress::-webkit-progress-bar { background: var(--ap-line); border-radius: 100vmax; }
+.appointments-progress progress::-webkit-progress-value { background: var(--ap-forest); border-radius: 100vmax; }
+.appointments-progress progress::-moz-progress-bar { background: var(--ap-forest); border-radius: 100vmax; }
+.appointments-inspiration { margin-block: var(--ap-7); }
+.appointments-gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--ap-5); padding: var(--ap-3); }
+.appointments-gallery .appointments-polaroid { transition: transform 180ms, box-shadow 180ms; }
+.appointments-gallery a { display: block; color: var(--ap-forest); text-decoration: none; }
+.appointments-gallery img { aspect-ratio: 6 / 5; object-position: 50% 40%; filter: saturate(0.85); }
+.appointments-photo-affordance { display: flex; align-items: center; justify-content: space-between; gap: var(--ap-2); min-block-size: 2.75rem; padding-inline: var(--ap-2); color: var(--ap-forest); }
+.appointments-frame-number { color: var(--ap-muted); margin-inline-end: var(--ap-2); }
+.appointments-faq { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--ap-5); margin-block: var(--ap-7) var(--ap-8); padding-block-start: var(--ap-6); border-block-start: 1px solid var(--ap-line); }
+.appointments-faq h2 { max-inline-size: 18ch; }
+.appointments-footer { border-block-start: 1px solid var(--ap-line); }
+.appointments-footer-inner { display: grid; gap: var(--ap-5); padding-block: var(--ap-6); }
+.appointments-footer-inner p { margin-block-end: var(--ap-2); color: var(--ap-muted); }
+.appointments-footer-nav { display: flex; flex-wrap: wrap; gap: var(--ap-2) var(--ap-5); }
+.appointments-footer-nav a { display: inline-flex; align-items: center; min-block-size: 2.75rem; color: var(--ap-forest); }
+.appointments-demo p:first-child { color: var(--ap-forest); font-weight: 600; }
+.appointments-demo .appointments-button { margin-block-start: var(--ap-2); }
+.appointments-dialog:not([open]) { display: none; }
+.appointments-dialog { inline-size: min(34rem, calc(100% - var(--ap-6))); max-inline-size: calc(100% - var(--ap-6)); max-block-size: calc(100vh - var(--ap-6)); max-block-size: calc(100dvh - var(--ap-6)); margin: auto; padding: var(--ap-5); overflow: auto; border: 1px solid var(--ap-control-border); border-radius: 1rem; background: var(--ap-card); color: var(--ap-ink); font-family: var(--ap-body); box-shadow: var(--ap-shadow-raised); }
+.appointments-dialog::backdrop { background: color-mix(in srgb, var(--ap-ink) 55%, transparent); }
+.appointments-dialog-facts { display: grid; gap: var(--ap-3); margin-block: var(--ap-5); padding-block: var(--ap-4); border-block: 1px solid var(--ap-line); }
+.appointments-dialog-facts > div { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr); gap: var(--ap-3); align-items: baseline; }
+.appointments-dialog-facts dt { color: var(--ap-muted); }
+.appointments-dialog-facts dd { margin: 0; text-align: end; }
+.appointments-dialog-deposit dd { color: var(--ap-wine); font-size: 1.25rem; font-weight: 600; }
+.appointments-dialog-actions { display: flex; flex-wrap: wrap; gap: var(--ap-3); }
+.appointments-dialog-actions .appointments-button { flex: 1 1 11rem; }
+.appointments-image-dialog { inline-size: min(52rem, calc(100% - var(--ap-6))); }
+.appointments-image-dialog-heading { display: flex; flex-wrap: wrap; align-items: start; justify-content: space-between; gap: var(--ap-3); margin-block-end: var(--ap-4); }
+.appointments-image-dialog-heading h2 { flex: 1 1 15rem; margin: 0; font-size: 1.5rem; }
+.appointments-image-dialog-heading form { margin: 0; }
+.appointments-image-dialog figure { margin: 0; }
+.appointments-image-dialog img { inline-size: 100%; max-block-size: 65vh; object-fit: contain; }
+.appointments-image-dialog figcaption { margin-block-start: var(--ap-3); }
+.appointments-print-sheet { display: none; }
+
+/* No-script filtering hides both the ticket and its journal, leaving preparation. */
+.appointments-collection:not([data-ap-enhanced]) :where(#ap-filter-booked, #ap-filter-completed):checked ~ .appointments-result,
+.appointments-collection:not([data-ap-enhanced]) :where(#ap-filter-booked, #ap-filter-completed):checked ~ .appointments-notebook-grid > .appointments-journal { display: none; }
+.appointments-collection:not([data-ap-enhanced]) :where(#ap-filter-booked, #ap-filter-completed):checked ~ .appointments-empty,
+.appointments-collection[data-ap-enhanced] .appointments-empty:not([hidden]) { display: block; }
+
+@media (hover: hover) {
+  .appointments-button:hover { background: var(--ap-forest-hover); border-color: var(--ap-forest-hover); color: var(--ap-card); transform: translateY(-2px); }
+  .appointments-button-secondary:hover { background: var(--ap-paper); color: var(--ap-forest-hover); }
+  .appointments-text-link:hover,
+  .appointments-nav a:hover,
+  .appointments-footer-nav a:hover { color: var(--ap-forest-hover); }
+  .appointments-week button:not([aria-pressed="true"]):hover { border-color: var(--ap-control-border); background: var(--ap-card); }
+  .appointments-filter-input:not(:checked) + .appointments-filter:hover { background: var(--ap-card); color: var(--ap-forest); }
+  .appointments-gallery .appointments-polaroid:hover { transform: translateY(-2px); box-shadow: var(--ap-shadow-raised); }
+  .appointments-details > summary:hover { color: var(--ap-forest-hover); }
+  .appointments-film-nav a:hover { border-color: var(--ap-forest); background: var(--ap-paper); color: var(--ap-forest-hover); }
+}
+
+@media (min-width: 48rem) {
+  .appointments-shell { padding-inline: var(--ap-5); }
+  .appointments-header-inner { grid-template-columns: minmax(0, 1fr) auto auto; gap: var(--ap-5); }
+  .appointments-nav { grid-column: auto; grid-row: auto; }
+  .appointments-hero { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; gap: var(--ap-5) var(--ap-6); padding-block: var(--ap-7); }
+  .appointments-film-nav a { flex-direction: row; justify-content: flex-start; gap: var(--ap-3); padding: var(--ap-3) var(--ap-4); }
+  .appointments-film-nav .appointments-icon { display: block; margin-inline-start: auto; }
+  .appointments-studio-stage { block-size: 400px; }
+  .appointments-studio[data-ap-enhanced="true"] .appointments-studio-stage { block-size: 600px; }
+  .appointments-studio-card img { block-size: 66px; }
+  .appointments-studio-card-1,
+  .appointments-studio-card-3 { top: 60px; }
+  .appointments-studio-card-2 { top: 76px; }
+  .appointments-studio-clip-1,
+  .appointments-studio-clip-3 { inset-block-start: 1rem; }
+  .appointments-studio-clip-2 { inset-block-start: 2rem; }
+  .appointments-studio-rope { inset-block-start: 1.25rem; }
+  .appointments-studio-camera { inset-block-end: 2rem; }
+  .appointments-studio-softbox { block-size: 12rem; inset-block-end: 2rem; }
+  .appointments-collection { grid-template-columns: repeat(4, max-content) minmax(0, 1fr); column-gap: var(--ap-3); }
+  .appointments-filter { padding-inline: var(--ap-4); }
+  .appointments-ticket { grid-template-columns: minmax(8rem, 0.7fr) minmax(0, 2.3fr); }
+  .appointments-ticket-date { flex-direction: column; justify-content: center; gap: var(--ap-3); border-block-end: 0; border-inline-end: 1px dashed var(--ap-control-border); text-align: center; }
+  .appointments-ticket-date time { flex-direction: column; }
+  .appointments-ticket-date time > span:last-child { max-inline-size: 100%; }
+  .appointments-date-number { font-size: clamp(3rem, 6vw, 4.5rem); }
+  .appointments-ticket-info { padding: var(--ap-5); }
+  .appointments-ticket-payment { grid-column: 1 / -1; padding: var(--ap-5); }
+  .appointments-ticket-bars { display: block; inline-size: 4rem; block-size: 1.75rem; opacity: 0.7; background: repeating-linear-gradient(90deg, var(--ap-ink) 0 1px, transparent 1px 3px, var(--ap-ink) 3px 5px, transparent 5px 8px); }
+  .appointments-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .appointments-gallery > :nth-child(1) { transform: rotate(-1deg); }
+  .appointments-gallery > :nth-child(3) { transform: rotate(1deg); }
+  .appointments-notebook-grid { gap: var(--ap-7); }
+  .appointments-inspiration { margin-block: var(--ap-8); }
+  .appointments-faq { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr); gap: var(--ap-7); }
+  .appointments-footer-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .appointments-demo { grid-column: 1 / -1; padding-block-start: var(--ap-4); border-block-start: 1px dashed var(--ap-control-border); }
+}
+@media (min-width: 64rem) {
+  .appointments-shell { padding-inline: var(--ap-7); }
+  .appointments-header-inner { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+  .appointments-account { justify-self: end; }
+  .appointments-hero { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); column-gap: var(--ap-7); }
+  .appointments-ticket { grid-template-columns: minmax(8rem, 0.75fr) minmax(0, 1.8fr) minmax(0, 1.45fr); }
+  .appointments-ticket-payment { grid-column: auto; border-block-start: 0; border-inline-start: 1px solid var(--ap-line); }
+  .appointments-ticket-date::before,
+  .appointments-ticket-date::after { position: absolute; inset-inline-end: -0.5rem; inline-size: 1rem; block-size: 1rem; border: 1px solid var(--ap-line); border-radius: 50%; background: var(--ap-paper); content: ""; }
+  .appointments-ticket-date::before { inset-block-start: -0.5rem; }
+  .appointments-ticket-date::after { inset-block-end: -0.5rem; }
+  .appointments-notebook-grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); margin-block-start: var(--ap-8); }
+  .appointments-notebook-grid:has(> .appointments-journal[hidden]) { grid-template-columns: minmax(0, 1fr); }
+  .appointments-collection:not([data-ap-enhanced]):has(> :where(#ap-filter-booked, #ap-filter-completed):checked) .appointments-notebook-grid { grid-template-columns: minmax(0, 1fr); }
+  .appointments-preparation { padding: var(--ap-6); }
+  .appointments-footer-inner { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.7fr) minmax(0, 1.1fr); }
+  .appointments-demo { grid-column: auto; border-block-start: 0; padding: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .appointments-page .appointments-button,
+  .appointments-page .appointments-filter,
+  .appointments-page .appointments-week button,
+  .appointments-page .appointments-gallery .appointments-polaroid { transition: none; }
+  .appointments-page .appointments-gallery .appointments-polaroid,
+  .appointments-page .appointments-gallery .appointments-polaroid:hover,
+  .appointments-page .appointments-button:hover { transform: none; }
+}
+@media print {
+  body.appointments-page { background: var(--ap-card); color: var(--ap-ink); font-size: 12pt; }
+  .appointments-page::before { display: none; }
+  .appointments-studio { display: none; }
+  .appointments-page > :not(.appointments-print-sheet) { display: none; }
+  .appointments-page > .appointments-print-sheet { display: block; max-inline-size: 100%; padding: 1cm; }
+  .appointments-print-sheet h2 { font-size: 22pt; }
+  .appointments-print-sheet dl { margin-block: var(--ap-5); border-block: 1px solid var(--ap-control-border); padding-block: var(--ap-4); }
+  .appointments-print-sheet dl > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--ap-4); padding-block: var(--ap-2); break-inside: avoid; }
+  .appointments-print-sheet dd { margin: 0; }
+}

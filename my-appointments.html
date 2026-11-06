@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nhật ký cuộc hẹn của Linh tại GradStudio: lịch makeup, buổi chụp, khoản cọc và những điều cần chuẩn bị.">
+  <title>Lịch chụp của tôi · GradStudio</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/my-appointments.css">
+  <script src="js/my-appointments.js" defer></script>
+</head>
+<body class="appointments-page">
+  <a class="appointments-skip appointments-button" href="#ap-main">Đến nội dung chính</a>
+  <svg class="appointments-icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="ap-i-brand" viewBox="0 0 48 48">
+      <circle class="appointments-brand-halo" cx="24" cy="24" r="22"/>
+      <path class="appointments-brand-camera" d="M10 20v16a5 5 0 0 0 5 5h18a5 5 0 0 0 5-5V20M10 24h6m16 0h6"/>
+      <path class="appointments-brand-cap" d="m7 13 17-7 17 7-17 7-17-7Zm8 4v5m18-5v5M15 22q9 5 18 0m8-9v12"/>
+      <circle class="appointments-brand-lens" cx="24" cy="31" r="7"/>
+      <path class="appointments-brand-iris" d="m21 25 7 1 3 6-4 5-7-1-3-6 4-5Zm0 0 1 7m6-6-6 6m9 0h-9m5 5-5-5m-2 4 2-4m-5-2 5 2"/>
+    </symbol>
+    <symbol id="ap-i-camera" viewBox="0 0 24 24"><path d="M3 7h5l2-3h4l2 3h5v13H3Z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="ap-i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="ap-i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="ap-i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></symbol>
+    <symbol id="ap-i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 12-7 12S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="ap-i-print" viewBox="0 0 24 24"><path d="M6 8V3h12v5M6 17H3V8h18v9h-3M6 14h12v7H6Z"/><path d="M17 11h1"/></symbol>
+  </svg>
+
+  <header class="appointments-header">
+    <div class="appointments-shell appointments-header-inner">
+      <a class="appointments-brand" href="index.html" aria-label="GradStudio — Dịch vụ"><svg class="appointments-brand-icon" aria-hidden="true"><use href="#ap-i-brand"/></svg><span class="appointments-wordmark"><span>Grad</span><span>Studio</span></span></a>
+      <nav class="appointments-nav" aria-label="Điều hướng chính"><a href="index.html">Dịch vụ</a><a href="my-appointments.html" aria-current="page">Lịch chụp của tôi</a></nav>
+      <p class="appointments-account"><img src="assets/images/avatar-linh.avif" alt="" width="120" height="120"><span>Linh</span></p>
+    </div>
+  </header>
+
+  <main class="appointments-shell" id="ap-main" tabindex="-1">
+    <section class="appointments-hero" aria-labelledby="ap-title">
+      <div class="appointments-hero-copy">
+        <p class="appointments-kicker">Nhật ký chụp ảnh / Tháng 10.2026</p>
+        <h1 id="ap-title"><span class="appointments-title-line">Lịch chụp</span> <span class="appointments-title-script">của tôi<svg class="appointments-title-flourish" viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 17C88 3 194 4 310 11M47 22C140 13 233 14 316 18"/></svg></span></h1>
+        <p class="appointments-hero-greeting">Chào Linh, hẹn một ngày thật đẹp.</p>
+        <p class="appointments-hero-description">Xem lại cuộc hẹn và chuẩn bị cho buổi chụp của bạn.</p>
+        <a class="appointments-text-link" href="#ap-schedule">Lật đến cuộc hẹn của Linh <svg class="appointments-icon" aria-hidden="true"><use href="#ap-i-arrow"/></svg></a>
+        <aside class="appointments-hero-note" aria-label="Ghi nhớ cuộc hẹn GS-1024">
+          <span class="appointments-note-day" aria-hidden="true">24<span>Tháng 10</span></span>
+          <div><p class="appointments-note-kicker">Hẹn Linh vào thứ Bảy</p><p class="appointments-note-date"><time datetime="2026-10-24">24 tháng 10, 2026</time></p><p>Có mặt <strong>12:50</strong> · Makeup từ <strong>13:00</strong></p></div>
+        </aside>
+      </div>
+      <div class="appointments-studio-column">
+        <div class="appointments-studio" id="ap-studio" role="group" aria-label="Góc studio ảnh lưu niệm" data-ap-busy="false">
+          <p class="appointments-studio-heading">Góc studio <span>Chờ một mùa để nhớ.</span></p>
+          <div class="appointments-studio-stage" id="ap-studio-stage">
+            <svg class="appointments-studio-rope" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M16 16 Q500 112 984 16"/><circle cx="16" cy="16" r="5"/><circle cx="984" cy="16" r="5"/></svg>
+            <svg class="appointments-studio-softbox" viewBox="0 0 100 180" aria-hidden="true"><path d="m20 8 51 8 14 52-39 32L8 66Z"/><path d="m20 8 26 92M8 66l63-50M46 100v62m0-18-27 29m27-29 29 29"/><path d="m85 68 11 7-5 22-15-2"/></svg>
+            <div class="appointments-studio-table" aria-hidden="true"><span>GradStudio / atelier</span></div>
+            <svg class="appointments-studio-film" viewBox="22 0 96 80" aria-hidden="true" data-ap-static-prop><path d="M35 14h43v49H35Z"/><ellipse cx="56.5" cy="14" rx="21.5" ry="8"/><ellipse cx="56.5" cy="63" rx="21.5" ry="8"/><path d="M78 24h32v33H78M88 29v6m12-6v6m-12 11v6m12-6v6M42 24v27"/><path d="M50 8h13v12H50Z"/></svg>
+            <button class="appointments-studio-film appointments-studio-prop" id="ap-studio-reset" type="button" aria-label="Sắp lại góc studio" hidden><svg viewBox="22 0 96 80" aria-hidden="true"><path d="M35 14h43v49H35Z"/><ellipse cx="56.5" cy="14" rx="21.5" ry="8"/><ellipse cx="56.5" cy="63" rx="21.5" ry="8"/><path d="M78 24h32v33H78M88 29v6m12-6v6m-12 11v6m12-6v6M42 24v27"/><path d="M50 8h13v12H50Z"/></svg></button>
+  
+            <span class="appointments-studio-clip appointments-studio-clip-1"><span aria-hidden="true" data-ap-static-prop></span><button id="ap-studio-clip-1" type="button" data-ap-release="1" aria-label="Thả ảnh Ngày nhận bằng" aria-controls="ap-studio-card-1" hidden><span aria-hidden="true"></span></button></span>
+            <span class="appointments-studio-clip appointments-studio-clip-2"><span aria-hidden="true" data-ap-static-prop></span><button id="ap-studio-clip-2" type="button" data-ap-release="2" aria-label="Thả ảnh Cùng nhau lớn lên" aria-controls="ap-studio-card-2" hidden><span aria-hidden="true"></span></button></span>
+            <span class="appointments-studio-clip appointments-studio-clip-3"><span aria-hidden="true" data-ap-static-prop></span><button id="ap-studio-clip-3" type="button" data-ap-release="3" aria-label="Thả ảnh Những ngày bên nhau" aria-controls="ap-studio-card-3" hidden><span aria-hidden="true"></span></button></span>
+  
+            <figure class="appointments-studio-card appointments-studio-card-1" id="ap-studio-card-1" data-ap-card="1" data-ap-created="false" data-ap-placement="hung" data-ap-face="front" data-ap-tone="original">
+              <div class="appointments-studio-swing">
+                <a class="appointments-studio-photo" id="ap-studio-link-1" data-ap-static-link href="assets/images/service-graduation.avif" aria-label="Mở ảnh tham khảo Ngày nhận bằng"><img src="assets/images/service-graduation.avif" alt="Hai người mặc áo tốt nghiệp, cầm bó hoa." width="900" height="1200"></a>
+                <button class="appointments-studio-photo appointments-studio-object" id="ap-studio-object-1" type="button" data-ap-object="1" aria-label="Lật ảnh minh họa 1" aria-describedby="ap-studio-keyboard" hidden>
+                  <span class="appointments-photo-flipper" id="ap-photo-flipper-1">
+                    <span class="appointments-photo-front" id="ap-photo-front-1" aria-hidden="false"><img id="ap-photo-image-1" src="assets/images/service-graduation.avif" alt="" width="900" height="1200" draggable="false"><span class="appointments-photo-caption">GradStudio</span></span>
+                    <span class="appointments-photo-back" id="ap-photo-back-1" aria-hidden="true">GradStudio — góc lưu niệm</span>
+                  </span>
+                </button>
+              </div>
+              <figcaption class="appointments-sr-only">Ảnh tham khảo phong cách, không phải ảnh buổi chụp của Linh.</figcaption>
+            </figure>
+            <figure class="appointments-studio-card appointments-studio-card-2" id="ap-studio-card-2" data-ap-card="2" data-ap-created="false" data-ap-placement="hung" data-ap-face="front" data-ap-tone="original">
+              <div class="appointments-studio-swing">
+                <a class="appointments-studio-photo" id="ap-studio-link-2" data-ap-static-link href="assets/images/gallery-graduates-trio--photo-1566055390950-e8334302c8cb.avif" aria-label="Mở ảnh tham khảo Cùng nhau lớn lên"><img src="assets/images/gallery-graduates-trio--photo-1566055390950-e8334302c8cb.avif" alt="Nhóm bạn mặc áo tốt nghiệp bên hàng cây." width="600" height="600"></a>
+                <button class="appointments-studio-photo appointments-studio-object" id="ap-studio-object-2" type="button" data-ap-object="2" aria-label="Lật ảnh minh họa 2" aria-describedby="ap-studio-keyboard" hidden>
+                  <span class="appointments-photo-flipper" id="ap-photo-flipper-2">
+                    <span class="appointments-photo-front" id="ap-photo-front-2" aria-hidden="false"><img id="ap-photo-image-2" src="assets/images/gallery-graduates-trio--photo-1566055390950-e8334302c8cb.avif" alt="" width="600" height="600" draggable="false"><span class="appointments-photo-caption">GradStudio</span></span>
+                    <span class="appointments-photo-back" id="ap-photo-back-2" aria-hidden="true">GradStudio — góc lưu niệm</span>
+                  </span>
+                </button>
+              </div>
+              <figcaption class="appointments-sr-only">Ảnh tham khảo phong cách, không phải ảnh buổi chụp của Linh.</figcaption>
+            </figure>
+            <figure class="appointments-studio-card appointments-studio-card-3" id="ap-studio-card-3" data-ap-card="3" data-ap-created="false" data-ap-placement="hung" data-ap-face="front" data-ap-tone="original">
+              <div class="appointments-studio-swing">
+                <a class="appointments-studio-photo" id="ap-studio-link-3" data-ap-static-link href="assets/images/gallery-class-friends--photo-1610208322193-07ba2fe4011d.avif" aria-label="Mở ảnh tham khảo Những ngày bên nhau"><img src="assets/images/gallery-class-friends--photo-1610208322193-07ba2fe4011d.avif" alt="Nhóm bạn ngồi bên cầu thang." width="600" height="600"></a>
+                <button class="appointments-studio-photo appointments-studio-object" id="ap-studio-object-3" type="button" data-ap-object="3" aria-label="Lật ảnh minh họa 3" aria-describedby="ap-studio-keyboard" hidden>
+                  <span class="appointments-photo-flipper" id="ap-photo-flipper-3">
+                    <span class="appointments-photo-front" id="ap-photo-front-3" aria-hidden="false"><img id="ap-photo-image-3" src="assets/images/gallery-class-friends--photo-1610208322193-07ba2fe4011d.avif" alt="" width="600" height="600" draggable="false"><span class="appointments-photo-caption">GradStudio</span></span>
+                    <span class="appointments-photo-back" id="ap-photo-back-3" aria-hidden="true">GradStudio — góc lưu niệm</span>
+                  </span>
+                </button>
+              </div>
+              <figcaption class="appointments-sr-only">Ảnh tham khảo phong cách, không phải ảnh buổi chụp của Linh.</figcaption>
+            </figure>
+            <figure class="appointments-studio-card appointments-studio-card-4" id="ap-studio-card-4" data-ap-card="4" data-ap-created="false" data-ap-placement="inactive" data-ap-face="front" data-ap-tone="original" hidden>
+              <div class="appointments-studio-swing">
+                <button class="appointments-studio-photo appointments-studio-object" id="ap-studio-object-4" type="button" data-ap-object="4" aria-label="Lật ảnh minh họa 4" aria-describedby="ap-studio-keyboard" hidden>
+                  <span class="appointments-photo-flipper" id="ap-photo-flipper-4">
+                    <span class="appointments-photo-front" id="ap-photo-front-4" aria-hidden="false"><img id="ap-photo-image-4" src="assets/images/service-graduation.avif" alt="" width="900" height="1200" draggable="false"><span class="appointments-photo-caption">GradStudio</span></span>
+                    <span class="appointments-photo-back" id="ap-photo-back-4" aria-hidden="true">GradStudio — góc lưu niệm</span>
+                  </span>
+                </button>
+              </div>
+              <figcaption class="appointments-sr-only">Ảnh tham khảo phong cách, không phải ảnh buổi chụp của Linh.</figcaption>
+            </figure>
+            <figure class="appointments-studio-card appointments-studio-card-5" id="ap-studio-card-5" data-ap-card="5" data-ap-created="false" data-ap-placement="inactive" data-ap-face="front" data-ap-tone="original" hidden>
+              <div class="appointments-studio-swing">
+                <button class="appointments-studio-photo appointments-studio-object" id="ap-studio-object-5" type="button" data-ap-object="5" aria-label="Lật ảnh minh họa 5" aria-describedby="ap-studio-keyboard" hidden>
+                  <span class="appointments-photo-flipper" id="ap-photo-flipper-5">
+                    <span class="appointments-photo-front" id="ap-photo-front-5" aria-hidden="false"><img id="ap-photo-image-5" src="assets/images/gallery-graduates-trio--photo-1566055390950-e8334302c8cb.avif" alt="" width="600" height="600" draggable="false"><span class="appointments-photo-caption">GradStudio</span></span>
+                    <span class="appointments-photo-back" id="ap-photo-back-5" aria-hidden="true">GradStudio — góc lưu niệm</span>
+                  </span>
+                </button>
+              </div>
+              <figcaption class="appointments-sr-only">Ảnh tham khảo phong cách, không phải ảnh buổi chụp của Linh.</figcaption>
+            </figure>
+            <figure class="appointments-studio-card appointments-studio-card-6" id="ap-studio-card-6" data-ap-card="6" data-ap-created="false" data-ap-placement="inactive" data-ap-face="front" data-ap-tone="original" hidden>
+              <div class="appointments-studio-swing">
+                <button class="appointments-studio-photo appointments-studio-object" id="ap-studio-object-6" type="button" data-ap-object="6" aria-label="Lật ảnh minh họa 6" aria-describedby="ap-studio-keyboard" hidden>
+                  <span class="appointments-photo-flipper" id="ap-photo-flipper-6">
+                    <span class="appointments-photo-front" id="ap-photo-front-6" aria-hidden="false"><img id="ap-photo-image-6" src="assets/images/gallery-class-friends--photo-1610208322193-07ba2fe4011d.avif" alt="" width="600" height="600" draggable="false"><span class="appointments-photo-caption">GradStudio</span></span>
+                    <span class="appointments-photo-back" id="ap-photo-back-6" aria-hidden="true">GradStudio — góc lưu niệm</span>
+                  </span>
+                </button>
+              </div>
+              <figcaption class="appointments-sr-only">Ảnh tham khảo phong cách, không phải ảnh buổi chụp của Linh.</figcaption>
+            </figure>
+
+            <div class="appointments-studio-camera" id="ap-studio-camera-static" data-ap-static-prop>
+              <svg viewBox="-8 0 260 170" aria-hidden="true">
+                <path class="appointments-camera-strap" d="M17 74C-4 117 2 152 45 154m180-80c28 32 11 76-23 81"/>
+                <path class="appointments-camera-shutter" d="M170 26v-9c0-4 4-6 8-6h16c5 0 8 2 8 6v9Z"/>
+                <path class="appointments-camera-top" d="M22 53V34c0-6 4-10 10-10h47l12-13h48l13 13h56c6 0 10 4 10 10v19Z"/>
+                <rect class="appointments-camera-body" x="18" y="44" width="204" height="105" rx="17"/>
+                <path class="appointments-camera-leather" d="M24 70h192v53H24Z"/>
+                <path class="appointments-camera-trim" d="M27 134h185M32 53h22"/>
+                <rect class="appointments-camera-viewfinder" x="36" y="33" width="28" height="16" rx="3"/>
+                <rect class="appointments-camera-flash" x="163" y="34" width="42" height="20" rx="3"/>
+                <path class="appointments-camera-flash-lines" d="M170 37v14m7-14v14m7-14v14m7-14v14m7-14v14"/>
+                <g class="appointments-camera-lens"><circle cx="119" cy="86" r="49"/><circle cx="119" cy="86" r="40"/><circle cx="119" cy="86" r="31"/><circle cx="119" cy="86" r="23"/><path d="m116 64 19 12 2 21-18 11-20-11-1-22Z"/><ellipse cx="108" cy="74" rx="7" ry="4"/></g>
+                <circle class="appointments-camera-indicator" cx="49" cy="91" r="5"/>
+                <path class="appointments-camera-slot" d="M76 143h88v9H76Z"/>
+                <path class="appointments-camera-screws" d="M30 60h4m173 0h4M30 128h4m173 0h4"/>
+              </svg>
+            </div>
+            <button class="appointments-studio-camera appointments-studio-prop" id="ap-studio-camera" type="button" aria-label="Tạo ảnh lưu niệm minh họa" aria-controls="ap-studio-basket" hidden>
+              <svg viewBox="-8 0 260 170" aria-hidden="true">
+                <path class="appointments-camera-strap" d="M17 74C-4 117 2 152 45 154m180-80c28 32 11 76-23 81"/>
+                <path class="appointments-camera-shutter" id="ap-camera-shutter" d="M170 26v-9c0-4 4-6 8-6h16c5 0 8 2 8 6v9Z"/>
+                <path class="appointments-camera-top" d="M22 53V34c0-6 4-10 10-10h47l12-13h48l13 13h56c6 0 10 4 10 10v19Z"/>
+                <rect class="appointments-camera-body" x="18" y="44" width="204" height="105" rx="17"/>
+                <path class="appointments-camera-leather" d="M24 70h192v53H24Z"/>
+                <path class="appointments-camera-trim" d="M27 134h185M32 53h22"/>
+                <rect class="appointments-camera-viewfinder" x="36" y="33" width="28" height="16" rx="3"/>
+                <rect class="appointments-camera-flash" id="ap-camera-flash" x="163" y="34" width="42" height="20" rx="3"/>
+                <path class="appointments-camera-flash-lines" d="M170 37v14m7-14v14m7-14v14m7-14v14m7-14v14"/>
+                <g class="appointments-camera-lens" id="ap-camera-lens"><circle cx="119" cy="86" r="49"/><circle cx="119" cy="86" r="40"/><circle cx="119" cy="86" r="31"/><circle cx="119" cy="86" r="23"/><path d="m116 64 19 12 2 21-18 11-20-11-1-22Z"/><ellipse cx="108" cy="74" rx="7" ry="4"/></g>
+                <circle class="appointments-camera-indicator" cx="49" cy="91" r="5"/>
+                <path class="appointments-camera-slot" id="ap-camera-slot" d="M76 143h88v9H76Z"/>
+                <path class="appointments-camera-screws" d="M30 60h4m173 0h4M30 128h4m173 0h4"/>
+              </svg>
+            </button>
+            <div class="appointments-studio-basket" id="ap-studio-basket" role="group" aria-label="Khung chứa ảnh lưu niệm"><p><span>Ảnh lưu niệm</span><span id="ap-studio-count" hidden>0/6 ảnh · 0/3 treo</span></p></div>
+          </div>
+          <p class="appointments-sr-only" id="ap-studio-keyboard">Bấm máy ảnh để tạo ảnh. Ảnh đã tạo dùng phím 1, 2 hoặc 3 để treo vào kẹp tương ứng; tối đa ba ảnh treo. Phím mũi tên di chuyển ảnh, Shift đi xa hơn. Enter hoặc Space lật ảnh trong khay hoặc tháo ảnh đang treo. Escape hủy lượt kéo. Ảnh chưa treo rơi xuống khung chứa.</p>
+          <p class="appointments-sr-only" id="ap-studio-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        </div>
+        <aside class="appointments-crew" aria-labelledby="ap-crew-title">
+          <h2 id="ap-crew-title">Đồng hành cùng Linh</h2>
+          <ul class="appointments-crew-list">
+            <li><span class="appointments-crew-initial" aria-hidden="true">M</span><div><strong>Mai</strong><span>Makeup</span></div><p><time datetime="2026-10-24T13:00">13:00</time>–<time datetime="2026-10-24T14:00">14:00</time></p></li>
+            <li><span class="appointments-crew-initial" aria-hidden="true">T</span><div><strong>Tuấn</strong><span>Chụp ảnh</span></div><p><time datetime="2026-10-24T14:00">14:00</time>–<time datetime="2026-10-24T16:00">16:00</time></p></li>
+          </ul>
+        </aside>
+      </div>
+
+      <nav class="appointments-film-nav" aria-label="Các phần trong nhật ký của Linh">
+        <a href="#ap-schedule"><span class="appointments-film-index" aria-hidden="true">01</span><span>Cuộc hẹn</span><svg class="appointments-icon" aria-hidden="true"><use href="#ap-i-clock"/></svg></a>
+        <a href="#ap-preparation"><span class="appointments-film-index" aria-hidden="true">02</span><span>Chuẩn bị</span><svg class="appointments-icon" aria-hidden="true"><use href="#ap-i-check"/></svg></a>
+        <a href="#ap-inspiration"><span class="appointments-film-index" aria-hidden="true">03</span><span>Khung hình</span><svg class="appointments-icon" aria-hidden="true"><use href="#ap-i-camera"/></svg></a>
+      </nav>
+    </section>
+
+    <section class="appointments-schedule" id="ap-schedule" aria-labelledby="ap-schedule-title">
+      <div class="appointments-section-heading">
+        <div><p class="appointments-kicker">01 / Cuộc hẹn</p><h2 id="ap-schedule-title">Đã hẹn một buổi chiều.</h2></div>
+        <p class="appointments-section-note">Tháng 10, 2026 <span>Tuần 43</span></p>
+      </div>
+      <fieldset class="appointments-collection" id="ap-collection">
+        <legend class="appointments-sr-only">Lọc lịch chụp theo trạng thái và ngày</legend>
+        <input class="appointments-filter-input" type="radio" name="appointment-filter" id="ap-filter-all" value="all" checked>
+        <label class="appointments-filter" for="ap-filter-all">Tất cả <span id="ap-count-all">1</span></label>
+        <input class="appointments-filter-input" type="radio" name="appointment-filter" id="ap-filter-pending" value="pending">
+        <label class="appointments-filter" for="ap-filter-pending">Chờ cọc <span id="ap-count-pending">1</span></label>
+        <input class="appointments-filter-input" type="radio" name="appointment-filter" id="ap-filter-booked" value="booked">
+        <label class="appointments-filter" for="ap-filter-booked">Đã đặt lịch <span id="ap-count-booked">0</span></label>
+        <input class="appointments-filter-input" type="radio" name="appointment-filter" id="ap-filter-completed" value="completed">
+        <label class="appointments-filter" for="ap-filter-completed">Hoàn thành <span id="ap-count-completed">0</span></label>
+
+        <div class="appointments-dates">
+          <ol class="appointments-week" id="ap-static-dates" aria-label="Tuần từ 19 đến 25 tháng 10, ngày được chọn là thứ Bảy 24">
+            <li><abbr title="Thứ Hai">T2</abbr><time datetime="2026-10-19">19</time></li>
+            <li><abbr title="Thứ Ba">T3</abbr><time datetime="2026-10-20">20</time></li>
+            <li><abbr title="Thứ Tư">T4</abbr><time datetime="2026-10-21">21</time></li>
+            <li><abbr title="Thứ Năm">T5</abbr><time datetime="2026-10-22">22</time></li>
+            <li><abbr title="Thứ Sáu">T6</abbr><time datetime="2026-10-23">23</time></li>
+            <li class="appointments-day-selected"><abbr title="Thứ Bảy">T7</abbr><time datetime="2026-10-24">24</time><span class="appointments-day-dot" aria-hidden="true"></span></li>
+            <li><abbr title="Chủ nhật">CN</abbr><time datetime="2026-10-25">25</time></li>
+          </ol>
+          <div class="appointments-week appointments-interactive-dates" id="ap-interactive-dates" role="group" aria-label="Chọn ngày trong tuần 19 đến 25 tháng 10" hidden>
+            <button id="ap-day-19" type="button" data-ap-day="19" aria-label="Thứ Hai ngày 19 tháng 10" aria-pressed="false" hidden><span>T2</span><span>19</span></button>
+            <button id="ap-day-20" type="button" data-ap-day="20" aria-label="Thứ Ba ngày 20 tháng 10" aria-pressed="false" hidden><span>T3</span><span>20</span></button>
+            <button id="ap-day-21" type="button" data-ap-day="21" aria-label="Thứ Tư ngày 21 tháng 10" aria-pressed="false" hidden><span>T4</span><span>21</span></button>
+            <button id="ap-day-22" type="button" data-ap-day="22" aria-label="Thứ Năm ngày 22 tháng 10" aria-pressed="false" hidden><span>T5</span><span>22</span></button>
+            <button id="ap-day-23" type="button" data-ap-day="23" aria-label="Thứ Sáu ngày 23 tháng 10" aria-pressed="false" hidden><span>T6</span><span>23</span></button>
+            <button id="ap-day-24" type="button" data-ap-day="24" aria-label="Thứ Bảy ngày 24 tháng 10, có một cuộc hẹn" aria-pressed="true" hidden><span>T7</span><span>24</span><span class="appointments-day-dot" aria-hidden="true"></span></button>
+            <button id="ap-day-25" type="button" data-ap-day="25" aria-label="Chủ nhật ngày 25 tháng 10" aria-pressed="false" hidden><span>CN</span><span>25</span></button>
+          </div>
+          <p class="appointments-date-caption">Cuộc hẹn của Linh: <time datetime="2026-10-24">thứ Bảy ngày 24 tháng 10</time>.</p>
+        </div>
+
+        <div class="appointments-result" id="ap-result">
+          <article class="appointments-ticket" id="ap-ticket" aria-labelledby="ap-ticket-title">
+            <div class="appointments-ticket-date">
+              <time datetime="2026-10-24"><span class="appointments-date-number">24</span><span>Tháng 10, 2026</span></time>
+              <p>Thứ Bảy</p><span class="appointments-ticket-bars" aria-hidden="true"></span><p class="appointments-ticket-code">GS-1024</p>
+            </div>
+            <div class="appointments-ticket-info">
+              <p class="appointments-kicker">Cuộc hẹn của Linh</p><h3 id="ap-ticket-title">Chụp ảnh tốt nghiệp</h3>
+              <p class="appointments-package">Tốt nghiệp Premium <span>Makeup &amp; 2 giờ chụp</span></p>
+              <p class="appointments-stamp">
+                <span data-ap-state="pending"><svg class="appointments-icon" aria-hidden="true"><use href="#ap-i-clock"/></svg>Chờ cọc 30%</span>
+                <span data-ap-state="booked" hidden><svg class="appointments-icon" aria-hidden="true"><use href="#ap-i-check"/></svg>Đã đặt lịch</span>
+              </p>
+              <p class="appointments-agreement">Đã thống nhất lịch · Nguyễn Thùy Linh</p>
+              <dl class="appointments-ticket-times">
+                <div><dt>Có mặt</dt><dd><strong>12:50</strong> · sớm 10 phút</dd></div>
+                <div><dt>Makeup</dt><dd>13:00–14:00 · Mai</dd></div>
+                <div><dt>Chụp ảnh</dt><dd>14:00–16:00 · Tuấn · Phòng B</dd></div>
+              </dl>
+              <details class="appointments-details appointments-package-details" id="ap-package-details" data-ap-detail>
+                <summary>Chi tiết gói</summary><div><p>Loại buổi chụp: Tốt nghiệp cá nhân. Gói Tốt nghiệp Premium bao gồm makeup và 2 giờ chụp.</p><p>Giờ đã được Linh thống nhất qua hội thoại, không cần xác nhận lại.</p></div>
+              </details>
+            </div>
+            <div class="appointments-ticket-payment">
+              <dl class="appointments-prices">
+                <div><dt>Tổng giá</dt><dd>1.800.000đ</dd></div>
+                <div class="appointments-deposit"><dt><span data-ap-state="pending">Cọc 30%</span><span data-ap-state="booked" hidden>Đã cọc · Demo</span></dt><dd>540.000đ</dd></div>
+                <div><dt>Còn lại</dt><dd>1.260.000đ</dd></div>
+              </dl>
+              <p class="appointments-balance-note">Khoản còn lại thanh toán sau buổi chụp.</p>
+              <div id="ap-payment-pending" data-ap-state="pending">
+                <button class="appointments-button appointments-pay-button" id="ap-pay-open" type="button" aria-haspopup="dialog" aria-controls="ap-pay-dialog" hidden>Thanh toán cọc 30%</button>
+                <details class="appointments-payment-fallback" id="ap-pay-fallback" data-ap-detail>
+                  <summary class="appointments-button">Thanh toán cọc 30%</summary>
+                  <div class="appointments-fallback-copy"><p><strong>GS-1024 · Cọc 540.000đ</strong></p><p>Mô phỏng không phát sinh giao dịch thật. Bật JavaScript trong trình duyệt hỗ trợ hộp thoại để thử Hủy hoặc Thành công; khi chỉ xem thông tin, lịch vẫn Chờ cọc.</p></div>
+                </details>
+              </div>
+              <div class="appointments-paid-confirm" id="ap-paid-confirm" data-ap-state="booked" tabindex="-1" hidden><p><strong>Đã cọc 540.000đ trong demo.</strong></p><p>Hẹn Linh lúc <strong>13:00 để makeup</strong>. Có mặt từ 12:50 nhé.</p></div>
+              <button class="appointments-print-button appointments-text-link" id="ap-print" type="button" hidden><svg class="appointments-icon" aria-hidden="true"><use href="#ap-i-print"/></svg>In phiếu hẹn</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="appointments-empty" id="ap-empty">
+          <svg class="appointments-icon" aria-hidden="true"><use href="#ap-i-camera"/></svg><h3>Chưa có lịch chụp nào ở mục này.</h3>
+          <p>Cuộc hẹn GS-1024 của Linh nằm ở ngày 24/10. Chọn ngày 24 và bộ lọc “Tất cả” để xem lại.</p>
+          <button class="appointments-button appointments-button-secondary" id="ap-show-booking" type="button" hidden>Xem cuộc hẹn ngày 24</button>
+        </div>
+
+        <div class="appointments-notebook-grid">
+          <section class="appointments-journal" id="ap-journal" aria-labelledby="ap-journal-title">
+            <p class="appointments-kicker">02 / Nhật ký buổi chụp</p><h2 id="ap-journal-title">Từng khoảnh khắc, thật thong thả.</h2><p class="appointments-journal-date">Thứ Bảy ngày 24 tháng 10 · GS-1024</p>
+            <ol class="appointments-journal-list">
+              <li><span class="appointments-step" aria-hidden="true">01</span><div><p class="appointments-journal-time"><time datetime="2026-10-24T12:50">12:50</time></p><h3>Đến và chuẩn bị</h3><p>Có mặt sớm 10 phút trước makeup để bắt đầu buổi hẹn thong thả.</p></div></li>
+              <li><span class="appointments-step" aria-hidden="true">02</span><div><p class="appointments-journal-time"><time datetime="2026-10-24T13:00">13:00</time>–<time datetime="2026-10-24T14:00">14:00</time></p><h3>Makeup với Mai</h3><p>Một giờ chuẩn bị trước khi bắt đầu chụp.</p></div></li>
+              <li><span class="appointments-step" aria-hidden="true">03</span><div><p class="appointments-journal-time"><time datetime="2026-10-24T14:00">14:00</time>–<time datetime="2026-10-24T16:00">16:00</time></p><h3>Chụp ảnh với Tuấn</h3><p>Phòng B · 2 giờ chụp trong gói Tốt nghiệp Premium.</p></div></li>
+            </ol>
+            <details class="appointments-details" id="ap-history" data-ap-detail><summary>Lịch sử thống nhất giờ</summary><div><p>Yêu cầu ban đầu <del>09:00</del> không khả dụng vì Mai đã bận 08:00–12:00.</p><p>Linh và studio đã thống nhất makeup 13:00–14:00, chụp 14:00–16:00. Đây là các mốc đang áp dụng cho GS-1024.</p></div></details>
+          </section>
+          <aside class="appointments-preparation" id="ap-preparation" aria-labelledby="ap-preparation-title">
+            <p class="appointments-kicker">Một chút chuẩn bị</p><h2 id="ap-preparation-title">Mang theo tâm trạng thật vui.</h2><p>Góc chuẩn bị của Linh, dành cho một buổi chụp nhẹ nhàng.</p>
+            <div class="appointments-progress" id="ap-progress" hidden><p><strong id="ap-progress-count">0</strong>/3 việc đã sẵn sàng</p><progress id="ap-progress-meter" value="0" max="3" aria-label="Tiến độ chuẩn bị"></progress></div>
+            <fieldset class="appointments-checklist">
+              <legend class="appointments-sr-only">Ba việc cần chuẩn bị</legend>
+              <label for="ap-check-1"><input id="ap-check-1" type="checkbox" data-ap-check><span>Kiểm tra lại các mốc giờ trong lịch hẹn.</span></label>
+              <label for="ap-check-2"><input id="ap-check-2" type="checkbox" data-ap-check><span>Chuẩn bị trang phục đã thống nhất.</span></label>
+              <label for="ap-check-3"><input id="ap-check-3" type="checkbox" data-ap-check><span>Lên kế hoạch đến trước 10 phút, lúc 12:50.</span></label>
+            </fieldset>
+            <details class="appointments-details appointments-studio-details" id="ap-studio-info" data-ap-detail><summary><svg class="appointments-icon" aria-hidden="true"><use href="#ap-i-pin"/></svg>Thông tin studio</summary><div><p><strong>GradStudio · Phòng B</strong><br>Chụp với Tuấn, 14:00–16:00.</p><p>Địa chỉ chưa được cung cấp. Chỉ đường chưa kết nối.</p></div></details>
+          </aside>
+        </div>
+      </fieldset>
+    </section>
+
+    <section class="appointments-inspiration" id="ap-inspiration" aria-labelledby="ap-inspiration-title">
+      <div class="appointments-section-heading"><div><p class="appointments-kicker">03 / Vài khung hình gợi ý</p><h2 id="ap-inspiration-title">Giữ lại một chút thanh xuân.</h2></div><p class="appointments-section-note">Ảnh tham khảo phong cách,<br>không phải ảnh sau buổi chụp của Linh.</p></div>
+      <div class="appointments-gallery">
+        <figure class="appointments-polaroid"><a id="ap-photo-link-1" data-ap-image="1" href="assets/images/service-graduation.avif" aria-label="Mở ảnh tham khảo Ngày nhận bằng"><img src="assets/images/service-graduation.avif" alt="Hai người mặc áo tốt nghiệp, cầm bó hoa trước tòa nhà." width="900" height="1200" loading="lazy"><span class="appointments-photo-affordance" aria-hidden="true">Xem ảnh <svg class="appointments-icon"><use href="#ap-i-arrow"/></svg></span></a><figcaption><span class="appointments-frame-number">01 /</span> Ngày nhận bằng</figcaption></figure>
+        <figure class="appointments-polaroid"><a id="ap-photo-link-2" data-ap-image="2" href="assets/images/gallery-graduates-trio--photo-1566055390950-e8334302c8cb.avif" aria-label="Mở ảnh tham khảo Cùng nhau lớn lên"><img src="assets/images/gallery-graduates-trio--photo-1566055390950-e8334302c8cb.avif" alt="Nhóm bạn mặc áo và mũ tốt nghiệp bên hàng cây." width="600" height="600" loading="lazy"><span class="appointments-photo-affordance" aria-hidden="true">Xem ảnh <svg class="appointments-icon"><use href="#ap-i-arrow"/></svg></span></a><figcaption><span class="appointments-frame-number">02 /</span> Cùng nhau lớn lên</figcaption></figure>
+        <figure class="appointments-polaroid"><a id="ap-photo-link-3" data-ap-image="3" href="assets/images/gallery-class-friends--photo-1610208322193-07ba2fe4011d.avif" aria-label="Mở ảnh tham khảo Những ngày bên nhau"><img src="assets/images/gallery-class-friends--photo-1610208322193-07ba2fe4011d.avif" alt="Nhóm bạn mặc áo trắng ngồi trò chuyện bên cầu thang." width="600" height="600" loading="lazy"><span class="appointments-photo-affordance" aria-hidden="true">Xem ảnh <svg class="appointments-icon"><use href="#ap-i-arrow"/></svg></span></a><figcaption><span class="appointments-frame-number">03 /</span> Những ngày bên nhau</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="appointments-faq" aria-labelledby="ap-faq-title">
+      <div><p class="appointments-kicker">Ghi chú bên lề</p><h2 id="ap-faq-title">Linh có thể đang băn khoăn…</h2></div>
+      <div>
+        <details class="appointments-details" data-ap-detail><summary>Khi nào tôi cần có mặt?</summary><div><p>Có mặt lúc 12:50, sớm 10 phút trước makeup với Mai lúc 13:00. Buổi chụp bắt đầu lúc 14:00 với Tuấn tại Phòng B.</p></div></details>
+        <details class="appointments-details" data-ap-detail><summary>Tôi cần cọc bao nhiêu?</summary><div><p>Khoản cọc 30% của gói Tốt nghiệp Premium là 540.000đ trên tổng giá 1.800.000đ. Thao tác thanh toán trên trang này chỉ là mô phỏng.</p></div></details>
+        <details class="appointments-details" data-ap-detail><summary>Khoản còn lại thanh toán lúc nào?</summary><div><p>Khoản còn lại 1.260.000đ thanh toán sau buổi chụp. Mô phỏng cọc không thay đổi số tiền này.</p></div></details>
+      </div>
+    </section>
+    <p class="appointments-sr-only" id="ap-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+  </main>
+
+  <footer class="appointments-footer">
+    <div class="appointments-shell appointments-footer-inner">
+      <div><a class="appointments-brand" href="index.html" aria-label="GradStudio — Dịch vụ"><svg class="appointments-brand-icon" aria-hidden="true"><use href="#ap-i-brand"/></svg><span class="appointments-wordmark"><span>Grad</span><span>Studio</span></span></a><p>Những ngày đáng nhớ, được giữ lại.</p></div>
+      <nav class="appointments-footer-nav" aria-label="Điều hướng cuối trang"><a href="index.html">Dịch vụ</a><a href="#ap-main">Về đầu trang</a></nav>
+      <div class="appointments-demo"><p>Điều khiển demo</p><p>Trạng thái và checklist chỉ giữ trong lần xem này.</p><button class="appointments-button appointments-button-secondary" id="ap-reset" type="button" hidden>Đặt lại demo</button></div>
+    </div>
+  </footer>
+
+  <dialog class="appointments-dialog" id="ap-pay-dialog" aria-labelledby="ap-pay-title" aria-describedby="ap-pay-description">
+    <form method="dialog">
+      <p class="appointments-kicker">GradStudio / GS-1024</p><h2 id="ap-pay-title">Mô phỏng thanh toán</h2><p id="ap-pay-description">Đây là thao tác mô phỏng, không phát sinh giao dịch thật.</p>
+      <dl class="appointments-dialog-facts"><div><dt>Booking</dt><dd>GS-1024</dd></div><div><dt>Khách hàng</dt><dd>Nguyễn Thùy Linh</dd></div><div><dt>Gói</dt><dd>Tốt nghiệp Premium</dd></div><div class="appointments-dialog-deposit"><dt>Cọc 30%</dt><dd>540.000đ</dd></div></dl>
+      <div class="appointments-dialog-actions"><button class="appointments-button appointments-button-secondary" type="submit" value="cancel" autofocus>Hủy</button><button class="appointments-button" type="submit" value="paid">Thanh toán thành công</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="appointments-dialog appointments-image-dialog" id="ap-image-dialog" aria-labelledby="ap-image-title">
+    <div class="appointments-image-dialog-heading"><h2 id="ap-image-title">Ảnh gợi ý phong cách</h2><form method="dialog"><button class="appointments-button appointments-button-secondary" type="submit" autofocus>Đóng ảnh</button></form></div>
+    <p>Ảnh tham khảo, không phải ảnh sau buổi chụp của Linh.</p>
+    <figure id="ap-dialog-image-1" data-ap-large-image="1" hidden><img src="assets/images/service-graduation.avif" alt="Hai người mặc áo tốt nghiệp, cầm bó hoa trước tòa nhà." width="900" height="1200" loading="lazy"><figcaption>Ngày nhận bằng</figcaption></figure>
+    <figure id="ap-dialog-image-2" data-ap-large-image="2" hidden><img src="assets/images/gallery-graduates-trio--photo-1566055390950-e8334302c8cb.avif" alt="Nhóm bạn mặc áo và mũ tốt nghiệp bên hàng cây." width="600" height="600" loading="lazy"><figcaption>Cùng nhau lớn lên</figcaption></figure>
+    <figure id="ap-dialog-image-3" data-ap-large-image="3" hidden><img src="assets/images/gallery-class-friends--photo-1610208322193-07ba2fe4011d.avif" alt="Nhóm bạn mặc áo trắng ngồi trò chuyện bên cầu thang." width="600" height="600" loading="lazy"><figcaption>Những ngày bên nhau</figcaption></figure>
+  </dialog>
+
+  <section class="appointments-print-sheet" id="ap-print-sheet" aria-labelledby="ap-print-title">
+    <p>GradStudio · GS-1024</p><h2 id="ap-print-title">Phiếu hẹn của Nguyễn Thùy Linh</h2>
+    <p>Thứ Bảy ngày 24 tháng 10 năm 2026 · Tốt nghiệp Premium</p>
+    <p data-ap-state="pending">Đã thống nhất lịch · Chờ cọc 30% · Dữ liệu demo</p><p id="ap-print-paid" data-ap-state="booked" hidden>Đã đặt lịch · Đã cọc 540.000đ trong demo</p>
+    <dl><div><dt>Có mặt</dt><dd>12:50, sớm 10 phút trước makeup</dd></div><div><dt>Makeup</dt><dd>13:00–14:00 với Mai</dd></div><div><dt>Chụp ảnh</dt><dd>14:00–16:00 với Tuấn, Phòng B</dd></div><div><dt>Tổng giá</dt><dd>1.800.000đ</dd></div><div><dt>Cọc 30%</dt><dd>540.000đ</dd></div><div><dt>Còn lại</dt><dd>1.260.000đ, thanh toán sau buổi chụp</dd></div></dl>
+    <p>Phiếu hẹn mô phỏng, không xác nhận giao dịch thật. Địa chỉ studio chưa được cung cấp.</p>
+  </section>
+</body>
+</html>
