@@ -182,11 +182,4 @@ chức năng mô phỏng ghi rõ tại đúng nơi.
 responsive và nghiệm thu. Không sao chép bảng màu/font chung thành bộ quy
 định độc lập. Thay phần chung cần cập nhật tài liệu, CSS và kiểm tra tích hợp.
 
-## 9. Trạng thái triển khai
 
-Lần này chuẩn bị tài liệu và nền tảng CSS, chưa xây các trang mới. Giữ tên
-tích hợp `index.html`, `admin-scheduling.html`, `my-appointments.html` khi
-triển khai; không tạo link UI tới file chưa có. Font cục bộ, responsive
-trực quan, bàn phím trên trang và W3C của giao diện mới chưa được kiểm tra.
-Minh chứng trước đổi hướng không dùng cho thiết kế mới;
-xem [lịch sử](docs/history/pre-redesign/README.md).
