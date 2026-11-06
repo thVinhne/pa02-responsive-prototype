@@ -1,3 +1,7 @@
+> Tài liệu nguồn PA01, chỉ dùng để tham khảo chức năng, dữ liệu và nguồn tài nguyên.
+> Bố cục, màu, font và cách tương tác trong bản nguồn không phải quy ước UI PA02.
+> Quy ước hiện hành: DESIGN.md và AGENTS.md ở gốc repo.
+
 # Nguồn ảnh trong màn 1 của prototype
 
 Các đường dẫn dưới đây được đối chiếu từ bundle công khai của [prototype GradStudio](https://proxy-swept-63177389.figma.site/) ngày 30/10/2026. Ảnh được tải từ **Unsplash**; nhóm không tự chụp các ảnh này. Xem [Unsplash License](https://unsplash.com/license) và [lưu ý về người có thể nhận diện trong ảnh](https://help.unsplash.com/en/articles/2612329-releases-and-trademarks).

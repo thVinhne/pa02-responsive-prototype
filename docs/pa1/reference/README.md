@@ -1,3 +1,7 @@
+> Tài liệu nguồn PA01, chỉ dùng để tham khảo chức năng, dữ liệu và nguồn tài nguyên.
+> Bố cục, màu, font và cách tương tác trong bản nguồn không phải quy ước UI PA02.
+> Quy ước hiện hành: DESIGN.md và AGENTS.md ở gốc repo.
+
 # Ảnh bổ sung cho Màn 2
 
 [Ảnh chính Màn 2](../02-admin-scheduling.png) bị cắt ở phần dưới, chưa hiển thị đầy đủ form **Booking mới**. Chat và form nằm trong cột giữa có vùng cuộn riêng, nên một ảnh tĩnh ở vị trí cuộn đó không thể hiện hết cả hai phần. Vui lòng xem thêm hai ảnh dưới đây và [mở prototype Figma](../LINK.md) để cuộn xem đầy đủ.
