@@ -181,5 +181,3 @@ chức năng mô phỏng ghi rõ tại đúng nơi.
 Đặc tả từng trang ghi bố cục, nội dung, trạng thái, hành vi bật/tắt JS,
 responsive và nghiệm thu. Không sao chép bảng màu/font chung thành bộ quy
 định độc lập. Thay phần chung cần cập nhật tài liệu, CSS và kiểm tra tích hợp.
-
-

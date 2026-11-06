@@ -31,10 +31,20 @@ chỉ dùng cho nghiệp vụ, vai trò và tài nguyên có ghi nguồn.
 - Đã thay nền tảng màu, typography dự kiến, spacing và control trong
   `css/common.css` theo thiết kế chung.
 - Đã gỡ `index.html` và `css/services.css` của giao diện trước đổi hướng.
-- Cả ba trang mới chưa triển khai. Chưa có trang HTML để mở hoặc nghiệm thu.
+- Đã tích hợp `admin-scheduling.html` từ nhánh màn 2. File mở trực tiếp được,
+  có CSS/JavaScript riêng nhúng trong HTML theo yêu cầu trước đó. Đây là bản
+  màn 2 đã có trước khi đổi thiết kế chung, chưa nghiệm thu theo `DESIGN.md`.
+- Màn dịch vụ mới và màn lịch chụp chưa triển khai. Không khôi phục
+  `index.html` hoặc CSS dịch vụ cũ khi ghép nhánh.
 - Font Merriweather và Be Vietnam Pro chưa nhập; CSS có fallback,
   chưa khai báo `@font-face` tới file không tồn tại.
 - Minh chứng cũ đã chuyển sang khu lịch sử, không dùng cho giao diện mới.
+
+Để xem bản màn 2 hiện có, mở trực tiếp `admin-scheduling.html`.
+Các liên kết từ màn này tới `index.html` và `my-appointments.html` hiện
+chưa có file đích; cần xử lý ở lượt tích hợp giao diện, không coi là luồng
+ba màn đã hoàn thiện. CSS chung đã theo main mới; HTML màn 2 chưa được sửa
+để đồng bộ font, kiểu trình bày và các quy tắc mới.
 
 Tên file tích hợp vẫn dự kiến là `index.html`, `admin-scheduling.html`,
 `my-appointments.html`, cùng CSS riêng tương ứng. Đây là tên dự kiến,
@@ -49,7 +59,8 @@ không duy trì bảng màu/font/kích thước thứ hai ở đây.
 
 Mỗi thành viên tạo đặc tả riêng trong `docs/design/`, dùng chung nhận diện
 và tự thiết kế bố cục, component đặc thù. Dây ảnh, máy ảnh và vé hẹn là phần
-riêng màn lịch chụp. Header/footer mới chưa có markup triển khai.
+riêng màn lịch chụp. Header/footer của màn Admin đã có markup riêng;
+chưa xác nhận đáp ứng toàn bộ quy ước thiết kế mới.
 
 ## Công nghệ và kiểm tra
 
@@ -60,4 +71,6 @@ khi tắt JS vẫn đọc nội dung chính và dùng điều hướng.
 Khi có trang mới: mở trực tiếp từ thư mục, kiểm tra 360/768/1280 px,
 zoom 200%, bàn phím, reduced motion, font tiếng Việt, tương phản và W3C
 Nu checker (0 errors). Lưu minh chứng mới trong `screenshots/` và `checks/`.
-Kiểm tra trực quan và W3C của các trang mới hiện là **NOT RUN**.
+Kiểm tra trực quan, responsive, tương phản và W3C của màn Admin sau khi
+ghép CSS chung mới hiện là **NOT RUN**. Các kết quả màn 2 trước merge đã
+lưu trong `docs/history/pre-redesign/`, không dùng để nghiệm thu bản ghép.

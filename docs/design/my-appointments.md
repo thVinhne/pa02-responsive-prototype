@@ -346,4 +346,3 @@ Cuối cùng báo file đã đổi, đối chiếu từng I01–I14, các kiểm
 - Font Merriweather: https://github.com/google/fonts/tree/main/ofl/merriweather ; metadata có Vietnamese và giấy phép OFL.
 - Font Be Vietnam Pro: https://github.com/google/fonts/tree/main/ofl/bevietnampro ; metadata có Vietnamese và giấy phép OFL.
 - Đây là đặc tả để triển khai, không phải báo cáo đã sửa code local, tải font hoặc kiểm thử trình duyệt thành công.
-
