@@ -108,3 +108,46 @@ Kiểm tra tài liệu/nền tảng: 18 token màu khớp DESIGN.md và common.c
 A01–A21. Không còn mã màu palette cũ trong tài liệu hiện hành/CSS chung.
 Đã đối chiếu Git HEAD: giữ nguyên nội dung gốc của 5 tài liệu PA01,
 các mục prompt/log lịch sử và SHA256 của 5 ảnh đã lưu trữ.
+
+## 2026-11-07 — Tổng hợp duyệt và triển khai màn 1
+Tool Codex.
+Asked for Dựng và kiểm tra màn Dịch vụ và chat theo bố cục nhật ký ảnh phim
+đã duyệt qua các lượt 07–08/11, được tổng hợp trong `brief.md`.
+Kept Hero đủ khung nhìn, video nền, slideshow Polaroid, ba thẻ gói, album
+lật quanh gáy, chat thu gọn và lối chuyển vai ở chân trang. Giữ ảnh, nguồn
+ảnh, video, poster và font cục bộ.
+Changed Đưa bản duyệt vào `index.html`, `css/services.css` và
+`js/services.js`, sửa đường dẫn tương đối và ghi chờ tích hợp vì chưa có
+HTML của màn 2 và 3. Ở 360 px, chia đều hai cột khi còn hai bìa album.
+Chrome đo mỗi bìa 136 × 175 px ở 360 × 751 và 360 × 900. Sau phản hồi về
+chiều cao trang ảnh, giữ chỗ theo lượt cao nhất để cụm nút đứng yên khi
+lật. Chrome đo nút video và hai nút lật chỉ 14 px trên màn nhỏ, nên bỏ
+cỡ chữ ghi đè để dùng mức chung 16 px. Đo lại ở 360 × 751, chữ vừa nút,
+vùng bấm đạt và trang không cuộn ngang.
+Chrome kiểm tra qua `file://` ở 360, 768 và 1280 px với JavaScript bật
+và tắt. Đã thử link xem gói, chat, album và các thao tác mô phỏng của bản
+lúc đó. Khi tắt JavaScript, chín lượt ảnh và 27 link ảnh vẫn có sẵn.
+Đã rà 118 đường dẫn và anchor, chạy `node --check` và `git diff --check`.
+W3C Nu của bản lúc đó trả 0 lỗi và 0 cảnh báo. Đã lưu ba ảnh toàn trang
+và báo cáo W3C. Zoom 200% và nghiệm thu liên trang **NOT RUN**.
+Rejected Sổ ý tưởng, nhãn xem thử, dòng Mở album trên điện thoại và link
+tư vấn dưới album Tốt nghiệp theo phản hồi khi duyệt. Dọn các bản xem
+thử sau khi chuyển sang trang chính.
+
+
+## 2026-11-08 — Rà checklist màn 1 và chuẩn bị tài nguyên PA02
+Tool Codex.
+Asked for Chỉnh khung chat, rà màn 1 theo mục Fix these, xóa ảnh trong archive
+PA01 và đề xuất tên commit cho ảnh, video PA02.
+Kept Hai tin nhắn mẫu ở cuối phần tư vấn, khung chat thu gọn ở 390 px trở xuống
+và khung rộng 328 px trên mốc này. Tên commit đề xuất là
+`chore(assets): add PA02 images and hero video`.
+Changed Cân lại khoảng cách và vùng cuộn trong khung chat. Bản đầu vẫn cho bấm
+Gửi mẫu. Khi đối chiếu brief, bài kiểm tra Chrome xác nhận nút còn hoạt động,
+nên khóa ô nhập và nút gửi ngay trong HTML, kèm ghi chú PA#2. Kiểm tra lại
+bằng Chrome và Playwright ở 360 px với JavaScript bật và tắt. Cả hai lần đều
+thấy hội thoại, nút bị khóa và ghi chú. `node --check` đạt. W3C Nu cho bản
+sau sửa **NOT RUN**. Xóa 49 tệp ảnh trong archive PA01 bằng PowerShell, rồi
+kiểm tra thư mục còn một video MP4 và hai tệp Markdown.
+Rejected Cách gửi tin mẫu bằng JavaScript vì mục Fix these yêu cầu nút gửi
+bị vô hiệu hóa và có ghi chú nhìn thấy được.

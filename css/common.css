@@ -1,4 +1,28 @@
 /* Shared foundation only. Load before each page's own stylesheet. */
+@font-face {
+  font-family: "GS Merriweather";
+  src: url("../assets/fonts/shared/Merriweather-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GS Be Vietnam";
+  src: url("../assets/fonts/shared/BeVietnamPro-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GS Be Vietnam";
+  src: url("../assets/fonts/shared/BeVietnamPro-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
 
@@ -24,8 +48,6 @@
   --color-disabled-background: var(--color-border);
   --color-disabled-text: var(--color-text);
 
-  /* Local GS font faces are pending import; use these fallbacks until then.
-     Add @font-face only after the shared font files and OFL licenses exist. */
   --font-body: "GS Be Vietnam", "Segoe UI", Arial, sans-serif;
   --font-heading: "GS Merriweather", "Times New Roman", serif;
   --font-size-body: 1rem;

@@ -18,27 +18,27 @@ chỉ dùng cho nghiệp vụ, vai trò và tài nguyên có ghi nguồn.
 
 - [AGENTS.md](AGENTS.md): kỹ thuật, phân công và dữ liệu xuyên suốt.
 - [DESIGN.md](DESIGN.md): thiết kế chung, tokens, font và thành phần tái sử dụng.
+- [Thiết kế màn 1](docs/design/services.md): bố cục và hành vi đã chốt.
 - [Thiết kế màn 3](docs/design/my-appointments.md): bố cục, trạng thái và tương tác riêng.
 - [Nghiệp vụ nguồn](docs/pa1/README.md): chức năng và tác giả nguồn;
   không dùng giao diện trong đó làm chuẩn để sao chép.
 - [brief.md](brief.md), [AI-LOG.md](AI-LOG.md): prompt và lịch sử làm việc.
 - [Minh chứng trước đổi hướng](docs/history/pre-redesign/README.md): chỉ để tra cứu lịch sử.
 
-## Trạng thái ngày 06/11/2026
+## Trạng thái hiện tại
 
 - Đã nhập `my-appointments.md` từ Downloads vào `docs/design/` và điều chỉnh
   tham chiếu để phân biệt đặc tả màn 3 với `DESIGN.md` chung.
 - Đã thay nền tảng màu, typography dự kiến, spacing và control trong
   `css/common.css` theo thiết kế chung.
-- Đã gỡ `index.html` và `css/services.css` của giao diện trước đổi hướng.
-- Cả ba trang mới chưa triển khai. Chưa có trang HTML để mở hoặc nghiệm thu.
-- Font Merriweather và Be Vietnam Pro chưa nhập; CSS có fallback,
-  chưa khai báo `@font-face` tới file không tồn tại.
+- Màn 1 đã chốt và triển khai. Mở trực tiếp [index.html](index.html) để xem
+  dịch vụ, album và hội thoại mẫu. Màn 2 và màn 3 đang chờ tích hợp.
+- Ngày 07/11/2026, đã nhập Merriweather và Be Vietnam Pro kèm giấy phép
+  OFL vào `assets/fonts/shared/` và khai báo font trong `css/common.css`.
 - Minh chứng cũ đã chuyển sang khu lịch sử, không dùng cho giao diện mới.
 
-Tên file tích hợp vẫn dự kiến là `index.html`, `admin-scheduling.html`,
-`my-appointments.html`, cùng CSS riêng tương ứng. Đây là tên dự kiến,
-không phải danh sách file hiện có.
+Màn 1 dùng `css/services.css` và `js/services.js`. Tên đích tích hợp của
+hai màn còn lại là `admin-scheduling.html` và `my-appointments.html`.
 
 ## Nền tảng dùng chung
 
@@ -49,7 +49,7 @@ không duy trì bảng màu/font/kích thước thứ hai ở đây.
 
 Mỗi thành viên tạo đặc tả riêng trong `docs/design/`, dùng chung nhận diện
 và tự thiết kế bố cục, component đặc thù. Dây ảnh, máy ảnh và vé hẹn là phần
-riêng màn lịch chụp. Header/footer mới chưa có markup triển khai.
+riêng màn lịch chụp.
 
 ## Công nghệ và kiểm tra
 
@@ -60,4 +60,7 @@ khi tắt JS vẫn đọc nội dung chính và dùng điều hướng.
 Khi có trang mới: mở trực tiếp từ thư mục, kiểm tra 360/768/1280 px,
 zoom 200%, bàn phím, reduced motion, font tiếng Việt, tương phản và W3C
 Nu checker (0 errors). Lưu minh chứng mới trong `screenshots/` và `checks/`.
-Kiểm tra trực quan và W3C của các trang mới hiện là **NOT RUN**.
+Màn 1 đã được kiểm tra trên Chrome ở 360, 768 và 1280 px khi bật và tắt
+JavaScript. [W3C Nu](checks/validator-index.txt) trả 0 lỗi và 0 cảnh báo.
+Ảnh toàn trang khi tắt JS nằm trong [screenshots](screenshots/).
+Kiểm tra zoom 200% và nghiệm thu luồng giữa ba màn vẫn đang chờ.
