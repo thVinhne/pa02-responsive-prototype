@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Góc nhìn Admin GradStudio: hội thoại tư vấn, lịch nhân sự và bản nháp booking tốt nghiệp của Linh.">
+  <title>Hội thoại &amp; lịch chụp | GradStudio</title>
+  <link rel="stylesheet" href="css/common.css">
+  <style>
+    /* Page styles are embedded to keep this delivery to one HTML file. */
+    .admin-page { --admin-line: color-mix(in srgb, var(--color-border) 30%, var(--color-background)); }
+    .admin-page h1,.admin-page h2,.admin-page h3 { font-family: "Times New Roman",serif; font-weight: 400; }
+    .admin-page h1 { font-size: 2rem; }
+    .admin-page h2 { font-size: 1.75rem; }
+    .admin-page h3 { font-size: 1.35rem; }
+    .admin-page button,.admin-page select,.admin-page input { min-height: 44px; }
+    .admin-page [hidden] { display: none; }
+    .admin-skip { position: absolute; left: 1rem; top: -8rem; z-index: 5; }
+    .admin-skip:focus { top: 1rem; }
+    .admin-header { padding: 1rem; border-bottom: 1px solid var(--admin-line); display: flex; align-items: center; gap: 1rem 2rem; flex-wrap: wrap; }
+    .admin-brand { display: inline-flex; align-items: center; min-height: 44px; font: 1.9rem "Times New Roman",serif; color: var(--color-text); text-decoration: none; }
+    .admin-brand em { font-weight: 400; }
+    .admin-role { background: var(--color-surface-soft); border-radius: 2rem; padding: .25rem .75rem; color: var(--color-text-muted); }
+    .admin-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; }
+    .admin-nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+    .admin-nav [aria-current] { border-bottom: 2px solid var(--color-brand); }
+    .admin-user { display: flex; align-items: center; gap: .75rem; margin: 0; }
+    .admin-avatar { width: 44px; height: 44px; object-fit: cover; border-radius: 50%; flex-shrink: 0; border: 1px solid var(--color-border); }
+    .admin-layout { display: grid; }
+    .admin-left,.admin-chat,.admin-right { min-width: 0; }
+    .admin-left { border-bottom: 1px solid var(--admin-line); }
+    .admin-inbox-head { padding: 1rem; }
+    .admin-eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: 1rem; color: var(--color-brand); margin-bottom: .5rem; }
+    .admin-muted { color: var(--color-text-muted); }
+    .admin-note { color: var(--color-text-muted); margin: .5rem 0 0; }
+    .admin-search { position: relative; }
+    .admin-search svg { position: absolute; left: 1rem; top: .85rem; width: 20px; height: 20px; color: var(--color-text-muted); }
+    .admin-search input { border-radius: 2rem; padding-left: 2.75rem; }
+    .admin-filters { margin: 0; padding: 0 1rem 1rem; display: flex; align-items: center; gap: .5rem; }
+    .admin-filters label { flex: 0 0 auto; margin: 0; }
+    .admin-filters select { flex: 1; min-width: 0; }
+    .admin-empty { padding: 1rem; color: var(--color-text-muted); }
+    .admin-customers { list-style: none; padding: 0; margin: 0; }
+    .admin-inbox-list { min-height: 0; overflow-y: scroll; scrollbar-gutter: stable; }
+    .admin-inbox-controls { min-width: 0; background: var(--color-background); }
+    .admin-customer { border-left: 3px solid transparent; }
+    .admin-customer--active { background: var(--color-surface-soft); border-left-color: var(--color-brand); }
+    .admin-customer-button { display: flex; align-items: flex-start; gap: .5rem; width: 100%; padding: 10px; border: 0; background: transparent; color: var(--color-text); font: inherit; text-align: left; cursor: pointer; }
+    .admin-customer-button:disabled { cursor: default; }
+    .admin-customer-button:hover { background: var(--color-surface-soft); }
+    .admin-customer-button:focus-visible { outline-offset: -3px; }
+    .admin-customer-button .admin-avatar { width: 52px; height: 52px; }
+    .admin-customer-body { display: grid; grid-template-rows: 26px 26px; min-width: 0; flex: 1; }
+    .admin-customer-name { display: block; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 26px; }
+    .admin-customer-preview { display: flex; min-width: 0; gap: .5rem; align-items: center; color: var(--color-text-muted); line-height: 26px; }
+    .admin-preview { min-width: 0; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .admin-customer-preview time { flex: 0 0 auto; white-space: nowrap; }
+    .admin-initials { display: grid; place-items: center; background: var(--color-text); color: var(--color-on-brand); font-weight: 600; }
+    .admin-status { display: inline-block; padding: .15rem .6rem; border: 1px solid var(--color-border); border-radius: 2rem; background: var(--color-background); color: var(--color-text-muted); }
+    .admin-status--success { color: var(--color-success); }
+    .admin-status--waiting { color: var(--color-warning); }
+    .admin-left { display: grid; grid-template-rows: auto minmax(0,1fr); height: 65dvh; min-height: 360px; }
+    .admin-chat { display: flex; flex-direction: column; border-bottom: 1px solid var(--admin-line); }
+    .admin-chat-head { padding: 1rem; display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; border-bottom: 1px solid var(--admin-line); }
+    .admin-chat-person { flex: 1; min-width: 140px; }
+    .admin-conversation-status { display: flex; align-items: center; gap: .5rem; width: 100%; }
+    .admin-conversation-status label { margin: 0; white-space: nowrap; }
+    .admin-conversation-status select { width: auto; flex: 1; min-width: 0; border-radius: 2rem; }
+    .admin-chat-head h2 { font: 600 1.125rem var(--font-body); margin: 0; }
+    .admin-chat-head p { margin: .25rem 0 0; }
+    .admin-chat-body { padding: 1.5rem 1rem; flex: 1; min-height: 16rem; max-height: 70dvh; overflow-y: scroll; scrollbar-gutter: stable; }
+    .admin-date-line { display: flex; align-items: center; gap: 1rem; color: var(--color-text-muted); margin-bottom: 1.5rem; text-align: center; }
+    .admin-date-line::before,.admin-date-line::after { content: ""; flex: 1; height: 1px; background: var(--admin-line); }
+    .admin-messages { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.5rem; }
+    .admin-message { max-width: 92%; align-self: flex-start; }
+    .admin-message p { border-radius: 1.25rem 1.25rem 1.25rem .25rem; padding: 1rem; margin: 0 0 .25rem; background: var(--color-surface-soft); }
+    .admin-message time { color: var(--color-text-muted); }
+    .admin-message--studio { align-self: flex-end; text-align: right; }
+    .admin-message--studio p { border-radius: 1.25rem 1.25rem .25rem 1.25rem; background: var(--color-brand); color: var(--color-on-brand); text-align: left; }
+    .admin-chat-context { margin-top: 2rem; padding: 1rem; border: 1px solid var(--admin-line); border-radius: .75rem; color: var(--color-success); }
+    .admin-compose { padding: 1rem; border-top: 1px solid var(--admin-line); }
+    .admin-compose-row { display: flex; align-items: end; gap: .5rem; }
+    .admin-compose-row textarea { min-height: 44px; max-height: 140px; }
+    .admin-compose button { border-radius: 2rem; flex: 0 0 auto; min-width: 64px; }
+    .admin-right { display: grid; grid-template-rows: auto minmax(0,1fr); min-height: 0; height: 100dvh; }
+    .admin-inbox-list,.admin-chat-body,.admin-booking { overscroll-behavior-y: contain; scrollbar-color: var(--color-border) var(--color-background); }
+    .admin-calendar-panel { min-width: 0; padding: 1rem; border-bottom: 1px solid var(--admin-line); }
+    .admin-calendar-panel h2 { font-size: 1.5rem; margin-bottom: .5rem; }
+    .admin-calendar-panel .admin-eyebrow { margin-bottom: .25rem; }
+    .admin-calendar-panel p { margin-bottom: .5rem; }
+    .admin-calendar { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    .admin-calendar caption { text-align: left; padding-bottom: .5rem; color: var(--color-text-muted); }
+    .admin-calendar th,.admin-calendar td { border: 1px solid var(--admin-line); padding: .25rem .5rem; text-align: left; }
+    .admin-calendar th { font-weight: 600; }
+    .admin-calendar td:first-child,.admin-calendar th:first-child { width: 40%; white-space: nowrap; }
+    .admin-busy { background: var(--color-surface-soft); }
+    .admin-booking { min-height: 0; overflow-y: scroll; scrollbar-gutter: stable; background: var(--color-surface-soft); padding: 1rem; }
+    .admin-booking h2 { font-size: 1.5rem; }
+    .admin-booking form { display: grid; gap: 1rem; }
+    .admin-booking-result { padding-top: 1rem; }
+    .admin-booking-result dl { display: grid; gap: .5rem; }
+    .admin-booking-result dt { color: var(--color-text-muted); }
+    .admin-booking-result dd { margin: 0 0 .5rem; font-weight: 600; }
+    .admin-response { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .admin-response button { flex: 1 1 100px; }
+    .admin-live { color: var(--color-warning); }
+    .admin-demo summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+    .admin-form-grid { display: grid; gap: 1rem; }
+    .admin-booking fieldset { padding: 0; border: 0; margin: 0; min-width: 0; }
+    .admin-booking legend { font-weight: 600; margin-bottom: .5rem; }
+    .admin-check { display: flex; align-items: center; gap: .5rem; min-height: 44px; }
+    .admin-check input { width: 20px; height: 20px; min-height: 20px; accent-color: var(--color-brand); }
+    .admin-assignment { display: flex; gap: .5rem; flex-wrap: wrap; margin: .5rem 0; }
+    .admin-assignment span { background: var(--color-background); border: 1px solid var(--color-border); padding: .25rem .65rem; border-radius: 2rem; }
+    .admin-price { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; border-top: 1px solid var(--admin-line); padding-top: 1rem; }
+    .admin-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .admin-actions .button { flex: 1 1 140px; border-radius: 2rem; }
+    .admin-demo { padding: 1rem; border-top: 1px solid var(--admin-line); color: var(--color-text-muted); }
+    .admin-demo p { margin: .5rem 0 0; }
+    .admin-demo a { min-height: 44px; display: inline-flex; align-items: center; padding-right: 1rem; }
+    @media (min-width: 48rem) {
+      .admin-header { padding-inline: 1.5rem; }
+      .admin-user { margin-left: auto; }
+      .admin-layout { grid-template-columns: 15rem minmax(0,1fr); align-items: start; }
+      .admin-left { grid-column: 1; grid-row: 1 / 3; border-right: 1px solid var(--admin-line); }
+      .admin-chat { grid-column: 2; width: 100%; }
+      .admin-right { grid-column: 2; }
+      .admin-form-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+    }
+    @media (min-width: 64rem) {
+      .admin-page { height: 100dvh; display: grid; grid-template-rows: auto minmax(0,1fr) auto; }
+      .admin-header { min-height: 80px; gap: 1rem; padding-block: .5rem; }
+      .admin-nav { margin-inline: auto; }
+      .admin-layout { grid-template-columns: clamp(230px,19vw,290px) minmax(0,1fr) clamp(320px,28vw,430px); align-items: stretch; min-height: 0; }
+      .admin-left { grid-row: 1; min-height: 0; height: 100%; }
+      .admin-chat { border-right: 1px solid var(--admin-line); min-height: 0; height: 100%; }
+      .admin-chat-head,.admin-compose { flex-shrink: 0; padding: 1rem; }
+      .admin-chat-body { min-height: 0; max-height: none; padding: 1.5rem; }
+      .admin-right { grid-column: 3; height: 100%; grid-template-rows: minmax(0,1fr) minmax(0,1fr); }
+      .admin-calendar-panel { padding: .5rem 1rem; }
+      .admin-calendar-panel .admin-note { line-height: 1.3; }
+      .admin-calendar-panel .admin-eyebrow { display: none; }
+      .admin-calendar th,.admin-calendar td { padding-block: .2rem; }
+      .admin-demo { padding: .25rem 1rem; display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+      .admin-demo details { max-width: 100%; }
+      .admin-message { max-width: 86%; }
+      .admin-conversation-status { margin-left: auto; width: auto; flex: 0 0 auto; }
+      .admin-conversation-status select { width: 160px; min-width: 160px; flex: none; }
+      .admin-chat-head .admin-avatar { width: 36px; height: 36px; }
+    }
+    @media (min-width: 64rem) and (max-height: 46rem) {
+      /* Short windows give the fixed calendar its natural height to avoid overlap. */
+      .admin-right { grid-template-rows: auto minmax(0,1fr); }
+    }
+  </style>
+</head>
+<body class="admin-page">
+  <a class="button admin-skip" href="#admin-main">Đến nội dung chính</a>
+  <header class="admin-header">
+    <a class="admin-brand" href="index.html">Grad<em>Studio</em></a>
+    <span class="admin-role">Studio · Admin</span>
+    <p class="admin-user"><img class="admin-avatar" src="assets/images/avatar-studio.avif" alt="" width="44" height="44"><span><strong>Thảo</strong><br><span class="admin-muted">Quản lý studio</span></span></p>
+  </header>
+  <main class="admin-layout" id="admin-main">
+    <section class="admin-left" aria-labelledby="admin-inbox-title">
+      <div class="admin-inbox-controls">
+      <div class="admin-inbox-head">
+        <p class="admin-eyebrow">Hội thoại</p>
+        <h1 id="admin-inbox-title">Khách đang chờ</h1>
+        <label class="form-label" for="admin-search">Tìm khách hàng theo tên</label>
+        <div class="admin-search">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 5 5"></path></svg>
+          <input class="form-control" id="admin-search" type="search" placeholder="Tìm khách hàng…" disabled>
+        </div>
+      </div>
+      <div class="admin-filters">
+        <label class="form-label" for="admin-filter">Lọc</label>
+        <select class="form-control" id="admin-filter" aria-label="Lọc trạng thái hội thoại" disabled>
+          <option value="all">Tất cả · 5</option><option value="unanswered">Chưa trả lời · 2</option><option value="advising">Đang tư vấn · 1</option><option value="confirmed">Đã xác nhận · 1</option><option value="completed">Hoàn thành · 1</option>
+        </select>
+      </div>
+      </div>
+      <div class="admin-inbox-list" tabindex="0" role="region" aria-label="Danh sách hội thoại, cuộn độc lập">
+      <ul class="admin-customers" aria-label="Danh sách hội thoại mẫu">
+        <li class="admin-customer admin-customer--active" data-status="advising" data-customer="linh">
+          <button class="admin-customer-button" type="button" aria-pressed="true" disabled>
+            <img class="admin-avatar" src="assets/images/avatar-linh.avif" alt="" width="52" height="52">
+            <span class="admin-customer-body"><strong class="admin-customer-name">Nguyễn Thùy Linh</strong><span class="admin-customer-preview"><span class="admin-preview">Dạ em chốt lịch 14:00 ạ.</span><time datetime="2026-10-24T17:24">17:24</time></span></span>
+          </button>
+        </li>
+        <li class="admin-customer" data-status="unanswered" data-customer="khoa"><button class="admin-customer-button" type="button" aria-pressed="false" disabled><span class="admin-avatar admin-initials" aria-hidden="true">MK</span><span class="admin-customer-body"><strong class="admin-customer-name">Trần Minh Khoa</strong><span class="admin-customer-preview"><span class="admin-preview">Chụp chân dung CV mất bao lâu ạ?</span><time datetime="2026-10-24T16:58">16:58</time></span></span></button></li>
+        <li class="admin-customer" data-status="confirmed" data-customer="bao"><button class="admin-customer-button" type="button" aria-pressed="false" disabled><span class="admin-avatar admin-initials" aria-hidden="true">12A3</span><span class="admin-customer-body"><strong class="admin-customer-name">Hồ Gia Bảo · Lớp 12A3</strong><span class="admin-customer-preview"><span class="admin-preview">Lớp mình chốt 24/10 nha studio.</span><time datetime="2026-10-23">Hôm qua</time></span></span></button></li>
+        <li class="admin-customer" data-status="unanswered" data-customer="han"><button class="admin-customer-button" type="button" aria-pressed="false" disabled><span class="admin-avatar admin-initials" aria-hidden="true">NH</span><span class="admin-customer-body"><strong class="admin-customer-name">Lê Ngọc Hân</strong><span class="admin-customer-preview"><span class="admin-preview">Gói gia đình 4 người giá sao ạ?</span><time datetime="2026-10-22">22/10</time></span></span></button></li>
+        <li class="admin-customer" data-status="completed" data-customer="anh"><button class="admin-customer-button" type="button" aria-pressed="false" disabled><span class="admin-avatar admin-initials" aria-hidden="true">HA</span><span class="admin-customer-body"><strong class="admin-customer-name">Phạm Hoàng Anh</strong><span class="admin-customer-preview"><span class="admin-preview">Cảm ơn studio, ảnh đẹp lắm!</span><time datetime="2026-10-21">21/10</time></span></span></button></li>
+      </ul>
+      <p class="admin-empty" id="admin-empty" role="status" hidden>Không có hội thoại phù hợp.</p>
+      <p class="admin-empty" id="admin-count" role="status">5 hội thoại · đang mở Linh</p>
+      </div>
+    </section>
+    <section class="admin-chat" id="admin-chat" aria-labelledby="admin-chat-title">
+      <header class="admin-chat-head">
+        <img class="admin-avatar" src="assets/images/avatar-linh.avif" alt="" width="44" height="44">
+        <div class="admin-chat-person"><h2 id="admin-chat-title">Nguyễn Thùy Linh</h2><p class="admin-muted">Tốt nghiệp Premium</p></div>
+        <div class="admin-conversation-status"><label for="admin-status">Trạng thái</label><select class="form-control" id="admin-status" disabled><option value="unanswered">Chưa trả lời</option><option value="advising" selected>Đang tư vấn</option><option value="confirmed">Đã xác nhận</option><option value="completed">Hoàn thành</option></select></div>
+      </header>
+      <div class="admin-chat-body" tabindex="0" role="region" aria-label="Tin nhắn, cuộn độc lập">
+        <p class="admin-date-line">Hội thoại mẫu · 24/10/2026</p>
+        <ol class="admin-messages" aria-label="Tin nhắn giữa Linh và studio" aria-live="polite" aria-relevant="additions">
+          <li class="admin-message"><p>Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?</p><span class="admin-muted">Linh · </span><time datetime="2026-10-24T17:20">17:20</time></li>
+          <li class="admin-message admin-message--studio"><p>Để mình kiểm tra lịch cho bạn nhé.</p><span class="admin-muted">Studio · </span><time datetime="2026-10-24T17:21">17:21</time></li>
+          <li class="admin-message admin-message--studio"><p>Mai đã có lịch makeup 08:00–12:00 nên khung 09:00 chưa phù hợp. Mình còn giờ chụp 14:00: makeup 13:00–14:00 với Mai, chụp 14:00–16:00 với Tuấn tại Phòng B. Bạn chốt giờ này không?</p><span class="admin-muted">Studio · </span><time datetime="2026-10-24T17:22">17:22</time></li>
+          <li class="admin-message"><p>Dạ em chốt lịch 14:00 ạ.</p><span class="admin-muted">Linh · </span><time datetime="2026-10-24T17:24">17:24</time></li>
+        </ol>
+        <p class="admin-chat-context" id="admin-context">✓ Linh đã đồng ý giờ 14:00 trong hội thoại mẫu. Có thể tạo booking chờ cọc.</p>
+      </div>
+      <form class="admin-compose" aria-label="Soạn tin nhắn mẫu">
+        <label class="form-label" for="admin-message" id="admin-compose-label">Tin nhắn trả lời Linh</label>
+        <div class="admin-compose-row"><textarea class="form-control" id="admin-message" rows="1" maxlength="3000" placeholder="Nhập tin nhắn…" aria-describedby="admin-chat-help"></textarea><button class="button" id="admin-send" type="submit" disabled>Gửi</button></div>
+        <p class="admin-note" id="admin-chat-help">Mô phỏng cục bộ · tin nhắn không gửi tới khách và mất khi tải lại.</p>
+      </form>
+    </section>
+    <aside class="admin-right" aria-label="Lịch booking và thiết lập booking">
+      <section class="admin-calendar-panel" id="admin-calendar" aria-labelledby="admin-calendar-title">
+        <p class="admin-eyebrow">Lịch booking</p>
+        <h2 id="admin-calendar-title">Thứ Bảy, 24/10/2026</h2>
+        <table class="admin-calendar">
+          <caption>Tình trạng theo khung giờ · dữ liệu mẫu</caption>
+          <thead><tr><th scope="col">Thời gian</th><th scope="col">Booking</th></tr></thead>
+          <tbody>
+            <tr class="admin-busy"><td>08:00–12:00</td><td>Đã có lịch</td></tr>
+            <tr><td>12:00–13:00</td><td>Chưa có dữ liệu</td></tr>
+            <tr><td>13:00–14:00</td><td id="admin-calendar-makeup">Chưa có booking</td></tr>
+            <tr><td>14:00–16:00</td><td id="admin-calendar-shoot">Chưa có booking</td></tr>
+            <tr><td>16:00–18:00</td><td>Chưa có dữ liệu</td></tr>
+          </tbody>
+        </table>
+        <p class="admin-note" id="admin-calendar-note">Lịch đã biết: 08:00–12:00. Khung chưa có booking không bảo đảm đủ nhân sự.</p>
+      </section>
+      <section class="admin-booking" id="admin-booking" aria-labelledby="admin-booking-title">
+        <p class="admin-eyebrow">Booking · GS-1024</p><h2 id="admin-booking-title" tabindex="-1">Lịch đã thống nhất</h2>
+        <div id="admin-booking-linh">
+        <p class="admin-status admin-status--success" id="admin-booking-status" role="status">Đã đồng ý giờ · Chưa tạo booking</p>
+        <p class="admin-muted">Gắn với cuộc tư vấn của Nguyễn Thùy Linh.</p>
+        <form id="admin-booking-form" aria-describedby="admin-booking-help">
+          <div><label class="form-label" for="admin-customer-name">Khách hàng</label><input class="form-control" id="admin-customer-name" value="Nguyễn Thùy Linh" readonly></div>
+          <div><label class="form-label" for="admin-session">Loại buổi chụp</label><select class="form-control" id="admin-session"><option>Tốt nghiệp cá nhân</option></select></div>
+          <div><label class="form-label" for="admin-package">Gói chụp</label><select class="form-control" id="admin-package"><option>Premium · 2 giờ · 30 ảnh</option></select></div>
+          <div class="admin-form-grid">
+            <div><label class="form-label" for="admin-date">Ngày chụp</label><input class="form-control" id="admin-date" type="date" value="2026-10-24"></div>
+            <div><label class="form-label" for="admin-time">Giờ bắt đầu chụp</label><select class="form-control" id="admin-time" aria-describedby="admin-time-help"><option value="09:00" disabled>09:00 · trùng lịch</option><option value="14:00" selected>14:00</option><option value="15:00">15:00</option></select></div>
+          </div>
+          <p class="admin-note" id="admin-time-help">Lịch mẫu đã chốt: makeup lúc 13:00, bắt đầu chụp lúc 14:00.</p>
+          <fieldset><legend>Dịch vụ thêm</legend><label class="admin-check"><input id="admin-makeup" type="checkbox" checked disabled> Makeup (60 phút trước giờ chụp)</label><label class="admin-check"><input type="checkbox" disabled> Thuê áo cử nhân · chưa có báo giá</label></fieldset>
+          <div><label class="form-label" for="admin-price">Giá chốt (đ)</label><input class="form-control" id="admin-price" value="1.800.000" readonly></div>
+          <div><strong>Phân công dự kiến</strong><div class="admin-assignment"><span>Makeup · Mai</span><span>Thợ chụp · Tuấn</span><span>Phòng B</span></div></div>
+          <div class="admin-price"><span>Cọc 30%</span><strong>540.000đ</strong></div>
+          <div class="admin-price"><span>Còn lại sau buổi chụp</span><strong>1.260.000đ</strong></div>
+          <fieldset><legend>Mô phỏng phản hồi của Linh</legend><div class="admin-response"><button class="button button--secondary" id="admin-agree" type="button" disabled>Đồng ý lịch</button><button class="button button--secondary" id="admin-decline" type="button" disabled>Từ chối lịch</button></div></fieldset>
+          <div class="admin-actions"><button class="button button--secondary" id="admin-quote" type="button" disabled>Gửi đề xuất vào chat</button><button class="button" id="admin-create" type="submit" disabled>Tạo booking</button></div>
+          <p class="admin-note" id="admin-booking-help">Mô phỏng trên trình duyệt. Đổi lịch cần gửi đề xuất và có phản hồi đồng ý mới. Không giữ tài nguyên hoặc thanh toán thật.</p>
+        </form>
+        <div class="admin-booking-result" id="admin-booking-result" hidden>
+          <dl><dt>Khách hàng · Gói</dt><dd>Nguyễn Thùy Linh · Tốt nghiệp Premium</dd><dt>Ngày chụp</dt><dd id="admin-result-date">24/10/2026</dd><dt>Makeup · Mai</dt><dd id="admin-result-makeup">13:00–14:00</dd><dt>Chụp · Tuấn · Phòng B</dt><dd id="admin-result-shoot">14:00–16:00</dd><dt>Tổng giá</dt><dd>1.800.000đ</dd><dt>Cọc 30%</dt><dd>540.000đ</dd><dt>Còn lại sau buổi chụp</dt><dd>1.260.000đ</dd></dl>
+          <p>Booking mô phỏng đang chờ cọc; chưa giữ lịch chính thức.</p>
+          <button class="button button--secondary" id="admin-edit" type="button" disabled>Chỉnh lại lịch</button>
+        </div>
+        <p class="admin-note admin-live" id="admin-feedback" role="status" aria-live="polite"></p>
+        <noscript><p>Bật JavaScript để tìm kiếm, lọc, gửi tin nhắn mô phỏng và thay đổi trạng thái booking. Nội dung mẫu, form và liên kết vẫn xem được.</p></noscript>
+        </div>
+        <div id="admin-booking-other" hidden><p id="admin-booking-other-note">Chưa có dữ liệu booking cho hội thoại này.</p><p class="admin-note">Có thể tiếp tục tư vấn qua chat. Mẫu booking đầy đủ hiện có ở hội thoại Linh.</p></div>
+      </section>
+    </aside>
+  </main>
+  <footer class="admin-demo">
+    <nav aria-label="Chuyển vai trò trong bản mẫu"><a href="index.html">← Màn 1 · Góc nhìn khách</a><a href="admin-scheduling.html" aria-current="page">Màn 2 · Góc nhìn Admin</a><a href="my-appointments.html" aria-describedby="admin-integration-note">Màn 3 · Lịch chụp của khách →</a></nav>
+    <details><summary>Thông tin bản mẫu</summary><p id="admin-integration-note">Màn 3 chờ tích hợp: file my-appointments.html chưa có trong repository tại thời điểm dựng màn 2.</p><p>GradStudio · Bản mẫu PA02 · Các tương tác mô phỏng không được lưu khi tải lại.</p></details>
+  </footer>
+  <script>
+    // Local demo only. Data is seeded from the HTML; no network or storage.
+    (() => {
+      'use strict';
+      const $ = id => document.getElementById(id);
+      const names = { unanswered: 'Chưa trả lời', advising: 'Đang tư vấn', confirmed: 'Đã xác nhận', completed: 'Hoàn thành' };
+      const search = $('admin-search'), filter = $('admin-filter'), status = $('admin-status');
+      const date = $('admin-date'), time = $('admin-time'), form = $('admin-booking-form');
+      const messages = document.querySelector('.admin-messages');
+      const chatScroll = document.querySelector('.admin-chat-body');
+      const feedback = $('admin-feedback');
+      const initialDate = document.querySelector('.admin-date-line').textContent;
+      const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/gi, 'd').toLocaleLowerCase('vi').trim();
+      const clock = () => new Intl.DateTimeFormat('vi-VN', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Ho_Chi_Minh' }).format(new Date());
+      const historyItem = (text, sender, stamp, studio = false) => {
+        const item = document.createElement('li');
+        item.className = 'admin-message' + (studio ? ' admin-message--studio' : '');
+        const content = document.createElement('p');
+        content.textContent = text;
+        const label = document.createElement('span');
+        label.className = 'admin-muted';
+        label.textContent = `${sender} · ${stamp}`;
+        item.append(content, label);
+        return item;
+      };
+      const conversations = [...document.querySelectorAll('.admin-customer')].map(row => {
+        const name = row.querySelector('strong').textContent;
+        const id = row.dataset.customer;
+        const preview = row.querySelector('.admin-preview');
+        const stamp = row.querySelector('time');
+        return { id, row, name, preview, stamp, button: row.querySelector('button'), status: row.dataset.status,
+          history: id === 'linh' ? [...messages.children] : [historyItem(preview.textContent, name, stamp.textContent)],
+          draft: '', scroll: 0 };
+      });
+      let active = conversations[0];
+      let bookingState = 'agreed';
+      let proposal = '';
+      const fingerprint = () => `${date.value}|${time.value}`;
+      const available = () => date.value === '2026-10-24' && ['14:00', '15:00'].includes(time.value);
+      const hour = value => `${String(value).padStart(2, '0')}:00`;
+      const times = () => {
+        const start = Number(time.value.slice(0, 2));
+        return { start, makeup: `${hour(start - 1)}–${hour(start)}`, shoot: `${hour(start)}–${hour(start + 2)}` };
+      };
+      function describe(conversation) {
+        conversation.button.title = `${conversation.name} · ${names[conversation.status]}\n${conversation.preview.textContent}`;
+        conversation.button.setAttribute('aria-label', `${conversation.name}. ${names[conversation.status]}. ${conversation.preview.textContent}`);
+        conversation.row.querySelector('strong').title = conversation.name;
+        conversation.preview.title = conversation.preview.textContent;
+      }
+      function applyFilters() {
+        let shown = 0;
+        conversations.forEach(item => {
+          item.row.hidden = !(normalize(item.name).includes(normalize(search.value)) && (filter.value === 'all' || item.status === filter.value));
+          if (!item.row.hidden) shown++;
+        });
+        [...filter.options].forEach(option => {
+          const count = option.value === 'all' ? conversations.length : conversations.filter(item => item.status === option.value).length;
+          option.textContent = `${option.value === 'all' ? 'Tất cả' : names[option.value]} · ${count}`;
+        });
+        $('admin-empty').hidden = shown !== 0;
+        $('admin-count').textContent = `${shown}/${conversations.length} hội thoại`;
+      }
+      function setStatus(value) {
+        active.status = value;
+        active.row.dataset.status = value;
+        status.value = value;
+        describe(active);
+        applyFilters();
+      }
+      function addMessage(text, studio = true) {
+        const stamp = clock();
+        const item = historyItem(text, studio ? 'Studio' : active.name, `${stamp} · mô phỏng`, studio);
+        active.history.push(item);
+        messages.append(item);
+        active.preview.textContent = text;
+        active.stamp.textContent = stamp;
+        active.stamp.dateTime = new Date().toISOString();
+        describe(active);
+        chatScroll.scrollTop = chatScroll.scrollHeight;
+      }
+      function renderCalendar() {
+        const value = times();
+        const valid = available();
+        const pending = bookingState === 'created';
+        const makeup = $('admin-calendar-makeup');
+        const shoot = $('admin-calendar-shoot');
+        // Pending deposits remain distinct from confirmed bookings.
+        [makeup, shoot].forEach(cell => {
+          cell.textContent = pending ? 'Chờ cọc · GS-1024' : 'Chưa có booking';
+          cell.className = pending ? 'admin-status--waiting' : '';
+        });
+        if (valid) {
+          makeup.previousElementSibling.textContent = value.makeup;
+          shoot.previousElementSibling.textContent = value.shoot;
+          makeup.parentElement.previousElementSibling.firstElementChild.textContent = `12:00–${hour(value.start - 1)}`;
+          shoot.parentElement.nextElementSibling.firstElementChild.textContent = `${hour(value.start + 2)}–18:00`;
+        }
+        $('admin-calendar-note').textContent = pending ? 'GS-1024 mới chờ cọc, chưa giữ lịch chính thức. Lịch này chỉ là dữ liệu mẫu.' : 'Lịch đã biết: 08:00–12:00. Khung chưa có booking không bảo đảm đủ nhân sự.';
+      }
+      function renderBooking() {
+        renderCalendar();
+        const isLinh = active.id === 'linh';
+        $('admin-booking-linh').hidden = !isLinh;
+        $('admin-booking-other').hidden = isLinh;
+        document.querySelector('#admin-booking > .admin-eyebrow').textContent = isLinh ? 'Booking · GS-1024' : 'Thông tin booking';
+        if (!isLinh) {
+          $('admin-booking-title').textContent = 'Booking của khách';
+          $('admin-booking-other-note').textContent = `Chưa có dữ liệu booking của ${active.name} trong tài liệu mẫu.`;
+          $('admin-context').textContent = `Đang xem hội thoại mẫu của ${active.name}. Có thể trả lời và đổi trạng thái; chưa có dữ liệu booking cho khách này.`;
+          $('admin-context').style.color = 'var(--color-text-muted)';
+          return;
+        }
+        const created = bookingState === 'created', valid = available();
+        const labels = { agreed: 'Đã đồng ý giờ · Chưa tạo booking', draft: 'Chưa chốt giờ', proposed: 'Chờ Linh phản hồi', declined: 'Khách từ chối · Cần tư vấn lại', created: 'Chờ cọc 30% · Mô phỏng' };
+        $('admin-booking-title').textContent = created ? 'Booking của Linh' : bookingState === 'agreed' ? 'Lịch đã thống nhất' : 'Booking mới';
+        $('admin-booking-status').textContent = labels[bookingState];
+        $('admin-booking-status').className = 'admin-status ' + (bookingState === 'agreed' ? 'admin-status--success' : 'admin-status--waiting');
+        form.hidden = created;
+        $('admin-booking-result').hidden = !created;
+        $('admin-create').disabled = !valid || bookingState !== 'agreed';
+        $('admin-quote').disabled = !valid;
+        $('admin-agree').disabled = !valid || bookingState !== 'proposed' || proposal !== fingerprint();
+        $('admin-decline').disabled = !valid || !['agreed', 'proposed'].includes(bookingState);
+        $('admin-context').textContent = !valid ? 'Chưa có dữ liệu cho ngày này. Chọn 24/10/2026 để tiếp tục bản mẫu.' : created ? 'GS-1024 đang chờ cọc 30% trong bản mô phỏng; lịch chưa giữ chính thức.' : bookingState === 'agreed' ? `✓ Linh đã đồng ý giờ ${time.value}. Có thể tạo booking chờ cọc.` : bookingState === 'declined' ? 'Linh đã từ chối đề xuất. Cần tư vấn giờ khác.' : bookingState === 'proposed' ? 'Đề xuất đã có trong chat mô phỏng. Chờ Linh phản hồi.' : 'Lịch đã thay đổi. Cần gửi đề xuất và có đồng ý mới.';
+        $('admin-context').style.color = bookingState === 'agreed' ? 'var(--color-success)' : 'var(--color-text-muted)';
+        if (valid) {
+          const value = times();
+          $('admin-time-help').textContent = `Makeup ${value.makeup} · Mai; chụp ${value.shoot} · Tuấn · Phòng B.`;
+          $('admin-result-makeup').textContent = value.makeup;
+          $('admin-result-shoot').textContent = value.shoot;
+        } else $('admin-time-help').textContent = 'Chưa có dữ liệu cho ngày này; không thể gửi đề xuất hoặc tạo booking.';
+      }
+      function selectConversation(item) {
+        active.draft = $('admin-message').value;
+        active.scroll = chatScroll.scrollTop;
+        active = item;
+        conversations.forEach(conversation => {
+          const selected = conversation === active;
+          conversation.row.classList.toggle('admin-customer--active', selected);
+          conversation.button.setAttribute('aria-pressed', String(selected));
+        });
+        const avatar = active.row.querySelector('.admin-avatar').cloneNode(true);
+        document.querySelector('.admin-chat-head > .admin-avatar').replaceWith(avatar);
+        $('admin-chat-title').textContent = active.name;
+        document.querySelector('.admin-chat-person p').textContent = active.id === 'linh' ? 'Tốt nghiệp Premium' : 'Hội thoại tư vấn';
+        status.value = active.status;
+        messages.replaceChildren(...active.history);
+        messages.setAttribute('aria-label', `Tin nhắn giữa ${active.name} và studio`);
+        document.querySelector('.admin-date-line').textContent = active.id === 'linh' ? initialDate : 'Hội thoại mẫu';
+        $('admin-message').value = active.draft;
+        $('admin-compose-label').textContent = `Tin nhắn trả lời ${active.name}`;
+        renderBooking();
+        chatScroll.scrollTop = active.scroll;
+      }
+      function changeSchedule() {
+        if (active.id !== 'linh') return;
+        bookingState = 'draft'; proposal = ''; feedback.textContent = '';
+        setStatus('advising'); renderBooking();
+      }
+      [search, filter, status, $('admin-send'), $('admin-edit')].forEach(control => { control.disabled = false; });
+      conversations.forEach(item => {
+        item.button.disabled = false;
+        describe(item);
+        item.button.addEventListener('click', () => selectConversation(item));
+      });
+      search.addEventListener('input', applyFilters);
+      filter.addEventListener('change', applyFilters);
+      status.addEventListener('change', () => setStatus(status.value));
+      document.querySelector('.admin-compose').addEventListener('submit', event => {
+        event.preventDefault();
+        const text = $('admin-message').value.trim();
+        if (!text) { $('admin-message').focus(); return; }
+        addMessage(text);
+        $('admin-message').value = ''; active.draft = '';
+        if (active.status === 'unanswered') setStatus('advising');
+        $('admin-message').focus();
+      });
+      date.addEventListener('change', changeSchedule);
+      time.addEventListener('change', changeSchedule);
+      $('admin-quote').addEventListener('click', () => {
+        if (active.id !== 'linh' || !available()) return;
+        const value = times();
+        addMessage(`Đề xuất ngày 24/10/2026: makeup ${value.makeup} với Mai, chụp ${value.shoot} với Tuấn tại Phòng B. Gói Tốt nghiệp Premium 1.800.000đ, cọc 30% là 540.000đ. Bạn đồng ý lịch này không?`);
+        bookingState = 'proposed'; proposal = fingerprint(); setStatus('advising'); renderBooking();
+        feedback.textContent = 'Đã thêm đề xuất vào chat mô phỏng. Có thể thử đồng ý hoặc từ chối.';
+      });
+      $('admin-agree').addEventListener('click', () => {
+        if (active.id !== 'linh' || bookingState !== 'proposed' || proposal !== fingerprint() || !available()) return;
+        addMessage(`Dạ em đồng ý lịch chụp ${time.value} ngày 24/10/2026 ạ.`, false);
+        bookingState = 'agreed'; setStatus('confirmed'); renderBooking();
+        feedback.textContent = 'Linh đồng ý trong bản mô phỏng. Booking chưa tạo, chưa có cọc.';
+      });
+      $('admin-decline').addEventListener('click', () => {
+        if (active.id !== 'linh' || !['agreed', 'proposed'].includes(bookingState) || !available()) return;
+        addMessage(`Giờ ${time.value} chưa phù hợp, studio tư vấn giúp em giờ khác nhé.`, false);
+        bookingState = 'declined'; proposal = ''; setStatus('advising'); renderBooking();
+        feedback.textContent = 'Khách từ chối. Chưa thể tạo booking; hãy gửi đề xuất mới.';
+      });
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        if (active.id !== 'linh' || !available() || bookingState !== 'agreed') return;
+        bookingState = 'created'; setStatus('confirmed');
+        addMessage(`Booking mô phỏng GS-1024 chuyển sang Chờ cọc 30% (540.000đ). Makeup ${times().makeup}; chụp ${times().shoot}. Chưa giữ lịch chính thức.`);
+        renderBooking();
+        feedback.textContent = 'Chỉ tạo trong phiên xem này. Màn 3 chưa tích hợp; không gửi hoặc lưu dữ liệu.';
+        $('admin-booking').scrollTop = 0;
+        $('admin-booking-title').focus({ preventScroll: true });
+      });
+      $('admin-edit').addEventListener('click', () => {
+        changeSchedule(); feedback.textContent = 'Đã mở bản nháp. Cần chốt lại trước khi tạo booking.'; time.focus();
+      });
+      applyFilters(); renderBooking();
+    })();
+  </script>
+</body>
+</html>

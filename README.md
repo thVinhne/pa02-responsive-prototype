@@ -32,13 +32,20 @@ chỉ dùng cho nghiệp vụ, vai trò và tài nguyên có ghi nguồn.
 - Đã thay nền tảng màu, typography dự kiến, spacing và control trong
   `css/common.css` theo thiết kế chung.
 - Màn 1 đã chốt và triển khai. Mở trực tiếp [index.html](index.html) để xem
-  dịch vụ, album và hội thoại mẫu. Màn 2 và màn 3 đang chờ tích hợp.
+  dịch vụ, album và hội thoại mẫu. Trang dùng `css/services.css` và
+  `js/services.js`. Bản mới thay cho giao diện cũ đã gỡ trong lần đổi thiết kế.
+- Màn 2 có bản Admin tại [admin-scheduling.html](admin-scheduling.html) từ
+  nhánh `prototype/screen2`. Trang mở trực tiếp, có CSS và JavaScript nhúng
+  trong HTML. Bản này được dựng trước khi đổi thiết kế chung và chưa được
+  nghiệm thu theo `DESIGN.md`.
+- Màn 3 có đặc tả riêng. Tệp `my-appointments.html` chưa có trên hai nhánh
+  đang ghép.
 - Ngày 07/11/2026, đã nhập Merriweather và Be Vietnam Pro kèm giấy phép
   OFL vào `assets/fonts/shared/` và khai báo font trong `css/common.css`.
 - Minh chứng cũ đã chuyển sang khu lịch sử, không dùng cho giao diện mới.
 
-Màn 1 dùng `css/services.css` và `js/services.js`. Tên đích tích hợp của
-hai màn còn lại là `admin-scheduling.html` và `my-appointments.html`.
+Cần kiểm tra lại các liên kết từ màn Admin đến màn Dịch vụ và màn Lịch chụp
+khi tích hợp luồng ba màn.
 
 ## Nền tảng dùng chung
 
@@ -49,7 +56,8 @@ không duy trì bảng màu/font/kích thước thứ hai ở đây.
 
 Mỗi thành viên tạo đặc tả riêng trong `docs/design/`, dùng chung nhận diện
 và tự thiết kế bố cục, component đặc thù. Dây ảnh, máy ảnh và vé hẹn là phần
-riêng màn lịch chụp.
+riêng màn lịch chụp. Header/footer của màn Admin dùng markup riêng.
+Màn Admin chưa được đối chiếu đầy đủ với quy ước thiết kế mới.
 
 ## Công nghệ và kiểm tra
 
@@ -61,6 +69,12 @@ Khi có trang mới: mở trực tiếp từ thư mục, kiểm tra 360/768/1280
 zoom 200%, bàn phím, reduced motion, font tiếng Việt, tương phản và W3C
 Nu checker (0 errors). Lưu minh chứng mới trong `screenshots/` và `checks/`.
 Màn 1 đã được kiểm tra trên Chrome ở 360, 768 và 1280 px khi bật và tắt
-JavaScript. [W3C Nu](checks/validator-index.txt) trả 0 lỗi và 0 cảnh báo.
-Ảnh toàn trang khi tắt JS nằm trong [screenshots](screenshots/).
-Kiểm tra zoom 200% và nghiệm thu luồng giữa ba màn vẫn đang chờ.
+JavaScript. Ảnh toàn trang khi tắt JS nằm trong [screenshots](screenshots/).
+Báo cáo [W3C Nu](checks/validator-index.txt) ghi 0 lỗi và 0 cảnh báo cho bản
+đã kiểm tra. Mã SHA-256 trong báo cáo khác với mã của `index.html` hiện có
+trong Git, nên cần chạy lại W3C Nu cho bản ghép.
+
+Kiểm tra trực quan, responsive, tương phản và W3C của màn Admin với CSS
+chung mới là **NOT RUN**. Kết quả trước đổi thiết kế được lưu trong
+`docs/history/pre-redesign/`. Kiểm tra zoom 200% và nghiệm thu luồng giữa
+ba màn vẫn đang chờ.
