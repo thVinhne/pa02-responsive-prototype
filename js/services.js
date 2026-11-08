@@ -6,7 +6,7 @@
   if (!video || !toggle || !('IntersectionObserver' in window)) return;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const overlays = Array.from(document.querySelectorAll('dialog, #studio-chat'));
+  const overlays = Array.from(document.querySelectorAll('dialog'));
   let inView = false;
   let userPaused = false;
   let failed = false;
@@ -396,11 +396,18 @@
   const packageName = document.getElementById('selected-package');
   const chat = document.getElementById('studio-chat');
   const toggle = document.getElementById('chat-toggle');
-  const form = document.getElementById('chat-form');
-  const input = document.getElementById('chat-input');
-  const messages = document.getElementById('chat-messages');
-  const status = document.getElementById('chat-status');
-  if (!packageName || !chat || !toggle || !form || !input || !messages || !status) return;
+  const preview = document.getElementById('chat-preview');
+  if (!packageName || !chat || !toggle || !preview) return;
+
+  const compactChat = window.matchMedia('(max-width: 390px)');
+
+  function updateChatLayout() {
+    preview.hidden = !compactChat.matches;
+    chat.open = !compactChat.matches;
+  }
+
+  updateChatLayout();
+  compactChat.addEventListener('change', updateChatLayout);
 
   document.querySelectorAll('a[href="#chat"]').forEach(link => {
     link.addEventListener('click', event => {
@@ -420,32 +427,4 @@
     chat.open = false;
     toggle.focus({ preventScroll: true });
   });
-
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    const text = input.value.trim();
-    if (!text) {
-      input.setCustomValidity('Bạn nhập nội dung trước khi gửi nhé.');
-      input.reportValidity();
-      return;
-    }
-    const message = document.createElement('div');
-    message.className = 'services-message services-message-customer';
-    const sender = document.createElement('span');
-    sender.textContent = 'Linh · tin nhắn thử';
-    const body = document.createElement('p');
-    body.textContent = text;
-    message.append(sender, body);
-    messages.append(message);
-    // Bound the sketch even if someone sends many messages while exploring it.
-    const extras = messages.querySelectorAll('[data-trial-message]');
-    if (extras.length >= 10) extras[0].remove();
-    message.dataset.trialMessage = 'true';
-    input.value = '';
-    status.textContent = 'Đã thêm tin nhắn thử trong trang này. Tin chưa được gửi tới studio.';
-    messages.scrollTop = messages.scrollHeight;
-    input.focus({ preventScroll: true });
-  });
-  input.addEventListener('input', () => input.setCustomValidity(''));
-  form.hidden = false;
 })();
