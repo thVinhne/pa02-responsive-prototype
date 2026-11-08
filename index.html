@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Xem gói chụp, album ảnh tham khảo và tư vấn cùng GradStudio.">
+  <title>Dịch vụ và tư vấn | GradStudio</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/services.css">
+  <script src="js/services.js" defer></script>
+</head>
+<body class="services-page">
+  <a class="services-skip button" href="#main">Đến nội dung chính</a>
+  <svg class="services-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="brand" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22"/><path d="M10 20v16a5 5 0 0 0 5 5h18a5 5 0 0 0 5-5V20M10 24h6m16 0h6M7 13l17-7 17 7-17 7-17-7Zm8 4v5m18-5v5M15 22q9 5 18 0m8-9v12"/><circle cx="24" cy="31" r="7"/><path d="m21 25 7 1 3 6-4 5-7-1-3-6 4-5Z"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="camera" viewBox="0 0 24 24"><path d="M3 7h5l2-3h4l2 3h5v13H3Z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="chat-icon" viewBox="0 0 24 24"><path d="M21 11a8 8 0 0 1-8 8H6l-4 3 1-7a8 8 0 1 1 18-4Z"/><path d="M7 10h10m-10 4h6"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  </svg>
+
+  <header class="services-opening">
+    <div class="services-header">
+      <div class="container services-header-inner">
+        <a class="services-brand" href="index.html" aria-label="GradStudio — Dịch vụ"><svg aria-hidden="true"><use href="#brand"/></svg><span>Grad<span>Studio</span></span></a>
+        <nav class="services-nav" aria-label="Điều hướng chính">
+          <a href="index.html" aria-current="page">Dịch vụ</a>
+          <a href="#gallery">Ảnh tham khảo</a>
+          <span class="services-pending-link" title="Chờ tích hợp màn 3">Lịch chụp của tôi</span>
+          <a href="#chat">Chat với studio</a>
+        </nav>
+        <p class="services-account"><img src="assets/images/linh-initial.svg" alt="" width="44" height="44"><span>Linh</span></p>
+      </div>
+    </div>
+
+    <section class="services-hero" aria-labelledby="hero-title">
+      <video class="services-hero-video" id="services-hero-video" aria-hidden="true"
+        width="1280" height="720" muted loop playsinline preload="none"
+        poster="assets/videos/gradstudio-video-nen-poster.jpg"
+        data-src="assets/videos/gradstudio-video-nen.mp4"></video>
+      <div class="container services-hero-copy">
+        <p class="services-kicker"><span class="services-rule" aria-hidden="true"></span> Một cuốn nhật ký bằng ảnh</p>
+        <h1 id="hero-title">Giữ một thời,<br><em>nhớ một đời.</em><svg class="services-flourish" viewBox="0 0 380 22" aria-hidden="true"><path d="M4 13Q166-1 374 10M76 21Q214 11 345 17"/></svg></h1>
+        <p class="services-hero-description">Từ ngày nhận bằng đến những buổi gặp gỡ bạn bè. Cùng GradStudio giữ lại một phiên bản thật đẹp của bạn.</p>
+        <div class="services-actions">
+          <a class="button services-package-link-mobile" href="#package-list">Xem gói chụp <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="button services-package-link-wide" href="#packages">Xem gói chụp <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="services-text-link" href="#chat">Chat với studio <svg class="services-icon" aria-hidden="true"><use href="#chat-icon"/></svg></a>
+        </div>
+        <p class="services-hero-footnote"><svg class="services-icon" aria-hidden="true"><use href="#camera"/></svg> Chọn một buổi chụp. Kể câu chuyện của riêng mình.</p>
+      </div>
+      <button class="button button--secondary services-hero-video-toggle" type="button"
+        data-services-video-toggle aria-controls="services-hero-video" hidden>Phát video nền</button>
+    </section>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="container services-offers" id="packages" aria-labelledby="packages-title">
+      <h2 class="services-offers-heading" id="packages-title">Mỗi kỷ niệm, một cách giữ.</h2>
+      <section class="services-album" data-services-album aria-label="Album ảnh tham khảo phong cách">
+        <div class="services-album-stage">
+          <span class="services-album-label">Những ngày đáng nhớ / GradStudio</span>
+          <figure class="services-polaroid services-polaroid-main" data-services-slide data-services-collection="graduation" data-theme="Tốt nghiệp" data-package="Tốt nghiệp Premium" data-note="Thử áo tốt nghiệp và bó hoa. Chụp chân dung riêng trước, rồi chụp cùng bạn bè ở sân trường.">
+            <span class="services-tape" aria-hidden="true"></span>
+            <img src="assets/images/pexels-16479971.webp" alt="Một người mặc áo tốt nghiệp cầm bó hoa trước tường gạch, nhìn từ phía sau." width="900" height="1200">
+            <figcaption>Bó hoa ngày nhận bằng</figcaption>
+          </figure>
+          <figure class="services-polaroid services-polaroid-main" data-services-slide data-services-collection="class" data-theme="Kỷ yếu lớp" data-package="Kỷ yếu lớp" data-note="Chụp cả lớp trước, rồi chia nhóm nhỏ. Cầu thang, hành lang và sân trường là những góc dễ tạo dáng." hidden>
+            <span class="services-tape" aria-hidden="true"></span>
+            <img src="assets/images/pexels-5905436.webp" alt="Sách vở trên bàn học và ba lô treo trên ghế." width="900" height="1200">
+            <figcaption>Bàn học và ba lô</figcaption>
+          </figure>
+          <figure class="services-polaroid services-polaroid-main" data-services-slide data-services-collection="portrait" data-theme="Chân dung" data-package="Chân dung / CV" data-note="Chọn vest cho ảnh CV hoặc áo dài cho ảnh lưu niệm. Nền gọn và ánh sáng dịu giúp gương mặt nổi bật." hidden>
+            <span class="services-tape" aria-hidden="true"></span>
+            <img src="assets/images/pexels-20239591.webp" alt="Cận cảnh tay chỉnh cà vạt trên áo sơ mi trắng." width="900" height="1200">
+            <figcaption>Chỉnh cà vạt trước khi chụp</figcaption>
+          </figure>
+          <div class="services-polaroid-small" data-services-companion-card>
+            <div data-services-front>
+              <figure class="services-polaroid" data-services-companion>
+                <img src="assets/images/pexels-16132529.webp" alt="Một người mặc lễ phục cầm bằng bước đi, nhìn từ phía sau." width="600" height="600">
+                <figcaption>Bước đi ngày nhận bằng</figcaption>
+              </figure>
+              <figure class="services-polaroid" data-services-companion hidden>
+                <img src="assets/images/pexels-5588404.webp" alt="Góc nhìn từ trên cao của người đang viết bên bàn học." width="600" height="600">
+                <figcaption>Một buổi tự học</figcaption>
+              </figure>
+              <figure class="services-polaroid" data-services-companion hidden>
+                <img src="assets/images/pexels-20479949.webp" alt="Cận cảnh tay chỉnh cà vạt và hoa cài trên vest màu be." width="800" height="1100">
+                <figcaption>Chi tiết vest màu be</figcaption>
+              </figure>
+              <button class="services-flip-trigger" type="button" data-services-flip aria-label="Lật ảnh để xem ghi chú phong cách" aria-controls="album-photo-note" hidden>
+                <span aria-hidden="true">↻</span>
+              </button>
+            </div>
+            <div class="services-polaroid services-photo-note" id="album-photo-note" data-services-back hidden>
+              <div class="services-photo-note-header">
+                <button class="services-flip-return" type="button" data-services-unflip aria-label="Về mặt ảnh">
+                  <span aria-hidden="true">↶</span>
+                </button>
+                <p class="services-photo-note-label">Ghi chú phong cách</p>
+              </div>
+              <h2 data-services-note-theme>Tốt nghiệp</h2>
+              <p data-services-note-copy>Thử áo tốt nghiệp và bó hoa. Chụp chân dung riêng trước, rồi chụp cùng bạn bè ở sân trường.</p>
+              <a class="services-photo-consult" href="#chat" data-services-note-consult data-package="Tốt nghiệp Premium">Tư vấn phong cách này</a>
+            </div>
+          </div>
+          <span class="services-stamp" aria-hidden="true">GRADSTUDIO<span>Giữ lại<br>thanh xuân</span>PHOTO JOURNAL</span>
+          <p class="services-album-note">Ảnh tham khảo phong cách</p>
+        </div>
+        <div class="services-album-player">
+          <div class="services-album-controls" data-services-album-player role="group" aria-label="Chọn ảnh trong album" hidden>
+            <button class="services-album-arrow services-album-arrow-prev" type="button" data-services-previous aria-label="Ảnh trước">
+              <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg>
+            </button>
+            <div class="services-album-thumbnails">
+              <button class="services-album-thumbnail" type="button" data-services-pick aria-label="Ảnh 1: Ngày nhận bằng" aria-pressed="true">
+                <img src="assets/images/pexels-16479971.webp" alt="" width="900" height="1200">
+              </button>
+              <button class="services-album-thumbnail" type="button" data-services-pick aria-label="Ảnh 2: Kỷ yếu lớp" aria-pressed="false">
+                <img src="assets/images/pexels-5905436.webp" alt="" width="900" height="1200">
+              </button>
+              <button class="services-album-thumbnail" type="button" data-services-pick aria-label="Ảnh 3: Chân dung" aria-pressed="false">
+                <img src="assets/images/pexels-20239591.webp" alt="" width="900" height="1200">
+              </button>
+            </div>
+            <button class="services-album-arrow" type="button" data-services-next aria-label="Ảnh tiếp theo">
+              <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg>
+            </button>
+          </div>
+          <div class="services-album-footer">
+            <p class="services-album-status" data-services-album-status role="status">Ngày nhận bằng</p>
+            <a class="services-text-link" href="#gallery" data-services-view-collection>
+              Xem bộ ảnh <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="services-packages">
+        <div class="services-package-grid" id="package-list">
+          <article class="services-package-card" id="graduation" aria-labelledby="graduation-title">
+            <img class="services-package-image" src="assets/images/pexels-15005450.webp" alt="Một người mặc áo tốt nghiệp giơ mũ, nhìn từ phía sau." width="853" height="1280" loading="lazy">
+            <div class="services-package-copy">
+              <p class="services-kicker">01 / Ngày mình trưởng thành</p>
+              <h3 id="graduation-title">Tốt nghiệp <em>Premium</em></h3>
+              <p>Một dấu mốc, một bộ ảnh để sau này nhìn lại vẫn thấy mình của ngày hôm ấy.</p>
+              <ul class="services-inclusions">
+                <li><svg class="services-icon" aria-hidden="true"><use href="#check"/></svg> Makeup cho buổi chụp</li>
+                <li><svg class="services-icon" aria-hidden="true"><use href="#check"/></svg> 2 giờ chụp ảnh</li>
+                <li><svg class="services-icon" aria-hidden="true"><use href="#check"/></svg> 30 ảnh chỉnh</li>
+              </ul>
+              <div class="services-package-action">
+                <p class="services-price">1.800.000<span>đ / gói</span></p>
+                <a class="button" href="#chat" data-package="Tốt nghiệp Premium">Tư vấn gói này <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+          <article class="services-package-card" id="class-photo" aria-labelledby="class-photo-title">
+            <img class="services-package-image" src="assets/images/pexels-5905436.webp" alt="Sách vở trên bàn học và ba lô treo trên ghế." width="900" height="1200" loading="lazy">
+            <div class="services-package-copy">
+              <p class="services-kicker">02 / Những năm tháng bên nhau</p>
+              <h3 id="class-photo-title">Kỷ yếu lớp</h3>
+              <p>Giữ những gương mặt thân quen trong cùng một khung hình.</p>
+              <div class="services-package-action">
+                <p class="services-price-note">Liên hệ tư vấn</p>
+                <a class="button button--secondary" href="#chat" data-package="Kỷ yếu lớp">Tư vấn gói này <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+          <article class="services-package-card" id="portrait" aria-labelledby="portrait-title">
+            <img class="services-package-image" src="assets/images/pexels-20239591.webp" alt="Cận cảnh tay chỉnh cà vạt trên áo sơ mi trắng." width="900" height="1200" loading="lazy">
+            <div class="services-package-copy">
+              <p class="services-kicker">03 / Một góc nhìn mới</p>
+              <h3 id="portrait-title">Chân dung / CV</h3>
+              <p>Một bức ảnh gọn gàng để bắt đầu chương tiếp theo của bạn.</p>
+              <div class="services-package-action">
+                <p class="services-price-note">Liên hệ tư vấn</p>
+                <a class="button button--secondary" href="#chat" data-package="Chân dung / CV">Tư vấn gói này <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-gallery-section" id="gallery" aria-labelledby="gallery-title" tabindex="-1">
+      <div class="container">
+        <h2 class="services-gallery-heading" id="gallery-title">Chuyện kể qua khung hình.</h2>
+        <nav class="services-gallery-shelf" aria-label="Chọn album ảnh">
+          <a class="services-gallery-cover" href="#gallery-graduation" data-services-gallery-cover="graduation">
+            <img src="assets/images/pexels-15005450.webp" alt="" width="853" height="1280" loading="lazy">
+            <span class="services-gallery-cover-copy">
+              <span class="services-gallery-volume">Album 01</span>
+              <span class="services-gallery-cover-title">Tốt nghiệp</span>
+              <span class="services-gallery-cover-action">Mở album</span>
+            </span>
+          </a>
+          <a class="services-gallery-cover" href="#gallery-class" data-services-gallery-cover="class">
+            <img src="assets/images/pexels-5905436.webp" alt="" width="900" height="1200" loading="lazy">
+            <span class="services-gallery-cover-copy">
+              <span class="services-gallery-volume">Album 02</span>
+              <span class="services-gallery-cover-title">Kỷ yếu lớp</span>
+              <span class="services-gallery-cover-action">Mở album</span>
+            </span>
+          </a>
+          <a class="services-gallery-cover" href="#gallery-portrait" data-services-gallery-cover="portrait">
+            <img src="assets/images/pexels-20239591.webp" alt="" width="900" height="1200" loading="lazy">
+            <span class="services-gallery-cover-copy">
+              <span class="services-gallery-volume">Album 03</span>
+              <span class="services-gallery-cover-title">Chân dung</span>
+              <span class="services-gallery-cover-action">Mở album</span>
+            </span>
+          </a>
+        </nav>
+
+        <section class="services-gallery-collection" id="gallery-graduation" data-services-gallery-theme="graduation" aria-labelledby="gallery-graduation-title">
+          <div class="services-gallery-book-header">
+            <h3 id="gallery-graduation-title">Bộ ảnh tốt nghiệp</h3>
+            <button class="button button--secondary" type="button" data-services-gallery-close hidden>Đóng album</button>
+          </div>
+          <div class="services-gallery-book">
+            <div class="services-gallery-spread" data-services-gallery-spread>
+              <div class="services-gallery-page services-gallery-page--opening">
+                <p class="services-gallery-volume">Album 01</p>
+                <p class="services-gallery-opening-title">Tốt nghiệp</p>
+                <p>9 ảnh tham khảo</p>
+              </div>
+              <div class="services-gallery-page">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-15005450.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-15005450.webp" alt="Một người mặc áo tốt nghiệp giơ mũ, nhìn từ phía sau." width="853" height="1280" loading="lazy">
+                  </a>
+                  <figcaption>Khoảnh khắc nâng mũ</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="services-gallery-spread" data-services-gallery-spread>
+              <div class="services-gallery-page services-gallery-page--stacked">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-1205651.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-1205651.webp" alt="Các tân cử nhân nhìn từ phía sau cùng tung mũ lên cao." width="1280" height="854" loading="lazy">
+                  </a>
+                  <figcaption>Mũ bay ngày tốt nghiệp</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-19501563.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-19501563.webp" alt="Các tân cử nhân đội mũ trong buổi lễ, nhìn từ phía sau." width="1280" height="852" loading="lazy">
+                  </a>
+                  <figcaption>Cùng dự lễ tốt nghiệp</figcaption>
+                </figure>
+              </div>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(900 / 1200); --services-second-aspect: calc(600 / 600);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-16479971.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-16479971.webp" alt="Một người mặc áo tốt nghiệp cầm bó hoa trước tường gạch, nhìn từ phía sau." width="900" height="1200" loading="lazy">
+                  </a>
+                  <figcaption>Bó hoa ngày nhận bằng</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-16132529.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-16132529.webp" alt="Một người mặc lễ phục cầm bằng bước đi, nhìn từ phía sau." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Bước đi ngày nhận bằng</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="services-gallery-spread" data-services-gallery-spread>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(800 / 1100); --services-second-aspect: calc(600 / 600);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-7944064.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-7944064.webp" alt="Cận cảnh tay cầm mũ tốt nghiệp và tấm bằng buộc nơ đỏ." width="680" height="935" loading="lazy">
+                  </a>
+                  <figcaption>Tấm bằng thắt nơ đỏ</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-12794087.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-12794087.webp" alt="Mũ tốt nghiệp và bằng cuộn đặt trên nền bê tông." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Mũ và bằng tốt nghiệp</figcaption>
+                </figure>
+              </div>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(600 / 600); --services-second-aspect: calc(600 / 600);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-26987551.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-26987551.webp" alt="Một người nâng mũ tốt nghiệp trên lối đi có hàng cây, nhìn từ phía sau." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Khoảnh khắc ngoài trời</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-7944061.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-7944061.webp" alt="Cận cảnh tay cầm mũ đen và cuộn bằng." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Cận cảnh lễ phục</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="services-gallery-controls" data-services-gallery-controls role="group" aria-label="Lật trang album" hidden>
+            <button class="button button--secondary" type="button" data-services-gallery-previous>← Trang trước</button>
+            <p role="status" data-services-gallery-status>Trang 1–2 / 6</p>
+            <button class="button button--secondary" type="button" data-services-gallery-next>Trang sau →</button>
+          </div>
+        </section>
+
+        <section class="services-gallery-collection" id="gallery-class" data-services-gallery-theme="class" aria-labelledby="gallery-class-title">
+          <div class="services-gallery-book-header">
+            <h3 id="gallery-class-title">Bộ ảnh kỷ yếu lớp</h3>
+            <button class="button button--secondary" type="button" data-services-gallery-close hidden>Đóng album</button>
+          </div>
+          <div class="services-gallery-book">
+            <div class="services-gallery-spread" data-services-gallery-spread>
+              <div class="services-gallery-page services-gallery-page--opening">
+                <p class="services-gallery-volume">Album 02</p>
+                <p class="services-gallery-opening-title">Kỷ yếu lớp</p>
+                <p>9 ảnh tham khảo</p>
+              </div>
+              <div class="services-gallery-page">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-5905436.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-5905436.webp" alt="Sách vở trên bàn học và ba lô treo trên ghế." width="900" height="1200" loading="lazy">
+                  </a>
+                  <figcaption>Bàn học và ba lô</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="services-gallery-spread" data-services-gallery-spread>
+              <div class="services-gallery-page services-gallery-page--stacked">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-30520306.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-30520306.webp" alt="Hành lang trường vắng với ánh sáng tự nhiên." width="1280" height="854" loading="lazy">
+                  </a>
+                  <figcaption>Hành lang giờ tan lớp</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-35656174.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-35656174.webp" alt="Lớp học vắng với cửa sổ lớn và những dãy bàn." width="1280" height="854" loading="lazy">
+                  </a>
+                  <figcaption>Ánh sáng bên cửa sổ</figcaption>
+                </figure>
+              </div>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(600 / 600); --services-second-aspect: calc(600 / 600);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-5588404.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-5588404.webp" alt="Góc nhìn từ trên cao của người đang viết bên bàn học." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Một buổi tự học</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-9258380.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-9258380.webp" alt="Những dãy bàn gỗ có sách trong lớp học vắng." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Dãy bàn gỗ</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="services-gallery-spread" data-services-gallery-spread>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(800 / 1100); --services-second-aspect: calc(600 / 600);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-5905618.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-5905618.webp" alt="Bàn học và chiếc ghế có ba lô đặt trước bảng trắng." width="800" height="1100" loading="lazy">
+                  </a>
+                  <figcaption>Góc bàn và bảng trắng</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-6981007.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-6981007.webp" alt="Lớp học trống với kệ sách và các cụm bàn." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Phòng học và kệ sách</figcaption>
+                </figure>
+              </div>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(800 / 1100); --services-second-aspect: calc(800 / 1100);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-36650153.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-36650153.webp" alt="Các dãy bàn gỗ hướng về bảng xanh trong lớp học trống." width="679" height="934" loading="lazy">
+                  </a>
+                  <figcaption>Bảng xanh cuối lớp</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-6207367.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-6207367.webp" alt="Giấy và bút trên bàn học bằng gỗ." width="674" height="927" loading="lazy">
+                  </a>
+                  <figcaption>Trang vở trên bàn</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="services-gallery-controls" data-services-gallery-controls role="group" aria-label="Lật trang album" hidden>
+            <button class="button button--secondary" type="button" data-services-gallery-previous>← Trang trước</button>
+            <p role="status" data-services-gallery-status>Trang 1–2 / 6</p>
+            <button class="button button--secondary" type="button" data-services-gallery-next>Trang sau →</button>
+          </div>
+          <a class="services-text-link" href="#chat" data-package="Kỷ yếu lớp">Tư vấn bộ ảnh kỷ yếu <svg class="services-icon" aria-hidden="true"><use href="#chat-icon"/></svg></a>
+        </section>
+
+        <section class="services-gallery-collection" id="gallery-portrait" data-services-gallery-theme="portrait" aria-labelledby="gallery-portrait-title">
+          <div class="services-gallery-book-header">
+            <h3 id="gallery-portrait-title">Bộ ảnh chân dung</h3>
+            <button class="button button--secondary" type="button" data-services-gallery-close hidden>Đóng album</button>
+          </div>
+          <div class="services-gallery-book">
+            <div class="services-gallery-spread" data-services-gallery-spread>
+              <div class="services-gallery-page services-gallery-page--opening">
+                <p class="services-gallery-volume">Album 03</p>
+                <p class="services-gallery-opening-title">Chân dung</p>
+                <p>9 ảnh tham khảo</p>
+              </div>
+              <div class="services-gallery-page">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-20239591.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-20239591.webp" alt="Cận cảnh tay chỉnh cà vạt trên áo sơ mi trắng." width="900" height="1200" loading="lazy">
+                  </a>
+                  <figcaption>Chỉnh cà vạt trước khi chụp</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="services-gallery-spread" data-services-gallery-spread>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(1600 / 2398); --services-second-aspect: calc(1600 / 2399);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-16495457.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-16495457.webp" alt="Studio trống với các chân đèn và ánh sáng vàng." width="854" height="1280" loading="lazy">
+                  </a>
+                  <figcaption>Ánh vàng trong studio</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-33365000.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-33365000.webp" alt="Ghế và đèn chụp ảnh trong studio trống." width="854" height="1280" loading="lazy">
+                  </a>
+                  <figcaption>Chuẩn bị ánh sáng</figcaption>
+                </figure>
+              </div>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(800 / 1100); --services-second-aspect: calc(600 / 600);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-20479949.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-20479949.webp" alt="Cận cảnh tay chỉnh cà vạt và hoa cài trên vest màu be." width="800" height="1100" loading="lazy">
+                  </a>
+                  <figcaption>Chi tiết vest màu be</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-26800055.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-26800055.webp" alt="Một ống kính máy ảnh đặt trên mặt bàn gỗ." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Ống kính trên bàn</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="services-gallery-spread" data-services-gallery-spread>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(800 / 1100); --services-second-aspect: calc(600 / 600);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-18981183.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-18981183.webp" alt="Máy ảnh cổ trên bàn gỗ với đèn chân máy phía sau." width="800" height="1100" loading="lazy">
+                  </a>
+                  <figcaption>Máy ảnh dưới đèn vàng</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-10942081.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-10942081.webp" alt="Máy ảnh phim và hộp phim đặt trên bàn gỗ." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Máy ảnh và cuộn phim</figcaption>
+                </figure>
+              </div>
+              <div class="services-gallery-page services-gallery-page--paired" style="--services-first-aspect: calc(600 / 600); --services-second-aspect: calc(600 / 600);">
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-4771446.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-4771446.webp" alt="Các ống kính đặt trên bàn gỗ có nắng chiếu." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Bộ ống kính</figcaption>
+                </figure>
+                <figure class="services-gallery-photo">
+                  <a href="assets/images/pexels-30359448.webp" data-services-gallery-photo>
+                    <img src="assets/images/pexels-30359448.webp" alt="Máy ảnh phim và phụ kiện trên bàn gỗ." width="600" height="600" loading="lazy">
+                  </a>
+                  <figcaption>Dụng cụ chụp ảnh</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="services-gallery-controls" data-services-gallery-controls role="group" aria-label="Lật trang album" hidden>
+            <button class="button button--secondary" type="button" data-services-gallery-previous>← Trang trước</button>
+            <p role="status" data-services-gallery-status>Trang 1–2 / 6</p>
+            <button class="button button--secondary" type="button" data-services-gallery-next>Trang sau →</button>
+          </div>
+          <a class="services-text-link" href="#chat" data-package="Chân dung / CV">Tư vấn bộ ảnh chân dung <svg class="services-icon" aria-hidden="true"><use href="#chat-icon"/></svg></a>
+        </section>
+
+        <dialog class="services-gallery-dialog" aria-labelledby="services-gallery-image-title" data-services-gallery-dialog>
+          <div class="services-gallery-dialog-header">
+            <p id="services-gallery-image-title">Ảnh tham khảo</p>
+            <form method="dialog">
+              <button class="button button--secondary" type="submit">Đóng</button>
+            </form>
+          </div>
+          <img src="assets/images/pexels-15005450.webp" alt="" data-services-gallery-enlarged>
+        </dialog>
+      </div>
+    </section>
+
+    <section class="container services-consultation" aria-labelledby="consultation-title">
+      <div class="services-consultation-copy">
+        <h2 id="consultation-title">Bạn kể một chút,<br><em>studio cùng chuẩn bị.</em></h2>
+        <p>Chia sẻ ngày dự định, kiểu ảnh bạn thích và gói đang quan tâm.</p>
+        <a class="button" href="#chat">Chat với studio <svg class="services-icon" aria-hidden="true"><use href="#chat-icon"/></svg></a>
+      </div>
+      <div>
+        <ol class="services-steps">
+          <li><span>01</span> Chọn gói và trao đổi mong muốn</li>
+          <li><span>02</span> Studio kiểm tra và thống nhất giờ</li>
+          <li><span>03</span> Xem lịch hẹn, cọc để giữ lịch</li>
+        </ol>
+        <p class="services-pending-link">Lịch chụp của tôi · Chờ tích hợp</p>
+      </div>
+      <section class="services-chat-preview" id="chat-preview" aria-labelledby="chat-preview-title">
+        <h3 id="chat-preview-title">Hội thoại mẫu</h3>
+        <div class="services-chat-messages">
+          <div class="services-message services-message-customer">
+            <span>Linh</span>
+            <p>Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?</p>
+          </div>
+          <div class="services-message services-message-studio">
+            <span>GradStudio</span>
+            <p>Để mình kiểm tra lịch cho bạn nhé.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="services-footer">
+    <div class="container services-footer-inner">
+      <div>
+        <a class="services-brand" href="index.html"><svg aria-hidden="true"><use href="#brand"/></svg><span>Grad<span>Studio</span></span></a>
+        <p>Những ngày đáng nhớ, được giữ lại.</p>
+      </div>
+      <nav aria-label="Điều hướng cuối trang">
+        <a href="#packages">Gói chụp</a>
+        <a href="#chat">Chat với studio</a>
+        <span class="services-pending-link" title="Chờ tích hợp màn 3">Lịch chụp của tôi</span>
+      </nav>
+    </div>
+    <aside class="container services-demo-flow" aria-labelledby="demo-title">
+      <div>
+        <p class="services-kicker" id="demo-title">Tiếp tục câu chuyện mẫu</p>
+        <p>Linh đã hỏi lịch. Xem studio tiếp nhận và kiểm tra giờ chụp.</p>
+      </div>
+      <a class="button button--secondary" href="admin-scheduling.html">Nhân viên studio: Mở hội thoại</a>
+    </aside>
+  </footer>
+  <details class="services-chat-widget" id="studio-chat">
+    <summary class="services-chat-toggle" id="chat-toggle">
+      <svg class="services-icon" aria-hidden="true"><use href="#chat-icon"/></svg>
+      <span class="services-chat-label">Chat với studio</span>
+      <span class="services-chat-minimize" aria-hidden="true">Thu gọn</span>
+    </summary>
+    <section class="services-chat-paper" aria-labelledby="chat">
+      <div class="services-chat-header">
+        <div class="services-chat-identity">
+          <img src="assets/images/gradstudio-initial.svg" alt="" width="32" height="32">
+          <div>
+            <h2 id="chat" tabindex="-1">GradStudio</h2>
+            <p class="services-chat-subtitle">Cuộc tư vấn của Linh</p>
+          </div>
+        </div>
+        <span class="services-demo-label">Hội thoại mẫu</span>
+      </div>
+      <p class="services-chat-context">Đang hỏi về: <strong id="selected-package">Tốt nghiệp Premium</strong></p>
+      <div class="services-chat-messages" id="chat-messages" role="log" aria-label="Nội dung hội thoại mẫu">
+        <p class="services-chat-date">Linh · Yêu cầu chụp ngày 24/10/2026</p>
+        <div class="services-message services-message-customer">
+          <span>Linh</span>
+          <p>Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?</p>
+        </div>
+        <div class="services-message services-message-studio">
+          <span>GradStudio</span>
+          <p>Để mình kiểm tra lịch cho bạn nhé.</p>
+        </div>
+      </div>
+      <div class="services-chat-form">
+        <label class="form-label" for="chat-input">Tin nhắn của bạn</label>
+        <div>
+          <input class="form-control" id="chat-input" type="text" disabled>
+          <button class="button" type="button" disabled aria-describedby="chat-send-note">Gửi tin nhắn <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+        </div>
+        <p class="services-small-note" id="chat-send-note">Tính năng gửi tin nhắn chưa có trong bản PA#2.</p>
+      </div>
+    </section>
+  </details>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Prompt thực sự đã gửi assistant
+# Prompt và yêu cầu tổng hợp
 
 > Lịch sử trước ngày 06/11/2026 bên dưới được giữ nguyên để truy vết.
 > Quy ước màu/font, slideshow, chat và yêu cầu bám giao diện nguồn trong
@@ -164,3 +164,68 @@ Prompt nguyên văn:
 
 Đây là yêu cầu đổi hướng hiện hành. Thiết kế chung xem DESIGN.md;
 thiết kế riêng màn 3 xem docs/design/my-appointments.md.
+
+## 07–08/11/2026 — Chốt màn Dịch vụ và tư vấn
+
+```text
+Dựng màn 1 GradStudio theo phong cách nhật ký ảnh phim, dùng DESIGN.md chung
+và đặc tả docs/design/services.md. Chốt bố cục đã duyệt thành index.html,
+css/services.css và js/services.js. Dùng đường dẫn tương đối, mở trực tiếp
+từ thư mục. Dọn các bản preview sau khi xác nhận trang chính chạy đúng.
+
+- Nạp Merriweather và Be Vietnam Pro từ font chung kèm giấy phép OFL.
+- Đặt thanh điều hướng và hero trong khung mở đầu cao ít nhất một viewport.
+  Dùng video ảnh GradStudio cục bộ với poster, nút tạm dừng và khung tĩnh
+  khi tắt JS hoặc giảm chuyển động. Chỉ phát trong vùng nhìn thấy.
+- Giữ thứ tự ảnh xem nhanh, ba gói chụp, album đầy đủ, rồi tư vấn. Trên
+  desktop đặt slideshow bên cạnh các thẻ gói. Ba thẻ cùng kích cỡ và giữ
+  nội dung, giá tham khảo đã chốt. Nút Xem gói chụp trên điện thoại đến
+  thẳng ba thẻ gói. Căn giữa tiêu đề gói và thư viện, cỡ chữ 36–64 px.
+- Slideshow đổi cặp Polaroid theo chủ đề, có thumbnail và nút trước/sau.
+  Ảnh nhỏ lật để xem gợi ý phong cách và có nút tư vấn theo đúng chủ đề.
+  Nút Xem bộ ảnh mở album tương ứng. Bỏ phần sổ ý tưởng đã thử.
+- Kệ có ba album bìa cứng. Giữ thứ tự khi chọn, đóng hoặc đổi album, mở
+  tại chỗ và giữ lượt đang xem nếu chọn lại cùng album. Lượt đầu mở bìa
+  180° quanh gáy, trang ảnh đầu nằm yên. Khi lật tiếp, Trang sau từ phải
+  sang trái và Trang trước chiều ngược lại. Cụm điều khiển ở giữa dưới
+  sách, chừa chỗ cho chat trên điện thoại. Giữ hai trang cân nhau và
+  tỉ lệ ảnh. Xem ảnh lớn, đóng bằng Escape và trả focus về ảnh.
+  Trên điện thoại, hai bìa còn lại chia đều hai cột khi mở một album.
+  Ẩn dòng Mở album trên bìa và giữ toàn bộ bìa bấm được.
+  Giữ chiều cao khung sách và vị trí cụm điều khiển ổn định khi lật trang.
+- Đặt Chat với studio màu xanh rêu, in đậm trong thanh điều hướng. Khi
+  thu gọn, nút chat nổi chỉ hiện biểu tượng. Các CTA mở cùng hội thoại
+  của Linh, giữ ngữ cảnh gói và tin nhắn thử trong lần xem trang.
+- Giữ bố cục gọn theo các phản hồi: bỏ nhãn và ghi chú thừa, bỏ link
+  tư vấn dưới album Tốt nghiệp, đưa khối tiếp tục câu chuyện xuống dưới
+  điều hướng ở chân trang. Màn Admin và Lịch chụp đang chờ tích hợp.
+- Giữ ảnh, video, poster, nguồn ảnh và font đã thêm. Kiểm tra bản chính
+  ở 360, 768 và 1280 px với JS bật/tắt, lưu minh chứng của index.html.
+```
+
+
+## 08/11/2026 — Rà checklist màn 1 và chuẩn bị tài nguyên PA02
+
+
+**Prompt nguyên văn** theo thứ tự gửi. Hai lượt “giải thích kĩ hơn vấn đề”
+và “thực hiện yêu cầu này” đều tham chiếu phần gửi tin trong khung chat.
+Yêu cầu khóa nút gửi thay thế phần gửi tin nhắn thử trong mục 07–08/11.
+
+```text
+đồng ý, như vậy cho 2 tin nhắn mẫu ở cuối trang này đi
+
+trên 390px tôi muốn kích thước hộp giảm lại so với ban đầu.
+
+scale lại các thành phần thuộc khung chat
+
+kiểm tra lại checklist những phần liên quan màn 1 đã hoàn thành chưa
+
+giải thích kĩ hơn vấn đề
+
+brief yêu cầu thao tác gửi tin ở PA#2 phải được vô hiệu hóa.
+
+thực hiện yêu cầu này
+
+xóa hết mấy ảnh trong archive PA01
+
+```
