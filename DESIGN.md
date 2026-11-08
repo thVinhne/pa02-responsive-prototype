@@ -102,9 +102,9 @@ Không tải font từ CDN khi mở trang. Sau khi có file thực, khai báo
 `font-display: swap`; không nhân bản font theo màn.
 
 Biến font dùng stack `"GS Merriweather", "Times New Roman", serif` và
-`"GS Be Vietnam", "Segoe UI", Arial, sans-serif`. Hiện chưa nhập file font
-và chưa khai báo `@font-face`; CSS đang có fallback. Đây chưa phải typography
-hoàn chỉnh. Khi triển khai phải kiểm tra font thật nạp qua `file://`,
+`"GS Be Vietnam", "Segoe UI", Arial, sans-serif`. Ba file font cục bộ đã
+được khai báo trong `css/common.css`. Khi triển khai phải kiểm tra font
+thật nạp qua `file://`,
 Rendered Fonts, dấu tiếng Việt và xuống dòng trên Windows. Không đổi bảo mật
 trình duyệt để làm kiểm tra có vẻ đạt.
 

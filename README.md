@@ -18,37 +18,34 @@ chỉ dùng cho nghiệp vụ, vai trò và tài nguyên có ghi nguồn.
 
 - [AGENTS.md](AGENTS.md): kỹ thuật, phân công và dữ liệu xuyên suốt.
 - [DESIGN.md](DESIGN.md): thiết kế chung, tokens, font và thành phần tái sử dụng.
+- [Thiết kế màn 1](docs/design/services.md): bố cục và hành vi đã chốt.
 - [Thiết kế màn 3](docs/design/my-appointments.md): bố cục, trạng thái và tương tác riêng.
 - [Nghiệp vụ nguồn](docs/pa1/README.md): chức năng và tác giả nguồn;
   không dùng giao diện trong đó làm chuẩn để sao chép.
 - [brief.md](brief.md), [AI-LOG.md](AI-LOG.md): prompt và lịch sử làm việc.
 - [Minh chứng trước đổi hướng](docs/history/pre-redesign/README.md): chỉ để tra cứu lịch sử.
 
-## Trạng thái ngày 06/11/2026
+## Trạng thái hiện tại
 
 - Đã nhập `my-appointments.md` từ Downloads vào `docs/design/` và điều chỉnh
   tham chiếu để phân biệt đặc tả màn 3 với `DESIGN.md` chung.
 - Đã thay nền tảng màu, typography dự kiến, spacing và control trong
   `css/common.css` theo thiết kế chung.
-- Đã gỡ `index.html` và `css/services.css` của giao diện trước đổi hướng.
-- Đã tích hợp `admin-scheduling.html` từ nhánh màn 2. File mở trực tiếp được,
-  có CSS/JavaScript riêng nhúng trong HTML theo yêu cầu trước đó. Đây là bản
-  màn 2 đã có trước khi đổi thiết kế chung, chưa nghiệm thu theo `DESIGN.md`.
-- Màn dịch vụ mới và màn lịch chụp chưa triển khai. Không khôi phục
-  `index.html` hoặc CSS dịch vụ cũ khi ghép nhánh.
-- Font Merriweather và Be Vietnam Pro chưa nhập; CSS có fallback,
-  chưa khai báo `@font-face` tới file không tồn tại.
+- Màn 1 đã chốt và triển khai. Mở trực tiếp [index.html](index.html) để xem
+  dịch vụ, album và hội thoại mẫu. Trang dùng `css/services.css` và
+  `js/services.js`. Bản mới thay cho giao diện cũ đã gỡ trong lần đổi thiết kế.
+- Màn 2 có bản Admin tại [admin-scheduling.html](admin-scheduling.html) từ
+  nhánh `prototype/screen2`. Trang mở trực tiếp, có CSS và JavaScript nhúng
+  trong HTML. Bản này được dựng trước khi đổi thiết kế chung và chưa được
+  nghiệm thu theo `DESIGN.md`.
+- Màn 3 có đặc tả riêng. Tệp `my-appointments.html` chưa có trên hai nhánh
+  đang ghép.
+- Ngày 07/11/2026, đã nhập Merriweather và Be Vietnam Pro kèm giấy phép
+  OFL vào `assets/fonts/shared/` và khai báo font trong `css/common.css`.
 - Minh chứng cũ đã chuyển sang khu lịch sử, không dùng cho giao diện mới.
 
-Để xem bản màn 2 hiện có, mở trực tiếp `admin-scheduling.html`.
-Các liên kết từ màn này tới `index.html` và `my-appointments.html` hiện
-chưa có file đích; cần xử lý ở lượt tích hợp giao diện, không coi là luồng
-ba màn đã hoàn thiện. CSS chung đã theo main mới; HTML màn 2 chưa được sửa
-để đồng bộ font, kiểu trình bày và các quy tắc mới.
-
-Tên file tích hợp vẫn dự kiến là `index.html`, `admin-scheduling.html`,
-`my-appointments.html`, cùng CSS riêng tương ứng. Đây là tên dự kiến,
-không phải danh sách file hiện có.
+Cần kiểm tra lại các liên kết từ màn Admin đến màn Dịch vụ và màn Lịch chụp
+khi tích hợp luồng ba màn.
 
 ## Nền tảng dùng chung
 
@@ -59,8 +56,8 @@ không duy trì bảng màu/font/kích thước thứ hai ở đây.
 
 Mỗi thành viên tạo đặc tả riêng trong `docs/design/`, dùng chung nhận diện
 và tự thiết kế bố cục, component đặc thù. Dây ảnh, máy ảnh và vé hẹn là phần
-riêng màn lịch chụp. Header/footer của màn Admin đã có markup riêng;
-chưa xác nhận đáp ứng toàn bộ quy ước thiết kế mới.
+riêng màn lịch chụp. Header/footer của màn Admin dùng markup riêng.
+Màn Admin chưa được đối chiếu đầy đủ với quy ước thiết kế mới.
 
 ## Công nghệ và kiểm tra
 
@@ -71,6 +68,13 @@ khi tắt JS vẫn đọc nội dung chính và dùng điều hướng.
 Khi có trang mới: mở trực tiếp từ thư mục, kiểm tra 360/768/1280 px,
 zoom 200%, bàn phím, reduced motion, font tiếng Việt, tương phản và W3C
 Nu checker (0 errors). Lưu minh chứng mới trong `screenshots/` và `checks/`.
-Kiểm tra trực quan, responsive, tương phản và W3C của màn Admin sau khi
-ghép CSS chung mới hiện là **NOT RUN**. Các kết quả màn 2 trước merge đã
-lưu trong `docs/history/pre-redesign/`, không dùng để nghiệm thu bản ghép.
+Màn 1 đã được kiểm tra trên Chrome ở 360, 768 và 1280 px khi bật và tắt
+JavaScript. Ảnh toàn trang khi tắt JS nằm trong [screenshots](screenshots/).
+Báo cáo [W3C Nu](checks/validator-index.txt) ghi 0 lỗi và 0 cảnh báo cho bản
+đã kiểm tra. Mã SHA-256 trong báo cáo khác với mã của `index.html` hiện có
+trong Git, nên cần chạy lại W3C Nu cho bản ghép.
+
+Kiểm tra trực quan, responsive, tương phản và W3C của màn Admin với CSS
+chung mới là **NOT RUN**. Kết quả trước đổi thiết kế được lưu trong
+`docs/history/pre-redesign/`. Kiểm tra zoom 200% và nghiệm thu luồng giữa
+ba màn vẫn đang chờ.

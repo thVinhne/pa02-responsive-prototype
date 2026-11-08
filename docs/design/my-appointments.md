@@ -259,13 +259,13 @@ Không đưa chú thích kỹ thuật như HTML/CSS tĩnh, chưa có backend ho�
 | assets/icons/appointments/ | SVG máy ảnh, dây, kẹp, cuộn phim hoặc softbox nếu không dùng SVG inline; chỉ tạo file thực sự được dùng |
 | assets/fonts/shared/ | Đọc font dùng chung; nếu thiếu, phối hợp Người 1 nhập font và OFL theo DESIGN.md |
 | assets/images/appointments/ | Chỉ tạo nếu cần ảnh riêng; ghi nguồn |
-| assets/images/ đang có | Có thể đọc và tái sử dụng ảnh gốc phù hợp; không sửa/xóa ảnh của thành viên khác |
+| assets/images/ đang có | Ảnh minh họa và avatar có nguồn trong PROTOTYPE.md |
 | css/common.css và CSS/HTML trang 1, 2 | Chỉ đọc để tích hợp; không viết lại |
 | DESIGN.md, AGENTS.md và tài liệu nhóm | Đọc để tuân theo phần chung; thay đổi phần chung phối hợp với Người 1 |
 
 Nạp common.css trước, my-appointments.css sau. Body màn 3 mang class appointments-page. Nếu cần alias --ap-, ánh xạ tới token chung theo mục 4; không ghi đè palette hoặc font chung. Class riêng có tiền tố appointments-. Font và @font-face được quản lý trong common.css theo DESIGN.md chung.
 
-Ảnh thô đã có có thể dùng làm moodboard: service-graduation.avif, gallery-graduates-trio--photo-1566055390950-e8334302c8cb.avif, gallery-class-friends--photo-1610208322193-07ba2fe4011d.avif trong assets/images/. Xem ảnh trước khi chọn. Avatar có thể dùng assets/images/avatar-linh.avif. Tái sử dụng ảnh thô không đồng nghĩa sao chép bố cục mẫu. Không dùng screenshot giao diện làm nền hoặc component.
+Ảnh minh họa của màn lịch chụp dùng cùng bộ ảnh với màn dịch vụ. Avatar Linh dùng `linh-initial.svg`. Nguồn ảnh xem [PROTOTYPE.md](../../PROTOTYPE.md#nguồn-ảnh-và-video).
 
 Nguồn font, file đích và giấy phép xem DESIGN.md chung; không tạo bản sao trong assets/fonts/appointments/. Ảnh trong HTML dùng assets/images/... tương đối. Không hotlink hoặc phụ thuộc Google Fonts CDN.
 
