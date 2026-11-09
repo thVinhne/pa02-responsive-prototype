@@ -1,0 +1,10 @@
+W3C Nu checker - admin-scheduling.html
+Date: 2026-11-09
+Checker: https://validator.w3.org/nu/ (POST file contents)
+SHA256: d3a9b7af3f63c1246c81bf45cf6c8c713801d6cc749901f8c563723f71dd3d2c
+Errors: 0
+Warnings: 0
+{
+  "version": "26.11.9",
+  "messages": []
+}

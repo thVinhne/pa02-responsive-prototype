@@ -381,3 +381,17 @@ sau sửa **NOT RUN**. Xóa 49 tệp ảnh trong archive PA01 bằng PowerShell,
 kiểm tra thư mục còn một video MP4 và hai tệp Markdown.
 Rejected Cách gửi tin mẫu bằng JavaScript vì mục Fix these yêu cầu nút gửi
 bị vô hiệu hóa và có ghi chú nhìn thấy được.
+
+## 2026-11-09 — Ghi đặc tả và tách tệp của màn Admin
+
+Dùng Codex để ghi lại bố cục và hành vi của màn đang chạy trong
+[đặc tả màn Admin](docs/design/admin-scheduling.md). Tách CSS và JavaScript
+nhúng sang hai tệp riêng, giữ thứ tự nạp CSS và dùng `defer` cho script.
+Giữ giao diện, trạng thái mẫu và hành vi hiện tại. Ghi các điểm lệch brief
+trong đặc tả để nhóm đối chiếu.
+
+Chrome qua `file://` cho ảnh toàn trang trùng khớp từng byte trước và sau ở
+360, 768 và 1280 px khi tắt JavaScript. Khi bật JavaScript, đã thử tìm kiếm,
+lọc, chọn khách bằng phím Enter, gửi tin mẫu, ngày không có dữ liệu, đề xuất,
+từ chối, đồng ý, tạo booking và chỉnh lại lịch. W3C Nu ghi 0 lỗi và 0 cảnh báo
+cho HTML sau khi tách.

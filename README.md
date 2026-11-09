@@ -19,6 +19,7 @@ chỉ dùng cho nghiệp vụ, vai trò và tài nguyên có ghi nguồn.
 - [AGENTS.md](AGENTS.md): kỹ thuật, phân công và dữ liệu xuyên suốt.
 - [DESIGN.md](DESIGN.md): thiết kế chung, tokens, font và thành phần tái sử dụng.
 - [Thiết kế màn 1](docs/design/services.md): bố cục và hành vi đã chốt.
+- [Thiết kế màn 2](docs/design/admin-scheduling.md) ghi bố cục và hành vi của màn Admin.
 - [Thiết kế màn 3](docs/design/my-appointments.md): bố cục, trạng thái và tương tác riêng.
 - [Nghiệp vụ nguồn](docs/pa1/README.md): chức năng và tác giả nguồn;
   không dùng giao diện trong đó làm chuẩn để sao chép.
@@ -35,9 +36,8 @@ chỉ dùng cho nghiệp vụ, vai trò và tài nguyên có ghi nguồn.
   dịch vụ, album và hội thoại mẫu. Trang dùng `css/services.css` và
   `js/services.js`. Bản mới thay cho giao diện cũ đã gỡ trong lần đổi thiết kế.
 - Màn 2 có bản Admin tại [admin-scheduling.html](admin-scheduling.html) từ
-  nhánh `prototype/screen2`. Trang mở trực tiếp, có CSS và JavaScript nhúng
-  trong HTML. Bản này được dựng trước khi đổi thiết kế chung và chưa được
-  nghiệm thu theo `DESIGN.md`.
+  nhánh `prototype/screen2`. Trang mở trực tiếp và nạp
+  `css/admin-scheduling.css` cùng `js/admin-scheduling.js`.
 - Màn 3 có đặc tả riêng. Tệp `my-appointments.html` chưa có trên hai nhánh
   đang ghép.
 - Ngày 07/11/2026, đã nhập Merriweather và Be Vietnam Pro kèm giấy phép
@@ -74,7 +74,7 @@ Báo cáo [W3C Nu](checks/validator-index.txt) ghi 0 lỗi và 0 cảnh báo cho
 đã kiểm tra. Mã SHA-256 trong báo cáo khác với mã của `index.html` hiện có
 trong Git, nên cần chạy lại W3C Nu cho bản ghép.
 
-Kiểm tra trực quan, responsive, tương phản và W3C của màn Admin với CSS
-chung mới là **NOT RUN**. Kết quả trước đổi thiết kế được lưu trong
-`docs/history/pre-redesign/`. Kiểm tra zoom 200% và nghiệm thu luồng giữa
-ba màn vẫn đang chờ.
+Ảnh toàn trang màn Admin ở ba độ rộng khi tắt JS nằm trong
+[screenshots/](screenshots/). [W3C Nu](checks/validator-admin-scheduling.txt)
+ghi 0 lỗi và 0 cảnh báo cho HTML hiện tại. Kiểm tra tương phản, zoom 200%
+và nghiệm thu luồng giữa ba màn vẫn đang chờ.

@@ -1,7 +1,11 @@
-W3C Nu: my-appointments.html (gallery shutter and Polaroid preview)
-SHA256: 932AFA9480A8D48BCE429E153EA72F8E092BDAC5A693C7A9BB8597FD19A9C6BE
-HTTP status: 200
-Response:
-{"version":"26.11.4","messages":[],"language":"vi"}
-
-
+W3C Nu checker - my-appointments.html
+Date: 2026-11-09
+Checker: https://validator.w3.org/nu/ (POST file contents)
+SHA256: 2b723f2ee63196a66540df6e563aa4d203e8ee5eb2e9dfb880eacd51026cc69f
+Errors: 0
+Warnings: 0
+{
+  "version": "26.11.9",
+  "messages": [],
+  "language": "vi"
+}
