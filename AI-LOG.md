@@ -724,3 +724,20 @@ Lịch sử Git cục bộ chưa có commit xác định người thực hiện 
 
 - **Rejected:** Giữ đường dẫn tới thư mục minh chứng trước đổi
   thiết kế làm đích liên kết của bản nộp.
+
+### 2026-11-11 - Sửa khung chat che nội dung ở 360 px
+
+- **Tool:** Codex, Chrome qua Playwright và W3C Nu.
+- **Asked for:** Sửa lỗi chat che nội dung ở 360 px và cập nhật các tệp
+  liên quan trong repo. [Prompt của lượt này](brief.md).
+- **Kept:** Liên kết `#chat`, hội thoại mẫu, nút gửi bị khóa và khung chat
+  nổi từ 48rem.
+- **Changed:** Đặt khung chat trước chân trang và cho khung mở trong luồng
+  trang dưới 48rem. Khi bật JS, liên kết đưa focus tới khung và giữ đúng
+  ngữ cảnh gói. Ở 360 px khi tắt JS, đo vùng chồng lên “Xem gói chụp”
+  giảm từ 8.394 px² xuống 0. Thử mở bằng bàn phím ở 360, 768, 1280 px
+  khi bật và tắt JS. Cả ba độ rộng không cuộn ngang. Kiểm tra đóng bằng
+  Escape và trả focus khi bật JS. Cập nhật [ảnh toàn trang 360 px](screenshots/index-360.png)
+  và [kết quả W3C của index.html](checks/validator-index.txt).
+- **Rejected:** Giữ khung chat cố định trên màn nhỏ vì khung mở che nút
+  xem gói. Kiểm tra zoom 200% thực tế và thiết bị thật **NOT RUN**.

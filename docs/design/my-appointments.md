@@ -164,12 +164,12 @@ Không cố định chiều rộng toàn trang, không dùng overflow-x:hidden �
 | 2 | Hero nhật ký | Nhãn Nhật ký chụp ảnh; H1 Lịch chụp của tôi; lời chào ngắn; góc studio mục 3.1 | Chữ serif lớn, dây treo Polaroid và máy ảnh có thể thao tác; không dùng hero nền ảnh toàn màn hình |
 | 3 | Điều khiển danh sách | Bộ lọc trạng thái kèm số lượng; dải ngày 19–25/10/2026 | Như nhãn phân trang trong sổ, ngày 24 có chấm chỉ lịch |
 | 4 | Vé hẹn của Linh | Ngày lớn 24 TH10; GS-1024; gói, giờ, trạng thái; tiền và thao tác cọc | Vé ngang, đường xé và dấu trạng thái; là điểm nhấn chính |
-| 5 | Nhật ký buổi chụp | Đến 12:50; makeup 13:00–14:00 với Mai; chụp 14:00–16:00 với Tuấn tại Phòng B | Các mốc như trang ghi chú; giờ là phần dễ quét bằng mắt nhất |
+| 5 | Nhật ký buổi chụp | Giờ yêu cầu 09:00 bị gạch; đến 12:50; makeup 13:00–14:00 với Mai; chụp 14:00–16:00 với Tuấn tại Phòng B | Các mốc như trang ghi chú; giờ là phần dễ quét bằng mắt nhất |
 | 6 | Góc chuẩn bị | Ba checkbox cần chuẩn bị, phần studio và thông tin phụ | Một mảnh giấy ghi chú, checkbox thật, không giống form quản trị |
 | 7 | Ảnh gợi ý và giải đáp | Ba ảnh gợi ý phong cách; FAQ về giờ đến, khoản cọc và tiền còn lại | Khung ảnh có chú thích; FAQ như những dòng ghi chú mở được |
 | 8 | Chân trang | Điều hướng hợp lệ; phần Điều khiển demo có Đặt lại demo | Tách thao tác demo khỏi hành động của khách |
 
-Không dựng lại cặp khối lịch tuần cao bên trái và booking nhỏ bên phải của ảnh gốc. Giờ 09:00 không khả dụng được ghi gọn trong phần Lịch sử thống nhất giờ; không chiếm một nửa trang hoặc làm lẫn với giờ hiện tại.
+Mốc đầu của nhật ký ghi giờ yêu cầu 09:00 bằng chữ gạch ngang, kèm lý do Mai bận 08:00–12:00. Các mốc tiếp theo là giờ đã thống nhất.
 
 Giữ các thông tin bắt buộc như ngày, giờ, trạng thái và tiền luôn hiện trên vé/nhật ký. Chi tiết mở rộng chỉ chứa thông tin phụ. Không bắt người xem mở nhiều accordion mới biết lúc nào phải đến hoặc cần trả bao nhiêu.
 

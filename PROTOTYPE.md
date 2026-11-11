@@ -37,8 +37,9 @@ cho phép dùng bộ ảnh GradStudio để đối chiếu PA#1 chưa có trong 
 - **Dịch vụ.** Nhóm thiết kế lại hero, xếp gói chụp và ảnh thành thẻ và
   album theo hướng nhật ký ảnh phim. Khung chat có bản xem trước trong
   luồng đọc và mở được bằng `details/summary` để dùng bằng bàn phím khi
-  tắt JS. Khung khởi đầu thu gọn để phần giới thiệu luôn đọc được khi
-  mở trang. Nút gửi tin ở màn khách bị khóa theo brief. Ở 360 px, ảnh hero
+  tắt JS. Dưới 48rem, khung mở trong luồng trang trước chân trang. Từ
+  48rem, khung mở ở góc dưới bên phải. Nút gửi tin ở màn khách bị khóa
+  theo brief. Ở 360 px, ảnh hero
   nằm dưới chữ và các gói xếp dọc. Ở desktop, ảnh xem nhanh nằm cạnh các gói.
 - **Admin.** Form từng nằm dưới hội thoại trong ảnh nguồn được chuyển
   xuống dưới lịch ở cột phải để dành cột giữa cho cuộc tư vấn. Bảng lịch
@@ -81,7 +82,7 @@ CSS từng trang. Màu, font Merriweather và Be Vietnam Pro, thang khoảng cá
 đạo cụ dùng kích thước riêng cho hình học của thành phần.
 
 Bố cục mobile first. Hai mốc chính là 48rem và 64rem. CSS từng màn có
-điều kiện bổ sung cho chat nổi, vùng cuộn Admin ở cửa sổ thấp, dải ngày
+điều kiện bổ sung cho vị trí khung chat, vùng cuộn Admin ở cửa sổ thấp, dải ngày
 và góc studio. Minh chứng cuối nằm trong [screenshots](screenshots/) và
 [checks](checks/).
 

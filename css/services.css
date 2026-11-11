@@ -302,7 +302,6 @@
 .services-price { color: var(--color-brand); font-weight: 600; font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.65rem); }
 .services-price > span { font-weight: 400; font-size: 1rem; margin-inline-start: 3px; }
 .services-small-note { font-size: 1rem; color: var(--color-text-muted); line-height: 1.5; }
-.services-price-note { align-self: center; color: var(--color-text-muted); }
 .services-gallery-section { background: var(--services-soft-fill); padding-block: var(--space-7); border-block: 1px solid var(--color-border); }
 .services-gallery-heading { margin-block-end: 28px; }
 .services-gallery-section [hidden] { display: none; }
@@ -668,16 +667,11 @@
 .services-steps li { display: flex; gap: var(--space-3); align-items: start; }
 .services-steps li > span { font-family: var(--font-heading); color: var(--color-wine); }
 .services-chat-widget {
-  position: fixed;
-  inset-inline-end: max(var(--space-4), env(safe-area-inset-right));
-  inset-block-end: max(var(--space-4), env(safe-area-inset-bottom));
-  z-index: 10;
-  max-inline-size: calc(100% - var(--space-6));
+  margin: var(--space-5) var(--space-4);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-raised);
 }
 .services-chat-widget[open] {
-  inline-size: 26rem;
   background: var(--color-surface);
 }
 .services-chat-toggle {
@@ -694,21 +688,6 @@
   list-style: none;
 }
 .services-chat-toggle::-webkit-details-marker { display: none; }
-.services-chat-widget:not([open]) .services-chat-toggle {
-  position: relative;
-  display: grid;
-  place-items: center;
-  inline-size: var(--button-min-size);
-  padding: 0;
-}
-.services-chat-widget:not([open]) .services-chat-label {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
 .services-chat-widget[open] .services-chat-toggle {
   border-end-start-radius: 0;
   border-end-end-radius: 0;
@@ -724,10 +703,6 @@
 .services-chat-paper {
   display: flex;
   flex-direction: column;
-  max-block-size: min(32rem, calc(100vh - 6rem));
-  max-block-size: min(32rem, calc(100dvh - 6rem));
-  overflow-y: auto;
-  overscroll-behavior: contain;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-end-start-radius: var(--radius-card);
@@ -768,11 +743,36 @@
 .services-chat-form input { flex: 1 1 8rem; }
 .services-chat-form .button { gap: var(--space-2); padding-inline: var(--space-2); }
 .services-chat-form .services-small-note { margin-block-start: var(--space-1); }
-@media (width > 390px) {
+@media (min-width: 48rem) {
+  .services-chat-widget {
+    position: fixed;
+    inset-inline-end: max(var(--space-4), env(safe-area-inset-right));
+    inset-block-end: max(var(--space-4), env(safe-area-inset-bottom));
+    z-index: 10;
+    max-inline-size: calc(100% - var(--space-6));
+    margin: 0;
+  }
   .services-chat-widget[open] { inline-size: 20.5rem; }
+  .services-chat-widget:not([open]) .services-chat-toggle {
+    position: relative;
+    display: grid;
+    place-items: center;
+    inline-size: var(--button-min-size);
+    padding: 0;
+  }
+  .services-chat-widget:not([open]) .services-chat-label {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
   .services-chat-paper {
     block-size: min(25rem, calc(100vh - 6rem));
     block-size: min(25rem, calc(100dvh - 6rem));
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 }
 .services-demo-flow { border-block-start: 1px dashed var(--color-control-border); padding-block: var(--space-5); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-4); }
@@ -787,16 +787,11 @@
     grid-template-columns: repeat(2, minmax(0, 12.5rem));
   }
   .services-gallery-cover-action { display: none; }
-  .services-page { --services-compact-chat-size: 3rem; }
   .services-gallery-controls {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 7.25rem));
     align-items: stretch;
     gap: var(--space-2);
-    padding-inline: calc(
-      var(--services-compact-chat-size) + var(--space-1) +
-      max(0px, env(safe-area-inset-right, 0px) - var(--space-4))
-    );
   }
   .services-gallery-controls p { grid-row: 1; grid-column: 1 / -1; text-align: center; }
   .services-gallery-controls .button { padding-inline: var(--space-1); }

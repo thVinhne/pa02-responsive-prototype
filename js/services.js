@@ -404,7 +404,7 @@
       event.preventDefault();
       if (link.dataset.package) packageName.textContent = link.dataset.package;
       chat.open = true;
-      toggle.focus({ preventScroll: true });
+      toggle.focus({ preventScroll: getComputedStyle(chat).position === 'fixed' });
     });
   });
 
