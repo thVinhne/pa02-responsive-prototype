@@ -393,27 +393,15 @@
 
 (() => {
   'use strict';
-  const packageName = document.getElementById('selected-package');
-  const chat = document.getElementById('studio-chat');
-  const toggle = document.getElementById('chat-toggle');
-  if (!packageName || !chat || !toggle) return;
+  const selection = document.getElementById('services-chat-selection');
+  if (!selection) return;
 
+  const packageName = selection.querySelector('strong');
   document.querySelectorAll('a[href="#chat"]').forEach(link => {
     link.addEventListener('click', event => {
       if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      if (link.dataset.package) packageName.textContent = link.dataset.package;
-      chat.open = true;
-      toggle.focus({ preventScroll: getComputedStyle(chat).position === 'fixed' });
+      packageName.textContent = link.dataset.package || '';
+      selection.hidden = !link.dataset.package;
     });
-  });
-
-  if (location.hash === '#chat') chat.open = true;
-
-  chat.addEventListener('keydown', event => {
-    if (event.key !== 'Escape' || !chat.open) return;
-    event.preventDefault();
-    chat.open = false;
-    toggle.focus({ preventScroll: true });
   });
 })();

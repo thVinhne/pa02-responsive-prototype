@@ -741,3 +741,11 @@ Lịch sử Git cục bộ chưa có commit xác định người thực hiện 
   và [kết quả W3C của index.html](checks/validator-index.txt).
 - **Rejected:** Giữ khung chat cố định trên màn nhỏ vì khung mở che nút
   xem gói. Kiểm tra zoom 200% thực tế và thiết bị thật **NOT RUN**.
+
+### 2026-11-11 - Hội thoại sau chân trang và cập nhật minh chứng W3C
+
+- **Tool:** Codex, Chrome qua Playwright, W3C Nu HTML Checker.
+- **Asked for:** Đặt hội thoại Linh ở cuối trang Dịch vụ sau footer và chạy lại W3C.
+- **Kept:** Hai tin nhắn mẫu, gói Tốt nghiệp Premium, liên kết tư vấn và nút Gửi bị khóa.
+- **Changed:** Dùng một khung hội thoại trong luồng trang sau footer. Liên kết tới tiêu đề hoạt động cả khi tắt JS. Khi bật JS, gói được chọn hiện riêng cạnh ô nhập. Kiểm tra ban đầu tái hiện thiếu hội thoại sau footer. Chrome kiểm tra lại ở 360, 768 và 1280 px với JS bật và tắt. Hai tin nhắn hiện trực tiếp, Enter trên liên kết chat đưa focus đến tiêu đề và trang không cuộn ngang. Chụp lại ba ảnh Dịch vụ với JS tắt. W3C Nu trả 0 lỗi, 0 cảnh báo cho HTML Dịch vụ và Lịch chụp. Đã lưu kết quả và SHA-256 trong checks/.
+- **Rejected:** Giữ khung thu gọn hoặc neo khung lên trên nội dung vì hai tin nhắn cần hiển thị trực tiếp sau footer.

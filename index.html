@@ -513,46 +513,6 @@
 
   </main>
 
-  <details class="services-chat-widget" id="studio-chat">
-    <summary class="services-chat-toggle" id="chat-toggle">
-      <svg class="services-icon" aria-hidden="true"><use href="#chat-icon"/></svg>
-      <span class="services-chat-label">Chat với studio</span>
-      <span class="services-chat-minimize" aria-hidden="true">Thu gọn</span>
-    </summary>
-    <section class="services-chat-paper" aria-labelledby="chat">
-      <div class="services-chat-header">
-        <div class="services-chat-identity">
-          <img src="assets/images/gradstudio-initial.svg" alt="" width="32" height="32">
-          <div>
-            <h2 id="chat" tabindex="-1">GradStudio</h2>
-            <p class="services-chat-subtitle">Cuộc tư vấn của Linh</p>
-          </div>
-        </div>
-        <span class="services-demo-label">Hội thoại mẫu</span>
-      </div>
-      <p class="services-chat-context">Đang hỏi về: <strong id="selected-package">Tốt nghiệp Premium</strong></p>
-      <div class="services-chat-messages" id="chat-messages" role="log" aria-label="Nội dung hội thoại mẫu">
-        <p class="services-chat-date">Linh · Yêu cầu chụp ngày 24/10/2026</p>
-        <div class="services-message services-message-customer">
-          <span>Linh</span>
-          <p>Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?</p>
-        </div>
-        <div class="services-message services-message-studio">
-          <span>GradStudio</span>
-          <p>Để mình kiểm tra lịch cho bạn nhé.</p>
-        </div>
-      </div>
-      <div class="services-chat-form">
-        <label class="form-label" for="chat-input">Tin nhắn của bạn</label>
-        <div>
-          <input class="form-control" id="chat-input" type="text" disabled>
-          <button class="button" type="button" disabled aria-describedby="chat-send-note">Gửi tin nhắn <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg></button>
-        </div>
-        <p class="services-small-note" id="chat-send-note">Tính năng gửi tin nhắn chưa có trong bản PA#2.</p>
-      </div>
-    </section>
-  </details>
-
   <footer class="services-footer">
     <div class="container services-footer-inner">
       <div>
@@ -573,5 +533,41 @@
       <a class="button button--secondary" href="admin-scheduling.html">Nhân viên studio: Mở hội thoại</a>
     </aside>
   </footer>
+
+  <section class="container services-chat" aria-labelledby="chat">
+    <div class="services-chat-paper">
+      <div class="services-chat-header">
+        <div class="services-chat-identity">
+          <img src="assets/images/gradstudio-initial.svg" alt="" width="32" height="32">
+          <div>
+            <h2 id="chat" tabindex="-1">GradStudio</h2>
+            <p class="services-chat-subtitle">Cuộc tư vấn của Linh</p>
+          </div>
+        </div>
+        <span class="services-demo-label">Hội thoại mẫu</span>
+      </div>
+      <p class="services-chat-context">Đang hỏi về: <strong>Tốt nghiệp Premium</strong></p>
+      <div class="services-chat-messages">
+        <p class="services-chat-date">Linh · Yêu cầu chụp ngày 24/10/2026</p>
+        <div class="services-message services-message-customer">
+          <span>Linh</span>
+          <p>Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?</p>
+        </div>
+        <div class="services-message services-message-studio">
+          <span>GradStudio</span>
+          <p>Để mình kiểm tra lịch cho bạn nhé.</p>
+        </div>
+      </div>
+      <div class="services-chat-form">
+        <p id="services-chat-selection" hidden>Gói bạn đang xem <strong></strong></p>
+        <label class="form-label" for="chat-input">Tin nhắn của bạn</label>
+        <div>
+          <input class="form-control" id="chat-input" type="text" disabled>
+          <button class="button" type="button" disabled aria-describedby="chat-send-note">Gửi tin nhắn <svg class="services-icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+        </div>
+        <p class="services-small-note" id="chat-send-note">Tính năng gửi tin nhắn chưa có trong bản PA#2.</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

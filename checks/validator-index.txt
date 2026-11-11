@@ -1,12 +1,13 @@
 W3C Nu checker - index.html
 Date: 2026-11-11
 Checker: https://validator.w3.org/nu/ (POST file contents)
-SHA256: 68bf7f132b8ede163041cde2d73dc076494dd757160b71eaf39a9c39e8130d1b
-SHA256 (LF): 338c8461e1b3cebd496ebebf073313eee6c2e83ac2e3ded874a4482887e5af9a
-SHA256 (CRLF): 68bf7f132b8ede163041cde2d73dc076494dd757160b71eaf39a9c39e8130d1b
+SHA256: a3f839bd00c52d40bd7650fea72bfdda87bba63091ab7dbced320e57902985f3
+SHA256 (LF): e73d06c4e3d4fa851052f88019852de3f734784b0ceabe3c41e7176fbd7a1e23
+SHA256 (CRLF): a3f839bd00c52d40bd7650fea72bfdda87bba63091ab7dbced320e57902985f3
 Errors: 0
 Warnings: 0
 {
   "version": "26.11.10",
-  "messages": []
+  "messages": [],
+  "language": "vi"
 }

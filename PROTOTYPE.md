@@ -35,11 +35,10 @@ ghi nhóm tác giả có MSSV khác danh sách nhóm PA#2 ở mục Team. Xác n
 cho phép dùng bộ ảnh GradStudio để đối chiếu PA#1 chưa có trong repo.
 
 - **Dịch vụ.** Nhóm thiết kế lại hero, xếp gói chụp và ảnh thành thẻ và
-  album theo hướng nhật ký ảnh phim. Khung chat mở bằng
-  `details/summary` và dùng được bằng bàn phím khi
-  tắt JS. Dưới 48rem, khung mở trong luồng trang trước chân trang. Từ
-  48rem, khung mở ở góc dưới bên phải. Nút gửi tin ở màn khách bị khóa
-  theo brief. Ở 360 px, ảnh hero
+  album theo hướng nhật ký ảnh phim. Hai tin nhắn mẫu hiện trong khung
+  chat sau chân trang ở mọi độ rộng, kể cả khi tắt JS. Các liên kết
+  tư vấn dẫn đến khung chat. Nút gửi tin ở màn khách bị khóa theo brief.
+  Ở 360 px, ảnh hero
   nằm dưới chữ và các gói xếp dọc. Ở desktop, ảnh xem nhanh nằm cạnh các gói.
 - **Admin.** Form từng nằm dưới hội thoại trong ảnh nguồn được chuyển
   xuống dưới lịch ở cột phải để dành cột giữa cho cuộc tư vấn. Bảng lịch
