@@ -63,7 +63,7 @@ thanh toán cọc và đạo cụ kéo/thả thuộc màn khác, không đưa v�
 | S01 | Xem gói chụp | Dưới 768 px, nhảy thẳng đến ba thẻ tại `#package-list`. Từ 768 px, đến đầu phần gói tại `#packages` | Dùng liên kết cùng trang, hoạt động khi tắt JavaScript |
 | S02 | Tư vấn gói này | Mở khung chat và đổi nhãn gói đang hỏi khi JS bật | Giữ ngữ cảnh gói, không tạo booking |
 | S03 | Chat với studio | Trên màn nhỏ, cuộn tới khung chat trước chân trang. Từ 48rem, mở khung tại vị trí đang xem. Nút “Thu gọn” hoặc phím Escape khi bật JS thu gọn hội thoại | Giữ hội thoại và ngữ cảnh gói khi mở lại |
-| S04 | Nhập và gửi tin | Ô nhập và nút Gửi tin nhắn bị vô hiệu hóa. Ghi chú giải thích tính năng chưa có trong PA#2 | Hội thoại mẫu có sẵn khi mở trang |
+| S04 | Nhập và gửi tin | Ô nhập và nút Gửi tin nhắn bị vô hiệu hóa. Ghi chú giải thích tính năng chưa có trong PA#2 | Hội thoại mẫu hiển thị khi mở khung chat |
 | S05 | Lịch chụp của tôi | Mở `my-appointments.html` từ menu, khối tư vấn hoặc chân trang | Dùng liên kết tương đối, hoạt động khi tắt JavaScript |
 | S06 | Tiếp tục luồng demo với vai Admin | “Nhân viên studio: Mở hội thoại” mở `admin-scheduling.html` | Link chuyển vai riêng ở chân trang, hoạt động khi tắt JavaScript |
 | S07 | Xem ảnh tham khảo | Bấm ảnh để mở hộp xem lớn, đóng bằng nút Đóng hoặc Escape và trở lại ảnh | Giữ link thật tới ảnh cục bộ để xem khi tắt JS |
@@ -75,8 +75,8 @@ thanh toán cọc và đạo cụ kéo/thả thuộc màn khác, không đưa v�
 | S13 | Phát và tạm dừng video nền | Video 10 giây phát lặp không tiếng khi phần hình ở trong viewport. Nút “Tạm dừng video nền” giữ lựa chọn khi cuộn. Video vẫn phát khi mở chat và tạm dừng khi tab ẩn hoặc hộp xem ảnh mở | Hiện khung hình tĩnh khi giảm chuyển động, tắt JS hoặc video lỗi |
 
 Khung dùng `details/summary` để mở và thu gọn bằng bàn phím hoặc khi tắt
-JS. Khung khởi đầu thu gọn ở mọi độ rộng, còn hai tin nhắn mẫu nằm trong
-phần tư vấn. CTA giữ link `#chat` tới hội thoại. Khi JS bật, CTA chuyển
+JS. Khung khởi đầu thu gọn ở mọi độ rộng và hiển thị hai tin nhắn mẫu
+khi mở. CTA giữ link `#chat` tới hội thoại. Khi JS bật, CTA chuyển
 focus tới nút thu gọn và cuộn tới khung trên màn nhỏ. Ô nhập và nút Gửi
 bị khóa trong PA#2. Từ 768 px, nút video nằm bên trái để tách khỏi nút
 chat bên phải.
@@ -85,7 +85,7 @@ chat bên phải.
 
 | Độ rộng | Bố cục |
 | --- | --- |
-| 360 px | Header xuống dòng. Video nằm dưới chữ trong hero. Slideshow nằm trên ba thẻ gói xếp dọc. Khi mở một album, hai bìa còn lại chia đều hai cột trên kệ. Bìa bấm được qua ảnh và tên album. Hai trang sách xếp dọc. Hai tin nhắn mẫu nằm dưới phần tư vấn. Khung chat mở trong luồng trang và đẩy chân trang xuống. |
+| 360 px | Header xuống dòng. Video nằm dưới chữ trong hero. Slideshow nằm trên ba thẻ gói xếp dọc. Khi mở một album, hai bìa còn lại chia đều hai cột trên kệ. Bìa bấm được qua ảnh và tên album. Hai trang sách xếp dọc. Khung chat mở trong luồng trang và đẩy chân trang xuống. |
 | 768 px | Hero đặt nội dung trên nền video. Slideshow nằm trên phần gói. Ba thẻ gói và ba bìa album đều nằm cùng hàng trong phần tương ứng. Hai trang sách đặt cạnh nhau |
 | Từ 1024 px | Hero có nền video phủ ngang. Tiêu đề và nút lớn dần theo viewport. Khung hai cột và thư viện rộng tối đa 100 rem. Từ 1280 px, riêng khung hai cột rộng tối đa 112 rem. Slideshow ở trái, ba thẻ gói ở phải. Khung chat neo góc dưới bên phải |
 

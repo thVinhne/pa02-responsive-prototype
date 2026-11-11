@@ -655,14 +655,6 @@
 .services-consultation h2 { margin-block: var(--space-3) var(--space-5); }
 .services-consultation-copy > p:not(.services-kicker) { color: var(--color-text-muted); max-inline-size: 410px; }
 .services-consultation-copy > .button { margin-block-start: var(--space-5); }
-.services-chat-preview {
-  grid-column: 1 / -1;
-  padding: var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-card);
-  background: var(--color-surface);
-}
-.services-chat-preview .services-chat-messages { padding: var(--space-3) 0 0; }
 .services-steps { list-style: none; padding: 0; display: grid; gap: var(--space-4); margin-block: var(--space-5); }
 .services-steps li { display: flex; gap: var(--space-3); align-items: start; }
 .services-steps li > span { font-family: var(--font-heading); color: var(--color-wine); }
