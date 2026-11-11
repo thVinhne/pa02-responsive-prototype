@@ -30,12 +30,12 @@ Các khách còn lại dùng chữ viết tắt trong HTML.
 | --- | --- |
 | Dưới 48rem, gồm 360 px | Một cột, cuộn trang theo thứ tự danh sách, chat, lịch và booking. Trạng thái nằm dưới khách. Ngày/giờ xếp dọc. |
 | Từ 48rem đến dưới 64rem, gồm 768 px | Danh sách ở cột trái 15rem, chat và lịch/booking xếp dọc bên phải. Các vùng có chiều cao tự nhiên, dùng cuộn trang. Ngày/giờ cạnh nhau. |
-| Từ 64rem, gồm 1280 px | Ba cột, khung làm việc cao tối thiểu 48rem hoặc viewport trừ 10rem. Danh sách, tin nhắn và booking có cuộn riêng khi tràn. Lịch cao theo nội dung, booking có ít nhất 16rem. |
-| Cửa sổ thấp hoặc nội dung đầu/chân trang dài | Trang vẫn cuộn tới toàn bộ khung làm việc và chân trang. Zoom làm chiều rộng CSS xuống dưới 64rem sẽ dùng cuộn trang tự nhiên. |
+| Từ 64rem, gồm 1280 px | Ba cột cao theo nội dung. Danh sách, chat và booking dùng cuộn trang, kể cả 1280 × 900. |
+| Cửa sổ thấp, zoom hoặc nội dung dài | Toàn bộ nội dung và nút được tiếp cận bằng cuộn trang ở mọi độ rộng. |
 
 ## Dữ liệu ban đầu
 
-- Admin mở hội thoại **Nguyễn Thùy Linh**, trạng thái **Đã xác nhận**.
+- Admin mở hội thoại **Nguyễn Thùy Linh**, trạng thái **Đã chốt lịch**.
   Bốn tin cũ thuộc ngày **23/10/2026**, chốt giờ chụp **14:00 ngày 24/10**.
   Tin mới được gắn nhãn mô phỏng và giờ thao tác, tách nghĩa với lịch sử.
 - Yêu cầu **09:00 ngày 24/10/2026** vướng lịch makeup của Mai từ
@@ -44,8 +44,9 @@ Các khách còn lại dùng chữ viết tắt trong HTML.
 - Booking mẫu **GS-1024** dùng gói **Tốt nghiệp Premium**, loại buổi chụp
   **Tốt nghiệp cá nhân**, thời lượng **2 giờ**, **30 ảnh**. Tổng giá
   **1.800.000đ**, cọc **540.000đ**, còn **1.260.000đ** sau buổi chụp.
-- Bản tĩnh hiển thị **Lịch đã thống nhất** và **GS-1024 · Chờ cọc 30% ·
-  Minh họa tĩnh**. JS mở form từ bước **Đã đồng ý giờ · Chưa tạo booking**.
+- Bản tĩnh và bản bật JS cùng bắt đầu ở **Đã chốt lịch · Chưa tạo booking**.
+  Form và nút Tạo booking hiện trong HTML. Nút disabled khi tắt JS, có
+  ghi chú cần bật JS để thực hiện bước tạo booking mô phỏng.
   Makeup đã bao gồm. Thuê áo cử nhân bị khóa vì chưa có báo giá.
 
 ## Tương tác trong bản hiện tại
@@ -53,9 +54,9 @@ Các khách còn lại dùng chữ viết tắt trong HTML.
 | Thao tác | Kết quả |
 | --- | --- |
 | Tìm, lọc và chọn khách | Tìm tên có dấu hoặc không dấu và kết hợp với bộ lọc trạng thái. Nút chọn khách dùng được bằng chuột và bàn phím. Khi chuyển khách, mỗi hội thoại giữ tin nhắn, bản nháp, trạng thái và vị trí cuộn trong phiên xem. |
-| Đổi trạng thái hoặc gửi tin | Dropdown áp dụng cho khách đang mở. Bốn nhãn hiện tại là Chưa trả lời, Đang tư vấn, Đã xác nhận và Hoàn thành. Gửi tin thêm nội dung vào hội thoại mẫu. Trả lời khách Chưa trả lời chuyển hội thoại sang Đang tư vấn. |
+| Đổi trạng thái hoặc gửi tin | Dropdown áp dụng cho khách đang mở. Bốn nhãn hiện tại là Chưa trả lời, Đang tư vấn, Đã chốt lịch và Hoàn thành. Gửi tin thêm nội dung vào hội thoại mẫu. Trả lời khách Chưa trả lời chuyển hội thoại sang Đang tư vấn. |
 | Đổi ngày hoặc giờ chụp | Đưa booking về bản nháp. Ngày có dữ liệu là 24/10/2026, với lựa chọn 14:00 và 15:00. Makeup bắt đầu trước giờ chụp một tiếng. |
-| Gửi đề xuất và mô phỏng phản hồi | Đề xuất thêm lịch và giá vào chat. Linh đồng ý thì bật Tạo booking và chuyển trạng thái hội thoại sang Đã xác nhận. Từ chối khóa Tạo booking và đưa hội thoại về Đang tư vấn. |
+| Gửi đề xuất và mô phỏng phản hồi | Đề xuất thêm lịch và giá vào chat. Linh đồng ý thì bật Tạo booking và chuyển trạng thái hội thoại sang Đã chốt lịch. Từ chối khóa Tạo booking và đưa hội thoại về Đang tư vấn. |
 | Tạo booking hoặc chỉnh lại lịch | Tạo booking hiển thị tóm tắt GS-1024 và cập nhật hai khung liên quan thành Chờ cọc. Chỉnh lại lịch mở lại form và yêu cầu chốt giờ mới. |
 
 Các thao tác trên chạy trong phiên xem. Tin nhắn và booking mất khi tải
@@ -64,9 +65,10 @@ lại trang. Liên kết ở chân trang và trong kết quả tạo booking m�
 thẻ và lịch ở màn Admin. Trang Lịch chụp mở dữ liệu mẫu riêng.
 
 Khi tắt JavaScript, HTML hiển thị danh sách, bốn tin nhắn của Linh,
-lịch và tóm tắt minh họa tĩnh GS-1024 Chờ cọc 30%, đủ phân công và tiền.
-Form tạo booking và điều khiển nâng cấp hiện sau khi gắn handler. Khi bật
-JS, bản tương tác bắt đầu từ giờ 14:00 Linh đã đồng ý trong hội thoại.
+lịch, form và nút Tạo booking disabled, đủ phân công và tiền. Booking
+chưa tạo, phần kết quả Chờ cọc chỉ hiện sau hành động tạo khi bật JS.
+Các trường thay đổi lịch và nút xử lý được mở khóa sau khi gắn handler.
+Bản tương tác bắt đầu từ giờ 14:00 Linh đã đồng ý trong hội thoại.
 Đổi ngày/giờ cần gửi đề xuất và đồng ý lại. Submit lặp sau khi tạo bị chặn.
 
 Ba mẫu tin soạn sẵn của Linh được chọn bằng select và nút Điền mẫu.
@@ -77,13 +79,13 @@ hiện bước xác nhận. Mẫu tin chỉ hiện khi đang mở Linh.
 
 ## Điểm đối chiếu với brief PA02
 
-- Brief dùng nhãn **Đã chốt lịch** cho hội thoại đã đồng ý. Màn hiện tại
-  dùng **Đã xác nhận** khi mở hội thoại đã chốt, mô phỏng đồng ý hoặc tạo booking.
+- Dùng nhãn **Đã chốt lịch** cho hội thoại đã đồng ý ở dropdown, bộ lọc
+  và nhãn truy cập. Trạng thái booking Chờ cọc hiện sau bước Tạo booking.
 - Chân trang vẫn có nhãn **Màn 1/2/3** và form vẫn có nhóm **Mô phỏng phản hồi
   của Linh**. Nút **Tạo booking** cần JS. Ghi chú chân trang và phản hồi
   sau khi tạo booking giải thích phạm vi mô phỏng của từng màn.
-- Bản hiện tại dùng cuộn trang dưới 64rem và vùng cuộn riêng từ 64rem,
-  đồng thời trang vẫn cuộn được trong cửa sổ thấp theo bảng responsive.
+- Bản hiện tại dùng cuộn trang ở mọi độ rộng theo yêu cầu ngày 11/11/2026,
+  gồm trường hợp 1280 × 900.
 
 ## Tệp triển khai và minh chứng
 

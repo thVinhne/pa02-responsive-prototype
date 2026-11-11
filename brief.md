@@ -904,3 +904,29 @@ Bắt đầu bằng việc kiểm tra repository và phân tích vấn đề 1. 
 ```text
 Dùng ba mẫu tin soạn sẵn
 ```
+
+```text
+Tiếp tục dự án PA02 GradStudio theo context hội thoại trước. Đọc AGENTS.md, DESIGN.md và code hiện tại. Chỉ tập trung sửa 3 vấn đề sau:
+
+1. **Trạng thái Admin và Tạo booking:**
+   - Khi bật JS, nút Tạo booking đã hoạt động nhưng trạng thái vẫn ghi "Đã xác nhận" thay vì "Đã chốt lịch". Sửa đúng theo brief.
+   - Khi tắt JS, không được ẩn toàn bộ form và nút Tạo booking hoặc bỏ qua bước tạo booking để chuyển thẳng sang Chờ cọc 30%.
+   - Đảm bảo luồng nghiệp vụ và trạng thái nhất quán khi bật/tắt JS. Không tạo nút giả hoặc hành động gây hiểu nhầm.
+2. **Điều khiển demo và thanh toán:**
+   - Giữ nguyên các chức năng Admin đang hoạt động như Màn 1/2/3, phản hồi của Linh và nút Gửi.
+   - Theo brief, nút Gửi tin ở màn khách và Thanh toán cọc 30% phải ở trạng thái disabled, kèm ghi chú rõ ràng.
+   - Hiện tại nút thanh toán vẫn bấm được và chuyển sang Đã đặt lịch. Hãy vô hiệu hóa đúng nghĩa, không chỉ thêm ghi chú.
+3. **Cuộn màn Admin:**
+   - Ở 1280 × 900, khung chat và booking vẫn phải cuộn bên trong mới đọc hết.
+   - Điều chỉnh để cả hai vùng đọc được bằng cách cuộn trang ở mọi độ rộng, tương tự cách đã sửa tại 360 và 768 px.
+   - Không tạo vùng cuộn lồng nhau, không cắt nội dung hoặc làm hỏng responsive.
+
+**Yêu cầu thực hiện:**
+
+- Ưu tiên sửa tối thiểu, không thiết kế lại giao diện hoặc làm hỏng chức năng đã đạt.
+- Kiểm tra tại 360, 768, 1280 px với JS bật/tắt, đặc biệt 1280 × 900.
+- Sau khi sửa, cập nhật `brief.md` (lưu nguyên văn prompt này một lần) và `AI-LOG.md` (ghi thay đổi, lý do, kết quả kiểm tra thực tế).
+- Không bịa kết quả kiểm tra; chưa chạy thì ghi NOT RUN.
+- Không tự commit hoặc push.
+- Cuối cùng báo ngắn gọn các file đã sửa, kết quả kiểm tra và vấn đề còn tồn tại.
+```

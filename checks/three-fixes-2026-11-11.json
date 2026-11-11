@@ -1,0 +1,522 @@
+{
+  "date": "2026-11-11",
+  "request": "Three corrections: Admin state, disabled customer actions, document scrolling",
+  "transport": "file://",
+  "browser": "Chrome/157.0.8103.50",
+  "results": [
+    {
+      "page": "admin-scheduling",
+      "js": false,
+      "width": 360,
+      "height": 900,
+      "status": "PASS",
+      "initial": {
+        "status": "Đã chốt lịch · Chưa tạo booking",
+        "formVisible": true,
+        "buttonVisible": true,
+        "createDisabled": true,
+        "resultHidden": true,
+        "selectedStatus": "Đã chốt lịch",
+        "regions": [
+          {
+            "selector": ".admin-inbox-list",
+            "overflow": "visible",
+            "height": 414,
+            "content": 414
+          },
+          {
+            "selector": ".admin-chat-body",
+            "overflow": "visible",
+            "height": 907,
+            "content": 907
+          },
+          {
+            "selector": ".admin-booking",
+            "overflow": "visible",
+            "height": 1651,
+            "content": 1651
+          }
+        ],
+        "width": 345,
+        "scrollWidth": 345,
+        "pageHeight": 4094
+      },
+      "checks": [
+        "same initial status with JS on/off",
+        "visible form and create control",
+        "document scrolling without nested scroll regions",
+        "long messages",
+        "native disabled with JS off"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "js": false,
+      "width": 360,
+      "status": "PASS",
+      "payment": {
+        "disabled": true,
+        "visible": true,
+        "note": "Thanh toán cọc chưa được kết nối trong PA02. Booking đang Chờ cọc 30%.",
+        "dialog": false,
+        "width": 345,
+        "scrollWidth": 345
+      },
+      "checks": [
+        "native disabled deposit",
+        "click and dispatched click cannot change booking",
+        "pending booking and amounts remain readable"
+      ]
+    },
+    {
+      "page": "index",
+      "js": false,
+      "width": 360,
+      "status": "PASS",
+      "checks": [
+        "customer input and send button disabled with note"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "js": false,
+      "width": 768,
+      "height": 900,
+      "status": "PASS",
+      "initial": {
+        "status": "Đã chốt lịch · Chưa tạo booking",
+        "formVisible": true,
+        "buttonVisible": true,
+        "createDisabled": true,
+        "resultHidden": true,
+        "selectedStatus": "Đã chốt lịch",
+        "regions": [
+          {
+            "selector": ".admin-inbox-list",
+            "overflow": "visible",
+            "height": 438,
+            "content": 438
+          },
+          {
+            "selector": ".admin-chat-body",
+            "overflow": "visible",
+            "height": 754,
+            "content": 754
+          },
+          {
+            "selector": ".admin-booking",
+            "overflow": "visible",
+            "height": 1393,
+            "content": 1393
+          }
+        ],
+        "width": 753,
+        "scrollWidth": 753,
+        "pageHeight": 2849
+      },
+      "checks": [
+        "same initial status with JS on/off",
+        "visible form and create control",
+        "document scrolling without nested scroll regions",
+        "long messages",
+        "native disabled with JS off"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "js": false,
+      "width": 768,
+      "status": "PASS",
+      "payment": {
+        "disabled": true,
+        "visible": true,
+        "note": "Thanh toán cọc chưa được kết nối trong PA02. Booking đang Chờ cọc 30%.",
+        "dialog": false,
+        "width": 753,
+        "scrollWidth": 753
+      },
+      "checks": [
+        "native disabled deposit",
+        "click and dispatched click cannot change booking",
+        "pending booking and amounts remain readable"
+      ]
+    },
+    {
+      "page": "index",
+      "js": false,
+      "width": 768,
+      "status": "PASS",
+      "checks": [
+        "customer input and send button disabled with note"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "js": false,
+      "width": 1280,
+      "height": 900,
+      "status": "PASS",
+      "initial": {
+        "status": "Đã chốt lịch · Chưa tạo booking",
+        "formVisible": true,
+        "buttonVisible": true,
+        "createDisabled": true,
+        "resultHidden": true,
+        "selectedStatus": "Đã chốt lịch",
+        "regions": [
+          {
+            "selector": ".admin-inbox-list",
+            "overflow": "visible",
+            "height": 438,
+            "content": 438
+          },
+          {
+            "selector": ".admin-chat-body",
+            "overflow": "visible",
+            "height": 703,
+            "content": 703
+          },
+          {
+            "selector": ".admin-booking",
+            "overflow": "visible",
+            "height": 1557,
+            "content": 1557
+          }
+        ],
+        "width": 1265,
+        "scrollWidth": 1265,
+        "pageHeight": 2143
+      },
+      "checks": [
+        "same initial status with JS on/off",
+        "visible form and create control",
+        "document scrolling without nested scroll regions",
+        "long messages",
+        "native disabled with JS off"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "js": false,
+      "width": 1280,
+      "status": "PASS",
+      "payment": {
+        "disabled": true,
+        "visible": true,
+        "note": "Thanh toán cọc chưa được kết nối trong PA02. Booking đang Chờ cọc 30%.",
+        "dialog": false,
+        "width": 1265,
+        "scrollWidth": 1265
+      },
+      "checks": [
+        "native disabled deposit",
+        "click and dispatched click cannot change booking",
+        "pending booking and amounts remain readable"
+      ]
+    },
+    {
+      "page": "index",
+      "js": false,
+      "width": 1280,
+      "status": "PASS",
+      "checks": [
+        "customer input and send button disabled with note"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "js": true,
+      "width": 360,
+      "height": 900,
+      "status": "PASS",
+      "initial": {
+        "status": "Đã chốt lịch · Chưa tạo booking",
+        "formVisible": true,
+        "buttonVisible": true,
+        "createDisabled": false,
+        "resultHidden": true,
+        "selectedStatus": "Đã chốt lịch",
+        "regions": [
+          {
+            "selector": ".admin-inbox-list",
+            "overflow": "visible",
+            "height": 414,
+            "content": 414
+          },
+          {
+            "selector": ".admin-chat-body",
+            "overflow": "visible",
+            "height": 882,
+            "content": 882
+          },
+          {
+            "selector": ".admin-booking",
+            "overflow": "visible",
+            "height": 1533,
+            "content": 1533
+          }
+        ],
+        "width": 345,
+        "scrollWidth": 345,
+        "pageHeight": 4484
+      },
+      "checks": [
+        "same initial status with JS on/off",
+        "visible form and create control",
+        "document scrolling without nested scroll regions",
+        "long messages",
+        "sample, keyboard send, decline, agree, create, duplicate, switch customer, edit"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "js": true,
+      "width": 360,
+      "status": "PASS",
+      "payment": {
+        "disabled": true,
+        "visible": true,
+        "note": "Thanh toán cọc chưa được kết nối trong PA02. Booking đang Chờ cọc 30%.",
+        "dialog": false,
+        "width": 345,
+        "scrollWidth": 345
+      },
+      "checks": [
+        "native disabled deposit",
+        "click and dispatched click cannot change booking",
+        "filters/reset/image/checklist"
+      ]
+    },
+    {
+      "page": "index",
+      "js": true,
+      "width": 360,
+      "status": "PASS",
+      "checks": [
+        "customer input and send button disabled with note"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "js": true,
+      "width": 768,
+      "height": 900,
+      "status": "PASS",
+      "initial": {
+        "status": "Đã chốt lịch · Chưa tạo booking",
+        "formVisible": true,
+        "buttonVisible": true,
+        "createDisabled": false,
+        "resultHidden": true,
+        "selectedStatus": "Đã chốt lịch",
+        "regions": [
+          {
+            "selector": ".admin-inbox-list",
+            "overflow": "visible",
+            "height": 438,
+            "content": 438
+          },
+          {
+            "selector": ".admin-chat-body",
+            "overflow": "visible",
+            "height": 728,
+            "content": 728
+          },
+          {
+            "selector": ".admin-booking",
+            "overflow": "visible",
+            "height": 1301,
+            "content": 1301
+          }
+        ],
+        "width": 753,
+        "scrollWidth": 753,
+        "pageHeight": 3101
+      },
+      "checks": [
+        "same initial status with JS on/off",
+        "visible form and create control",
+        "document scrolling without nested scroll regions",
+        "long messages",
+        "sample, keyboard send, decline, agree, create, duplicate, switch customer, edit"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "js": true,
+      "width": 768,
+      "status": "PASS",
+      "payment": {
+        "disabled": true,
+        "visible": true,
+        "note": "Thanh toán cọc chưa được kết nối trong PA02. Booking đang Chờ cọc 30%.",
+        "dialog": false,
+        "width": 753,
+        "scrollWidth": 753
+      },
+      "checks": [
+        "native disabled deposit",
+        "click and dispatched click cannot change booking",
+        "filters/reset/image/checklist"
+      ]
+    },
+    {
+      "page": "index",
+      "js": true,
+      "width": 768,
+      "status": "PASS",
+      "checks": [
+        "customer input and send button disabled with note"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "js": true,
+      "width": 1280,
+      "height": 900,
+      "status": "PASS",
+      "initial": {
+        "status": "Đã chốt lịch · Chưa tạo booking",
+        "formVisible": true,
+        "buttonVisible": true,
+        "createDisabled": false,
+        "resultHidden": true,
+        "selectedStatus": "Đã chốt lịch",
+        "regions": [
+          {
+            "selector": ".admin-inbox-list",
+            "overflow": "visible",
+            "height": 438,
+            "content": 438
+          },
+          {
+            "selector": ".admin-chat-body",
+            "overflow": "visible",
+            "height": 703,
+            "content": 703
+          },
+          {
+            "selector": ".admin-booking",
+            "overflow": "visible",
+            "height": 1439,
+            "content": 1439
+          }
+        ],
+        "width": 1265,
+        "scrollWidth": 1265,
+        "pageHeight": 2024
+      },
+      "checks": [
+        "same initial status with JS on/off",
+        "visible form and create control",
+        "document scrolling without nested scroll regions",
+        "long messages",
+        "sample, keyboard send, decline, agree, create, duplicate, switch customer, edit"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "js": true,
+      "width": 1280,
+      "status": "PASS",
+      "payment": {
+        "disabled": true,
+        "visible": true,
+        "note": "Thanh toán cọc chưa được kết nối trong PA02. Booking đang Chờ cọc 30%.",
+        "dialog": false,
+        "width": 1265,
+        "scrollWidth": 1265
+      },
+      "checks": [
+        "native disabled deposit",
+        "click and dispatched click cannot change booking",
+        "filters/reset/image/checklist"
+      ]
+    },
+    {
+      "page": "index",
+      "js": true,
+      "width": 1280,
+      "status": "PASS",
+      "checks": [
+        "customer input and send button disabled with note"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "js": false,
+      "zoom": "200%",
+      "reduced_motion": true,
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "js": false,
+      "zoom": "200%",
+      "reduced_motion": true,
+      "status": "PASS"
+    },
+    {
+      "page": "admin-scheduling",
+      "js": true,
+      "zoom": "200%",
+      "reduced_motion": true,
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "js": true,
+      "zoom": "200%",
+      "reduced_motion": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Admin role navigation by Enter with JS off",
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "admin-scheduling.html": "e54b9050c3396aa3ce018c1d5d4bb93da86d1fbbfa879579082ffa9382879dc7",
+    "js/admin-scheduling.js": "92c292fa3d2e7ae0198740d292a7fbebafb342db5b5f7537eeeeba4fee490a8e",
+    "css/admin-scheduling.css": "60bf2523cdb72e064268c937535fcc731048dc9fe129c53ab3722adbc034bd74",
+    "my-appointments.html": "f6c8a7fc258c53dc6b8b9011dfac8bee6eaf2fdc0c8f95f8edbd3f955e161916",
+    "js/my-appointments.js": "fdb34c4377f278790d65cfad64bdcc087bd64fa831871099b8742a74f13ce1a7",
+    "css/my-appointments.css": "d10e44af7b47840cc84fd3381a68ffea3a11792fab5bcf4b00da33d01ef75271",
+    "index.html": "a3f839bd00c52d40bd7650fea72bfdda87bba63091ab7dbced320e57902985f3"
+  },
+  "screenshots": {
+    "admin-scheduling-1280.png": "94e525dbb0676bed6cd8525d98605da7df4b01b771e16b781d00b2b23d9b4a41",
+    "admin-scheduling-360.png": "5ad8e019d79d3d2407d963dcee759b216aef569223f1b6b1716ee9ff612a852a",
+    "admin-scheduling-768.png": "54f6567f8cf61646a461d04cb14f4a4e7bcfaebaa13688a4211a7bd535637a77",
+    "my-appointments-1280.png": "f8689dd51b75fda4f721cbf53ce28bc841998ea450ad0ae69df10bee8b9b7011",
+    "my-appointments-360.png": "bf6ba858743632fe2ba3e6f56c89b97aeb373ac351abad61d086fad7922fcb23",
+    "my-appointments-768.png": "eacb4c54b6f9fe4b95e54c5e4d74fdcefb020e5e7d8c7a8a355c5ad90684eb26"
+  },
+  "not_run": [
+    "physical devices",
+    "manual screen reader"
+  ],
+  "w3c": [
+    {
+      "page": "admin-scheduling",
+      "errors": 0,
+      "warnings": 0,
+      "sha256": "e54b9050c3396aa3ce018c1d5d4bb93da86d1fbbfa879579082ffa9382879dc7"
+    },
+    {
+      "page": "my-appointments",
+      "errors": 0,
+      "warnings": 0,
+      "sha256": "f6c8a7fc258c53dc6b8b9011dfac8bee6eaf2fdc0c8f95f8edbd3f955e161916"
+    }
+  ],
+  "static_checks": {
+    "semantic_markup": "PASS",
+    "labels_and_aria_references": "PASS",
+    "local_resources_and_links": "PASS",
+    "javascript_syntax": "PASS",
+    "css_rules": "PASS",
+    "git_diff_check": "PASS",
+    "prompt_preserved_once": "PASS"
+  }
+}

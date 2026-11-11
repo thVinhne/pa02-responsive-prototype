@@ -305,12 +305,8 @@
                 <div><dt>Còn lại</dt><dd>1.260.000đ</dd></div>
               </dl>
               <p class="appointments-balance-note">Khoản còn lại thanh toán sau buổi chụp.</p>
-              <button class="appointments-button appointments-pay-button" id="ap-pay-open" type="button" aria-haspopup="dialog" aria-controls="ap-pay-dialog" aria-describedby="ap-payment-demo-note" hidden>Thanh toán cọc 30%</button>
-              <p class="appointments-balance-note" id="ap-payment-demo-note">Thanh toán mô phỏng trong lần xem này.</p>
-              <details class="appointments-payment-fallback" id="ap-pay-fallback" data-ap-detail>
-                <summary class="appointments-button">Thanh toán cọc 30%</summary>
-                <div class="appointments-fallback-copy"><p><strong>GS-1024 · Cọc 540.000đ</strong></p><p>Mô phỏng không phát sinh giao dịch thật. Bật JavaScript trong trình duyệt hỗ trợ hộp thoại để thử Hủy hoặc Thành công; khi chỉ xem thông tin, lịch vẫn Chờ cọc.</p></div>
-              </details>
+              <button class="appointments-button appointments-pay-button" id="ap-pay-open" type="button" aria-describedby="ap-payment-demo-note" disabled>Thanh toán cọc 30%</button>
+              <p class="appointments-balance-note" id="ap-payment-demo-note">Thanh toán cọc chưa được kết nối trong PA02. Booking đang Chờ cọc 30%.</p>
             </div>
           </article>
         </div>
@@ -402,14 +398,6 @@
       <div class="appointments-demo"><p>Điều khiển demo</p><p>Trạng thái và checklist chỉ giữ trong lần xem này.</p><button class="appointments-button appointments-button-secondary" id="ap-reset" type="button" hidden>Đặt lại demo</button></div>
     </div>
   </footer>
-
-  <dialog class="appointments-dialog" id="ap-pay-dialog" aria-labelledby="ap-pay-title" aria-describedby="ap-pay-description">
-    <form method="dialog">
-      <p class="appointments-kicker">GradStudio / GS-1024</p><h2 id="ap-pay-title">Mô phỏng thanh toán</h2><p id="ap-pay-description">Đây là thao tác mô phỏng, không phát sinh giao dịch thật.</p>
-      <dl class="appointments-dialog-facts"><div><dt>Booking</dt><dd>GS-1024</dd></div><div><dt>Khách hàng</dt><dd>Nguyễn Thùy Linh</dd></div><div><dt>Gói</dt><dd>Tốt nghiệp Premium</dd></div><div class="appointments-dialog-deposit"><dt>Cọc 30%</dt><dd>540.000đ</dd></div></dl>
-      <div class="appointments-dialog-actions"><button class="appointments-button appointments-button-secondary" type="submit" value="cancel" autofocus>Hủy</button><button class="appointments-button" type="submit" value="paid">Thanh toán thành công</button></div>
-    </form>
-  </dialog>
 
   <dialog class="appointments-dialog appointments-image-dialog" id="ap-image-dialog" aria-labelledby="ap-image-title" aria-describedby="ap-image-description">
     <div class="appointments-image-dialog-heading"><h2 id="ap-image-title">Ảnh gợi ý phong cách</h2><form method="dialog"><button class="appointments-button appointments-button-secondary" type="submit" autofocus>Đóng ảnh</button></form></div>

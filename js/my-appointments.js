@@ -23,25 +23,17 @@
   const imageLinks = document.querySelectorAll('[data-ap-image]');
   const photoPins = document.querySelectorAll('[data-ap-pin]');
   const largeImages = document.querySelectorAll('[data-ap-large-image]');
-  const payDialog = get('ap-pay-dialog');
   const imageDialog = get('ap-image-dialog');
-  const payButton = get('ap-pay-open');
-  const paymentStub = get('ap-payment-pending');
   const resetButton = get('ap-reset');
   const announcement = get('ap-announcement');
   const state = { status: 'pending', day: 24, filter: 'all' };
   let imageOpener = null;
-  let paymentTear = null;
   let filmDrag = null;
   let suppressFilmClick = false;
   const studio = createStudio();
 
   function bookingVisible() {
     return state.day === 24 && (state.filter === 'all' || state.filter === state.status);
-  }
-
-  function currentFilter() {
-    return filters.find(input => input.value === state.filter);
   }
 
   function render() {
@@ -64,38 +56,11 @@
     const frameLabel = `Khung ${String(frame + 1).padStart(2, '0')} / ${String(days.length).padStart(2, '0')} · Ngày ${state.day}/10`;
     if (filmCurrent.textContent !== frameLabel) filmCurrent.textContent = frameLabel;
     stateContent.forEach(node => {
-      node.hidden = node.dataset.apState !== state.status && !(paymentTear && node === paymentStub);
+      node.hidden = node.dataset.apState !== state.status;
     });
-    result.hidden = !visible && !paymentTear;
+    result.hidden = !visible;
     journal.hidden = !visible;
-    empty.hidden = visible || paymentTear !== null;
-    payButton.disabled = state.status === 'booked';
-  }
-
-  function stopPaymentTear() {
-    if (!paymentTear) return;
-    const animation = paymentTear;
-    paymentTear = null;
-    animation.cancel();
-    paymentStub.inert = false;
-  }
-
-  function startPaymentTear() {
-    if (typeof paymentStub.animate !== 'function' || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
-    paymentStub.inert = true;
-    const animation = paymentStub.animate([
-      { transform: 'perspective(900px) rotateY(0) rotateZ(0)', opacity: 1 },
-      { transform: 'perspective(900px) rotateY(-11deg) rotateZ(1deg)', offset: 0.25 },
-      { transform: 'perspective(900px) translateY(8px) rotateX(-14deg) rotateY(-27deg) rotateZ(3deg) scale(0.96)', offset: 0.52, opacity: 1 },
-      { transform: 'perspective(900px) translate(-12px, 70px) rotateX(-26deg) rotateY(-38deg) rotateZ(9deg) scale(0.84)', opacity: 0 }
-    ], { duration: 800, easing: 'cubic-bezier(.4, 0, .68, 1)', fill: 'forwards' });
-    paymentTear = animation;
-    const finish = () => {
-      if (paymentTear !== animation) return;
-      stopPaymentTear();
-      render();
-    };
-    animation.finished.then(finish, finish);
+    empty.hidden = visible;
   }
 
   function updateProgress() {
@@ -111,7 +76,6 @@
   }
 
   function resetDemo() {
-    stopPaymentTear();
     clearFilmDrag();
     state.status = 'pending';
     state.day = 24;
@@ -122,8 +86,6 @@
     setNotebookPage('1');
     photoPins.forEach(pin => pin.setAttribute('aria-pressed', 'true'));
     studio.reset();
-    if (payDialog.open) payDialog.close('reset');
-    else payDialog.returnValue = '';
     if (imageDialog.open) imageDialog.close('reset');
     else imageDialog.returnValue = '';
     largeImages.forEach(figure => { figure.hidden = true; });
@@ -134,7 +96,6 @@
   }
 
   filters.forEach(input => input.addEventListener('change', () => {
-    stopPaymentTear();
     state.filter = input.value;
     render();
   }));
@@ -144,7 +105,6 @@
     const button = days[Math.max(0, Math.min(days.length - 1, index))];
     const day = Number(button.dataset.apDay);
     if (state.day !== day) {
-      stopPaymentTear();
       state.day = day;
       render();
     }
@@ -243,7 +203,6 @@
   });
   resetButton.addEventListener('click', resetDemo);
   get('ap-show-booking').addEventListener('click', () => {
-    stopPaymentTear();
     clearFilmDrag();
     state.day = 24;
     state.filter = 'all';
@@ -252,44 +211,7 @@
   });
 
   const supportsModal = dialog => typeof dialog.showModal === 'function' && typeof dialog.close === 'function';
-  const dialogOpen = () => payDialog.open || imageDialog.open;
-
-  if (supportsModal(payDialog)) {
-    payButton.addEventListener('click', () => {
-      if (state.status !== 'pending' || !bookingVisible() || dialogOpen()) return;
-      payDialog.returnValue = '';
-      studio.pauseForDialog();
-      payDialog.showModal();
-    });
-    payDialog.addEventListener('close', () => {
-      // A queued close can arrive after a reopen or a completed payment.
-      if (payDialog.open || state.status !== 'pending') return;
-      const outcome = payDialog.returnValue;
-      payDialog.returnValue = '';
-      studio.sync();
-      if (outcome === 'reset') {
-        resetButton.focus();
-        return;
-      }
-      if (outcome === 'paid') {
-        state.status = 'booked';
-        startPaymentTear();
-        render();
-        announcement.textContent = state.filter === 'pending'
-          ? 'Đã cọc 540.000đ trong demo. GS-1024 đã đặt lịch. Chọn Đã đặt lịch để xem cuộc hẹn.'
-          : 'Đã cọc 540.000đ trong demo. GS-1024 đã đặt lịch; makeup lúc 13:00.';
-        const focusTarget = bookingVisible() ? get('ap-paid-confirm') : currentFilter();
-        focusTarget.focus({ preventScroll: paymentTear !== null });
-      } else if (bookingVisible()) {
-        payButton.focus();
-      } else {
-        currentFilter().focus();
-      }
-    });
-    get('ap-pay-fallback').open = false;
-    get('ap-pay-fallback').hidden = true;
-    payButton.hidden = false;
-  }
+  const dialogOpen = () => imageDialog.open;
 
   if (supportsModal(imageDialog)) {
     imageLinks.forEach(link => {
@@ -348,7 +270,7 @@
     let busy = false, printing = null, serial = 0, cameraEpoch = 0;
     let frame = null, motionEpoch = 0, motionStart = 0, lastFrame = 0, quietFrames = 0;
     const now = () => typeof performance !== 'undefined' ? performance.now() : Date.now();
-    const dialogsOpen = () => payDialog.open || imageDialog.open;
+    const dialogsOpen = () => imageDialog.open;
     const canMove = () => !media.matches && visible && !document.hidden && !dialogsOpen();
     const ready = i => photos[i].created && photos[i].placement !== 'printing';
     const owner = slot => photos.findIndex(p => p.created && p.placement === 'hung' && p.slot === slot);
@@ -907,7 +829,7 @@
     }).observe(root);
     if (typeof MutationObserver !== 'undefined') {
       const observer = new MutationObserver(sync);
-      [payDialog, imageDialog].forEach(dialog => observer.observe(dialog, { attributes: true, attributeFilter: ['open'] }));
+      observer.observe(imageDialog, { attributes: true, attributeFilter: ['open'] });
     }
     if (typeof media.addEventListener === 'function') media.addEventListener('change', sync);
     root.querySelectorAll('[data-ap-static-link], [data-ap-static-prop]').forEach(node => { node.hidden = true; });

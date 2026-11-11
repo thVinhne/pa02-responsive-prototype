@@ -2,7 +2,7 @@
 
 Bản mẫu HTML/CSS cho ba bước của một cuộc hẹn chụp ảnh. Linh xem dịch vụ,
 studio tư vấn và tạo booking mẫu, rồi Linh xem lịch đã thống nhất và
-thử cọc mô phỏng.
+xem khoản cọc chưa kết nối thanh toán.
 
 ## Mở bản mẫu
 
@@ -13,8 +13,8 @@ Từ chân trang Admin, chọn **Màn 3 · Lịch chụp của khách** để xe
 trang đầu. Bản mẫu dùng tài nguyên cục bộ và mở được qua `file://`.
 
 Nội dung chính và các liên kết chạy với JavaScript tắt. Bật JavaScript để
-thử chuyển album, tìm khách, tạo booking mẫu, thanh toán mô phỏng và góc
-studio. Dữ liệu demo được giữ riêng trong từng trang.
+thử chuyển album, tìm khách, tạo booking mẫu và góc studio. Nút cọc đang
+disabled kèm ghi chú chưa kết nối thanh toán. Dữ liệu demo được giữ riêng trong từng trang.
 
 ## Thành viên và phân công
 
@@ -35,7 +35,9 @@ studio. Dữ liệu demo được giữ riêng trong từng trang.
   nguồn. Minh chứng của giao diện trước đổi hướng nằm trong lịch sử Git.
 - [brief.md](brief.md) lưu prompt đã dùng. [AI-LOG.md](AI-LOG.md) ghi nhật
   ký theo từng thành viên và các lượt tích hợp chung.
-- [Kết quả kiểm chứng ngày 11/11](checks/review-2026-11-11.md) ghi năm vấn đề,
+- [Kiểm tra ba sửa đổi mới nhất](checks/three-fixes-2026-11-11.json) ghi trạng thái
+  Admin, hành động khách bị khóa và cuộn trang ở ba độ rộng.
+- [Kết quả kiểm chứng trước lượt sửa này](checks/review-2026-11-11.md) ghi năm vấn đề,
   phép thử thực tế và các mục chờ xác nhận. [Báo cáo tự đánh giá](SELF_ASSESSMENT_REPORT.md)
   để nhóm chốt điểm sau khi đối chiếu rubric.
 - [screenshots](screenshots/) giữ chín ảnh toàn trang khi tắt JavaScript.

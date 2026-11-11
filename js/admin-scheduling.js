@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
-  const names = { unanswered: 'Chưa trả lời', advising: 'Đang tư vấn', confirmed: 'Đã xác nhận', completed: 'Hoàn thành' };
+  const names = { unanswered: 'Chưa trả lời', advising: 'Đang tư vấn', confirmed: 'Đã chốt lịch', completed: 'Hoàn thành' };
   const search = $('admin-search'), filter = $('admin-filter'), status = $('admin-status');
   const date = $('admin-date'), time = $('admin-time'), form = $('admin-booking-form');
   const messages = document.querySelector('.admin-messages');
@@ -85,7 +85,7 @@
     const pending = bookingState === 'created';
     const makeup = $('admin-calendar-makeup');
     const shoot = $('admin-calendar-shoot');
-    const stages = { draft: 'Dự kiến', proposed: 'Đề xuất', agreed: 'Đã thống nhất', declined: 'Đã từ chối', created: 'Chờ cọc' };
+    const stages = { draft: 'Dự kiến', proposed: 'Đề xuất', agreed: 'Đã chốt lịch', declined: 'Đã từ chối', created: 'Chờ cọc' };
     [makeup, shoot].forEach((cell, index) => {
       cell.textContent = `${index === 0 ? 'Mai' : 'Tuấn · Phòng B'} · ${valid ? stages[bookingState] : 'Mẫu 14:00'}`;
       cell.className = pending ? 'admin-status--waiting' : '';
@@ -111,7 +111,7 @@
       return;
     }
     const created = bookingState === 'created', valid = available();
-    const labels = { agreed: 'Đã đồng ý giờ · Chưa tạo booking', draft: 'Chưa chốt giờ', proposed: 'Chờ Linh phản hồi', declined: 'Khách từ chối · Cần tư vấn lại', created: 'Chờ cọc 30% · Mô phỏng' };
+    const labels = { agreed: 'Đã chốt lịch · Chưa tạo booking', draft: 'Chưa chốt giờ', proposed: 'Chờ Linh phản hồi', declined: 'Khách từ chối · Cần tư vấn lại', created: 'Chờ cọc 30% · Mô phỏng' };
     $('admin-booking-title').textContent = created ? 'Booking của Linh' : bookingState === 'agreed' ? 'Lịch đã thống nhất' : 'Booking mới';
     $('admin-booking-status').textContent = labels[bookingState];
     $('admin-booking-status').className = 'admin-status ' + (bookingState === 'agreed' ? 'admin-status--success' : 'admin-status--waiting');
@@ -158,7 +158,7 @@
     bookingState = 'draft'; proposal = ''; agreedSchedule = ''; feedback.textContent = '';
     setStatus('advising'); renderBooking();
   }
-  [search, filter, status, $('admin-send'), $('admin-edit')].forEach(control => { control.disabled = false; });
+  [search, filter, status, date, time, $('admin-session'), $('admin-package'), $('admin-send'), $('admin-edit')].forEach(control => { control.disabled = false; });
   conversations.forEach(item => {
     item.button.disabled = false;
     describe(item);

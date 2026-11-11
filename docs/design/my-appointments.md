@@ -1,5 +1,9 @@
 # Thiết kế riêng — Lịch chụp của tôi
 
+> Cập nhật theo yêu cầu ngày 11/11/2026. Thanh toán cọc 30% dùng button
+> disabled và ghi chú chưa kết nối ở cả hai chế độ JS. Booking giữ Chờ cọc.
+> Các mục mô phỏng Hủy/Thành công bên dưới ghi lại đặc tả trước lượt sửa này.
+
 ## GradStudio Màn 3 theo phong cách nhật ký ảnh phim
 
 Phiên bản 1.2 ngày 06/11/2026. Đã đưa vào cấu trúc tài liệu thiết kế chung của nhóm. Phạm vi triển khai: màn Lịch chụp của tôi của người 3. Đây là đặc tả thiết kế mới để Codex viết lại HTML/CSS màn 3, kèm tương tác mô phỏng. Bản 1.1 bổ sung góc studio với dây treo ảnh, ảnh có thể kéo/thả và máy ảnh tạo Polaroid minh họa.

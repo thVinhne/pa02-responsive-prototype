@@ -137,6 +137,12 @@ body.appointments-page {
   cursor: pointer;
   transition: background-color 160ms, color 160ms, transform 160ms;
 }
+.appointments-button:disabled {
+  border-color: var(--color-disabled-background);
+  background: var(--color-disabled-background);
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+}
 .appointments-button-secondary {
   min-block-size: 2.75rem;
   background: var(--ap-card);
@@ -481,13 +487,7 @@ body.appointments-page {
 .appointments-deposit { padding-block: var(--ap-3); border-block: 1px solid var(--ap-line); }
 .appointments-deposit dd { color: var(--ap-wine); font-size: 1.5rem; }
 .appointments-balance-note { margin-block-end: var(--ap-5); color: var(--ap-muted); }
-.appointments-pay-button,
-.appointments-payment-fallback > summary { inline-size: 100%; }
-.appointments-payment-fallback > summary { list-style: none; }
-.appointments-payment-fallback > summary::-webkit-details-marker { display: none; }
-.appointments-payment-fallback[open] > summary { background: var(--ap-forest-hover); }
-.appointments-fallback-copy { padding-block-start: var(--ap-4); }
-.appointments-fallback-copy > :last-child { margin: 0; }
+.appointments-pay-button { inline-size: 100%; }
 .appointments-paid-confirm { margin-block-start: var(--ap-4); padding: var(--ap-3) var(--ap-4); border-inline-start: 3px solid var(--ap-forest); border-radius: 0 var(--ap-2) var(--ap-2) 0; background: color-mix(in srgb, var(--ap-forest) 6%, var(--ap-card)); color: var(--ap-forest); }
 .appointments-paid-confirm p { margin-block-end: var(--ap-2); }
 .appointments-paid-confirm p:last-child { margin: 0; color: var(--ap-ink); }
@@ -761,7 +761,7 @@ body.appointments-page {
 .appointments-collection[data-ap-enhanced] .appointments-empty:not([hidden]) { display: block; }
 
 @media (hover: hover) {
-  .appointments-button:hover { background: var(--ap-forest-hover); border-color: var(--ap-forest-hover); color: var(--ap-card); transform: translateY(-2px); }
+  .appointments-button:not(:disabled):hover { background: var(--ap-forest-hover); border-color: var(--ap-forest-hover); color: var(--ap-card); transform: translateY(-2px); }
   .appointments-button-secondary:hover { background: var(--ap-paper); color: var(--ap-forest-hover); }
   .appointments-text-link:hover,
   .appointments-nav a:hover,
@@ -844,7 +844,7 @@ body.appointments-page {
   .appointments-page .appointments-film-track::before,
   .appointments-page .appointments-gallery .appointments-polaroid { transition: none; }
   .appointments-notebook[data-ap-page][data-ap-turning="true"] .appointments-notebook-page { animation: none; }
-  .appointments-page .appointments-button:hover { transform: none; }
+  .appointments-page .appointments-button:not(:disabled):hover { transform: none; }
 }
 @media print {
   body.appointments-page { background: var(--ap-card); color: var(--ap-ink); font-size: 12pt; }
