@@ -24,7 +24,7 @@ về mẫu ban đầu khi tải lại.
 | Trang PA#2 | Ảnh nguồn GradStudio PA#1 | Việc người xem làm | Đích điều hướng |
 | --- | --- | --- | --- |
 | [index.html](index.html) | [01 — Dịch vụ và chat](docs/pa1/01-customer-services-chat.png) | Xem gói, album ảnh và câu hỏi mẫu của Linh về khung 09:00 ngày 24/10/2026. | “Nhân viên studio: Mở hội thoại” chuyển vai sang [Admin](admin-scheduling.html). “Lịch chụp của tôi” ở menu, khối tư vấn và chân trang mở [Lịch chụp](my-appointments.html). Các link gói, album và chat đi tới mục tương ứng trong trang. |
-| [admin-scheduling.html](admin-scheduling.html) | [02 — Admin](docs/pa1/02-admin-scheduling.png) | Đọc lịch sử tư vấn ngày 23/10 và bảng tài nguyên ngày chụp 24/10. Mai bận 08:00–12:00. Bản tĩnh hiện form và Tạo booking disabled, trạng thái Đã chốt lịch · Chưa tạo booking. Khi bật JS, chọn mẫu tin 1/2/3, thử đề xuất, phản hồi của Linh và tạo booking trong phiên. | Logo và “Màn 1 · Góc nhìn khách” về [Dịch vụ](index.html). “Màn 3 · Lịch chụp của khách” ở chân trang và link trong kết quả tạo booking mở [Lịch chụp](my-appointments.html). |
+| [admin-scheduling.html](admin-scheduling.html) | [02 — Admin](docs/pa1/02-admin-scheduling.png) | Đọc lịch sử tư vấn ngày 23/10 và bảng tài nguyên ngày chụp 24/10. Mai bận 08:00–12:00. Bản tĩnh hiện form và liên kết Tạo booking tới GS-1024 Chờ cọc, trạng thái Admin ban đầu là Đã chốt lịch · Chưa tạo booking. Khi bật JS, chọn mẫu tin 1/2/3, thử đề xuất, phản hồi của Linh và tạo booking trong phiên. | Logo và “Dịch vụ · Góc nhìn khách” về [Dịch vụ](index.html). “Lịch chụp · Góc nhìn khách” ở chân trang và link trong kết quả tạo booking mở [Lịch chụp](my-appointments.html). |
 | [my-appointments.html](my-appointments.html) | [03 — Lịch chụp và cọc](docs/pa1/03-customer-appointment.png) | Xem GS-1024, có mặt 12:50, makeup với Mai 13:00–14:00 và chụp với Tuấn tại Phòng B 14:00–16:00. Xem tổng 1.800.000đ, cọc 540.000đ và còn lại 1.260.000đ. | Logo và link Dịch vụ ở đầu và cuối trang về [Dịch vụ](index.html). Link trên dải mục lục nhảy tới lịch, nhật ký và góc chuẩn bị. Link ảnh mở ảnh cục bộ khi tắt JS. |
 
 ## Changed since PA#1
@@ -67,11 +67,14 @@ của người dùng. Điền mẫu chỉ thêm vào bản nháp, Gửi thêm ti
 Phản hồi Đồng ý lịch ở form xác nhận ngày/giờ trước khi tạo booking.
 Ngày tư vấn minh họa 23/10 do assistant chọn để bốn tin cũ diễn ra trước
 buổi chụp 24/10. Sau yêu cầu sửa tiếp theo, cả hai chế độ JS cùng bắt đầu
-ở Đã chốt lịch · Chưa tạo booking và hiện form. Khi tắt JS, nút Tạo booking
-bị disabled kèm giải thích. Khi bật JS, thao tác tạo chuyển sang Chờ cọc.
+ở Đã chốt lịch · Chưa tạo booking và hiện form. Khi tắt JS, liên kết Tạo
+booking mở Lịch chụp với booking mẫu GS-1024 Chờ cọc. Khi bật JS, nút
+submit tạo booking trong phiên và hiển thị kết quả tại Admin.
 
-Kết quả ba sửa đổi mới nhất và hash của code hiện tại nằm trong
-[kiểm tra trạng thái, nút disabled và cuộn trang](checks/three-fixes-2026-11-11.json).
+Kết quả mới nhất và hash code hiện tại nằm trong
+[kiểm tra lối tạo booking tĩnh và FAQ](checks/static-booking-review-2026-11-11.json).
+[Kiểm tra trạng thái, nút disabled và cuộn trang](checks/three-fixes-2026-11-11.json)
+ghi kết quả của bản trước lượt này.
 [Báo cáo kiểm chứng trước lượt sửa này](checks/review-2026-11-11.md) giữ kết quả
 của bản đã kiểm trước đó.
 

@@ -45,8 +45,9 @@ Các khách còn lại dùng chữ viết tắt trong HTML.
   **Tốt nghiệp cá nhân**, thời lượng **2 giờ**, **30 ảnh**. Tổng giá
   **1.800.000đ**, cọc **540.000đ**, còn **1.260.000đ** sau buổi chụp.
 - Bản tĩnh và bản bật JS cùng bắt đầu ở **Đã chốt lịch · Chưa tạo booking**.
-  Form và nút Tạo booking hiện trong HTML. Nút disabled khi tắt JS, có
-  ghi chú cần bật JS để thực hiện bước tạo booking mô phỏng.
+  Form hiện trong HTML. Khi tắt JS, Tạo booking là liên kết thật tới
+  my-appointments.html, có ghi chú mở booking mẫu GS-1024 Chờ cọc. Khi bật
+  JS, liên kết này nhường chỗ cho nút submit tạo booking trong phiên.
   Makeup đã bao gồm. Thuê áo cử nhân bị khóa vì chưa có báo giá.
 
 ## Tương tác trong bản hiện tại
@@ -65,8 +66,9 @@ lại trang. Liên kết ở chân trang và trong kết quả tạo booking m�
 thẻ và lịch ở màn Admin. Trang Lịch chụp mở dữ liệu mẫu riêng.
 
 Khi tắt JavaScript, HTML hiển thị danh sách, bốn tin nhắn của Linh,
-lịch, form và nút Tạo booking disabled, đủ phân công và tiền. Booking
-chưa tạo, phần kết quả Chờ cọc chỉ hiện sau hành động tạo khi bật JS.
+lịch, form và liên kết Tạo booking, đủ phân công và tiền. Liên kết mở
+Lịch chụp với GS-1024 Chờ cọc trong bộ dữ liệu mẫu riêng. Trong Admin,
+phần kết quả Chờ cọc chỉ hiện sau hành động tạo khi bật JS.
 Các trường thay đổi lịch và nút xử lý được mở khóa sau khi gắn handler.
 Bản tương tác bắt đầu từ giờ 14:00 Linh đã đồng ý trong hội thoại.
 Đổi ngày/giờ cần gửi đề xuất và đồng ý lại. Submit lặp sau khi tạo bị chặn.
@@ -81,9 +83,10 @@ hiện bước xác nhận. Mẫu tin chỉ hiện khi đang mở Linh.
 
 - Dùng nhãn **Đã chốt lịch** cho hội thoại đã đồng ý ở dropdown, bộ lọc
   và nhãn truy cập. Trạng thái booking Chờ cọc hiện sau bước Tạo booking.
-- Chân trang vẫn có nhãn **Màn 1/2/3** và form vẫn có nhóm **Mô phỏng phản hồi
-  của Linh**. Nút **Tạo booking** cần JS. Ghi chú chân trang và phản hồi
-  sau khi tạo booking giải thích phạm vi mô phỏng của từng màn.
+- Chân trang dùng tên Dịch vụ, Tư vấn và Lịch chụp, ghi rõ vai trò. Nhóm
+  **Phản hồi của Linh** giữ Đồng ý/Từ chối và có chú thích mô phỏng tại form.
+  Gửi tin của Admin tiếp tục hoạt động khi bật JS theo yêu cầu trước.
+  Tạo booking dùng link khi tắt JS và submit khi bật JS.
 - Bản hiện tại dùng cuộn trang ở mọi độ rộng theo yêu cầu ngày 11/11/2026,
   gồm trường hợp 1280 × 900.
 

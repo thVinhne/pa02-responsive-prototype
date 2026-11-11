@@ -124,9 +124,10 @@
           <div><strong>Phân công dự kiến</strong><div class="admin-assignment"><span>Makeup · Mai</span><span>Thợ chụp · Tuấn</span><span>Phòng B</span></div></div>
           <div class="admin-price"><span>Cọc 30%</span><strong>540.000đ</strong></div>
           <div class="admin-price"><span>Còn lại sau buổi chụp</span><strong>1.260.000đ</strong></div>
-          <fieldset><legend>Mô phỏng phản hồi của Linh</legend><div class="admin-response"><button class="button button--secondary" id="admin-agree" type="button" disabled>Đồng ý lịch</button><button class="button button--secondary" id="admin-decline" type="button" disabled>Từ chối lịch</button></div></fieldset>
-          <div class="admin-actions"><button class="button button--secondary" id="admin-quote" type="button" disabled>Gửi đề xuất vào chat</button><button class="button" id="admin-create" type="submit" disabled>Tạo booking</button></div>
-          <p class="admin-note" id="admin-booking-help">Tạo booking cần bật JavaScript để chạy mô phỏng. Khi đổi lịch, cần gửi đề xuất và có phản hồi đồng ý mới.</p>
+          <fieldset><legend>Phản hồi của Linh</legend><div class="admin-response"><button class="button button--secondary" id="admin-agree" type="button" disabled>Đồng ý lịch</button><button class="button button--secondary" id="admin-decline" type="button" disabled>Từ chối lịch</button></div></fieldset>
+          <div class="admin-actions"><button class="button button--secondary" id="admin-quote" type="button" disabled>Gửi đề xuất vào chat</button><a class="button" id="admin-create-static" href="my-appointments.html" aria-describedby="admin-static-note">Tạo booking</a><button class="button" id="admin-create" type="submit" disabled hidden>Tạo booking</button></div>
+          <p class="admin-note" id="admin-static-note">Tiếp tục tới booking mẫu GS-1024 Chờ cọc trong Lịch chụp của Linh.</p>
+          <p class="admin-note" id="admin-booking-help">Khi đổi lịch, cần gửi đề xuất và có phản hồi đồng ý mới. Đồng ý/Từ chối là phản hồi mô phỏng trong phiên xem.</p>
         </form>
         <div class="admin-booking-result" id="admin-booking-result" hidden>
           <dl><dt>Khách hàng · Gói</dt><dd>Nguyễn Thùy Linh · Tốt nghiệp Premium</dd><dt>Ngày chụp</dt><dd id="admin-result-date">24/10/2026</dd><dt>Makeup · Mai</dt><dd id="admin-result-makeup">13:00–14:00</dd><dt>Chụp · Tuấn · Phòng B</dt><dd id="admin-result-shoot">14:00–16:00</dd><dt>Tổng giá</dt><dd>1.800.000đ</dd><dt>Cọc 30%</dt><dd>540.000đ</dd><dt>Còn lại sau buổi chụp</dt><dd>1.260.000đ</dd></dl>
@@ -137,14 +138,13 @@
           </div>
         </div>
         <p class="admin-note admin-live" id="admin-feedback" role="status" aria-live="polite"></p>
-        <noscript><p>Linh đã chốt lịch, booking chưa được tạo. Form và nút Tạo booking đang hiển thị để xem lại. Bật JavaScript và tải lại để thử tạo booking mô phỏng.</p></noscript>
         </div>
         <div id="admin-booking-other" hidden><p id="admin-booking-other-note">Chưa có dữ liệu booking cho hội thoại này.</p><p class="admin-note">Có thể tiếp tục tư vấn qua chat. Mẫu booking đầy đủ hiện có ở hội thoại Linh.</p></div>
       </section>
     </aside>
   </main>
   <footer class="admin-demo">
-    <nav aria-label="Chuyển vai trò trong bản mẫu"><a href="index.html">← Màn 1 · Góc nhìn khách</a><a href="admin-scheduling.html" aria-current="page">Màn 2 · Góc nhìn Admin</a><a href="my-appointments.html" aria-describedby="admin-integration-note">Màn 3 · Lịch chụp của khách →</a></nav>
+    <nav aria-label="Chuyển vai trò trong bản mẫu"><a href="index.html">← Dịch vụ · Góc nhìn khách</a><a href="admin-scheduling.html" aria-current="page">Tư vấn · Admin</a><a href="my-appointments.html" aria-describedby="admin-integration-note">Lịch chụp · Góc nhìn khách →</a></nav>
     <details><summary>Thông tin bản mẫu</summary><p id="admin-integration-note">Lịch chụp mở booking mẫu GS-1024 ở trạng thái Chờ cọc. Thay đổi trên màn Admin chỉ áp dụng trong phiên xem này.</p></details>
   </footer>
 </body>

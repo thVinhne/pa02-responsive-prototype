@@ -8,7 +8,7 @@ xem khoản cọc chưa kết nối thanh toán.
 
 Mở [index.html](index.html) trực tiếp từ thư mục đã giải nén. Cuối trang,
 chọn **Nhân viên studio: Mở hội thoại** để vào [Admin](admin-scheduling.html).
-Từ chân trang Admin, chọn **Màn 3 · Lịch chụp của khách** để xem
+Từ chân trang Admin, chọn **Lịch chụp · Góc nhìn khách** để xem
 [Lịch chụp](my-appointments.html). Link Dịch vụ ở màn Lịch chụp đưa về
 trang đầu. Bản mẫu dùng tài nguyên cục bộ và mở được qua `file://`.
 
@@ -35,7 +35,9 @@ disabled kèm ghi chú chưa kết nối thanh toán. Dữ liệu demo được 
   nguồn. Minh chứng của giao diện trước đổi hướng nằm trong lịch sử Git.
 - [brief.md](brief.md) lưu prompt đã dùng. [AI-LOG.md](AI-LOG.md) ghi nhật
   ký theo từng thành viên và các lượt tích hợp chung.
-- [Kiểm tra ba sửa đổi mới nhất](checks/three-fixes-2026-11-11.json) ghi trạng thái
+- [Kiểm tra lối tạo booking tĩnh và FAQ](checks/static-booking-review-2026-11-11.json)
+  ghi kết quả mới nhất ở ba độ rộng với JS bật/tắt.
+- [Kiểm tra ba sửa đổi trước đó](checks/three-fixes-2026-11-11.json) ghi trạng thái
   Admin, hành động khách bị khóa và cuộn trang ở ba độ rộng.
 - [Kết quả kiểm chứng trước lượt sửa này](checks/review-2026-11-11.md) ghi năm vấn đề,
   phép thử thực tế và các mục chờ xác nhận. [Báo cáo tự đánh giá](SELF_ASSESSMENT_REPORT.md)

@@ -225,4 +225,7 @@
   $('admin-edit').hidden = false;
   document.querySelectorAll('[data-admin-enhancement]').forEach(control => { control.hidden = false; });
   applyFilters(); renderBooking();
+  $('admin-create-static').hidden = true;
+  $('admin-static-note').hidden = true;
+  $('admin-create').hidden = false;
 })();

@@ -1,0 +1,467 @@
+{
+  "date": "2026-11-11",
+  "base_commit": "d7257fc",
+  "scope": [
+    "static Tạo booking navigation",
+    "demo labels and FAQ copy"
+  ],
+  "admin_send_and_replies": "Retained per earlier explicit user instruction",
+  "transport": "file://",
+  "browser": "Chrome/157.0.8103.50",
+  "results": [
+    {
+      "page": "admin-scheduling",
+      "width": 360,
+      "height": 900,
+      "js": false,
+      "status": "PASS",
+      "layout": {
+        "width": 360,
+        "clientWidth": 345,
+        "scrollWidth": 345,
+        "height": 4051,
+        "regions": [
+          {
+            "name": "admin-chat-body",
+            "overflow": "visible",
+            "clientHeight": 907,
+            "scrollHeight": 907
+          },
+          {
+            "name": "admin-booking",
+            "overflow": "visible",
+            "clientHeight": 1608,
+            "scrollHeight": 1608
+          }
+        ]
+      },
+      "links": [
+        {
+          "text": "← Dịch vụ · Góc nhìn khách",
+          "href": "index.html"
+        },
+        {
+          "text": "Tư vấn · Admin",
+          "href": "admin-scheduling.html"
+        },
+        {
+          "text": "Lịch chụp · Góc nhìn khách →",
+          "href": "my-appointments.html"
+        }
+      ],
+      "checks": [
+        "native static create link and Enter navigation",
+        "visible form and agreed state",
+        "role links and revised labels",
+        "document scrolling"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "width": 360,
+      "height": 900,
+      "js": false,
+      "status": "PASS",
+      "layout": {
+        "width": 360,
+        "clientWidth": 345,
+        "scrollWidth": 345,
+        "height": 7086,
+        "regions": []
+      },
+      "checks": [
+        "pending GS-1024 after static navigation",
+        "native disabled payment",
+        "FAQ copy and keyboard expansion",
+        "native HTML fallback"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 768,
+      "height": 900,
+      "js": false,
+      "status": "PASS",
+      "layout": {
+        "width": 768,
+        "clientWidth": 753,
+        "scrollWidth": 753,
+        "height": 2832,
+        "regions": [
+          {
+            "name": "admin-chat-body",
+            "overflow": "visible",
+            "clientHeight": 754,
+            "scrollHeight": 754
+          },
+          {
+            "name": "admin-booking",
+            "overflow": "visible",
+            "clientHeight": 1376,
+            "scrollHeight": 1376
+          }
+        ]
+      },
+      "links": [
+        {
+          "text": "← Dịch vụ · Góc nhìn khách",
+          "href": "index.html"
+        },
+        {
+          "text": "Tư vấn · Admin",
+          "href": "admin-scheduling.html"
+        },
+        {
+          "text": "Lịch chụp · Góc nhìn khách →",
+          "href": "my-appointments.html"
+        }
+      ],
+      "checks": [
+        "native static create link and Enter navigation",
+        "visible form and agreed state",
+        "role links and revised labels",
+        "document scrolling"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "width": 768,
+      "height": 900,
+      "js": false,
+      "status": "PASS",
+      "layout": {
+        "width": 768,
+        "clientWidth": 753,
+        "scrollWidth": 753,
+        "height": 5249,
+        "regions": []
+      },
+      "checks": [
+        "pending GS-1024 after static navigation",
+        "native disabled payment",
+        "FAQ copy and keyboard expansion",
+        "native HTML fallback"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 1280,
+      "height": 900,
+      "js": false,
+      "status": "PASS",
+      "layout": {
+        "width": 1280,
+        "clientWidth": 1265,
+        "scrollWidth": 1265,
+        "height": 2100,
+        "regions": [
+          {
+            "name": "admin-chat-body",
+            "overflow": "visible",
+            "clientHeight": 703,
+            "scrollHeight": 703
+          },
+          {
+            "name": "admin-booking",
+            "overflow": "visible",
+            "clientHeight": 1514,
+            "scrollHeight": 1514
+          }
+        ]
+      },
+      "links": [
+        {
+          "text": "← Dịch vụ · Góc nhìn khách",
+          "href": "index.html"
+        },
+        {
+          "text": "Tư vấn · Admin",
+          "href": "admin-scheduling.html"
+        },
+        {
+          "text": "Lịch chụp · Góc nhìn khách →",
+          "href": "my-appointments.html"
+        }
+      ],
+      "checks": [
+        "native static create link and Enter navigation",
+        "visible form and agreed state",
+        "role links and revised labels",
+        "document scrolling"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "width": 1280,
+      "height": 900,
+      "js": false,
+      "status": "PASS",
+      "layout": {
+        "width": 1280,
+        "clientWidth": 1265,
+        "scrollWidth": 1265,
+        "height": 4166,
+        "regions": []
+      },
+      "checks": [
+        "pending GS-1024 after static navigation",
+        "native disabled payment",
+        "FAQ copy and keyboard expansion",
+        "native HTML fallback"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 360,
+      "height": 900,
+      "js": true,
+      "status": "PASS",
+      "layout": {
+        "width": 360,
+        "clientWidth": 345,
+        "scrollWidth": 345,
+        "height": 4484,
+        "regions": [
+          {
+            "name": "admin-chat-body",
+            "overflow": "visible",
+            "clientHeight": 882,
+            "scrollHeight": 882
+          },
+          {
+            "name": "admin-booking",
+            "overflow": "visible",
+            "clientHeight": 1533,
+            "scrollHeight": 1533
+          }
+        ]
+      },
+      "links": [
+        {
+          "text": "← Dịch vụ · Góc nhìn khách",
+          "href": "index.html"
+        },
+        {
+          "text": "Tư vấn · Admin",
+          "href": "admin-scheduling.html"
+        },
+        {
+          "text": "Lịch chụp · Góc nhìn khách →",
+          "href": "my-appointments.html"
+        }
+      ],
+      "checks": [
+        "in-page create, send by Enter, agree/decline, edit and duplicate guard",
+        "visible form and agreed state",
+        "role links and revised labels",
+        "document scrolling"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "width": 360,
+      "height": 900,
+      "js": true,
+      "status": "PASS",
+      "layout": {
+        "width": 360,
+        "clientWidth": 345,
+        "scrollWidth": 345,
+        "height": 7531,
+        "regions": []
+      },
+      "checks": [
+        "pending GS-1024 after static navigation",
+        "native disabled payment",
+        "FAQ copy and keyboard expansion",
+        "image Escape and focus"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 768,
+      "height": 900,
+      "js": true,
+      "status": "PASS",
+      "layout": {
+        "width": 768,
+        "clientWidth": 753,
+        "scrollWidth": 753,
+        "height": 3101,
+        "regions": [
+          {
+            "name": "admin-chat-body",
+            "overflow": "visible",
+            "clientHeight": 728,
+            "scrollHeight": 728
+          },
+          {
+            "name": "admin-booking",
+            "overflow": "visible",
+            "clientHeight": 1301,
+            "scrollHeight": 1301
+          }
+        ]
+      },
+      "links": [
+        {
+          "text": "← Dịch vụ · Góc nhìn khách",
+          "href": "index.html"
+        },
+        {
+          "text": "Tư vấn · Admin",
+          "href": "admin-scheduling.html"
+        },
+        {
+          "text": "Lịch chụp · Góc nhìn khách →",
+          "href": "my-appointments.html"
+        }
+      ],
+      "checks": [
+        "in-page create, send by Enter, agree/decline, edit and duplicate guard",
+        "visible form and agreed state",
+        "role links and revised labels",
+        "document scrolling"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "width": 768,
+      "height": 900,
+      "js": true,
+      "status": "PASS",
+      "layout": {
+        "width": 768,
+        "clientWidth": 753,
+        "scrollWidth": 753,
+        "height": 5328,
+        "regions": []
+      },
+      "checks": [
+        "pending GS-1024 after static navigation",
+        "native disabled payment",
+        "FAQ copy and keyboard expansion",
+        "image Escape and focus"
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 1280,
+      "height": 900,
+      "js": true,
+      "status": "PASS",
+      "layout": {
+        "width": 1280,
+        "clientWidth": 1265,
+        "scrollWidth": 1265,
+        "height": 2024,
+        "regions": [
+          {
+            "name": "admin-chat-body",
+            "overflow": "visible",
+            "clientHeight": 703,
+            "scrollHeight": 703
+          },
+          {
+            "name": "admin-booking",
+            "overflow": "visible",
+            "clientHeight": 1439,
+            "scrollHeight": 1439
+          }
+        ]
+      },
+      "links": [
+        {
+          "text": "← Dịch vụ · Góc nhìn khách",
+          "href": "index.html"
+        },
+        {
+          "text": "Tư vấn · Admin",
+          "href": "admin-scheduling.html"
+        },
+        {
+          "text": "Lịch chụp · Góc nhìn khách →",
+          "href": "my-appointments.html"
+        }
+      ],
+      "checks": [
+        "in-page create, send by Enter, agree/decline, edit and duplicate guard",
+        "visible form and agreed state",
+        "role links and revised labels",
+        "document scrolling"
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "width": 1280,
+      "height": 900,
+      "js": true,
+      "status": "PASS",
+      "layout": {
+        "width": 1280,
+        "clientWidth": 1265,
+        "scrollWidth": 1265,
+        "height": 4388,
+        "regions": []
+      },
+      "checks": [
+        "pending GS-1024 after static navigation",
+        "native disabled payment",
+        "FAQ copy and keyboard expansion",
+        "image Escape and focus"
+      ]
+    },
+    {
+      "check": "200% browser zoom and reduced motion",
+      "js": false,
+      "status": "PASS"
+    },
+    {
+      "check": "200% browser zoom and reduced motion",
+      "js": true,
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "admin-scheduling.html": "75accd5cc521c472c894790e9d6f8c71bb078beebfb4f5dda19b0e044f1f0575",
+    "js/admin-scheduling.js": "dd1e3baf82652b601dab7debf576801bf9c265e5d3f642a7d62341ead52570c3",
+    "my-appointments.html": "a328f56010d97103a3c04fd2118b11821b6e480443b771a6fad440d6671a3718",
+    "css/admin-scheduling.css": "60bf2523cdb72e064268c937535fcc731048dc9fe129c53ab3722adbc034bd74",
+    "css/my-appointments.css": "d10e44af7b47840cc84fd3381a68ffea3a11792fab5bcf4b00da33d01ef75271",
+    "js/my-appointments.js": "fdb34c4377f278790d65cfad64bdcc087bd64fa831871099b8742a74f13ce1a7"
+  },
+  "screenshots_sha256": {
+    "admin-scheduling-1280.png": "6206382d53ca88b7a46f307acfb2ea46fb32fb8365ffc0a0bb36924b37a19555",
+    "admin-scheduling-360.png": "b4cd241e56261afdbf37fa32bd46a874ab33662fe24b60cfdd0dfb0ee06ccdae",
+    "admin-scheduling-768.png": "41aae9c8e4f52251a64cc7226e848fe94377759050b4c2c80b170054a0e96df5",
+    "my-appointments-1280.png": "f8689dd51b75fda4f721cbf53ce28bc841998ea450ad0ae69df10bee8b9b7011",
+    "my-appointments-360.png": "8edc10a65b66324f73fd40830502b71b9100c1c60116f251d6d43f3b6015866b",
+    "my-appointments-768.png": "eacb4c54b6f9fe4b95e54c5e4d74fdcefb020e5e7d8c7a8a355c5ad90684eb26"
+  },
+  "not_run": [
+    "physical devices",
+    "manual screen reader"
+  ],
+  "w3c": [
+    {
+      "page": "admin-scheduling",
+      "sha256": "75accd5cc521c472c894790e9d6f8c71bb078beebfb4f5dda19b0e044f1f0575",
+      "errors": 0,
+      "warnings": 0,
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "sha256": "a328f56010d97103a3c04fd2118b11821b6e480443b771a6fad440d6671a3718",
+      "errors": 0,
+      "warnings": 0,
+      "status": "PASS"
+    }
+  ],
+  "static_checks": {
+    "unique_ids_and_h1": "PASS",
+    "image_alt_and_input_labels": "PASS",
+    "relative_links_and_aria_references": "PASS",
+    "source_and_screenshot_hashes": "PASS"
+  }
+}

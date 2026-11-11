@@ -930,3 +930,11 @@ Tiếp tục dự án PA02 GradStudio theo context hội thoại trước. Đọ
 - Không tự commit hoặc push.
 - Cuối cùng báo ngắn gọn các file đã sửa, kết quả kiểm tra và vấn đề còn tồn tại.
 ```
+
+```text
+Bỏ qua vấn đề 3
+```
+
+```text
+Là sao
+```
