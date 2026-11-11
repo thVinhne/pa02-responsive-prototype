@@ -16,3 +16,6 @@ Thumbs.db
 Desktop.ini
 
 # Keep HTML, CSS, assets, documents, screenshots and checks tracked.
+
+# Retired evidence remains available in local copies and Git history.
+/docs/history/pre-redesign/

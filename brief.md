@@ -154,6 +154,284 @@ Sau khi làm:
 Tôi muốn giữ phần chat như trong prototupe, hãy chỉnh sửa lại các file cần thiết
 ```
 
+Các prompt màn Lịch chụp dưới đây được đối chiếu với chat “Dựng màn Lịch chụp của tôi”. Các yêu cầu cũ được ghi để truy vết. Quy ước hiện hành nằm trong AGENTS.md và DESIGN.md.
+
+## 05/11/2026 — Dựng màn Lịch chụp ban đầu (prompt thực tế)
+
+```text
+Tôi là người 3, phụ trách màn Lịch chụp của tôi trong repo PA02 GradStudio.
+
+Đọc AGENTS.md, README.md, css/common.css, phần Màn 3 trong docs/pa1/PROPOSAL.md và docs/pa1/LINK.md; xem docs/pa1/03-customer-appointment.png. Đọc rubric PA02 nếu đã được đính kèm. Kiểm tra HTML, CSS và assets thực tế trước khi sửa. Nếu file mới xuất hiện, tiếp tục trên bản hiện có, không ghi đè thay đổi của người khác.
+
+Chỉ thực hiện màn 3. Được tạo/sửa my-appointments.html, css/my-appointments.css và tài nguyên mới riêng cho trang này trong assets/ nếu cần. Giữ nguyên css/common.css, AGENTS.md, README.md, brief.md, docs/pa1/ và các trang/CSS của người khác. Chưa tổng hợp PROTOTYPE.md, AI-LOG.md hoặc bảng tự chấm. Không tự commit, push, merge, đổi nhánh hoặc cấu hình Git.
+
+HTML5 và CSS thuần, không dependency hoặc bước build. Không dùng JavaScript, script, onclick, backend, localStorage hay CSS framework. Nội dung mẫu viết trực tiếp trong HTML. Nạp css/common.css trước css/my-appointments.css. Class riêng bắt đầu bằng appointments-. Dùng token màu, font, khoảng cách hiện có; không chép lại bộ token hoặc tự đổi mã màu chung.
+
+Dựng gần ảnh PA#1 về bố cục và trang trí, bằng phần tử HTML thật, không dùng ảnh chụp nguyên màn hình làm giao diện. Nội dung gồm:
+1. Header GradStudio, Dịch vụ, Lịch chụp của tôi, avatar và tên Linh.
+2. H1 Lịch chụp của tôi và mô tả.
+3. Bộ lọc Tất cả 1 / Chờ cọc 1 / Đã đặt lịch 0 / Hoàn thành 0. Dùng radio có label hiển thị và CSS để lọc, vẫn dùng được bằng bàn phím. Tất cả và Chờ cọc hiện booking mẫu; hai mục còn lại hiện thông báo danh sách trống. Không gán ARIA tabs nếu không triển khai đầy đủ tương tác tabs.
+4. Lịch tuần tháng 10/2026, tuần 43, các ngày 19–25 và chọn thứ Bảy 24.
+5. Timeline 09:00 bị gạch vì makeup Mai đã bận; makeup với Mai 13:00–14:00, chụp với Tuấn 14:00–16:00 tại Phòng B. Có mặt sớm 10 phút trước makeup.
+6. Booking GS-1024, Tốt nghiệp Premium, makeup và 2 giờ chụp, trạng thái Đã thống nhất lịch · Chờ cọc 30%. Tổng 1.800.000đ, cọc 540.000đ, còn lại 1.260.000đ thanh toán sau buổi chụp.
+7. Mục Thanh toán cọc 30% dùng details/summary có kiểu nút để mở thông tin cọc minh họa ngay trong trang. Ghi rõ chưa kết nối thanh toán. Không có nút thành công giả, không thay trạng thái hoặc số lượng booking; summary dùng được bằng Enter/Space.
+8. Thẻ studio và bản đồ minh họa dựng bằng HTML/CSS hoặc SVG cục bộ. Không thêm bản đồ nhúng cần mạng hoặc địa chỉ thực chưa được cung cấp. Xem đường đi chưa kết nối phải thể hiện trung thực.
+
+Ảnh/avatar phải nằm trong repo. Nếu có avatar dùng chung phù hợp thì dùng lại. Nếu chưa có, lấy đúng nguồn Avatar Linh trong docs/pa1/IMAGE_SOURCES.md, lưu assets/images/appointments-linh-avatar.jpg; chỉ tham chiếu file cục bộ. Nếu không tải được, báo rõ; dùng tạm avatar chữ L và ghi nhận khác biệt, không tự nhận đã dùng đúng ảnh. Không tải font ngoài.
+
+Responsive mobile first: 360 px một cột; 768 px bố cục đủ rộng để đọc; 1280 px hai cột, lịch/timeline trái, booking và studio phải. Dùng minmax(0, ...) hoặc min-width:0 ở vùng cần co. Không fixed width cho toàn trang, không overflow-x:hidden, không !important. Dùng spacing token; nội dung và tên dài được xuống dòng. Điều hướng demo không che nội dung trên điện thoại.
+
+HTML có lang=vi, UTF-8, viewport; một h1; heading đúng cấp, landmark phù hợp, alt; radio có label hiển thị liên kết đúng. Nội dung và chữ trên nút từ 16px, tương phản tối thiểu 4.5:1, vùng bấm nút/link đứng riêng và label lọc tối thiểu 44px; focus bàn phím rõ.
+
+Logo/Dịch vụ dùng href="index.html"; tự đọc xem file đích đã tồn tại chưa. Không tạo index.html hoặc admin-scheduling.html giả để làm link có vẻ hoàn thành. Nếu chưa có, ghi rõ cần kiểm tra lại sau tích hợp. Link nội trang phải có id đích thật.
+
+Sau khi làm, trả lời: file đã đổi, cách mở my-appointments.html, cách dùng bộ lọc và thông tin cọc, khác biệt so với PA#1, kiểm tra thực sự đã chạy và chưa chạy. Nếu có công cụ trình duyệt, kiểm tra 360/768/1280 với JavaScript tắt. Không ghi PASS cho W3C hoặc kiểm tra trình duyệt khi chưa chạy. Không tự tạo screenshot hoặc log giả.
+```
+
+## 05/11/2026 — Rà font và luồng cọc màn Lịch chụp (prompt thực tế)
+
+```text
+Sửa và hoàn thiện màn 3 hiện có, không dựng lại từ đầu hoặc
+thay bằng một giao diện khác.
+
+Đọc:
+- AGENTS.md và README.md;
+- my-appointments.html;
+- css/my-appointments.css;
+- css/common.css;
+- css/services.css, đặc biệt cách màn 1 xử lý font tiếng Việt;
+- phần Màn 3 trong docs/pa1/LINK.md và PROPOSAL.md;
+- ảnh docs/pa1/03-customer-appointment.png;
+- ảnh lỗi tôi đính kèm.
+
+Mục tiêu: giao diện bám PA#1, font tiếng Việt đúng, có đủ tương tác
+mô phỏng của màn 3 để kiểm thử.
+
+PHẠM VI
+Được sửa my-appointments.html, css/my-appointments.css.
+Có thể tạo js/my-appointments.js để điều khiển tương tác mô phỏng.
+Dùng script thường có defer, không dùng module vì trang phải mở
+trực tiếp bằng file://.
+
+Giữ nguyên common.css, AGENTS.md, trang 1, trang 2 và tài liệu nguồn.
+Không tự commit, push, merge hoặc đổi nhánh.
+
+1. ĐIỀU TRA VÀ SỬA FONT
+
+Không kết luận mọi lỗi chữ đều do thiếu font.
+
+Kiểm tra:
+- HTML có UTF-8 và lang="vi";
+- nội dung tiếng Việt có bị sai ký tự, chèn khoảng trắng hoặc
+  tách chữ/dấu qua nhiều span hay không;
+- font-family thực tế và font fallback;
+- letter-spacing, word-spacing, line-height;
+- font-size, font-weight và CSS ghi đè.
+
+Màn 1 đã ghi nhận Georgia bị trộn glyph fallback tiếng Việt.
+Đối chiếu cách sửa trong css/services.css.
+Nếu màn 3 gặp cùng nguyên nhân, ưu tiên Times New Roman cho
+tiêu đề và giờ trong phạm vi appointments-, giữ font hệ thống
+cho nội dung. Không đổi token font chung của cả nhóm.
+
+Kiểm tra trực quan các chuỗi:
+"Lịch chụp của tôi"
+"Chụp ảnh tốt nghiệp"
+"Tháng 10, 2026"
+"Nguyễn Thùy Linh"
+"Đã thống nhất lịch"
+"13:00–14:00"
+
+Chữ và dấu phải liền mạch, không bị tách, lệch hoặc cắt.
+Không sửa bằng cách biến chữ thành ảnh.
+
+2. HOÀN THIỆN GIAO DIỆN
+
+Đối chiếu ảnh PA#1 và giữ đủ:
+- header GradStudio, điều hướng, avatar và tên Linh;
+- tiêu đề và mô tả;
+- bộ lọc trạng thái;
+- lịch tuần và timeline;
+- thẻ booking;
+- thông tin tiền;
+- phần thanh toán;
+- thẻ studio và bản đồ minh họa.
+
+Kiểm tra toàn trang trước khi kết luận phần nào bị thiếu;
+ảnh lỗi của tôi chỉ chụp một vị trí cuộn.
+
+Tinh chỉnh:
+- thứ bậc kích thước chữ, độ đậm và khoảng cách;
+- đường viền thẻ nhẹ và đồng nhất;
+- bộ lọc có trạng thái được chọn rõ ràng, không để tất cả mục
+  giống nhau hoặc gạch chân như đang cùng được chọn;
+- các dòng nhãn và giá trị trong booking căn chỉnh ổn định;
+- trạng thái booking có kiểu badge gọn, xuống dòng đẹp khi hẹp;
+- giữ bảng màu và spacing token của common.css.
+
+Các dòng giải thích kỹ thuật như "Thông tin minh họa",
+"chưa kết nối" không được rải thành các đoạn lớn ngoài bố cục.
+Đưa thông báo mô phỏng ngắn gọn vào phần thanh toán phù hợp.
+Không thay một chức năng bằng một đoạn văn mô tả rồi coi là xong.
+
+3. KHÔI PHỤC ĐỦ LUỒNG MÔ PHỎNG THANH TOÁN
+
+Toàn bộ nội dung chính phải được viết sẵn trong HTML.
+JavaScript chỉ điều khiển tương tác và trạng thái của các phần
+đã có; không dựng toàn trang bằng innerHTML, không điều hướng
+bằng JavaScript, không gọi backend hoặc thanh toán thật.
+
+Trạng thái ban đầu:
+- một booking GS-1024;
+- Chờ cọc 30%;
+- Tất cả 1, Chờ cọc 1, Đã đặt lịch 0, Hoàn thành 0;
+- tổng 1.800.000đ, cọc 540.000đ;
+- còn lại 1.260.000đ thanh toán sau buổi chụp.
+
+Khi bấm Thanh toán cọc 30%:
+- mở hộp Mô phỏng thanh toán trên chính màn 3;
+- hiển thị GS-1024, tên gói và khoản cọc 540.000đ;
+- có hai lựa chọn Hủy và Thanh toán thành công;
+- ghi rõ đây là mô phỏng, không phát sinh giao dịch thật.
+
+Ưu tiên dialog HTML nguyên bản cho hộp thoại.
+Có tên truy cập, focus hợp lý, dùng được bằng bàn phím;
+đóng bằng Hủy hoặc Escape và trả focus về nút mở.
+
+Nhánh Hủy:
+- đóng hộp;
+- booking và số lượng các bộ lọc không đổi;
+- có thể mở lại để thử tiếp.
+
+Nhánh Thanh toán thành công:
+- đóng hộp;
+- chuyển booking sang Đã đặt lịch trong demo;
+- đánh dấu cọc 540.000đ đã thanh toán trong demo;
+- Chờ cọc giảm về 0, Đã đặt lịch tăng lên 1;
+- Tất cả vẫn là 1, Hoàn thành vẫn là 0;
+- thay thao tác trả cọc bằng thông tin đã cọc và nhắc đến
+  lúc 13:00 để makeup;
+- giữ nguyên khoản còn lại 1.260.000đ;
+- không tạo thêm booking và không cho trả cọc lặp lại.
+
+Chỉ đổi trạng thái sau khi người xem chọn thành công.
+Bấm mở hộp hoặc đóng hộp không được tự đánh dấu đã thanh toán.
+
+4. BỘ LỌC VÀ ĐẶT LẠI DEMO
+
+Bộ lọc phải hoạt động theo trạng thái hiện tại:
+- Tất cả: hiện booking;
+- Chờ cọc: hiện booking khi chưa cọc, trống sau khi đã cọc;
+- Đã đặt lịch: trống trước cọc, hiện booking sau mô phỏng thành công;
+- Hoàn thành: vẫn trống.
+
+Mục trống hiện "Chưa có lịch chụp nào ở mục này."
+Đổi bộ lọc không làm thay đổi trạng thái booking.
+
+Đặt lại demo:
+- đóng phần thanh toán nếu đang mở;
+- khôi phục booking về Chờ cọc;
+- khôi phục các số lượng ban đầu;
+- chọn lại Tất cả;
+- cho phép thử lại cả nhánh Hủy và Thành công.
+
+Dữ liệu demo trong bộ nhớ là đủ, không cần lưu tài khoản,
+localStorage hoặc đồng bộ với backend.
+
+5. BẢN KHÔNG JAVASCRIPT VẪN PHẢI ĐẠT PA02
+
+Khi tắt JavaScript và reload:
+- toàn bộ thông tin lịch, timeline, booking, giá, cọc và studio
+  vẫn hiện bằng HTML;
+- các liên kết liên trang vẫn là href tương đối;
+- bộ lọc HTML/CSS hiện có vẫn hoạt động nếu đã triển khai;
+- phần thông tin cọc vẫn tiếp cận được bằng HTML nguyên bản;
+- thao tác mô phỏng cần JavaScript phải có phương án thay thế
+  hoặc trạng thái giải thích phù hợp, không để nút bấm im lặng;
+- không để lớp phủ, dialog hoặc trạng thái loading che trang.
+
+Đây là bổ sung tương tác tùy chọn; không để trang phụ thuộc
+JavaScript mới có nội dung hoặc điều hướng.
+
+6. DỮ LIỆU VÀ PHẠM VI NGHIỆP VỤ
+
+Giữ:
+- ngày 24/10/2026;
+- makeup với Mai 13:00–14:00;
+- chụp với Tuấn 14:00–16:00 tại Phòng B;
+- có mặt sớm 10 phút trước makeup;
+- gói Tốt nghiệp Premium.
+
+Xem đường đi và menu tài khoản chưa có chức năng thật trong
+PA#1 thì ghi nhận đúng phạm vi; không tự thêm địa chỉ, đăng nhập
+hoặc nghiệp vụ mới để làm giao diện có vẻ nhiều chức năng hơn.
+
+7. RESPONSIVE VÀ KIỂM TRA
+
+Kiểm tra 360, 768, 1280px:
+- không cuộn ngang, cắt chữ hoặc chồng thành phần;
+- popup không vượt màn hình, nội dung dài cuộn được;
+- vùng bấm tối thiểu 44px;
+- chữ nội dung từ 16px, tương phản tối thiểu 4.5:1;
+- focus rõ và không bị che;
+- không dùng overflow-x:hidden hoặc !important để che lỗi.
+
+Kiểm tra cả JavaScript bật và tắt.
+Chạy các ca Hủy, Thành công, lọc và Đặt lại demo.
+Kiểm tra HTML bằng W3C nếu có khả năng truy cập công cụ.
+
+Sau khi sửa, báo:
+- nguyên nhân font đã xác minh và cách sửa;
+- file thay đổi;
+- các tương tác đã hoàn thiện;
+- bảng ca kiểm thử với kết quả thật;
+- khác biệt với PA#1 và mục cần cập nhật trong PROTOTYPE.md.
+Chưa chạy kiểm tra nào thì ghi NOT RUN.
+```
+
+## 05/11/2026 — Đổi hướng thiết kế màn Lịch chụp (prompt thực tế)
+
+```text
+Tôi đổi định hướng thiết kế màn 3. Dùng [$ui-ux-pro-max](C:\Users\tranl\\.codex\skills\ui-ux-pro-max\SKILL.md) \
+\
+Repo GradStudio ban đầu chỉ tham khảo CHỨC NĂNG và nghiệp vụ.\
+Giao diện phải được thiết kế mới, không sao chép bố cục, màu sắc\
+hoặc cách trang trí của bản mẫu.\
+\
+Đọc DESIGN.md mới ở gốc repo và triển khai theo đặc tả đó.\
+Đọc AGENTS.md, README.md và code hiện có để giữ đúng yêu cầu kỹ thuật.\
+Yêu cầu thiết kế mới này thay phần giữ giao diện cũ cho riêng màn 3.\
+\
+Viết lại hoàn toàn:\
+\- my-appointments.html;\
+\- css/my-appointments.css;\
+\- js/my-appointments.js nếu cần cho tương tác;\
+\- tài nguyên riêng cần thiết theo mục 12 của DESIGN.md.\
+\
+Dựng bố cục mới: hero kiểu nhật ký ảnh phim, bộ lọc và ngày,\
+vé hẹn ngang, nhật ký buổi chụp, góc chuẩn bị, ảnh Polaroid và FAQ.\
+Không chỉ đổi màu trên bố cục hiện tại.\
+\
+Hoàn thiện các tương tác I01–I09, đúng trạng thái và dữ liệu mẫu\
+trong DESIGN.md. Dùng bảng nghiệm thu A01–A15 để kiểm tra.\
+\
+Giữ nội dung chính được viết sẵn bằng HTML. JavaScript chỉ nâng cấp\
+tương tác; tắt JavaScript vẫn đọc đủ lịch, tiền, ảnh, thông tin cọc\
+và sử dụng được điều hướng tương đối.\
+\
+Scope CSS và token trong appointments-page để không ảnh hưởng\
+trang khác. Không sửa common.css, trang/CSS của người 1, người 2\
+hoặc tự thay quy tắc toàn nhóm.\
+\
+Kiểm tra font tiếng Việt, responsive 360/768/1280, bàn phím,\
+dialog, bộ lọc, Hủy/Thành công, in phiếu và Đặt lại demo.\
+Kiểm tra cả khi JavaScript bật và tắt.\
+\
+Không tự commit, push, merge hoặc đổi nhánh.\
+Báo file thay đổi, kết quả kiểm tra thật và phần chưa kiểm tra.\
+Không ghi PASS hoặc tạo minh chứng giả.
+```
+
 ## 06/11/2026 — Tách thiết kế chung và gỡ giao diện cũ
 
 Prompt nguyên văn:
@@ -263,6 +541,52 @@ Phạm vi thực hiện: resolve nội dung tài liệu và vị trí minh chứ
 giữ HTML hiện có. Các thay đổi CSS chung và việc gỡ màn 1 cũ được nhận từ
 main, không tự viết lại giao diện hoặc khôi phục file đã bị main gỡ.
 
+## 06/11/2026 — Bổ sung góc studio (prompt thực tế)
+
+```text
+Đọc DESIGN.md phiên bản 1.1, đặc biệt mục 3.1.
+
+Bổ sung góc studio tương tác vào màn 3:
+- dây treo ảnh và kẹp gỗ;
+- Polaroid đung đưa, kéo/thả, rơi xuống bàn và treo lại;
+- máy ảnh hoài niệm có nút chụp, ống kính và khe nhả ảnh;
+- nhấn chụp tạo hiệu ứng Polaroid trượt ra từ ảnh minh họa cục bộ;
+- đạo cụ softbox/cuộn phim và điều khiển sắp lại góc studio.
+
+Triển khai I10–I14 và kiểm tra A16–A21.
+Dựng thành phần HTML/CSS/SVG có tương tác thật,
+không thay bằng emoji hoặc ảnh nền giả.
+
+Giữ các chức năng lịch, thanh toán và bộ lọc đã làm.
+Kiểm tra bản hiện có trước khi sửa; không viết đè phần đã đúng.
+```
+
+## 06/11/2026 — Đặt điều khiển trực tiếp trên đạo cụ (prompt thực tế)
+
+```text
+Đọc DESIGN.md bản 1.2 và cập nhật riêng góc studio.
+
+Bỏ các nút chữ điều khiển hiệu ứng. Đồ vật tự là mục tiêu bấm:
+ảnh treo → rơi/treo lại; máy ảnh → nhả Polaroid;
+ảnh vừa nhả → lật; cuộn phim → sắp lại cảnh.
+
+Không tự chạy hiệu ứng lúc đầu hoặc hiển thị hướng dẫn bật mí.
+Giữ khả năng dùng bàn phím và tên truy cập của đồ vật.
+Giữ nguyên phần lịch, bộ lọc và thanh toán đã làm.
+```
+
+## 06/11/2026 — Tạo và treo ảnh lưu niệm (prompt thực tế)
+
+```text
+Hay cho cái máy ảnh chụp hình rồi sau đó mới treo lên được nếu có quá nhiều ảnh thì bây giờ tạo một cái khung chứa ảnh ở dưới chỉ trewo tối đa được ba ảnh à m,à các ảnh vẫn tương tác đâye nhau đồ được nha thêm trọng lực cho các ảnh để không nếu không treo thì nó sẽ rơi xuống đất
+```
+
+## 07/11/2026 — Rà thao tác giữ góc ảnh (prompt thực tế)
+
+```text
+Mạc dù tôi nắm ở góc nhưng ảnh vẫn cứ nằm ngang nè
+```
+
 ## 07–08/11/2026 — Chốt màn Dịch vụ và tư vấn
 
 ```text
@@ -326,4 +650,62 @@ thực hiện yêu cầu này
 
 xóa hết mấy ảnh trong archive PA01
 
+```
+
+## 11/11/2026 — Rà rubric và sửa bản tích hợp
+
+Prompt nguyên văn theo thứ tự gửi.
+
+```text
+Chấm điểm thử và đưa ra màn hình chỗ nào trừ nêu rõ lí do trừ điểm
+```
+
+```text
+Tự động fix tất cả để điểm trên 95
+```
+
+Tiêu chí nghiệm thu của rubric cho lượt này gồm mở file:// ở 360, 768, 1280 px với JavaScript tắt, dùng Accessibility pane để kiểm tra ngữ nghĩa và upload HTML lên W3C Nu. Dữ liệu mẫu và điều hướng tương đối theo AGENTS.md. Điểm chính thức do nhóm xác nhận.
+
+## 11/11/2026 — Sắp xếp nhật ký AI theo thành viên
+
+Prompt nguyên văn.
+
+```text
+[https://github.com/thVinhne/pa02-responsive-prototype.git](https://github.com/thVinhne/pa02-responsive-prototype.git) Đọc lại  Git tôi cần chia lại AI-LOG theo của từng người riêng ra
+```
+
+Người dùng làm rõ bố cục nhật ký.
+
+```text
+Ý là viết cả 3 vào AI-LOG.md mà chia ra thành nhiều mục á chứ không phải tách ra thành ba file md
+```
+
+Người dùng yêu cầu rà định dạng sau khi xem bản hiển thị.
+
+```text
+Lỗi định dạnh nè mấy cái này phải cùng cấp chứ ở dưới còn có không xuống hàng check lại AI-LOG sửa tất cả lỗi định dạng
+```
+
+```text
+: đừng dùng - dài
+```
+
+## 11/11/2026 — Sửa các điểm phát hiện trước khi nộp
+
+Prompt nguyên văn sau lượt kiểm bản chuẩn bị nộp.
+
+```text
+Sửa lại lên 100/100
+```
+
+Lượt sửa tập trung vào header Dịch vụ ở 768 px, focus bàn phím ở
+Lịch chụp, ảnh nghiệm thu và báo cáo tự chấm của nhóm.
+
+## 11/11/2026 — Sửa liên kết và bàn giao ZIP
+
+Prompt nguyên văn sau khi kiểm tra nội dung ZIP.
+
+```text
+2. **Hai link tài liệu bị hỏng.** `README.md` dòng 35 và `AI-LOG.md` dòng 232 cùng trỏ tới `docs/history/pre-redesign/README.md`, tệp đã bị bỏ khỏi ZIP. Sửa link tới vị trí thật của minh chứng hoặc bỏ link nếu đã dọn thư mục cũ. README.md · AI-LOG.md
+3. **Bản cuối chưa được commit.** ZIP đã chứa code, ảnh mới và báo cáo, còn `HEAD` vẫn ở `7e9a8ec`. `SELF_ASSESSMENT_REPORT.md` cũng chưa được Git theo dõi. Commit bản cuối rồi nén lại để lịch sử Git khớp với bài nộp.
 ```

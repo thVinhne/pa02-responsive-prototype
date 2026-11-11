@@ -1,6 +1,6 @@
 # Thiết kế riêng — Màn 2 Admin tư vấn và xử lý lịch
 
-Đặc tả ghi lại màn Admin đang chạy trên nhánh tích hợp ngày 09/11/2026. Màn
+Đặc tả ghi lại màn Admin sau lượt tích hợp ngày 11/11/2026. Màn
 này nối yêu cầu tư vấn của Linh ở màn Dịch vụ với booking mẫu ở màn Lịch
 chụp. Quy ước dùng chung nằm trong [DESIGN.md](../../DESIGN.md). Nghiệp vụ
 nguồn và hình tham chiếu nằm trong [tài liệu PA01](../pa1/LINK.md) và
@@ -11,16 +11,17 @@ nguồn và hình tham chiếu nằm trong [tài liệu PA01](../pa1/LINK.md) v�
 | Vùng | Nội dung hiện tại |
 | --- | --- |
 | Đầu trang | Logo GradStudio dẫn về Dịch vụ, nhãn vai trò Studio · Admin và thông tin Thảo, quản lý studio. Liên kết bỏ qua điều hướng trỏ đến nội dung chính. |
-| Danh sách hội thoại | Tiêu đề Khách đang chờ, tìm theo tên, bộ lọc trạng thái có số lượng và năm khách mẫu. Mỗi mục có avatar, tên, tin nhắn gần nhất và thời điểm. Tên hoặc lời nhắn dài rút gọn bằng dấu ba chấm. Khi bật JS, tooltip và nhãn truy cập giữ nội dung đầy đủ. |
+| Danh sách hội thoại | Tiêu đề Khách đang chờ, tìm theo tên, bộ lọc trạng thái có số lượng và năm khách mẫu. Mỗi mục có avatar, tên, tin nhắn gần nhất và thời điểm. Tên dài xuống dòng. Dòng xem trước giữ dấu ba chấm, có nội dung đầy đủ trong nhãn truy cập khi bật JS. |
 | Hội thoại | Tên, avatar, gói và trạng thái của khách đang mở. Tin khách nằm bên trái, tin studio nằm bên phải. Hội thoại Linh có ghi chú về khung giờ đã thống nhất. Ô soạn và nút Gửi nằm cuối vùng chat. |
 | Lịch booking | Bảng ngày 24/10/2026 có hai cột Thời gian và Booking. Khung 08:00–12:00 ghi Đã có lịch. Các khung còn lại phân biệt Chưa có dữ liệu và Chưa có booking. |
 | Thẻ booking | Nằm dưới lịch, hiển thị form hoặc bản tóm tắt booking của Linh. Form gồm loại buổi chụp, gói, ngày, giờ, dịch vụ, phân công, giá và thao tác mô phỏng. Khách khác có thông báo thiếu dữ liệu booking. |
 | Chân trang | Liên kết sang Dịch vụ và Lịch chụp, mục Admin hiện tại và phần Thông tin bản mẫu có thể mở rộng. |
 
 Màn Admin lấy màu và điều khiển nền từ CSS chung. Các thành phần riêng dùng
-tiền tố `admin-`. Tiêu đề khu vực và logo dùng Times New Roman. Tên khách
-trong đầu vùng chat dùng font thân bài. Mục hội thoại có avatar 52 px và cao
-72 px. Avatar chữ **G** và **L** dùng [SVG của nhóm](../../PROTOTYPE.md#nguồn-ảnh-và-video).
+tiền tố `admin-`. Tiêu đề khu vực và logo dùng Merriweather. Tên khách
+trong đầu vùng chat dùng Be Vietnam Pro. Mục hội thoại có avatar 52 px,
+padding theo `--space-2` và cao theo nội dung. Avatar chữ **G** và **L** dùng
+[SVG của nhóm](../../PROTOTYPE.md#nguồn-ảnh-và-video).
 Các khách còn lại dùng chữ viết tắt trong HTML.
 
 ## Responsive
@@ -56,9 +57,9 @@ Các khách còn lại dùng chữ viết tắt trong HTML.
 | Tạo booking hoặc chỉnh lại lịch | Tạo booking hiển thị tóm tắt GS-1024 và cập nhật hai khung liên quan thành Chờ cọc. Chỉnh lại lịch mở lại form và yêu cầu chốt giờ mới. |
 
 Các thao tác trên chạy trong phiên xem. Tin nhắn và booking mất khi tải
-lại trang. Liên kết ở chân trang mở được [Lịch chụp của khách](../../my-appointments.html).
-Tạo booking cập nhật thẻ và lịch ở màn Admin. Dữ liệu màn Lịch chụp vẫn là
-mẫu riêng của trang đó.
+lại trang. Liên kết ở chân trang và trong kết quả tạo booking mở được
+[Lịch chụp của khách](../../my-appointments.html). Tạo booking cập nhật
+thẻ và lịch ở màn Admin. Trang Lịch chụp mở dữ liệu mẫu riêng.
 
 Khi tắt JavaScript, HTML vẫn hiển thị danh sách, bốn tin nhắn của Linh,
 lịch, form và liên kết. Tìm kiếm, lọc, chọn khách, đổi trạng thái, gửi tin
@@ -69,9 +70,8 @@ và tạo booking cần JS. Ghi chú trong `noscript` giải thích phạm vi n�
 - Brief dùng nhãn **Đã chốt lịch** cho hội thoại đã đồng ý. Màn hiện tại
   mở ở **Đang tư vấn** và dùng **Đã xác nhận** khi mô phỏng đồng ý hoặc tạo booking.
 - Chân trang vẫn có nhãn **Màn 1/2/3** và form vẫn có nhóm **Mô phỏng phản hồi
-  của Linh**. Nút **Tạo booking** cần JS, còn đường sang màn Lịch chụp nằm
-  ở liên kết chân trang. Ghi chú tích hợp trong chân trang và phản hồi sau
-  khi tạo booking vẫn dùng nội dung cũ dù tệp màn Lịch chụp đã có.
+  của Linh**. Nút **Tạo booking** cần JS. Ghi chú chân trang và phản hồi
+  sau khi tạo booking giải thích phạm vi mô phỏng của từng màn.
 - Brief yêu cầu đọc toàn bộ chat và form bằng cuộn trang. Bản hiện tại
   dùng vùng cuộn riêng như mô tả ở bảng responsive.
 

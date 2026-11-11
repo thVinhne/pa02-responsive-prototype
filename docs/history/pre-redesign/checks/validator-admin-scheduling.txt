@@ -1,7 +1,0 @@
-{
-  "checked_file": "admin-scheduling.html",
-  "sha256": "99a271f7ddc3b23892ffaddf19e5a7ea020cc53fc0779e3009ce5b290e409530",
-  "endpoint": "https://validator.w3.org/nu/",
-  "status": "NOT_VALIDATED",
-  "error": "403 Client Error: Forbidden for url: https://validator.w3.org/nu/?out=json"
-}
