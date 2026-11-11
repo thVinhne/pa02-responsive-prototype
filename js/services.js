@@ -396,18 +396,7 @@
   const packageName = document.getElementById('selected-package');
   const chat = document.getElementById('studio-chat');
   const toggle = document.getElementById('chat-toggle');
-  const preview = document.getElementById('chat-preview');
-  if (!packageName || !chat || !toggle || !preview) return;
-
-  const compactChat = window.matchMedia('(max-width: 390px)');
-
-  function updateChatLayout() {
-    preview.hidden = !compactChat.matches;
-    chat.open = !compactChat.matches;
-  }
-
-  updateChatLayout();
-  compactChat.addEventListener('change', updateChatLayout);
+  if (!packageName || !chat || !toggle) return;
 
   document.querySelectorAll('a[href="#chat"]').forEach(link => {
     link.addEventListener('click', event => {

@@ -117,7 +117,10 @@
         <div class="admin-booking-result" id="admin-booking-result" hidden>
           <dl><dt>Khách hàng · Gói</dt><dd>Nguyễn Thùy Linh · Tốt nghiệp Premium</dd><dt>Ngày chụp</dt><dd id="admin-result-date">24/10/2026</dd><dt>Makeup · Mai</dt><dd id="admin-result-makeup">13:00–14:00</dd><dt>Chụp · Tuấn · Phòng B</dt><dd id="admin-result-shoot">14:00–16:00</dd><dt>Tổng giá</dt><dd>1.800.000đ</dd><dt>Cọc 30%</dt><dd>540.000đ</dd><dt>Còn lại sau buổi chụp</dt><dd>1.260.000đ</dd></dl>
           <p>Booking mô phỏng đang chờ cọc; chưa giữ lịch chính thức.</p>
-          <button class="button button--secondary" id="admin-edit" type="button" disabled>Chỉnh lại lịch</button>
+          <div class="admin-actions">
+            <button class="button button--secondary" id="admin-edit" type="button" disabled>Chỉnh lại lịch</button>
+            <a class="button button--secondary" href="my-appointments.html">Xem lịch chụp mẫu của khách</a>
+          </div>
         </div>
         <p class="admin-note admin-live" id="admin-feedback" role="status" aria-live="polite"></p>
         <noscript><p>Bật JavaScript để tìm kiếm, lọc, gửi tin nhắn mô phỏng và thay đổi trạng thái booking. Nội dung mẫu, form và liên kết vẫn xem được.</p></noscript>
@@ -128,7 +131,7 @@
   </main>
   <footer class="admin-demo">
     <nav aria-label="Chuyển vai trò trong bản mẫu"><a href="index.html">← Màn 1 · Góc nhìn khách</a><a href="admin-scheduling.html" aria-current="page">Màn 2 · Góc nhìn Admin</a><a href="my-appointments.html" aria-describedby="admin-integration-note">Màn 3 · Lịch chụp của khách →</a></nav>
-    <details><summary>Thông tin bản mẫu</summary><p id="admin-integration-note">Màn 3 chờ tích hợp: file my-appointments.html chưa có trong repository tại thời điểm dựng màn 2.</p><p>GradStudio · Bản mẫu PA02 · Các tương tác mô phỏng không được lưu khi tải lại.</p></details>
+    <details><summary>Thông tin bản mẫu</summary><p id="admin-integration-note">Lịch chụp mở booking mẫu GS-1024 ở trạng thái Chờ cọc. Thay đổi trên màn Admin chỉ áp dụng trong phiên xem này.</p></details>
   </footer>
 </body>
 </html>

@@ -1,68 +1,30 @@
-@font-face {
-  font-family: "AP Playfair";
-  src: url("../assets/fonts/appointments/PlayfairDisplay-Variable.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: "AP Playfair";
-  src: url("../assets/fonts/appointments/PlayfairDisplay-Italic-Variable.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 400 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: "AP Be Vietnam";
-  src: url("../assets/fonts/appointments/BeVietnamPro-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "AP Be Vietnam";
-  src: url("../assets/fonts/appointments/BeVietnamPro-SemiBold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
-
-/* This palette, type system and shared-component aliases belong to screen 3 only. */
+/* Map the appointment components to the shared design tokens. */
 body.appointments-page {
-  --ap-paper: #f5f0e6;
-  --ap-card: #fffcf5;
-  --ap-ink: #262b28;
-  --ap-muted: #62655b;
-  --ap-forest: #284c3f;
-  --ap-forest-hover: #1b392f;
-  --ap-wine: #7a3734;
-  --ap-gold: #b59157;
-  --ap-line: #d3c9b9;
-  --ap-control-border: #8a8171;
-  --ap-focus: #175e92;
-  --ap-body: "AP Be Vietnam", "Segoe UI", Arial, sans-serif;
-  --ap-display: "AP Playfair", "Times New Roman", serif;
+  --ap-paper: var(--color-background);
+  --ap-card: var(--color-surface);
+  --ap-ink: var(--color-text);
+  --ap-muted: var(--color-text-muted);
+  --ap-forest: var(--color-brand);
+  --ap-forest-hover: var(--color-brand-hover);
+  --ap-wine: var(--color-wine);
+  --ap-gold: var(--color-accent);
+  --ap-line: var(--color-border);
+  --ap-control-border: var(--color-control-border);
+  --ap-focus: var(--color-focus);
+  --ap-body: var(--font-body);
+  --ap-display: var(--font-heading);
   --ap-reading: clamp(1rem, 0.91rem + 0.4vw, 1.125rem);
-  --ap-1: 0.25rem;
-  --ap-2: 0.5rem;
-  --ap-3: 0.75rem;
-  --ap-4: 1rem;
-  --ap-5: 1.5rem;
-  --ap-6: 2rem;
-  --ap-7: 3rem;
-  --ap-8: 4rem;
-  --ap-9: 6rem;
+  --ap-1: var(--space-1);
+  --ap-2: var(--space-2);
+  --ap-3: var(--space-3);
+  --ap-4: var(--space-4);
+  --ap-5: var(--space-5);
+  --ap-6: var(--space-6);
+  --ap-7: var(--space-7);
+  --ap-8: var(--space-8);
+  --ap-9: var(--space-9);
   --ap-shadow: 0 4px 16px color-mix(in srgb, var(--ap-ink) 9%, transparent);
   --ap-shadow-raised: 0 10px 30px color-mix(in srgb, var(--ap-ink) 15%, transparent);
-  --color-background: var(--ap-paper);
-  --color-surface: var(--ap-card);
-  --color-text: var(--ap-ink);
-  --color-text-muted: var(--ap-muted);
-  --color-brand: var(--ap-forest);
-  --color-brand-hover: var(--ap-forest-hover);
-  --color-focus: var(--ap-focus);
-  --font-body: var(--ap-body);
-  --font-heading: var(--ap-display);
   position: relative;
   isolation: isolate;
   background: var(--ap-paper);
@@ -71,7 +33,6 @@ body.appointments-page {
   font-size: var(--ap-reading);
   font-weight: 400;
   line-height: 1.6;
-  font-synthesis: none;
   font-optical-sizing: auto;
 }
 .appointments-page::before {
@@ -150,7 +111,10 @@ body.appointments-page {
   max-inline-size: calc(100% - var(--ap-5));
   transform: translateY(calc(-100% - var(--ap-5)));
 }
-.appointments-skip:focus { transform: none; }
+.appointments-skip:focus {
+  transform: none;
+  transition: none;
+}
 .appointments-button {
   display: inline-flex;
   align-items: center;

@@ -202,7 +202,7 @@
     bookingState = 'created'; setStatus('confirmed');
     addMessage(`Booking mô phỏng GS-1024 chuyển sang Chờ cọc 30% (540.000đ). Makeup ${times().makeup}; chụp ${times().shoot}. Chưa giữ lịch chính thức.`);
     renderBooking();
-    feedback.textContent = 'Chỉ tạo trong phiên xem này. Màn 3 chưa tích hợp; không gửi hoặc lưu dữ liệu.';
+    feedback.textContent = 'Booking mô phỏng đã tạo trong phiên xem này. Liên kết Lịch chụp mở dữ liệu mẫu của khách.';
     $('admin-booking').scrollTop = 0;
     $('admin-booking-title').focus({ preventScroll: true });
   });

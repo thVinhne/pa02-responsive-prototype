@@ -262,6 +262,8 @@
       payDialog.showModal();
     });
     payDialog.addEventListener('close', () => {
+      // A queued close can arrive after a reopen or a completed payment.
+      if (payDialog.open || state.status !== 'pending') return;
       const outcome = payDialog.returnValue;
       payDialog.returnValue = '';
       studio.sync();
@@ -269,7 +271,7 @@
         resetButton.focus();
         return;
       }
-      if (outcome === 'paid' && state.status === 'pending') {
+      if (outcome === 'paid') {
         state.status = 'booked';
         startPaymentTear();
         render();
@@ -278,7 +280,7 @@
           : 'Đã cọc 540.000đ trong demo. GS-1024 đã đặt lịch; makeup lúc 13:00.';
         const focusTarget = bookingVisible() ? get('ap-paid-confirm') : currentFilter();
         focusTarget.focus({ preventScroll: paymentTear !== null });
-      } else if (bookingVisible() && state.status === 'pending') {
+      } else if (bookingVisible()) {
         payButton.focus();
       } else {
         currentFilter().focus();
