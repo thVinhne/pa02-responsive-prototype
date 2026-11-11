@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-11",
+  "structure": [
+    {
+      "page": "admin-scheduling.html",
+      "ids": 51,
+      "images": 3,
+      "labelled_inputs": 13,
+      "status": "PASS"
+    },
+    {
+      "page": "index.html",
+      "ids": 33,
+      "images": 45,
+      "labelled_inputs": 1,
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments.html",
+      "ids": 156,
+      "images": 19,
+      "labelled_inputs": 7,
+      "status": "PASS"
+    }
+  ],
+  "local_references_checked": 189,
+  "issues": [],
+  "w3c": [
+    {
+      "page": "index",
+      "sha256": "a3f839bd00c52d40bd7650fea72bfdda87bba63091ab7dbced320e57902985f3",
+      "status": "PASS",
+      "note": "Existing W3C response matches unchanged HTML exactly"
+    },
+    {
+      "page": "admin-scheduling",
+      "sha256": "b4676e39eab67165c7106483ad83f5829e15feeacab8a48e15420ffbd1ee6855",
+      "status": "PASS",
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "page": "my-appointments",
+      "sha256": "6012d1cd0813a004df7700130b2a1d6a1a1cec303043ab486da655db943ca92b",
+      "status": "PASS",
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "font_files": [
+    "BeVietnamPro-OFL.txt",
+    "BeVietnamPro-Regular.ttf",
+    "BeVietnamPro-SemiBold.ttf",
+    "Merriweather-OFL.txt",
+    "Merriweather-Variable.ttf"
+  ],
+  "image_source_entries": 27,
+  "old_zip_git_entries": 223,
+  "status": "PASS",
+  "limits": [
+    "Rubric PDF unavailable",
+    "Image licences checked for documented attribution and local OFL files only"
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "date": "2026-11-11",
+  "transport": "file://",
+  "browser": "Chrome/157.0.8103.50",
+  "matrix": [
+    {
+      "page": "index",
+      "width": 360,
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 360,
+      "clientWidth": 345,
+      "scrollWidth": 345,
+      "height": 10805,
+      "h1": 1,
+      "badImages": [],
+      "regions": [],
+      "screenshot": "screenshots/index-360.png",
+      "screenshot_sha256": "9120ccf86fcd196b0f0e87bf01f72720eeadb2c5a54d0597f42dcd216fb30516"
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 360,
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 360,
+      "clientWidth": 345,
+      "scrollWidth": 345,
+      "height": 3542,
+      "h1": 1,
+      "badImages": [],
+      "regions": [
+        {
+          "name": "admin-chat-body",
+          "height": 933,
+          "content": 933,
+          "overflow": "visible"
+        },
+        {
+          "name": "admin-booking",
+          "height": 1073,
+          "content": 1073,
+          "overflow": "visible"
+        }
+      ],
+      "screenshot": "screenshots/admin-scheduling-360.png",
+      "screenshot_sha256": "c5cf17da6214353f3ef859647acf288daca9f43cc4a5fcf630d5798c40439a7d"
+    },
+    {
+      "page": "my-appointments",
+      "width": 360,
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 360,
+      "clientWidth": 345,
+      "scrollWidth": 345,
+      "height": 7061,
+      "h1": 1,
+      "badImages": [],
+      "regions": [],
+      "screenshot": "screenshots/my-appointments-360.png",
+      "screenshot_sha256": "411f3d5cc426b29decbe3e8975f87eb90ff22ac5612e05ce535be4d2466403fe"
+    },
+    {
+      "page": "index",
+      "width": 768,
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 7565,
+      "h1": 1,
+      "badImages": [],
+      "regions": [],
+      "screenshot": "screenshots/index-768.png",
+      "screenshot_sha256": "a1e8db1e3d139e7a04d85a025f2cb5ae76d6b465702b1dd9b62d8c748e745259"
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 768,
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 2427,
+      "h1": 1,
+      "badImages": [],
+      "regions": [
+        {
+          "name": "admin-chat-body",
+          "height": 754,
+          "content": 754,
+          "overflow": "visible"
+        },
+        {
+          "name": "admin-booking",
+          "height": 971,
+          "content": 971,
+          "overflow": "visible"
+        }
+      ],
+      "screenshot": "screenshots/admin-scheduling-768.png",
+      "screenshot_sha256": "511d228a3bb3bb036b35f44d3cac0327d06603d7e670af98e15be21ab6f9a25b"
+    },
+    {
+      "page": "my-appointments",
+      "width": 768,
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 5249,
+      "h1": 1,
+      "badImages": [],
+      "regions": [],
+      "screenshot": "screenshots/my-appointments-768.png",
+      "screenshot_sha256": "7f6903ff13163a8bfe1debc8315549f0b49fac10c0547e7366f709c0fecddd25"
+    },
+    {
+      "page": "index",
+      "width": 1280,
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 1280,
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "height": 9334,
+      "h1": 1,
+      "badImages": [],
+      "regions": [],
+      "screenshot": "screenshots/index-1280.png",
+      "screenshot_sha256": "385c70310d541204400306a39665f95b9e9e704161bdc709babed8541e4b51f6"
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 1280,
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 1280,
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "height": 901,
+      "h1": 1,
+      "badImages": [],
+      "regions": [
+        {
+          "name": "admin-chat-body",
+          "height": 681,
+          "content": 728,
+          "overflow": "auto"
+        },
+        {
+          "name": "admin-booking",
+          "height": 316,
+          "content": 1073,
+          "overflow": "auto"
+        }
+      ],
+      "screenshot": "screenshots/admin-scheduling-1280.png",
+      "screenshot_sha256": "3225ce463e70ccbac689c1a1f4e1304edaf45ee0e4e252c0e076f12d2b50ee3f"
+    },
+    {
+      "page": "my-appointments",
+      "width": 1280,
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 1280,
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "height": 4166,
+      "h1": 1,
+      "badImages": [],
+      "regions": [],
+      "screenshot": "screenshots/my-appointments-1280.png",
+      "screenshot_sha256": "94efd5b8b9a9b35d7f128dd2ae76e9c21dc154df3e2e7574b719530002fec07a"
+    },
+    {
+      "page": "index",
+      "width": 360,
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 360,
+      "clientWidth": 345,
+      "scrollWidth": 345,
+      "height": 5610,
+      "h1": 1,
+      "badImages": [],
+      "regions": []
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 360,
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 360,
+      "clientWidth": 345,
+      "scrollWidth": 345,
+      "height": 4510,
+      "h1": 1,
+      "badImages": [],
+      "regions": [
+        {
+          "name": "admin-chat-body",
+          "height": 882,
+          "content": 882,
+          "overflow": "visible"
+        },
+        {
+          "name": "admin-booking",
+          "height": 1558,
+          "content": 1558,
+          "overflow": "visible"
+        }
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "width": 360,
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 360,
+      "clientWidth": 345,
+      "scrollWidth": 345,
+      "height": 7505,
+      "h1": 1,
+      "badImages": [],
+      "regions": []
+    },
+    {
+      "page": "index",
+      "width": 768,
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 4203,
+      "h1": 1,
+      "badImages": [],
+      "regions": []
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 768,
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 3127,
+      "h1": 1,
+      "badImages": [],
+      "regions": [
+        {
+          "name": "admin-chat-body",
+          "height": 728,
+          "content": 728,
+          "overflow": "visible"
+        },
+        {
+          "name": "admin-booking",
+          "height": 1326,
+          "content": 1326,
+          "overflow": "visible"
+        }
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "width": 768,
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "height": 5328,
+      "h1": 1,
+      "badImages": [],
+      "regions": []
+    },
+    {
+      "page": "index",
+      "width": 1280,
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 1280,
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "height": 3653,
+      "h1": 1,
+      "badImages": [],
+      "regions": []
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 1280,
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 1280,
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "height": 901,
+      "h1": 1,
+      "badImages": [],
+      "regions": [
+        {
+          "name": "admin-chat-body",
+          "height": 392,
+          "content": 703,
+          "overflow": "auto"
+        },
+        {
+          "name": "admin-booking",
+          "height": 316,
+          "content": 1465,
+          "overflow": "auto"
+        }
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "width": 1280,
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 1280,
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "height": 4388,
+      "h1": 1,
+      "badImages": [],
+      "regions": []
+    }
+  ],
+  "zoom_200": [
+    {
+      "page": "index",
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 628,
+      "devicePixelRatio": 2,
+      "outerWidth": 1280,
+      "clientWidth": 620,
+      "scrollWidth": 620
+    },
+    {
+      "page": "admin-scheduling",
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 628,
+      "devicePixelRatio": 2,
+      "outerWidth": 1280,
+      "clientWidth": 620,
+      "scrollWidth": 620
+    },
+    {
+      "page": "my-appointments",
+      "js": false,
+      "status": "PASS",
+      "innerWidth": 628,
+      "devicePixelRatio": 2,
+      "outerWidth": 1280,
+      "clientWidth": 620,
+      "scrollWidth": 620
+    },
+    {
+      "page": "index",
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 628,
+      "devicePixelRatio": 2,
+      "outerWidth": 1280,
+      "clientWidth": 620,
+      "scrollWidth": 620
+    },
+    {
+      "page": "admin-scheduling",
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 628,
+      "devicePixelRatio": 2,
+      "outerWidth": 1280,
+      "clientWidth": 620,
+      "scrollWidth": 620
+    },
+    {
+      "page": "my-appointments",
+      "js": true,
+      "status": "PASS",
+      "innerWidth": 628,
+      "devicePixelRatio": 2,
+      "outerWidth": 1280,
+      "clientWidth": 620,
+      "scrollWidth": 620
+    }
+  ],
+  "reduced_motion": [
+    {
+      "page": "index",
+      "status": "PASS"
+    },
+    {
+      "page": "admin-scheduling",
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "status": "PASS"
+    }
+  ],
+  "fonts": [
+    {
+      "page": "index",
+      "platform_fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Merriweather Light",
+              "postScriptName": "Merriweather-60pt",
+              "isCustomFont": true,
+              "glyphCount": 25
+            }
+          ]
+        },
+        {
+          "selector": "p",
+          "fonts": [
+            {
+              "familyName": "Be Vietnam Pro",
+              "postScriptName": "BeVietnamPro-Regular",
+              "isCustomFont": true,
+              "glyphCount": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "admin-scheduling",
+      "platform_fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Merriweather Light",
+              "postScriptName": "Merriweather-36pt",
+              "isCustomFont": true,
+              "glyphCount": 13
+            }
+          ]
+        },
+        {
+          "selector": "p",
+          "fonts": []
+        }
+      ]
+    },
+    {
+      "page": "my-appointments",
+      "platform_fonts": [
+        {
+          "selector": "h1",
+          "fonts": [
+            {
+              "familyName": "Merriweather Light",
+              "postScriptName": "Merriweather-Medium-60pt",
+              "isCustomFont": true,
+              "glyphCount": 16
+            }
+          ]
+        },
+        {
+          "selector": "p",
+          "fonts": [
+            {
+              "familyName": "Be Vietnam Pro",
+              "postScriptName": "BeVietnamPro-Regular",
+              "isCustomFont": true,
+              "glyphCount": 4
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "keyboard": [
+    {
+      "page": "index",
+      "width": 360,
+      "js": false,
+      "skip_link": {
+        "tag": "A",
+        "href": "#main",
+        "top": 8,
+        "bottom": 56,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 360,
+      "js": false,
+      "skip_link": {
+        "tag": "A",
+        "href": "#admin-main",
+        "top": 16,
+        "bottom": 64,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "width": 360,
+      "js": false,
+      "skip_link": {
+        "tag": "A",
+        "href": "#ap-main",
+        "top": 12,
+        "bottom": 64,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "index",
+      "width": 768,
+      "js": false,
+      "skip_link": {
+        "tag": "A",
+        "href": "#main",
+        "top": 8,
+        "bottom": 56,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 768,
+      "js": false,
+      "skip_link": {
+        "tag": "A",
+        "href": "#admin-main",
+        "top": 16,
+        "bottom": 64,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "width": 768,
+      "js": false,
+      "skip_link": {
+        "tag": "A",
+        "href": "#ap-main",
+        "top": 12,
+        "bottom": 64.4375,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "index",
+      "width": 1280,
+      "js": false,
+      "skip_link": {
+        "tag": "A",
+        "href": "#main",
+        "top": 8,
+        "bottom": 56,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 1280,
+      "js": false,
+      "skip_link": {
+        "tag": "A",
+        "href": "#admin-main",
+        "top": 16,
+        "bottom": 64,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "width": 1280,
+      "js": false,
+      "skip_link": {
+        "tag": "A",
+        "href": "#ap-main",
+        "top": 12,
+        "bottom": 65,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "index",
+      "width": 360,
+      "js": true,
+      "skip_link": {
+        "tag": "A",
+        "href": "#main",
+        "top": 8,
+        "bottom": 56,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 360,
+      "js": true,
+      "skip_link": {
+        "tag": "A",
+        "href": "#admin-main",
+        "top": 16,
+        "bottom": 64,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "width": 360,
+      "js": true,
+      "skip_link": {
+        "tag": "A",
+        "href": "#ap-main",
+        "top": 12,
+        "bottom": 64,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "index",
+      "width": 768,
+      "js": true,
+      "skip_link": {
+        "tag": "A",
+        "href": "#main",
+        "top": 8,
+        "bottom": 56,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 768,
+      "js": true,
+      "skip_link": {
+        "tag": "A",
+        "href": "#admin-main",
+        "top": 16,
+        "bottom": 64,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "width": 768,
+      "js": true,
+      "skip_link": {
+        "tag": "A",
+        "href": "#ap-main",
+        "top": 12,
+        "bottom": 64.4375,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "index",
+      "width": 1280,
+      "js": true,
+      "skip_link": {
+        "tag": "A",
+        "href": "#main",
+        "top": 8,
+        "bottom": 56,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "admin-scheduling",
+      "width": 1280,
+      "js": true,
+      "skip_link": {
+        "tag": "A",
+        "href": "#admin-main",
+        "top": 16,
+        "bottom": 64,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    },
+    {
+      "page": "my-appointments",
+      "width": 1280,
+      "js": true,
+      "skip_link": {
+        "tag": "A",
+        "href": "#ap-main",
+        "top": 12,
+        "bottom": 65,
+        "outline": "3px"
+      },
+      "status": "PASS"
+    }
+  ],
+  "not_run": [
+    "Physical devices",
+    "Manual screen-reader review",
+    "All video frames",
+    "Teacher confirmation of PA1 source",
+    "Exact rubric PDF review (file unavailable)"
+  ],
+  "source_sha256": {
+    "admin-scheduling.html": "b4676e39eab67165c7106483ad83f5829e15feeacab8a48e15420ffbd1ee6855",
+    "index.html": "a3f839bd00c52d40bd7650fea72bfdda87bba63091ab7dbced320e57902985f3",
+    "my-appointments.html": "6012d1cd0813a004df7700130b2a1d6a1a1cec303043ab486da655db943ca92b",
+    "css/admin-scheduling.css": "1b3fed43a15204acebe59f1d3370f22324f2677f25e26a2ebfe854dea2fb9217",
+    "css/common.css": "9fcf017ef1ea707bcd6dca14782c8b7d304ccb109c5857902c43047c0750d840",
+    "css/my-appointments.css": "388ddf30af84fdaabd9a458c0e11f7f7de4c35446cfed40f8b7c26388231ea57",
+    "css/services.css": "4752f602db660dd99a1dfcdd05c2e44a52a1cccd9103f6fd8521b92d60dbf5d4",
+    "js/admin-scheduling.js": "93a481f5c2b8427e63fc2b27a233b37e405fbd8afbe7c7589fdb09a853362189",
+    "js/my-appointments.js": "7ea8ae4d9af1cac7d48910dfe28361b9436cb66f1c1417185c577f9b654088ba",
+    "js/services.js": "5df4a17a22a061800a491ae483614634e4df455951609d0f889edfa545557a09"
+  }
+}

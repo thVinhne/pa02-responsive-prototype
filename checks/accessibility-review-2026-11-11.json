@@ -1,0 +1,70 @@
+[
+  {
+    "page": "admin-scheduling",
+    "landmarks": "PASS",
+    "body_fonts": [
+      {
+        "familyName": "Be Vietnam Pro",
+        "postScriptName": "BeVietnamPro-Regular",
+        "isCustomFont": true,
+        "glyphCount": 56
+      }
+    ],
+    "contrast": [
+      {
+        "selector": ".admin-message--studio p",
+        "color": "rgb(255, 252, 245)",
+        "background": "rgb(40, 76, 63)",
+        "size": "16px",
+        "contrast": 9.33,
+        "status": "PASS"
+      },
+      {
+        "selector": "#admin-booking-status",
+        "color": "rgb(40, 76, 63)",
+        "background": "rgb(245, 240, 230)",
+        "size": "16px",
+        "contrast": 8.42,
+        "status": "PASS"
+      },
+      {
+        "selector": ".admin-note",
+        "color": "rgb(98, 101, 91)",
+        "background": "rgb(245, 240, 230)",
+        "size": "16px",
+        "contrast": 5.23,
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "page": "my-appointments",
+    "landmarks": "PASS",
+    "body_fonts": [
+      {
+        "familyName": "Be Vietnam Pro",
+        "postScriptName": "BeVietnamPro-Regular",
+        "isCustomFont": true,
+        "glyphCount": 38
+      }
+    ],
+    "contrast": [
+      {
+        "selector": "#ap-payment-demo-note",
+        "color": "rgb(98, 101, 91)",
+        "background": "color(srgb 0.986275 0.971765 0.940196)",
+        "size": "18px",
+        "contrast": 5.6,
+        "status": "PASS"
+      },
+      {
+        "selector": "#ap-pay-open",
+        "color": "rgb(255, 252, 245)",
+        "background": "rgb(40, 76, 63)",
+        "size": "18px",
+        "contrast": 9.33,
+        "status": "PASS"
+      }
+    ]
+  }
+]

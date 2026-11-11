@@ -1,14 +1,3 @@
-# Prompt và yêu cầu tổng hợp
-
-> Lịch sử trước ngày 06/11/2026 bên dưới được giữ nguyên để truy vết.
-> Quy ước màu/font, slideshow, chat và yêu cầu bám giao diện nguồn trong
-> các mục cũ đã hết hiệu lực. Dùng DESIGN.md và AGENTS.md hiện hành.
-> Không thực thi lại prompt lịch sử như yêu cầu mới.
-
-## 04/11/2026 — Chuẩn bị nền tảng CSS chung
-
-Nội dung bên dưới được lưu nguyên văn, bao gồm cách đánh số của prompt.
-
 ```text
 Đọc và tuân thủ AGENTS.md trong repository hiện tại. Thực hiện bước 5: chuẩn bị nền tảng CSS chung cho ba thành viên.
 
@@ -38,19 +27,9 @@ Sau khi làm, trả lời qua chat:
 - Đề xuất checklist kiểm tra và thông điệp commit để tôi dùng trong GitHub Desktop.
 ```
 
-## 04/11/2026 — Thống nhất quy định màu
-
-Prompt nguyên văn; “bảng màu trên” tham chiếu bảng kem–nâu cùng
-vai trò màu trạng thái đã trao đổi trong chat, được ghi cụ thể ở
-mục 7 của AGENTS.md và phần bảng màu của README.md.
-
 ```text
 Cập nhật các file quy định về màu theo bảng màu trên
 ```
-
-## 05/11/2026 — Dựng cấu trúc HTML màn 1
-
-Prompt nguyên văn:
 
 ```text
 Đọc và tuân thủ AGENTS.md. Thực hiện bước 7: dựng cấu trúc
@@ -94,10 +73,6 @@ Sau khi làm, báo nội dung đã dựng, phần nguồn còn thiếu,
 kiểm tra đã chạy và phần chưa kiểm tra.
 Không tuyên bố đạt responsive hoặc W3C nếu chưa kiểm tra.
 ```
-
-## 05/11/2026 — Hoàn thiện CSS riêng màn 1
-
-Prompt nguyên văn:
 
 ```text
 Đọc và tuân thủ AGENTS.md. Thực hiện bước 8: hoàn thiện CSS
@@ -148,15 +123,9 @@ Sau khi làm:
   không tuyên bố đạt responsive chỉ từ việc đọc CSS.
 ```
 
-## 05/11/2026 — Khôi phục khung chat nổi có thể thu gọn
-
 ```text
 Tôi muốn giữ phần chat như trong prototupe, hãy chỉnh sửa lại các file cần thiết
 ```
-
-Các prompt màn Lịch chụp dưới đây được đối chiếu với chat “Dựng màn Lịch chụp của tôi”. Các yêu cầu cũ được ghi để truy vết. Quy ước hiện hành nằm trong AGENTS.md và DESIGN.md.
-
-## 05/11/2026 — Dựng màn Lịch chụp ban đầu (prompt thực tế)
 
 ```text
 Tôi là người 3, phụ trách màn Lịch chụp của tôi trong repo PA02 GradStudio.
@@ -187,8 +156,6 @@ Logo/Dịch vụ dùng href="index.html"; tự đọc xem file đích đã tồn
 
 Sau khi làm, trả lời: file đã đổi, cách mở my-appointments.html, cách dùng bộ lọc và thông tin cọc, khác biệt so với PA#1, kiểm tra thực sự đã chạy và chưa chạy. Nếu có công cụ trình duyệt, kiểm tra 360/768/1280 với JavaScript tắt. Không ghi PASS cho W3C hoặc kiểm tra trình duyệt khi chưa chạy. Không tự tạo screenshot hoặc log giả.
 ```
-
-## 05/11/2026 — Rà font và luồng cọc màn Lịch chụp (prompt thực tế)
 
 ```text
 Sửa và hoàn thiện màn 3 hiện có, không dựng lại từ đầu hoặc
@@ -389,8 +356,6 @@ Sau khi sửa, báo:
 Chưa chạy kiểm tra nào thì ghi NOT RUN.
 ```
 
-## 05/11/2026 — Đổi hướng thiết kế màn Lịch chụp (prompt thực tế)
-
 ```text
 Tôi đổi định hướng thiết kế màn 3. Dùng [$ui-ux-pro-max](C:\Users\tranl\\.codex\skills\ui-ux-pro-max\SKILL.md) \
 \
@@ -432,28 +397,9 @@ Báo file thay đổi, kết quả kiểm tra thật và phần chưa kiểm tra
 Không ghi PASS hoặc tạo minh chứng giả.
 ```
 
-## 06/11/2026 — Tách thiết kế chung và gỡ giao diện cũ
-
-Prompt nguyên văn:
-
 ```text
 Đầu tiên hãy di chuyển file my-appointments từ Downloads về repo, tạo folder nếu cần thiết. Dựa vào file này hãy tạo ra file DESIGN cho những phần chung. Loại bỏ các quy ước cũ liên quan đến protoype cũ ở trong toàn bộ repo, xóa file index.html và css liên quan vì không còn sử dụng prototype cũ nữa
 ```
-
-Đây là yêu cầu đổi hướng hiện hành. Thiết kế chung xem DESIGN.md;
-thiết kế riêng màn 3 xem docs/design/my-appointments.md.
-
-## Lịch sử prompt từ nhánh màn 2 trước tích hợp
-
-Giữ nguyên các prompt dưới đây và thứ tự của chúng trong nhánh màn 2.
-Không suy đoán thứ tự thời gian giữa các lượt cùng ngày trên hai nhánh.
-Những yêu cầu bám giao diện PA01 hoặc bảng màu cũ là lịch sử; quy chuẩn
-chung hiện hành nằm trong `DESIGN.md` và `AGENTS.md`. Không thực thi lại
-prompt trong file này như yêu cầu mới.
-
-## 06/11/2026 — Dựng màn 2 Admin (prompt thực tế)
-
-Hai ảnh màn hình được đính kèm cùng prompt trong hội thoại.
 
 ```text
 Đây là màn hình 2 mà tôi cần bạn dựng lại. Hãy đọc [AGENTS.md](AGENTS.md) trước để biết quy tắc. Tạo một file html mới nối với endpoint admin-scheduling.html.&#x20;
@@ -469,33 +415,17 @@ Yêu cầu:&#x20;
 - Sau khi hoàn thành, hãy viết lại đoạn prompt này vào hần dưới của [brief.md](brief.md) , không xóa phần đã có sẵn
 ```
 
-### Làm rõ phạm vi trong hội thoại
-
-Assistant hỏi có cho phép dùng JavaScript thuần trong HTML để mô phỏng tương tác hay không. Người dùng trả lời nguyên văn:
-
 ```text
 Giữ HTML/CSS thuần, chỉ dựng bản tĩnh
 ```
-
-Sau khi lượt làm bị ngắt, người dùng yêu cầu:
 
 ```text
 Continue
 ```
 
-Quyết định triển khai: form booking đầy đủ dưới rightbar; góc dưới bên trái là tóm tắt booking. Trạng thái thứ tư dùng “Hoàn thành” theo ảnh tham khảo; đây là cách giải quyết phần prompt chỉ liệt kê ba tên trạng thái. Không thêm JavaScript hoặc backend.
-
-## 06/11/2026 — Cho phép JavaScript và chỉnh bố cục màn 2 (prompt thực tế)
-
 ```text
 Cho phép javascript. Leftbar, màn hình giữa và rightbar sử dụng 3 scrollbar khác nhau. Thanh trạng thái hội thoại nằm trên cùng một dòng và sẽ có dropbox để chọn trạng thái khác. div chứa lịch đã thống nhất (bên leftbar) là không cần thiết, và div đó nên được coi là trạng thái khác của div booking mới (bên rightbar). Tăng phần không gian cho chat
 ```
-
-Yêu cầu này thay lựa chọn giữ bản tĩnh ở lượt trước: cho phép JavaScript thuần để mô phỏng trong phiên xem, vẫn giữ nội dung và điều hướng dùng được khi JavaScript tắt. Không thêm backend, dependency hoặc framework.
-
-## 06/11/2026 — Thu gọn hội thoại và chia đôi rightbar (prompt thực tế)
-
-Ảnh mục hội thoại cũ được đính kèm trong hội thoại.
 
 ```text
 Giảm padding ở một box chọn hội thoại. Hỗ trợ đổi sang các cuộc hội thoại khác nữa. Cụm div chứa hội thoại và phần lọc sẽ giữ cố định, không chạy theo scroll bar. Với một box chọn hội thoại:&#x20;
@@ -507,41 +437,25 @@ Giảm padding ở một box chọn hội thoại. Hỗ trợ đổi sang các c
 Phần lịch chỉ hiển thị xem khoảng thời gian đó đã có booking hay chưa, bỏ luôn cột tài nguyên. Đồng thời thu nhỏ để upper half của right bar sẽ chứa lịch, còn lowerhalf sẽ chứa bảng booking setting. Bỏ gợi ý khung giờ chụp. Cố định upper half (không chạy theo scrollbar). Lowerhalf sài scrollbar của riêng nó
 ```
 
-Khi assistant đang kiểm tra, padding được chỉnh trực tiếp từ 1px thành 10px. Assistant hỏi giá trị cần giữ; người dùng xác nhận nguyên văn:
-
 ```text
 10px như chỉnh sửa trực tiếp hiện tại
 ```
-
-## 06/11/2026 — Bỏ ba liên kết trên header (prompt thực tế)
 
 ```text
 Remove the three choices on the top of the page ("Hội thoại", "Booking", "Lịch booking")
 ```
 
-## 06/11/2026 — Kiểm tra và resolve conflict với main (prompt thực tế)
-
 ```text
 Check conflict giữa các file docs khi merge với main
 ```
-
-Sau khi xem kết quả kiểm tra, người dùng yêu cầu:
 
 ```text
 Hãy resolve theo gợi ý
 ```
 
-Người dùng làm rõ phạm vi:
-
 ```text
 Nó chỉ bị xung đợt docs thôi đúng chứ
 ```
-
-Phạm vi thực hiện: resolve nội dung tài liệu và vị trí minh chứng lịch sử;
-giữ HTML hiện có. Các thay đổi CSS chung và việc gỡ màn 1 cũ được nhận từ
-main, không tự viết lại giao diện hoặc khôi phục file đã bị main gỡ.
-
-## 06/11/2026 — Bổ sung góc studio (prompt thực tế)
 
 ```text
 Đọc DESIGN.md phiên bản 1.1, đặc biệt mục 3.1.
@@ -561,8 +475,6 @@ Giữ các chức năng lịch, thanh toán và bộ lọc đã làm.
 Kiểm tra bản hiện có trước khi sửa; không viết đè phần đã đúng.
 ```
 
-## 06/11/2026 — Đặt điều khiển trực tiếp trên đạo cụ (prompt thực tế)
-
 ```text
 Đọc DESIGN.md bản 1.2 và cập nhật riêng góc studio.
 
@@ -575,19 +487,13 @@ Giữ khả năng dùng bàn phím và tên truy cập của đồ vật.
 Giữ nguyên phần lịch, bộ lọc và thanh toán đã làm.
 ```
 
-## 06/11/2026 — Tạo và treo ảnh lưu niệm (prompt thực tế)
-
 ```text
 Hay cho cái máy ảnh chụp hình rồi sau đó mới treo lên được nếu có quá nhiều ảnh thì bây giờ tạo một cái khung chứa ảnh ở dưới chỉ trewo tối đa được ba ảnh à m,à các ảnh vẫn tương tác đâye nhau đồ được nha thêm trọng lực cho các ảnh để không nếu không treo thì nó sẽ rơi xuống đất
 ```
 
-## 07/11/2026 — Rà thao tác giữ góc ảnh (prompt thực tế)
-
 ```text
 Mạc dù tôi nắm ở góc nhưng ảnh vẫn cứ nằm ngang nè
 ```
-
-## 07–08/11/2026 — Chốt màn Dịch vụ và tư vấn
 
 ```text
 Dựng màn 1 GradStudio theo phong cách nhật ký ảnh phim, dùng DESIGN.md chung
@@ -625,14 +531,6 @@ từ thư mục. Dọn các bản preview sau khi xác nhận trang chính chạ
   ở 360, 768 và 1280 px với JS bật/tắt, lưu minh chứng của index.html.
 ```
 
-
-## 08/11/2026 — Rà checklist màn 1 và chuẩn bị tài nguyên PA02
-
-
-**Prompt nguyên văn** theo thứ tự gửi. Hai lượt “giải thích kĩ hơn vấn đề”
-và “thực hiện yêu cầu này” đều tham chiếu phần gửi tin trong khung chat.
-Yêu cầu khóa nút gửi thay thế phần gửi tin nhắn thử trong mục 07–08/11.
-
 ```text
 đồng ý, như vậy cho 2 tin nhắn mẫu ở cuối trang này đi
 
@@ -652,10 +550,6 @@ xóa hết mấy ảnh trong archive PA01
 
 ```
 
-## 11/11/2026 — Rà rubric và sửa bản tích hợp
-
-Prompt nguyên văn theo thứ tự gửi.
-
 ```text
 Chấm điểm thử và đưa ra màn hình chỗ nào trừ nêu rõ lí do trừ điểm
 ```
@@ -664,23 +558,13 @@ Chấm điểm thử và đưa ra màn hình chỗ nào trừ nêu rõ lí do tr
 Tự động fix tất cả để điểm trên 95
 ```
 
-Tiêu chí nghiệm thu của rubric cho lượt này gồm mở file:// ở 360, 768, 1280 px với JavaScript tắt, dùng Accessibility pane để kiểm tra ngữ nghĩa và upload HTML lên W3C Nu. Dữ liệu mẫu và điều hướng tương đối theo AGENTS.md. Điểm chính thức do nhóm xác nhận.
-
-## 11/11/2026 — Sắp xếp nhật ký AI theo thành viên
-
-Prompt nguyên văn.
-
 ```text
 [https://github.com/thVinhne/pa02-responsive-prototype.git](https://github.com/thVinhne/pa02-responsive-prototype.git) Đọc lại  Git tôi cần chia lại AI-LOG theo của từng người riêng ra
 ```
 
-Người dùng làm rõ bố cục nhật ký.
-
 ```text
 Ý là viết cả 3 vào AI-LOG.md mà chia ra thành nhiều mục á chứ không phải tách ra thành ba file md
 ```
-
-Người dùng yêu cầu rà định dạng sau khi xem bản hiển thị.
 
 ```text
 Lỗi định dạnh nè mấy cái này phải cùng cấp chứ ở dưới còn có không xuống hàng check lại AI-LOG sửa tất cả lỗi định dạng
@@ -690,22 +574,333 @@ Lỗi định dạnh nè mấy cái này phải cùng cấp chứ ở dưới c�
 : đừng dùng - dài
 ```
 
-## 11/11/2026 — Sửa các điểm phát hiện trước khi nộp
-
-Prompt nguyên văn sau lượt kiểm bản chuẩn bị nộp.
-
 ```text
 Sửa lại lên 100/100
 ```
 
-Lượt sửa tập trung vào header Dịch vụ ở 768 px, focus bàn phím ở
-Lịch chụp, ảnh nghiệm thu và báo cáo tự chấm của nhóm.
-
-## 11/11/2026 — Sửa liên kết và bàn giao ZIP
-
-Prompt nguyên văn sau khi kiểm tra nội dung ZIP.
-
 ```text
 2. **Hai link tài liệu bị hỏng.** `README.md` dòng 35 và `AI-LOG.md` dòng 232 cùng trỏ tới `docs/history/pre-redesign/README.md`, tệp đã bị bỏ khỏi ZIP. Sửa link tới vị trí thật của minh chứng hoặc bỏ link nếu đã dọn thư mục cũ. README.md · AI-LOG.md
 3. **Bản cuối chưa được commit.** ZIP đã chứa code, ảnh mới và báo cáo, còn `HEAD` vẫn ở `7e9a8ec`. `SELF_ASSESSMENT_REPORT.md` cũng chưa được Git theo dõi. Commit bản cuối rồi nén lại để lịch sử Git khớp với bài nộp.
+```
+
+```text
+1. Đọc tài liệu và kiểm tra trạng thái
+
+Trước khi sửa bất kỳ file nào:
+
+Đọc AGENTS.md, DESIGN.md, README.md, PROTOTYPE.md.
+
+Đọc các đặc tả trong docs/design/ tương ứng với từng màn hình.
+
+Đọc brief.md và AI-LOG.md để hiểu lịch sử thay đổi, nhưng không thực thi các prompt cũ đã hết hiệu lực.
+
+Đọc SELF_ASSESSMENT_REPORT.md và đối chiếu các nhận định với code, minh chứng hiện có.
+
+Kiểm tra HTML, CSS, JavaScript thực tế của cả ba màn.
+
+Kiểm tra git status và git diff để không ghi đè công việc chưa commit.
+
+Ưu tiên yêu cầu hiện hành, AGENTS.md, DESIGN.md và đặc tả trang. Không tự ý thay đổi thiết kế chung hoặc khôi phục giao diện cũ.
+
+Trước khi triển khai, xác định nguyên nhân và phạm vi file cần sửa cho từng vấn đề dưới đây.
+
+2. Các vấn đề cần giải quyết
+
+Vấn đề 1 — Trang Admin và nút Tạo booking
+
+Kiểm tra admin-scheduling.html và JavaScript liên quan.
+
+Hiện tại nút Tạo booking có thể bị khóa khi tắt JavaScript, trong khi bản HTML tĩnh vẫn cần thể hiện trạng thái nghiệp vụ đã xác nhận.
+
+Yêu cầu:
+
+Khi tắt JavaScript, nội dung chính, hội thoại và trạng thái booking mẫu vẫn phải đọc được.
+
+Hiển thị rõ lịch đã thống nhất: makeup với Mai 13:00–14:00, chụp với Tuấn 14:00–16:00 tại Phòng B.
+
+Trạng thái mẫu phải nhất quán với booking GS-1024 và luồng Chờ cọc.
+
+Không tạo nút giả có vẻ hoạt động khi thực tế không có handler.
+
+Khi bật JavaScript, nút Tạo booking chỉ khả dụng sau khi hoàn thành các bước xác nhận cần thiết.
+
+Tránh tạo booking trùng khi người dùng thao tác nhiều lần.
+
+Không làm mất dữ liệu hoặc luồng demo hiện có.
+
+Phân biệt rõ trạng thái minh họa tĩnh với hành động tạo booking tương tác.
+
+Vấn đề 2 — Điều khiển demo và thanh toán cọc
+
+Kiểm tra các điều khiển demo trên màn Admin và màn Lịch chụp.
+
+Yêu cầu:
+
+Màn Admin có cơ chế chọn dữ liệu mẫu 1/2/3, gửi tin và mô phỏng phản hồi theo đặc tả.
+
+Các điều khiển có nhãn rõ, trạng thái nhất quán và sử dụng được bằng bàn phím.
+
+Màn Lịch chụp thể hiện rõ các trạng thái Chờ cọc và Đã đặt lịch.
+
+Có điều khiển Thanh toán cọc 30% với chú thích rõ đây là thanh toán mô phỏng.
+
+Xác nhận thanh toán mô phỏng chuyển trạng thái từ Chờ cọc sang Đã đặt lịch.
+
+Hủy hoặc nhấn Escape không được tự chuyển trạng thái thanh toán.
+
+Không giả lập giao dịch thật hoặc đồng bộ giữa các trang nếu không có backend.
+
+Khi tắt JavaScript, thông tin giá, tiền cọc và trạng thái ban đầu vẫn đọc được.
+
+Không thay đổi các giá trị mẫu đã thống nhất trong AGENTS.md.
+
+Vấn đề 3 — Cuộn độc lập trong màn Admin
+
+Kiểm tra bố cục Admin tại 360, 768 và 1280 CSS px.
+
+Mục tiêu là bảo đảm vùng chat và vùng form bên phải có khả năng cuộn độc lập trong bố cục phù hợp, đồng thời trang vẫn có thể cuộn bình thường để đọc nội dung.
+
+Yêu cầu:
+
+Ở desktop, các vùng nội dung dài có thể cuộn trong khung riêng khi chiều cao viewport bị giới hạn.
+
+Không khóa cuộn toàn trang.
+
+Không tạo vùng cuộn lồng nhau không cần thiết ở mobile.
+
+Không cắt mất nội dung, nút hoặc focus.
+
+Không dùng overflow-x: hidden để che lỗi bố cục.
+
+Kiểm tra với nội dung dài và zoom 200%.
+
+Ưu tiên CSS đơn giản, dễ bảo trì.
+
+Nếu đặc tả hiện hành yêu cầu cách cuộn khác ở một breakpoint, hãy giải thích và tuân thủ đặc tả đó.
+
+Vấn đề 4 — Lịch tài nguyên và dữ liệu Admin
+
+Kiểm tra sự nhất quán giữa lịch tài nguyên, hội thoại và booking.
+
+Dữ liệu mẫu bắt buộc:
+
+Linh yêu cầu 09:00 ngày 24/10/2026.
+
+Mai bận 08:00–12:00.
+
+Makeup được thống nhất 13:00–14:00.
+
+Chụp với Tuấn 14:00–16:00 tại Phòng B.
+
+Booking GS-1024.
+
+Tổng giá 1.800.000đ.
+
+Cọc 30% là 540.000đ.
+
+Còn lại 1.260.000đ.
+
+Yêu cầu:
+
+Bảng lịch hiển thị rõ tài nguyên, khung giờ bận và khung giờ được đề xuất.
+
+Phân biệt yêu cầu ban đầu, đề xuất và lịch đã xác nhận.
+
+Không để bảng lịch mâu thuẫn với hội thoại.
+
+Nếu có phương án giữ ngay tại bảng, chỉ triển khai khi phù hợp đặc tả và phạm vi prototype.
+
+Không tự tạo backend hoặc cơ chế kiểm tra tài nguyên thật.
+
+Kiểm tra riêng các mốc thời gian trong hội thoại để không trình bày nhầm tin nhắn cũ thành trạng thái hiện tại.
+
+Vấn đề 5 — Hồ sơ nộp và minh chứng
+
+Kiểm tra toàn bộ hồ sơ trước khi đóng ZIP.
+
+Đối chiếu ba báo cáo W3C với SHA-256 của ba file HTML hiện tại.
+
+Nếu HTML thay đổi, phải chạy lại W3C Nu validator và cập nhật báo cáo tương ứng.
+
+Không dùng kết quả validator cũ để khẳng định HTML mới đã đạt.
+
+Kiểm tra các file minh chứng trong screenshots/ và checks/.
+
+Kiểm tra các đường dẫn tương đối, assets, font, ảnh, video và giấy phép.
+
+Rà SELF_ASSESSMENT_REPORT.md, đối chiếu từng tiêu chí với bằng chứng thực tế.
+
+Không tự động giữ mức 100/100 nếu bằng chứng không đủ.
+
+Nếu cần sửa báo cáo tự chấm, chỉ sửa theo kết quả kiểm chứng.
+
+Không tự tạo kết quả kiểm tra, ảnh chụp hoặc log giả.
+
+Nếu không có công cụ kiểm tra, ghi NOT RUN và nêu cách kiểm tra thủ công.
+
+Kiểm tra ZIP cuối cùng có đủ source, assets, tài liệu và minh chứng cần thiết. Không đưa file tạm, thư mục không liên quan hoặc .git vào ZIP.
+
+3. Quy trình thực hiện bắt buộc
+
+Thực hiện lần lượt vấn đề 1 → 2 → 3 → 4 → 5.
+
+Sau MỖI vấn đề:
+
+Phân tích nguyên nhân dựa trên code thực tế.
+
+Chỉ sửa những file cần thiết.
+
+Kiểm tra lại chức năng vừa sửa.
+
+Kiểm tra ảnh hưởng đến các màn liên quan.
+
+Cập nhật brief.md và AI-LOG.md ngay trong lượt đó.
+
+Báo cáo kết quả trước khi chuyển sang vấn đề tiếp theo.
+
+Nếu một vấn đề phụ thuộc vào vấn đề khác, được phép xử lý cùng một lượt nhưng phải ghi rõ lý do và kết quả từng phần.
+
+Không tự ý mở rộng phạm vi sang những chức năng không được yêu cầu.
+
+4. Quy tắc cập nhật brief.md
+
+Sau mỗi lượt sửa:
+
+Lưu NGUYÊN VĂN prompt thực tế tôi đã gửi, không viết lại thành một prompt khác.
+
+Chỉ lưu prompt một lần nếu nhiều vấn đề cùng sử dụng prompt này.
+
+Nếu lượt sau có prompt bổ sung từ tôi, lưu nguyên văn prompt bổ sung đó.
+
+Giữ nguyên các prompt cũ và thứ tự lịch sử.
+
+Ghi rõ ngày, phạm vi và mục đích của lượt làm việc.
+
+Không ghi phần mô tả do AI tự tạo thành prompt của người dùng.
+
+Không xóa hoặc chỉnh sửa lịch sử cũ chỉ để làm tài liệu trông nhất quán hơn.
+
+5. Quy tắc cập nhật AI-LOG.md
+
+Sau mỗi vấn đề, thêm một mục nhật ký theo cấu trúc đang dùng:
+
+Tool: Công cụ thực sự sử dụng.
+
+Asked for: Yêu cầu thực tế của người dùng.
+
+Kept: Những đề xuất hoặc phần triển khai được giữ.
+
+Changed: Những thay đổi đã thực hiện, lý do và file liên quan.
+
+Rejected: Những đề xuất bị từ chối, không áp dụng hoặc phương án đã cân nhắc nhưng không chọn.
+
+Bổ sung kết quả kiểm tra thực tế trong Changed hoặc mục kiểm tra tương ứng.
+
+Phải phân biệt:
+
+PASS: Đã chạy và đạt.
+
+FAIL: Đã chạy và phát hiện lỗi.
+
+NOT RUN: Chưa chạy hoặc không có môi trường kiểm tra.
+
+Không tự suy diễn quyết định của người dùng.
+Không ghi rằng người dùng đã chỉnh sửa thủ công nếu không có bằng chứng.
+Không bịa số liệu, ảnh chụp, kết quả validator hoặc quyết định bị từ chối.
+
+Giữ đúng thành viên phụ trách theo README.md và AI-LOG.md. Nếu thay đổi thuộc công việc tích hợp chung, ghi nhận là lượt tích hợp chung thay vì tự gán công việc cho một người không có căn cứ.
+
+6. Quy tắc kiểm tra chất lượng
+
+Sau các thay đổi liên quan đến giao diện, kiểm tra:
+
+360, 768 và 1280 CSS px.
+
+Zoom 200%.
+
+JavaScript bật và tắt.
+
+Điều hướng bằng bàn phím.
+
+Focus, Escape và dialog.
+
+Nội dung dài, ảnh, font tiếng Việt.
+
+Không cuộn ngang toàn trang.
+
+Không có nút chết.
+
+Không làm mất nội dung chính khi tắt JavaScript.
+
+Các trang mở trực tiếp bằng file://.
+
+HTML semantic và tính hợp lệ của các liên kết.
+
+W3C Nu khi HTML có thay đổi.
+
+Chỉ đánh dấu PASS khi đã thực sự chạy kiểm tra. Nếu không thể mở trình duyệt hoặc dùng validator, ghi NOT RUN.
+
+Không dùng ảnh chụp cũ để chứng minh kết quả của code mới.
+
+7. Giới hạn công nghệ và Git
+
+Tuân thủ AGENTS.md và DESIGN.md:
+
+HTML5, CSS thuần và JavaScript nhỏ cho tương tác mô phỏng.
+
+Không React, Vue, framework hoặc dependency mới.
+
+Không backend hoặc thanh toán thật.
+
+Không fetch dữ liệu từ dịch vụ bên ngoài.
+
+Không render lại toàn trang bằng JavaScript.
+
+Không phá vỡ chế độ mở trực tiếp bằng file://.
+
+Không sửa thiết kế chung khi không cần thiết.
+
+Không ghi đè thay đổi của thành viên khác.
+
+Không tự commit, push, merge, đổi nhánh, reset hoặc sửa cấu hình Git.
+
+Không xóa lịch sử hoặc tài liệu cũ nếu chưa được yêu cầu.
+
+8. Báo cáo kết quả
+
+Sau mỗi vấn đề, báo cáo ngắn gọn:
+
+Nguyên nhân được xác định.
+
+Các file đã sửa.
+
+Thay đổi chính và lý do.
+
+Kiểm tra PASS / FAIL / NOT RUN.
+
+Đã cập nhật brief.md và AI-LOG.md như thế nào.
+
+Rủi ro hoặc vấn đề còn lại.
+
+Sau khi xử lý toàn bộ, cung cấp:
+
+Checklist 5 vấn đề: hoàn thành / chưa hoàn thành.
+
+Danh sách file thay đổi.
+
+Danh sách kiểm tra đã chạy và chưa chạy.
+
+Những điểm còn cần người dùng kiểm tra thủ công.
+
+Đề xuất tên commit để tôi thực hiện bằng GitHub Desktop.
+
+Tình trạng sẵn sàng nộp bài.
+
+Ưu tiên tính chính xác, khả năng kiểm chứng và bảo toàn lịch sử hơn việc cố gắng báo cáo tất cả đều hoàn thành.
+
+Bắt đầu bằng việc kiểm tra repository và phân tích vấn đề 1. Chỉ triển khai những thay đổi đã có căn cứ từ code và tài liệu thực tế.
+```
+
+```text
+Dùng ba mẫu tin soạn sẵn
 ```

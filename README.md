@@ -35,6 +35,9 @@ studio. Dữ liệu demo được giữ riêng trong từng trang.
   nguồn. Minh chứng của giao diện trước đổi hướng nằm trong lịch sử Git.
 - [brief.md](brief.md) lưu prompt đã dùng. [AI-LOG.md](AI-LOG.md) ghi nhật
   ký theo từng thành viên và các lượt tích hợp chung.
+- [Kết quả kiểm chứng ngày 11/11](checks/review-2026-11-11.md) ghi năm vấn đề,
+  phép thử thực tế và các mục chờ xác nhận. [Báo cáo tự đánh giá](SELF_ASSESSMENT_REPORT.md)
+  để nhóm chốt điểm sau khi đối chiếu rubric.
 - [screenshots](screenshots/) giữ chín ảnh toàn trang khi tắt JavaScript.
   [checks](checks/) giữ kết quả W3C Nu theo tệp HTML và SHA-256 của dữ liệu
   đã gửi.

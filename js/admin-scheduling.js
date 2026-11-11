@@ -35,6 +35,7 @@
   let bookingState = 'agreed';
   let proposal = '';
   const fingerprint = () => `${date.value}|${time.value}`;
+  let agreedSchedule = fingerprint();
   const available = () => date.value === '2026-10-24' && ['14:00', '15:00'].includes(time.value);
   const hour = value => `${String(value).padStart(2, '0')}:00`;
   const times = () => {
@@ -79,27 +80,26 @@
     chatScroll.scrollTop = chatScroll.scrollHeight;
   }
   function renderCalendar() {
-    const value = times();
     const valid = available();
+    const value = valid ? times() : { start: 14, makeup: '13:00–14:00', shoot: '14:00–16:00' };
     const pending = bookingState === 'created';
     const makeup = $('admin-calendar-makeup');
     const shoot = $('admin-calendar-shoot');
-    // Pending deposits remain distinct from confirmed bookings.
-    [makeup, shoot].forEach(cell => {
-      cell.textContent = pending ? 'Chờ cọc · GS-1024' : 'Chưa có booking';
+    const stages = { draft: 'Dự kiến', proposed: 'Đề xuất', agreed: 'Đã thống nhất', declined: 'Đã từ chối', created: 'Chờ cọc' };
+    [makeup, shoot].forEach((cell, index) => {
+      cell.textContent = `${index === 0 ? 'Mai' : 'Tuấn · Phòng B'} · ${valid ? stages[bookingState] : 'Mẫu 14:00'}`;
       cell.className = pending ? 'admin-status--waiting' : '';
     });
-    if (valid) {
-      makeup.previousElementSibling.textContent = value.makeup;
-      shoot.previousElementSibling.textContent = value.shoot;
-      makeup.parentElement.previousElementSibling.firstElementChild.textContent = `12:00–${hour(value.start - 1)}`;
-      shoot.parentElement.nextElementSibling.firstElementChild.textContent = `${hour(value.start + 2)}–18:00`;
-    }
-    $('admin-calendar-note').textContent = pending ? 'GS-1024 mới chờ cọc, chưa giữ lịch chính thức. Lịch này chỉ là dữ liệu mẫu.' : 'Lịch đã biết: 08:00–12:00. Khung chưa có booking không bảo đảm đủ nhân sự.';
+    makeup.previousElementSibling.textContent = value.makeup;
+    shoot.previousElementSibling.textContent = value.shoot;
+    makeup.parentElement.previousElementSibling.firstElementChild.textContent = `12:00–${hour(value.start - 1)}`;
+    shoot.parentElement.nextElementSibling.firstElementChild.textContent = `${hour(value.start + 2)}–18:00`;
+    $('admin-calendar-note').textContent = !valid ? 'Bảng là lịch mẫu 24/10/2026. Ngày đang chọn chưa có dữ liệu tài nguyên.' : pending ? 'GS-1024 Chờ cọc 30% trong phiên mô phỏng. Mỗi trang dùng dữ liệu mẫu riêng.' : 'Yêu cầu 09:00 vướng lịch Mai. Các khung dự kiến cần Linh đồng ý trước khi tạo booking.';
   }
   function renderBooking() {
     renderCalendar();
     const isLinh = active.id === 'linh';
+    $('admin-message-samples').hidden = !isLinh;
     $('admin-booking-linh').hidden = !isLinh;
     $('admin-booking-other').hidden = isLinh;
     document.querySelector('#admin-booking > .admin-eyebrow').textContent = isLinh ? 'Booking · GS-1024' : 'Thông tin booking';
@@ -117,7 +117,7 @@
     $('admin-booking-status').className = 'admin-status ' + (bookingState === 'agreed' ? 'admin-status--success' : 'admin-status--waiting');
     form.hidden = created;
     $('admin-booking-result').hidden = !created;
-    $('admin-create').disabled = !valid || bookingState !== 'agreed';
+    $('admin-create').disabled = !valid || bookingState !== 'agreed' || agreedSchedule !== fingerprint();
     $('admin-quote').disabled = !valid;
     $('admin-agree').disabled = !valid || bookingState !== 'proposed' || proposal !== fingerprint();
     $('admin-decline').disabled = !valid || !['agreed', 'proposed'].includes(bookingState);
@@ -148,13 +148,14 @@
     messages.setAttribute('aria-label', `Tin nhắn giữa ${active.name} và studio`);
     document.querySelector('.admin-date-line').textContent = active.id === 'linh' ? initialDate : 'Hội thoại mẫu';
     $('admin-message').value = active.draft;
+    $('admin-message').setCustomValidity('');
     $('admin-compose-label').textContent = `Tin nhắn trả lời ${active.name}`;
     renderBooking();
     chatScroll.scrollTop = active.scroll;
   }
   function changeSchedule() {
     if (active.id !== 'linh') return;
-    bookingState = 'draft'; proposal = ''; feedback.textContent = '';
+    bookingState = 'draft'; proposal = ''; agreedSchedule = ''; feedback.textContent = '';
     setStatus('advising'); renderBooking();
   }
   [search, filter, status, $('admin-send'), $('admin-edit')].forEach(control => { control.disabled = false; });
@@ -166,6 +167,17 @@
   search.addEventListener('input', applyFilters);
   filter.addEventListener('change', applyFilters);
   status.addEventListener('change', () => setStatus(status.value));
+  $('admin-fill-sample').addEventListener('click', () => {
+    if (active.id !== 'linh') return;
+    const input = $('admin-message');
+    const text = [input.value.trim(), $('admin-sample').value].filter(Boolean).join('\n');
+    input.setCustomValidity(text.length > input.maxLength ? 'Bản nháp vượt 3000 ký tự. Hãy rút gọn trước khi điền mẫu.' : '');
+    if (!input.reportValidity()) return;
+    input.value = text;
+    active.draft = text;
+    input.focus();
+  });
+  $('admin-message').addEventListener('input', () => $('admin-message').setCustomValidity(''));
   document.querySelector('.admin-compose').addEventListener('submit', event => {
     event.preventDefault();
     const text = $('admin-message').value.trim();
@@ -181,33 +193,36 @@
     if (active.id !== 'linh' || !available()) return;
     const value = times();
     addMessage(`Đề xuất ngày 24/10/2026: makeup ${value.makeup} với Mai, chụp ${value.shoot} với Tuấn tại Phòng B. Gói Tốt nghiệp Premium 1.800.000đ, cọc 30% là 540.000đ. Bạn đồng ý lịch này không?`);
-    bookingState = 'proposed'; proposal = fingerprint(); setStatus('advising'); renderBooking();
+    bookingState = 'proposed'; proposal = fingerprint(); agreedSchedule = ''; setStatus('advising'); renderBooking();
     feedback.textContent = 'Đã thêm đề xuất vào chat mô phỏng. Có thể thử đồng ý hoặc từ chối.';
   });
   $('admin-agree').addEventListener('click', () => {
     if (active.id !== 'linh' || bookingState !== 'proposed' || proposal !== fingerprint() || !available()) return;
     addMessage(`Dạ em đồng ý lịch chụp ${time.value} ngày 24/10/2026 ạ.`, false);
-    bookingState = 'agreed'; setStatus('confirmed'); renderBooking();
+    bookingState = 'agreed'; agreedSchedule = fingerprint(); setStatus('confirmed'); renderBooking();
     feedback.textContent = 'Linh đồng ý trong bản mô phỏng. Booking chưa tạo, chưa có cọc.';
   });
   $('admin-decline').addEventListener('click', () => {
     if (active.id !== 'linh' || !['agreed', 'proposed'].includes(bookingState) || !available()) return;
     addMessage(`Giờ ${time.value} chưa phù hợp, studio tư vấn giúp em giờ khác nhé.`, false);
-    bookingState = 'declined'; proposal = ''; setStatus('advising'); renderBooking();
+    bookingState = 'declined'; proposal = ''; agreedSchedule = ''; setStatus('advising'); renderBooking();
     feedback.textContent = 'Khách từ chối. Chưa thể tạo booking; hãy gửi đề xuất mới.';
   });
   form.addEventListener('submit', event => {
     event.preventDefault();
-    if (active.id !== 'linh' || !available() || bookingState !== 'agreed') return;
+    if (active.id !== 'linh' || !available() || bookingState !== 'agreed' || agreedSchedule !== fingerprint()) return;
     bookingState = 'created'; setStatus('confirmed');
+    $('admin-result-note').textContent = 'Booking mô phỏng đã tạo trong phiên xem, đang Chờ cọc 540.000đ. Mỗi trang dùng dữ liệu mẫu riêng.';
     addMessage(`Booking mô phỏng GS-1024 chuyển sang Chờ cọc 30% (540.000đ). Makeup ${times().makeup}; chụp ${times().shoot}. Chưa giữ lịch chính thức.`);
     renderBooking();
     feedback.textContent = 'Booking mô phỏng đã tạo trong phiên xem này. Liên kết Lịch chụp mở dữ liệu mẫu của khách.';
     $('admin-booking').scrollTop = 0;
-    $('admin-booking-title').focus({ preventScroll: true });
+    $('admin-booking-title').focus();
   });
   $('admin-edit').addEventListener('click', () => {
     changeSchedule(); feedback.textContent = 'Đã mở bản nháp. Cần chốt lại trước khi tạo booking.'; time.focus();
   });
+  $('admin-edit').hidden = false;
+  document.querySelectorAll('[data-admin-enhancement]').forEach(control => { control.hidden = false; });
   applyFilters(); renderBooking();
 })();

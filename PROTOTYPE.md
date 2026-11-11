@@ -24,7 +24,7 @@ về mẫu ban đầu khi tải lại.
 | Trang PA#2 | Ảnh nguồn GradStudio PA#1 | Việc người xem làm | Đích điều hướng |
 | --- | --- | --- | --- |
 | [index.html](index.html) | [01 — Dịch vụ và chat](docs/pa1/01-customer-services-chat.png) | Xem gói, album ảnh và câu hỏi mẫu của Linh về khung 09:00 ngày 24/10/2026. | “Nhân viên studio: Mở hội thoại” chuyển vai sang [Admin](admin-scheduling.html). “Lịch chụp của tôi” ở menu, khối tư vấn và chân trang mở [Lịch chụp](my-appointments.html). Các link gói, album và chat đi tới mục tương ứng trong trang. |
-| [admin-scheduling.html](admin-scheduling.html) | [02 — Admin](docs/pa1/02-admin-scheduling.png) | Đọc hội thoại và bảng giờ. Mai bận 08:00–12:00. Khi bật JS, thử đề xuất, phản hồi của Linh và tạo GS-1024 Chờ cọc. | Logo và “Màn 1 · Góc nhìn khách” về [Dịch vụ](index.html). “Màn 3 · Lịch chụp của khách” ở chân trang và link trong kết quả tạo booking mở [Lịch chụp](my-appointments.html). |
+| [admin-scheduling.html](admin-scheduling.html) | [02 — Admin](docs/pa1/02-admin-scheduling.png) | Đọc lịch sử tư vấn ngày 23/10 và bảng tài nguyên ngày chụp 24/10. Mai bận 08:00–12:00. Bản tĩnh có GS-1024 Chờ cọc. Khi bật JS, chọn mẫu tin 1/2/3, thử đề xuất, phản hồi của Linh và tạo booking trong phiên. | Logo và “Màn 1 · Góc nhìn khách” về [Dịch vụ](index.html). “Màn 3 · Lịch chụp của khách” ở chân trang và link trong kết quả tạo booking mở [Lịch chụp](my-appointments.html). |
 | [my-appointments.html](my-appointments.html) | [03 — Lịch chụp và cọc](docs/pa1/03-customer-appointment.png) | Xem GS-1024, có mặt 12:50, makeup với Mai 13:00–14:00 và chụp với Tuấn tại Phòng B 14:00–16:00. Xem tổng 1.800.000đ, cọc 540.000đ và còn lại 1.260.000đ. | Logo và link Dịch vụ ở đầu và cuối trang về [Dịch vụ](index.html). Link trên dải mục lục nhảy tới lịch, nhật ký và góc chuẩn bị. Link ảnh mở ảnh cục bộ khi tắt JS. |
 
 ## Changed since PA#1
@@ -42,10 +42,12 @@ cho phép dùng bộ ảnh GradStudio để đối chiếu PA#1 chưa có trong 
   nằm dưới chữ và các gói xếp dọc. Ở desktop, ảnh xem nhanh nằm cạnh các gói.
 - **Admin.** Form từng nằm dưới hội thoại trong ảnh nguồn được chuyển
   xuống dưới lịch ở cột phải để dành cột giữa cho cuộc tư vấn. Bảng lịch
-  rút còn thời gian và booking để dễ đọc trên màn nhỏ. Tên khách dài
+  giữ hai cột, ghi thời gian cùng tên tài nguyên và trạng thái để đọc trên màn nhỏ. Tên khách dài
   xuống dòng, còn dòng xem trước giữ dấu ba chấm. Màn nhỏ xếp một cột,
-  tablet chia hai và desktop có ba vùng làm việc. Bảng chỉ đánh dấu
-  các khung có dữ liệu minh họa.
+  tablet chia hai và desktop có ba vùng làm việc. Dưới 64rem dùng cuộn
+  trang tự nhiên. Từ 64rem, chat và form có cuộn riêng, toàn trang vẫn
+  cuộn được khi cửa sổ thấp. Bảng phân biệt dự kiến, đề xuất, lịch đã
+  thống nhất và Chờ cọc, các ô thiếu dữ liệu được ghi rõ.
 - **Lịch chụp.** Lịch tuần và thông tin cọc của bản nguồn được bố trí lại
   thành dải ngày, vé hẹn GS-1024 và nhật ký. Mốc có mặt, makeup, chụp
   và tiền cọc được nhóm lại để đọc nhanh. Checklist, ảnh gợi ý, bản in
@@ -60,6 +62,16 @@ cho phép dùng bộ ảnh GradStudio để đối chiếu PA#1 chưa có trong 
 Đặc tả từng màn ghi bố cục và phạm vi chi tiết.
 [Dịch vụ](docs/design/services.md) · [Admin](docs/design/admin-scheduling.md) ·
 [Lịch chụp](docs/design/my-appointments.md).
+
+Lượt kiểm chứng ngày 11/11 bổ sung mẫu tin 1/2/3 ở Admin theo lựa chọn
+của người dùng. Điền mẫu chỉ thêm vào bản nháp, Gửi thêm tin trong phiên.
+Phản hồi Đồng ý lịch ở form xác nhận ngày/giờ trước khi tạo booking.
+Ngày tư vấn minh họa 23/10 do assistant chọn để bốn tin cũ diễn ra trước
+buổi chụp 24/10. Bản tĩnh trình bày GS-1024 Chờ cọc. Khi bật JS, form
+bắt đầu từ bước đã đồng ý giờ và cho thử tạo booking trong phiên.
+
+Kết quả mới, hash và phạm vi còn cần kiểm tra nằm trong
+[báo cáo kiểm chứng](checks/review-2026-11-11.md).
 
 ## Not wired yet
 

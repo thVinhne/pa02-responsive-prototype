@@ -1,27 +1,38 @@
 # Self-assessment — PA#2 GradStudio
 
-Submitted by: 24120136 — Trần Lê Xuân Tân
-Submitted by: 24120157 — Lê Thái Vinh
-Submitted by: 24120394 — Nguyễn Đặng Khôi Nguyên
+| MSSV | Thành viên |
+| --- | --- |
+| 24120136 | Trần Lê Xuân Tân |
+| 24120157 | Lê Thái Vinh |
+| 24120394 | Nguyễn Đặng Khôi Nguyên |
 
-Total I claim: 100 / 100
+## Trạng thái tự đánh giá ngày 11/11/2026
 
-| Criterion | Max | I claim | Evidence |
-|---|---:|---:|---|
-| Three linked screens that trace back to PA#1 | 20 | 20 | **Chạy mới, JS tắt.** Mở `file://`, dùng Enter từ `index.html` qua link chuyển vai ở chân trang tới `admin-scheduling.html`, rồi tới `my-appointments.html`. Đã thử link quay về Dịch vụ và ba link đi thẳng sang Lịch chụp từ Dịch vụ. `PROTOTYPE.md` mục Screens đối chiếu `docs/pa1/01-customer-services-chat.png` với khách hỏi giờ 09:00, `02-admin-scheduling.png` với xử lý lịch Mai bận và tạo GS-1024, `03-customer-appointment.png` với vé Chờ cọc 540.000đ. Mục Changed since PA#1 ghi các thay đổi và lý do. Mục Not wired yet ghi dữ liệu demo riêng từng trang. Mức 20/20 giả định người chấm chấp nhận bộ ảnh nguồn GradStudio để đối chiếu PA#1. |
-| Responsive at 360, 768 and 1280 px | 25 | 25 | **Chạy lại, JS tắt.** Edge 157.0.4341.46 reload `file://` ở 360, 768 và 1280 px, viewport cao 900 CSS px, DPR 1. Cả ba trang có `clientWidth/scrollWidth` lần lượt 360/360, 768/768 và 1280/1280, không có phần tử hiển thị vượt mép phải. Nút, link đứng riêng và `summary` cao tối thiểu 44 px ở 360. Tên dài thử nghiệm xuống dòng, ảnh tải và nằm trong khung. Sau khi sửa `css/services.css`, “GradStudio” và “Linh” ở header đều nằm trên một dòng tại 768 px. **Minh chứng đã lưu.** Mục [Sửa header, focus và chốt bộ ảnh nộp](AI-LOG.md#2026-11-11---sửa-header-focus-và-chốt-bộ-ảnh-nộp) ghi cách chụp khi JS tắt và dẫn đủ chín ảnh hiện hành. Lượt kiểm Chrome mới xác nhận hội thoại nằm sau footer, hai tin nhắn hiển thị ngay khi mở trang và trang Dịch vụ không cuộn ngang tại 360, 768, 1280 px khi bật hoặc tắt JS. Đã chụp lại ba ảnh Dịch vụ khi tắt JS. Lượt kiểm trước ghi zoom Edge 200% cho cả ba trang ở 640 CSS px, không cuộn ngang. |
-| Semantic, valid HTML | 20 | 20 | **Chạy mới.** Cây Accessibility xác nhận `banner`, `navigation`, `main` và `contentinfo` trên cả ba trang. Mỗi trang có một `h1` và không nhảy cấp heading. Có label cho 1, 12 và 7 trường nhập tương ứng. Nhãn ô chat hiện cùng hội thoại cuối trang. Toàn bộ ảnh có `alt`, gồm `alt=""` cho ảnh trang trí. Nút hành động có `type`, điều hướng dùng `a href` tương đối. **Minh chứng đã lưu.** Ba tệp `checks/validator-index.txt`, `checks/validator-admin-scheduling.txt` và `checks/validator-my-appointments.txt` ghi W3C Nu 26.11.10 ngày 11/11/2026, mỗi trang 0 lỗi và 0 cảnh báo. Đã gửi lại HTML hiện tại của Dịch vụ và Lịch chụp, đối chiếu SHA-256 với báo cáo của từng trang. Mã của ba tệp hiện tại lần lượt bắt đầu bằng `a3f839bd00c5`, `86341c929634` và `dabdbb825e79`. |
-| Design you can check | 10 | 10 | Ba trang nạp `css/common.css` trước CSS riêng, dùng HTML/CSS/JS thuần và tài nguyên cục bộ. Thang chung là 4/8/12/16/24/32/48/64/96 px với mốc bố cục chính `48rem` và `64rem`. Lề trên chân trang Dịch vụ dùng `--space-5` (24 px). Rà bốn tệp CSS không thấy `!important` hoặc `overflow-x: hidden`. Chữ nội dung đo từ 16 px và cây font xác nhận Merriweather, Be Vietnam Pro cục bộ. **Đo lại.** Chữ mô tả trên poster và 12 mẫu video đạt từ 5,11:1. Nút xem gói và nút cọc đạt 9,33:1 trong lượt đo trước. Điểm nhấn là hero và nút xem gói, hội thoại Linh cạnh khu booking, và vé GS-1024. Link bỏ qua ở Lịch chụp hiện ngay khi Tab tại cả ba độ rộng. **Kiểm tra riêng, JS bật.** Chat khách vẫn khóa gửi. Admin tạo GS-1024 Chờ cọc trong phiên. Escape giữ Chờ cọc và trả focus, xác nhận cọc mô phỏng đổi sang Đã đặt lịch. Góc studio là mô phỏng với ảnh cục bộ. Kết quả kéo, hủy kéo và in phiếu nằm trong `AI-LOG.md` mục Nghiệm thu ba trang từ thư mục. |
-| The brief and the rules file | 10 | 10 | `brief.md` lưu prompt thực tế theo thứ tự, gồm “Rà checklist màn 1 và chuẩn bị tài nguyên PA02” ngày 08/11 yêu cầu khóa gửi tin, “Cho phép JavaScript và chỉnh bố cục màn 2” ngày 06/11 yêu cầu vùng cuộn riêng, và “Dựng màn Lịch chụp ban đầu” ngày 05/11 giao ảnh PA#1, ba độ rộng và HTML semantic. Mục 11/11 ghi lượt sửa và cách nghiệm thu theo rubric. `AGENTS.md` §2 quy định HTML/CSS thuần và dữ liệu tĩnh. §§5–7 ghi label, link tương đối, mobile first, W3C và lưu minh chứng. |
-| AI-LOG.md | 10 | 10 | [Nhật ký Vinh ngày 08/11](AI-LOG.md#2026-11-08---rà-checklist-màn-1-và-chuẩn-bị-tài-nguyên-pa02) ghi Chrome phát hiện nút Gửi mẫu còn hoạt động, sau đó khóa gửi và thử lại khi bật/tắt JS. Mục Nguyên ngày 06/11 ghi phát hiện chữ “Gửi” xuống dòng và hai link thấp hơn 44 px qua ảnh và phép đo. Mục Tân ngày 07/11 dẫn ảnh cho thấy ảnh lưu niệm còn nằm ngang khi cầm góc và commit `35a2f0b` ghi phần xử lý. Các mục dùng ngày YYYY-MM-DD và năm nhãn `Tool:`, `Asked for:`, `Kept:`, `Changed:`, `Rejected:`. Mục [Sửa header, focus và chốt bộ ảnh nộp](AI-LOG.md#2026-11-11---sửa-header-focus-và-chốt-bộ-ảnh-nộp) ghi kết quả tái hiện và kiểm lại sau sửa. |
-| Commit history | 5 | 5 | `c0e01ea` là commit đầu thêm `AGENTS.md`. `fae7980` triển khai Dịch vụ responsive, `cd3be63` có công việc Admin, `e76eb65` thêm Lịch chụp và `35a2f0b` chỉnh tương tác màn 3. `818ea29` ghi lượt responsive Dịch vụ trước đổi thiết kế. `7e9a8ec` tích hợp tệp và cập nhật sáu ảnh cùng ba kết quả W3C. `a1986a1` chốt lượt sửa responsive sau kiểm tra, gồm header Dịch vụ ở 768 px, focus của Lịch chụp và bộ ảnh cùng kết quả W3C của bản cuối. |
+Mức 100/100 trong bản trước cần nhóm xác nhận lại sau lượt kiểm chứng này.
+Điểm hiện tại chưa chốt. Rubric PDF chưa có trong repository hoặc tệp đính
+kèm của phiên kiểm tra. Bảng dưới giữ tên tiêu chí và điểm tối đa từ báo
+cáo trước để nhóm đối chiếu, các ô tự chấm chờ nhóm quyết định.
+
+| Criterion | Max theo báo cáo trước | I claim | Evidence hiện tại |
+| --- | ---: | --- | --- |
+| Three linked screens that trace back to PA#1 | 20 | Chưa chốt | PASS mở file:// và dùng Enter từ Dịch vụ qua Admin, Lịch chụp rồi về Dịch vụ khi tắt JS. PROTOTYPE.md đối chiếu ba ảnh PA#1 và ghi nguồn tác giả khác. Xác nhận của giảng viên về nguồn PA#1 còn thiếu. |
+| Responsive at 360, 768 and 1280 px | 25 | Chưa chốt | PASS 18 lượt Chrome 157.0.8103.50 ở 360/768/1280 với JS bật/tắt, viewport cao 900, DPR 1. clientWidth bằng scrollWidth trong từng lượt, ảnh hiển thị tải đủ. Chín PNG mới trong screenshots/ và hash nằm trong checks/browser-review-2026-11-11.json. PASS zoom thực tế 200% với JS bật/tắt, outerWidth 1280, innerWidth 628 và DPR 2. PASS tên dài và cuộn độc lập Admin trong cửa sổ thấp. |
+| Semantic, valid HTML | 20 | Chưa chốt | PASS một h1, ID duy nhất, alt, label tường minh hoặc bao input, type cho button và 189 tham chiếu cục bộ. Accessibility tree của hai trang sửa có banner/navigation/main/contentinfo. Hai HTML sửa gửi lại W3C Nu 26.11.10 đạt 0 errors, 0 warnings. Báo cáo index.html khớp hash nguyên byte của HTML hiện tại. Ba hash đầy đủ nằm trong checks/validator-*.txt và checks/static-review-2026-11-11.json. |
+| Design you can check | 10 | Chưa chốt | Giữ DESIGN.md và common.css. PASS font Merriweather và Be Vietnam Pro cục bộ qua CDP Platform Fonts, reduced motion, focus skip link ở 18 lượt. Đo bề mặt render của chat/note/nút cọc đạt 5,23–9,33 phần 1. PASS mẫu tin 1/2/3, Enter gửi, đổi lịch cần đồng ý mới, submit lặp, Hủy/Escape/Thành công cọc, lọc và reset. Toàn bộ khung hình video, in phiếu và thao tác kéo studio chưa chạy lại trong lượt này. |
+| The brief and the rules file | 10 | Chưa chốt | brief.md giữ lịch sử, lưu nguyên văn prompt đính kèm một lần và câu trả lời chọn ba mẫu tin. AGENTS.md quy định nội dung HTML, file://, JS nâng cấp, focus, responsive và minh chứng. Đặc tả Admin và PROTOTYPE.md cập nhật theo code mới. |
+| AI-LOG.md | 10 | Chưa chốt | Giữ các phần thành viên và lịch sử. Năm mục mới ở phần tích hợp chung ghi Tool, Asked for, Kept, Changed, Rejected, kết quả thực và giới hạn. Ghi rõ ngày tư vấn 23/10 do assistant chọn và lỗi ở bộ kiểm thử đã điều chỉnh. |
+| Commit history | 5 | Chưa chốt | Đã đọc git log và trạng thái. HEAD hiện là 7ffe30b. Các thay đổi của lượt kiểm chứng đang ở working tree để nhóm xem và commit bằng GitHub Desktop. Lượt này chưa tạo commit. |
 
 ## What I did not manage
 
-Hồ sơ PA#1 cục bộ mang đúng ba MSSV của nhóm có tên WordLoop. `docs/pa1/PROPOSAL.md` ghi bộ nguồn GradStudio do nhóm tác giả khác thực hiện. Việc dùng bộ ảnh GradStudio cho tiêu chí nối tiếp PA#1 vẫn cần xác nhận của giảng viên.
 
-**NOT RUN** gồm kiểm tra trên thiết bị thật, trình duyệt ngoài Edge và toàn bộ khung hình video. Nhóm đã đo sáu mẫu video ở mỗi độ rộng 768 và 1280 px.
+- Hồ sơ PA#1 cục bộ mang MSSV nhóm có tên WordLoop. Bộ GradStudio trong
+  docs/pa1/ ghi nhóm tác giả khác. Nhóm cần xác nhận nguồn này với giảng viên.
+- Tên ZIP dùng MSSV và ngày kiểm chứng. Quy tắc tên chính thức cần đối chiếu
+  rubric khi có tệp. Bản ZIP cũ trong submission/ có 223 entry thuộc .git.
+  Bản mới được kiểm riêng theo báo cáo đóng gói.
 
 ## What I would do differently
 
-Nhóm sẽ xác nhận nguồn ba ảnh PA#1 với giảng viên trước khi triển khai và ghi xác nhận cùng bảng đối chiếu màn. Nhóm sẽ kiểm tra trực quan cả tên ngắn trong header ở điểm đổi bố cục, thử focus từ phím Tab đầu tiên và ghi từng lượt responsive bằng commit riêng ngay sau khi chụp minh chứng. Trước khi nộp, nhóm sẽ mở bản giải nén và thử trên thiết bị thật.
+Nhóm sẽ bổ sung rubric và xác nhận nguồn PA#1 trước khi chốt điểm, rồi mở
+bản giải nén trên thiết bị thật. 

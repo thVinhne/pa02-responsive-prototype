@@ -1,0 +1,377 @@
+{
+  "date": "2026-11-11",
+  "cases": [
+    {
+      "case": "issue1",
+      "status": "PASS",
+      "details": [
+        "PASS issue 1: static booking, schedule re-confirmation, duplicate-submit guard, switch customer preservation"
+      ]
+    },
+    {
+      "case": "issue2",
+      "status": "PASS",
+      "details": [
+        "PASS sample 1/2/3, keyboard send, decline/re-propose/agree/create width 360",
+        "PASS sample 1/2/3, keyboard send, decline/re-propose/agree/create width 768",
+        "PASS sample 1/2/3, keyboard send, decline/re-propose/agree/create width 1280"
+      ]
+    },
+    {
+      "case": "issue3",
+      "status": "PASS",
+      "details": [
+        "PASS {\"width\": 345, \"scrollWidth\": 345, \"pageHeight\": 13855, \"regions\": [{\"selector\": \".admin-inbox-list\", \"height\": 414, \"content\": 414, \"overflow\": \"visible\"}, {\"selector\": \".admin-chat-body\", \"height\": 10228, \"content\": 10228, \"overflow\": \"visible\"}, {\"selector\": \".admin-booking\", \"height\": 1558, \"content\": 1558, \"overflow\": \"visible\"}]}",
+        "PASS {\"width\": 753, \"scrollWidth\": 753, \"pageHeight\": 9785, \"regions\": [{\"selector\": \".admin-inbox-list\", \"height\": 438, \"content\": 438, \"overflow\": \"visible\"}, {\"selector\": \".admin-chat-body\", \"height\": 7387, \"content\": 7387, \"overflow\": \"visible\"}, {\"selector\": \".admin-booking\", \"height\": 1326, \"content\": 1326, \"overflow\": \"visible\"}]}",
+        "PASS {\"width\": 1265, \"scrollWidth\": 1265, \"pageHeight\": 901, \"regions\": [{\"selector\": \".admin-inbox-list\", \"height\": 472, \"content\": 472, \"overflow\": \"auto\"}, {\"selector\": \".admin-chat-body\", \"height\": 392, \"content\": 6210, \"overflow\": \"auto\"}, {\"selector\": \".admin-booking\", \"height\": 316, \"content\": 1465, \"overflow\": \"auto\"}]}",
+        "PASS {\"width\": 1265, \"scrollWidth\": 1265, \"pageHeight\": 901, \"regions\": [{\"selector\": \".admin-inbox-list\", \"height\": 472, \"content\": 472, \"overflow\": \"auto\"}, {\"selector\": \".admin-chat-body\", \"height\": 392, \"content\": 6210, \"overflow\": \"auto\"}, {\"selector\": \".admin-booking\", \"height\": 316, \"content\": 1465, \"overflow\": \"auto\"}]}",
+        "PASS {\"width\": 625, \"scrollWidth\": 625, \"pageHeight\": 9341, \"regions\": [{\"selector\": \".admin-inbox-list\", \"height\": 414, \"content\": 414, \"overflow\": \"visible\"}, {\"selector\": \".admin-chat-body\", \"height\": 6184, \"content\": 6184, \"overflow\": \"visible\"}, {\"selector\": \".admin-booking\", \"height\": 1394, \"content\": 1394, \"overflow\": \"visible\"}]}"
+      ]
+    },
+    {
+      "case": "issue4",
+      "status": "PASS",
+      "details": [
+        "PASS resource labels, historical times and booking stages, JS False",
+        "PASS resource labels, historical times and booking stages, JS True"
+      ]
+    },
+    {
+      "case": "payment",
+      "status": "PASS",
+      "details": [
+        "PASS payment width 360",
+        "PASS payment width 768",
+        "PASS payment width 1280"
+      ]
+    },
+    {
+      "case": "sample selection by arrows, append preserves draft, length limit, customer validity isolation, safe text chat",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "case": "40 sequential Tab stops on mobile Admin remain visible",
+      "status": "PASS",
+      "details": [
+        {
+          "tag": "A",
+          "id": "",
+          "top": 16,
+          "bottom": 64,
+          "outline": "3px"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "top": 16,
+          "bottom": 60,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "admin-search",
+          "top": 330.71875,
+          "bottom": 374.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "SELECT",
+          "id": "admin-filter",
+          "top": 390.71875,
+          "bottom": 434.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "top": 450.71875,
+          "bottom": 864.3125,
+          "outline": "1px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "top": 450.71875,
+          "bottom": 518.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "top": 518.71875,
+          "bottom": 586.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "top": 586.71875,
+          "bottom": 654.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "top": 654.71875,
+          "bottom": 722.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "top": 722.71875,
+          "bottom": 790.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "SELECT",
+          "id": "admin-status",
+          "top": 427.90625,
+          "bottom": 471.90625,
+          "outline": "3px"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "top": 17.90625,
+          "bottom": 899.78125,
+          "outline": "1px"
+        },
+        {
+          "tag": "SELECT",
+          "id": "admin-sample",
+          "top": 428.375,
+          "bottom": 472.375,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "admin-fill-sample",
+          "top": 424.375,
+          "bottom": 472.375,
+          "outline": "3px"
+        },
+        {
+          "tag": "TEXTAREA",
+          "id": "admin-message",
+          "top": 594.75,
+          "bottom": 638.75,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "admin-send",
+          "top": 590.75,
+          "bottom": 638.75,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "admin-customer-name",
+          "top": 428.21875,
+          "bottom": 472.21875,
+          "outline": "3px"
+        },
+        {
+          "tag": "SELECT",
+          "id": "admin-session",
+          "top": 521.8125,
+          "bottom": 565.8125,
+          "outline": "3px"
+        },
+        {
+          "tag": "SELECT",
+          "id": "admin-package",
+          "top": 615.40625,
+          "bottom": 659.40625,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "admin-date",
+          "top": 709,
+          "bottom": 754.59375,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "admin-date",
+          "top": 709,
+          "bottom": 754.59375,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "admin-date",
+          "top": 709,
+          "bottom": 754.59375,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "admin-date",
+          "top": 709,
+          "bottom": 754.59375,
+          "outline": "3px"
+        },
+        {
+          "tag": "SELECT",
+          "id": "admin-time",
+          "top": 804.1875,
+          "bottom": 848.1875,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "admin-price",
+          "top": 427.5625,
+          "bottom": 471.5625,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "admin-decline",
+          "top": 775.125,
+          "bottom": 823.125,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "admin-quote",
+          "top": 834.125,
+          "bottom": 900.125,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "admin-create",
+          "top": 834.125,
+          "bottom": 900.125,
+          "outline": "3px"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "top": 707.5,
+          "bottom": 751.5,
+          "outline": "3px"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "top": 751.5,
+          "bottom": 795.5,
+          "outline": "3px"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "top": 795.5,
+          "bottom": 839.5,
+          "outline": "3px"
+        },
+        {
+          "tag": "SUMMARY",
+          "id": "",
+          "top": 839.5,
+          "bottom": 883.5,
+          "outline": "3px"
+        },
+        {
+          "tag": "BODY",
+          "id": "",
+          "top": -3610,
+          "bottom": 899.5,
+          "outline": "3px"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "top": 16,
+          "bottom": 64,
+          "outline": "3px"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "top": 16,
+          "bottom": 60,
+          "outline": "3px"
+        },
+        {
+          "tag": "INPUT",
+          "id": "admin-search",
+          "top": 330.71875,
+          "bottom": 374.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "SELECT",
+          "id": "admin-filter",
+          "top": 390.71875,
+          "bottom": 434.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "top": 450.71875,
+          "bottom": 864.3125,
+          "outline": "1px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "top": 450.71875,
+          "bottom": 518.71875,
+          "outline": "3px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "top": 518.71875,
+          "bottom": 586.71875,
+          "outline": "3px"
+        }
+      ]
+    },
+    {
+      "case": "keyboard deposit confirmation from pending filter, filter counts and reset",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "case": "image dialog Escape and focus",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "case": "three-screen navigation using Enter with JavaScript disabled",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "case": "long customer names width 360",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "case": "long customer names width 768",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "case": "long customer names width 1280",
+      "status": "PASS",
+      "details": null
+    }
+  ],
+  "source_sha256": {
+    "admin-scheduling.html": "b4676e39eab67165c7106483ad83f5829e15feeacab8a48e15420ffbd1ee6855",
+    "my-appointments.html": "6012d1cd0813a004df7700130b2a1d6a1a1cec303043ab486da655db943ca92b",
+    "js/admin-scheduling.js": "93a481f5c2b8427e63fc2b27a233b37e405fbd8afbe7c7589fdb09a853362189",
+    "js/my-appointments.js": "7ea8ae4d9af1cac7d48910dfe28361b9436cb66f1c1417185c577f9b654088ba",
+    "css/admin-scheduling.css": "1b3fed43a15204acebe59f1d3370f22324f2677f25e26a2ebfe854dea2fb9217"
+  }
+}

@@ -13,7 +13,7 @@ nguồn và hình tham chiếu nằm trong [tài liệu PA01](../pa1/LINK.md) v�
 | Đầu trang | Logo GradStudio dẫn về Dịch vụ, nhãn vai trò Studio · Admin và thông tin Thảo, quản lý studio. Liên kết bỏ qua điều hướng trỏ đến nội dung chính. |
 | Danh sách hội thoại | Tiêu đề Khách đang chờ, tìm theo tên, bộ lọc trạng thái có số lượng và năm khách mẫu. Mỗi mục có avatar, tên, tin nhắn gần nhất và thời điểm. Tên dài xuống dòng. Dòng xem trước giữ dấu ba chấm, có nội dung đầy đủ trong nhãn truy cập khi bật JS. |
 | Hội thoại | Tên, avatar, gói và trạng thái của khách đang mở. Tin khách nằm bên trái, tin studio nằm bên phải. Hội thoại Linh có ghi chú về khung giờ đã thống nhất. Ô soạn và nút Gửi nằm cuối vùng chat. |
-| Lịch booking | Bảng ngày 24/10/2026 có hai cột Thời gian và Booking. Khung 08:00–12:00 ghi Đã có lịch. Các khung còn lại phân biệt Chưa có dữ liệu và Chưa có booking. |
+| Lịch booking | Bảng ngày 24/10/2026 có hai cột thời gian và tài nguyên/trạng thái. Mai bận makeup 08:00–12:00. Các hàng makeup Mai và chụp Tuấn/Phòng B ghi Dự kiến, Đề xuất, Đã thống nhất, Đã từ chối hoặc Chờ cọc theo bước demo. Khung khác ghi Chưa có dữ liệu. |
 | Thẻ booking | Nằm dưới lịch, hiển thị form hoặc bản tóm tắt booking của Linh. Form gồm loại buổi chụp, gói, ngày, giờ, dịch vụ, phân công, giá và thao tác mô phỏng. Khách khác có thông báo thiếu dữ liệu booking. |
 | Chân trang | Liên kết sang Dịch vụ và Lịch chụp, mục Admin hiện tại và phần Thông tin bản mẫu có thể mở rộng. |
 
@@ -28,23 +28,25 @@ Các khách còn lại dùng chữ viết tắt trong HTML.
 
 | Điều kiện | Bố cục |
 | --- | --- |
-| Dưới 48rem, gồm 360 px | Một cột theo thứ tự danh sách, chat, lịch và booking. Trạng thái hội thoại nằm dưới thông tin khách. Các trường ngày và giờ xếp dọc. |
-| Từ 48rem đến dưới 64rem, gồm 768 px | Danh sách nằm ở cột trái rộng 15rem. Chat và cụm lịch/booking xếp dọc ở cột phải. Ngày và giờ nằm cạnh nhau trong form. |
-| Từ 64rem, gồm 1280 px | Ba cột trong khung cao bằng viewport. Danh sách khách, tin nhắn và thẻ booking có vùng cuộn riêng. Lịch nằm phía trên thẻ booking, hai phần chia đều chiều cao mặc định. |
-| Từ 64rem và viewport cao tối đa 46rem | Lịch lấy chiều cao tự nhiên. Thẻ booking dùng phần chiều cao còn lại. |
+| Dưới 48rem, gồm 360 px | Một cột, cuộn trang theo thứ tự danh sách, chat, lịch và booking. Trạng thái nằm dưới khách. Ngày/giờ xếp dọc. |
+| Từ 48rem đến dưới 64rem, gồm 768 px | Danh sách ở cột trái 15rem, chat và lịch/booking xếp dọc bên phải. Các vùng có chiều cao tự nhiên, dùng cuộn trang. Ngày/giờ cạnh nhau. |
+| Từ 64rem, gồm 1280 px | Ba cột, khung làm việc cao tối thiểu 48rem hoặc viewport trừ 10rem. Danh sách, tin nhắn và booking có cuộn riêng khi tràn. Lịch cao theo nội dung, booking có ít nhất 16rem. |
+| Cửa sổ thấp hoặc nội dung đầu/chân trang dài | Trang vẫn cuộn tới toàn bộ khung làm việc và chân trang. Zoom làm chiều rộng CSS xuống dưới 64rem sẽ dùng cuộn trang tự nhiên. |
 
 ## Dữ liệu ban đầu
 
-- Admin đang mở hội thoại **Nguyễn Thùy Linh**. Trạng thái hội thoại là
-  **Đang tư vấn**. Tin nhắn mẫu cho thấy Linh đã đồng ý giờ chụp **14:00**.
+- Admin mở hội thoại **Nguyễn Thùy Linh**, trạng thái **Đã xác nhận**.
+  Bốn tin cũ thuộc ngày **23/10/2026**, chốt giờ chụp **14:00 ngày 24/10**.
+  Tin mới được gắn nhãn mô phỏng và giờ thao tác, tách nghĩa với lịch sử.
 - Yêu cầu **09:00 ngày 24/10/2026** vướng lịch makeup của Mai từ
   **08:00 đến 12:00**. Phương án đang chọn là makeup **13:00–14:00** với Mai
   và chụp **14:00–16:00** với Tuấn tại **Phòng B**.
 - Booking mẫu **GS-1024** dùng gói **Tốt nghiệp Premium**, loại buổi chụp
   **Tốt nghiệp cá nhân**, thời lượng **2 giờ**, **30 ảnh**. Tổng giá
   **1.800.000đ**, cọc **540.000đ**, còn **1.260.000đ** sau buổi chụp.
-- Thẻ ban đầu hiển thị **Lịch đã thống nhất** và **Đã đồng ý giờ · Chưa tạo
-  booking**. Makeup đã bao gồm. Thuê áo cử nhân bị khóa vì chưa có báo giá.
+- Bản tĩnh hiển thị **Lịch đã thống nhất** và **GS-1024 · Chờ cọc 30% ·
+  Minh họa tĩnh**. JS mở form từ bước **Đã đồng ý giờ · Chưa tạo booking**.
+  Makeup đã bao gồm. Thuê áo cử nhân bị khóa vì chưa có báo giá.
 
 ## Tương tác trong bản hiện tại
 
@@ -61,19 +63,27 @@ lại trang. Liên kết ở chân trang và trong kết quả tạo booking m�
 [Lịch chụp của khách](../../my-appointments.html). Tạo booking cập nhật
 thẻ và lịch ở màn Admin. Trang Lịch chụp mở dữ liệu mẫu riêng.
 
-Khi tắt JavaScript, HTML vẫn hiển thị danh sách, bốn tin nhắn của Linh,
-lịch, form và liên kết. Tìm kiếm, lọc, chọn khách, đổi trạng thái, gửi tin
-và tạo booking cần JS. Ghi chú trong `noscript` giải thích phạm vi này.
+Khi tắt JavaScript, HTML hiển thị danh sách, bốn tin nhắn của Linh,
+lịch và tóm tắt minh họa tĩnh GS-1024 Chờ cọc 30%, đủ phân công và tiền.
+Form tạo booking và điều khiển nâng cấp hiện sau khi gắn handler. Khi bật
+JS, bản tương tác bắt đầu từ giờ 14:00 Linh đã đồng ý trong hội thoại.
+Đổi ngày/giờ cần gửi đề xuất và đồng ý lại. Submit lặp sau khi tạo bị chặn.
+
+Ba mẫu tin soạn sẵn của Linh được chọn bằng select và nút Điền mẫu.
+Mẫu 1 ghi nhận yêu cầu 09:00 và Mai bận, mẫu 2 đề xuất giờ 14:00, mẫu 3
+hướng dẫn cọc. Điền mẫu nối vào bản nháp rồi bấm Gửi. Thao tác này giữ
+nguyên trạng thái booking. Gửi đề xuất và Đồng ý lịch trong form thực
+hiện bước xác nhận. Mẫu tin chỉ hiện khi đang mở Linh.
 
 ## Điểm đối chiếu với brief PA02
 
 - Brief dùng nhãn **Đã chốt lịch** cho hội thoại đã đồng ý. Màn hiện tại
-  mở ở **Đang tư vấn** và dùng **Đã xác nhận** khi mô phỏng đồng ý hoặc tạo booking.
+  dùng **Đã xác nhận** khi mở hội thoại đã chốt, mô phỏng đồng ý hoặc tạo booking.
 - Chân trang vẫn có nhãn **Màn 1/2/3** và form vẫn có nhóm **Mô phỏng phản hồi
   của Linh**. Nút **Tạo booking** cần JS. Ghi chú chân trang và phản hồi
   sau khi tạo booking giải thích phạm vi mô phỏng của từng màn.
-- Brief yêu cầu đọc toàn bộ chat và form bằng cuộn trang. Bản hiện tại
-  dùng vùng cuộn riêng như mô tả ở bảng responsive.
+- Bản hiện tại dùng cuộn trang dưới 64rem và vùng cuộn riêng từ 64rem,
+  đồng thời trang vẫn cuộn được trong cửa sổ thấp theo bảng responsive.
 
 ## Tệp triển khai và minh chứng
 

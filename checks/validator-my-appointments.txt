@@ -1,9 +1,9 @@
 W3C Nu checker - my-appointments.html
 Date: 2026-11-11
-Checker: https://validator.w3.org/nu/ (POST file contents)
-SHA256: dabdbb825e793b4d8a4d688310d5da39b978cd028aceee33f2f4edc6be637bdd
-SHA256 (LF): 42352dc7c4ec436a10621c5974d3327700e32ccb1ae5c8d534e5ea807feb233a
-SHA256 (CRLF): dabdbb825e793b4d8a4d688310d5da39b978cd028aceee33f2f4edc6be637bdd
+Checker: https://validator.w3.org/nu/ (POST exact file bytes)
+SHA256: 6012d1cd0813a004df7700130b2a1d6a1a1cec303043ab486da655db943ca92b
+SHA256 (LF): 8a8895e5ba6268b327440d9c3a20e322ab3e8b7de574f3e7f4c9f1b92cd7a60a
+SHA256 (CRLF): 6012d1cd0813a004df7700130b2a1d6a1a1cec303043ab486da655db943ca92b
 Errors: 0
 Warnings: 0
 {

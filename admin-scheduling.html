@@ -22,25 +22,27 @@
       <div class="admin-inbox-head">
         <p class="admin-eyebrow">Hội thoại</p>
         <h1 id="admin-inbox-title">Khách đang chờ</h1>
+        <div data-admin-enhancement hidden>
         <label class="form-label" for="admin-search">Tìm khách hàng theo tên</label>
         <div class="admin-search">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 5 5"></path></svg>
           <input class="form-control" id="admin-search" type="search" placeholder="Tìm khách hàng…" disabled>
         </div>
+        </div>
       </div>
-      <div class="admin-filters">
+      <div class="admin-filters" data-admin-enhancement hidden>
         <label class="form-label" for="admin-filter">Lọc</label>
         <select class="form-control" id="admin-filter" aria-label="Lọc trạng thái hội thoại" disabled>
-          <option value="all">Tất cả · 5</option><option value="unanswered">Chưa trả lời · 2</option><option value="advising">Đang tư vấn · 1</option><option value="confirmed">Đã xác nhận · 1</option><option value="completed">Hoàn thành · 1</option>
+          <option value="all">Tất cả · 5</option><option value="unanswered">Chưa trả lời · 2</option><option value="advising">Đang tư vấn · 0</option><option value="confirmed">Đã xác nhận · 2</option><option value="completed">Hoàn thành · 1</option>
         </select>
       </div>
       </div>
       <div class="admin-inbox-list" tabindex="0" role="region" aria-label="Danh sách hội thoại, cuộn độc lập">
       <ul class="admin-customers" aria-label="Danh sách hội thoại mẫu">
-        <li class="admin-customer admin-customer--active" data-status="advising" data-customer="linh">
+        <li class="admin-customer admin-customer--active" data-status="confirmed" data-customer="linh">
           <button class="admin-customer-button" type="button" aria-pressed="true" disabled>
             <img class="admin-avatar" src="assets/images/linh-initial.svg" alt="" width="52" height="52">
-            <span class="admin-customer-body"><strong class="admin-customer-name">Nguyễn Thùy Linh</strong><span class="admin-customer-preview"><span class="admin-preview">Dạ em chốt lịch 14:00 ạ.</span><time datetime="2026-10-24T17:24">17:24</time></span></span>
+            <span class="admin-customer-body"><strong class="admin-customer-name">Nguyễn Thùy Linh</strong><span class="admin-customer-preview"><span class="admin-preview">Dạ em chốt lịch 14:00 ạ.</span><time datetime="2026-10-23T17:24">23/10</time></span></span>
           </button>
         </li>
         <li class="admin-customer" data-status="unanswered" data-customer="khoa"><button class="admin-customer-button" type="button" aria-pressed="false" disabled><span class="admin-avatar admin-initials" aria-hidden="true">MK</span><span class="admin-customer-body"><strong class="admin-customer-name">Trần Minh Khoa</strong><span class="admin-customer-preview"><span class="admin-preview">Chụp chân dung CV mất bao lâu ạ?</span><time datetime="2026-10-24T16:58">16:58</time></span></span></button></li>
@@ -56,19 +58,31 @@
       <header class="admin-chat-head">
         <img class="admin-avatar" src="assets/images/linh-initial.svg" alt="" width="44" height="44">
         <div class="admin-chat-person"><h2 id="admin-chat-title">Nguyễn Thùy Linh</h2><p class="admin-muted">Tốt nghiệp Premium</p></div>
-        <div class="admin-conversation-status"><label for="admin-status">Trạng thái</label><select class="form-control" id="admin-status" disabled><option value="unanswered">Chưa trả lời</option><option value="advising" selected>Đang tư vấn</option><option value="confirmed">Đã xác nhận</option><option value="completed">Hoàn thành</option></select></div>
+        <div class="admin-conversation-status" data-admin-enhancement hidden><label for="admin-status">Trạng thái</label><select class="form-control" id="admin-status" disabled><option value="unanswered">Chưa trả lời</option><option value="advising">Đang tư vấn</option><option value="confirmed" selected>Đã xác nhận</option><option value="completed">Hoàn thành</option></select></div>
       </header>
       <div class="admin-chat-body" tabindex="0" role="region" aria-label="Tin nhắn, cuộn độc lập">
-        <p class="admin-date-line">Hội thoại mẫu · 24/10/2026</p>
+        <p class="admin-date-line">Lịch sử tư vấn · 23/10/2026 · Chụp ngày 24/10/2026</p>
         <ol class="admin-messages" aria-label="Tin nhắn giữa Linh và studio" aria-live="polite" aria-relevant="additions">
-          <li class="admin-message"><p>Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?</p><span class="admin-muted">Linh · </span><time datetime="2026-10-24T17:20">17:20</time></li>
-          <li class="admin-message admin-message--studio"><p>Để mình kiểm tra lịch cho bạn nhé.</p><span class="admin-muted">Studio · </span><time datetime="2026-10-24T17:21">17:21</time></li>
-          <li class="admin-message admin-message--studio"><p>Mai đã có lịch makeup 08:00–12:00 nên khung 09:00 chưa phù hợp. Mình còn giờ chụp 14:00: makeup 13:00–14:00 với Mai, chụp 14:00–16:00 với Tuấn tại Phòng B. Bạn chốt giờ này không?</p><span class="admin-muted">Studio · </span><time datetime="2026-10-24T17:22">17:22</time></li>
-          <li class="admin-message"><p>Dạ em chốt lịch 14:00 ạ.</p><span class="admin-muted">Linh · </span><time datetime="2026-10-24T17:24">17:24</time></li>
+          <li class="admin-message"><p>Gói tốt nghiệp có makeup còn lịch 24/10 lúc 09:00 không?</p><span class="admin-muted">Linh · </span><time datetime="2026-10-23T17:20">17:20</time></li>
+          <li class="admin-message admin-message--studio"><p>Để mình kiểm tra lịch cho bạn nhé.</p><span class="admin-muted">Studio · </span><time datetime="2026-10-23T17:21">17:21</time></li>
+          <li class="admin-message admin-message--studio"><p>Mai đã có lịch makeup 08:00–12:00 nên khung 09:00 chưa phù hợp. Mình còn giờ chụp 14:00: makeup 13:00–14:00 với Mai, chụp 14:00–16:00 với Tuấn tại Phòng B. Bạn chốt giờ này không?</p><span class="admin-muted">Studio · </span><time datetime="2026-10-23T17:22">17:22</time></li>
+          <li class="admin-message"><p>Dạ em chốt lịch 14:00 ạ.</p><span class="admin-muted">Linh · </span><time datetime="2026-10-23T17:24">17:24</time></li>
         </ol>
-        <p class="admin-chat-context" id="admin-context">✓ Linh đã đồng ý giờ 14:00 trong hội thoại mẫu. Có thể tạo booking chờ cọc.</p>
+        <p class="admin-chat-context" id="admin-context">Lịch đã thống nhất trong hội thoại mẫu. Booking minh họa GS-1024 Chờ cọc 30% được trình bày bên dưới.</p>
       </div>
-      <form class="admin-compose" aria-label="Soạn tin nhắn mẫu">
+      <form class="admin-compose" aria-label="Soạn tin nhắn mẫu" data-admin-enhancement hidden>
+        <div id="admin-message-samples">
+          <label class="form-label" for="admin-sample">Tin nhắn soạn sẵn cho Linh</label>
+          <div class="admin-compose-row">
+            <select class="form-control" id="admin-sample" aria-describedby="admin-sample-help">
+              <option value="Mình ghi nhận yêu cầu chụp lúc 09:00 ngày 24/10/2026 của bạn. Mai bận makeup 08:00–12:00, mình sẽ tư vấn giờ phù hợp.">1 · Yêu cầu 09:00</option>
+              <option value="Studio đề xuất makeup với Mai 13:00–14:00, chụp với Tuấn 14:00–16:00 tại Phòng B ngày 24/10/2026. Gói Tốt nghiệp Premium 1.800.000đ, cọc 540.000đ. Bạn đồng ý lịch này không?">2 · Đề xuất 14:00</option>
+              <option value="Sau khi tạo booking GS-1024, khoản cọc 30% là 540.000đ, còn lại 1.260.000đ thanh toán sau buổi chụp. Bạn có thể thử thanh toán mô phỏng ở trang Lịch chụp mẫu.">3 · Hướng dẫn cọc</option>
+            </select>
+            <button class="button button--secondary" id="admin-fill-sample" type="button">Điền mẫu</button>
+          </div>
+          <p class="admin-note" id="admin-sample-help">Điền mẫu vào bản nháp rồi bấm Gửi. Để chốt lịch, dùng Gửi đề xuất và Đồng ý lịch ở form booking.</p>
+        </div>
         <label class="form-label" for="admin-message" id="admin-compose-label">Tin nhắn trả lời Linh</label>
         <div class="admin-compose-row"><textarea class="form-control" id="admin-message" rows="1" maxlength="3000" placeholder="Nhập tin nhắn…" aria-describedby="admin-chat-help"></textarea><button class="button" id="admin-send" type="submit" disabled>Gửi</button></div>
         <p class="admin-note" id="admin-chat-help">Mô phỏng cục bộ · tin nhắn không gửi tới khách và mất khi tải lại.</p>
@@ -79,24 +93,24 @@
         <p class="admin-eyebrow">Lịch booking</p>
         <h2 id="admin-calendar-title">Thứ Bảy, 24/10/2026</h2>
         <table class="admin-calendar">
-          <caption>Tình trạng theo khung giờ · dữ liệu mẫu</caption>
-          <thead><tr><th scope="col">Thời gian</th><th scope="col">Booking</th></tr></thead>
+          <caption>Tài nguyên ngày 24/10 · GS-1024 minh họa</caption>
+          <thead><tr><th scope="col">Thời gian</th><th scope="col">Tài nguyên · Trạng thái</th></tr></thead>
           <tbody>
-            <tr class="admin-busy"><td>08:00–12:00</td><td>Đã có lịch</td></tr>
+            <tr class="admin-busy"><td>08:00–12:00</td><td>Mai · Bận makeup</td></tr>
             <tr><td>12:00–13:00</td><td>Chưa có dữ liệu</td></tr>
-            <tr><td>13:00–14:00</td><td id="admin-calendar-makeup">Chưa có booking</td></tr>
-            <tr><td>14:00–16:00</td><td id="admin-calendar-shoot">Chưa có booking</td></tr>
+            <tr><td>13:00–14:00</td><td id="admin-calendar-makeup">Mai · Chờ cọc</td></tr>
+            <tr><td>14:00–16:00</td><td id="admin-calendar-shoot">Tuấn · Phòng B · Chờ cọc</td></tr>
             <tr><td>16:00–18:00</td><td>Chưa có dữ liệu</td></tr>
           </tbody>
         </table>
-        <p class="admin-note" id="admin-calendar-note">Lịch đã biết: 08:00–12:00. Khung chưa có booking không bảo đảm đủ nhân sự.</p>
+        <p class="admin-note" id="admin-calendar-note">Yêu cầu 09:00 vướng lịch Mai. GS-1024 đã thống nhất giờ, Chờ cọc trong minh họa tĩnh.</p>
       </section>
       <section class="admin-booking" id="admin-booking" aria-labelledby="admin-booking-title">
         <p class="admin-eyebrow">Booking · GS-1024</p><h2 id="admin-booking-title" tabindex="-1">Lịch đã thống nhất</h2>
         <div id="admin-booking-linh">
-        <p class="admin-status admin-status--success" id="admin-booking-status" role="status">Đã đồng ý giờ · Chưa tạo booking</p>
+        <p class="admin-status admin-status--waiting" id="admin-booking-status" role="status">GS-1024 · Chờ cọc 30% · Minh họa tĩnh</p>
         <p class="admin-muted">Gắn với cuộc tư vấn của Nguyễn Thùy Linh.</p>
-        <form id="admin-booking-form" aria-describedby="admin-booking-help">
+        <form id="admin-booking-form" aria-describedby="admin-booking-help" hidden>
           <div><label class="form-label" for="admin-customer-name">Khách hàng</label><input class="form-control" id="admin-customer-name" value="Nguyễn Thùy Linh" readonly></div>
           <div><label class="form-label" for="admin-session">Loại buổi chụp</label><select class="form-control" id="admin-session"><option>Tốt nghiệp cá nhân</option></select></div>
           <div><label class="form-label" for="admin-package">Gói chụp</label><select class="form-control" id="admin-package"><option>Premium · 2 giờ · 30 ảnh</option></select></div>
@@ -114,16 +128,16 @@
           <div class="admin-actions"><button class="button button--secondary" id="admin-quote" type="button" disabled>Gửi đề xuất vào chat</button><button class="button" id="admin-create" type="submit" disabled>Tạo booking</button></div>
           <p class="admin-note" id="admin-booking-help">Mô phỏng trên trình duyệt. Đổi lịch cần gửi đề xuất và có phản hồi đồng ý mới. Không giữ tài nguyên hoặc thanh toán thật.</p>
         </form>
-        <div class="admin-booking-result" id="admin-booking-result" hidden>
+        <div class="admin-booking-result" id="admin-booking-result">
           <dl><dt>Khách hàng · Gói</dt><dd>Nguyễn Thùy Linh · Tốt nghiệp Premium</dd><dt>Ngày chụp</dt><dd id="admin-result-date">24/10/2026</dd><dt>Makeup · Mai</dt><dd id="admin-result-makeup">13:00–14:00</dd><dt>Chụp · Tuấn · Phòng B</dt><dd id="admin-result-shoot">14:00–16:00</dd><dt>Tổng giá</dt><dd>1.800.000đ</dd><dt>Cọc 30%</dt><dd>540.000đ</dd><dt>Còn lại sau buổi chụp</dt><dd>1.260.000đ</dd></dl>
-          <p>Booking mô phỏng đang chờ cọc; chưa giữ lịch chính thức.</p>
+          <p id="admin-result-note">Minh họa tĩnh sau bước tạo booking GS-1024. Lịch đã thống nhất, đang Chờ cọc 540.000đ.</p>
           <div class="admin-actions">
-            <button class="button button--secondary" id="admin-edit" type="button" disabled>Chỉnh lại lịch</button>
+            <button class="button button--secondary" id="admin-edit" type="button" hidden>Chỉnh lại lịch</button>
             <a class="button button--secondary" href="my-appointments.html">Xem lịch chụp mẫu của khách</a>
           </div>
         </div>
         <p class="admin-note admin-live" id="admin-feedback" role="status" aria-live="polite"></p>
-        <noscript><p>Bật JavaScript để tìm kiếm, lọc, gửi tin nhắn mô phỏng và thay đổi trạng thái booking. Nội dung mẫu, form và liên kết vẫn xem được.</p></noscript>
+        <noscript><p>Đây là booking minh họa tĩnh. Bật JavaScript và tải lại để thử tạo booking từ bước Linh đã đồng ý giờ. Mỗi trang dùng dữ liệu mẫu riêng.</p></noscript>
         </div>
         <div id="admin-booking-other" hidden><p id="admin-booking-other-note">Chưa có dữ liệu booking cho hội thoại này.</p><p class="admin-note">Có thể tiếp tục tư vấn qua chat. Mẫu booking đầy đủ hiện có ở hội thoại Linh.</p></div>
       </section>

@@ -749,3 +749,51 @@ Lịch sử Git cục bộ chưa có commit xác định người thực hiện 
 - **Kept:** Hai tin nhắn mẫu, gói Tốt nghiệp Premium, liên kết tư vấn và nút Gửi bị khóa.
 - **Changed:** Dùng một khung hội thoại trong luồng trang sau footer. Liên kết tới tiêu đề hoạt động cả khi tắt JS. Khi bật JS, gói được chọn hiện riêng cạnh ô nhập. Kiểm tra ban đầu tái hiện thiếu hội thoại sau footer. Chrome kiểm tra lại ở 360, 768 và 1280 px với JS bật và tắt. Hai tin nhắn hiện trực tiếp, Enter trên liên kết chat đưa focus đến tiêu đề và trang không cuộn ngang. Chụp lại ba ảnh Dịch vụ với JS tắt. W3C Nu trả 0 lỗi, 0 cảnh báo cho HTML Dịch vụ và Lịch chụp. Đã lưu kết quả và SHA-256 trong checks/.
 - **Rejected:** Giữ khung thu gọn hoặc neo khung lên trên nội dung vì hai tin nhắn cần hiển thị trực tiếp sau footer.
+
+## Tích hợp chung theo yêu cầu kiểm chứng ngày 11/11/2026
+
+### 2026-11-11 - Vấn đề 1, booking tĩnh và tạo booking tương tác
+
+- **Tool:** Codex, PowerShell, Python, Chrome headless qua CDP, `node --check`, `git diff --check`.
+- **Asked for:** Kiểm tra repository và sửa vấn đề 1 trong prompt nguyên văn đã lưu một lần ở cuối `brief.md`.
+- **Kept:** Hội thoại Linh, form đầy đủ, giờ 14:00 đã đồng ý và nhánh thử giờ 15:00 trong phiên. Trạng thái từng trang được lưu riêng trong bộ nhớ.
+- **Changed:** Tái hiện HTML tắt JS có form và nút Tạo booking bị khóa, kết quả booking bị ẩn. `admin-scheduling.html` hiển thị tóm tắt GS-1024 Chờ cọc minh họa tĩnh, đủ makeup/chụp, phân công và tiền. Form tương tác cùng nút chỉnh chỉ hiện khi JS hoàn tất gắn handler. `js/admin-scheduling.js` ràng buộc lịch được đồng ý với ngày/giờ hiện tại, giữ chặn submit sau khi đã tạo. PASS trong Chrome qua file:// cho bản tĩnh, tạo từ giờ đã đồng ý, thay giờ cần đề xuất/đồng ý lại, submit lặp ba lần chỉ thêm một booking và chuyển khách vẫn giữ booking. PASS syntax JS và diff check. W3C, ảnh cuối và kiểm tra toàn bộ responsive chờ vấn đề 5. Rubric PDF chưa tìm thấy trong repo hoặc tệp đính kèm của phiên này.
+- **Rejected:** Phương án bỏ thuộc tính disabled để nút chạy khi JS tắt, vì HTML cần có tóm tắt minh họa và điều khiển cần handler. Không ghi nhận quyết định mới của thành viên nhóm.
+
+### 2026-11-11 - Vấn đề 2, mẫu tin Admin và cọc mô phỏng
+
+- **Tool:** Codex, apply_patch, PowerShell, Python và Chrome headless qua CDP.
+- **Asked for:** Mẫu 1/2/3, gửi tin, phản hồi và thanh toán cọc. Người dùng xác nhận dùng ba mẫu tin soạn sẵn, lưu nguyên văn trong brief.md.
+- **Kept:** Luồng cọc và JavaScript màn Lịch chụp sau khi thử đạt. Các mẫu tin chỉ hỗ trợ soạn, bước đồng ý lịch vẫn dùng phản hồi mô phỏng ở form.
+- **Changed:** `admin-scheduling.html` có select ba mẫu, nút Điền mẫu và chú thích. `js/admin-scheduling.js` điền nối vào bản nháp, kiểm tra giới hạn 3000 ký tự, ẩn mẫu khi chọn khách khác. Tìm/lọc/trạng thái/ô soạn hiện sau khi handler sẵn sàng. `my-appointments.html` thêm chú thích và aria-describedby cạnh nút cọc. PASS tại 360/768/1280 qua file:// cho chọn ba mẫu, gửi bằng Enter, từ chối khóa tạo, gửi lại/đồng ý/tạo. PASS cọc Hủy và Escape giữ Chờ cọc và trả focus, Thành công đổi counts thành 1/0/1/0 và focus tới xác nhận. Phép thử Escape đầu chờ 100ms chưa đủ cho sự kiện close, chạy lại sau khi chờ hoàn tất đạt. Phép thử Enter đầu thiếu sự kiện char của CDP, sửa bộ kiểm thử rồi chạy đạt. PASS node --check. W3C và screenshot cuối chờ vấn đề 5.
+- **Rejected:** Tự đặt ba bộ dữ liệu booking khi người dùng đã chọn mẫu tin. Giữ nguyên controller cọc vì phép thử hiện tại đạt.
+
+### 2026-11-11 - Vấn đề 3, cuộn Admin theo breakpoint
+
+- **Tool:** Codex, apply_patch, Python và Chrome headless qua CDP.
+- **Asked for:** Cuộn riêng chat/form trên desktop, cuộn trang và nội dung dài, tránh vùng cuộn lồng trên mobile.
+- **Kept:** Ba cột từ 64rem, hai cột từ 48rem, lịch ở trên form và các token chung.
+- **Changed:** `css/admin-scheduling.css` bỏ chiều cao giới hạn và overflow của danh sách/chat/form dưới 64rem. Desktop có khung cao tối thiểu 48rem, lịch cao tự nhiên và booking tối thiểu 16rem. Trang có thể cuộn tới chân trang, scroll chaining dùng mặc định. `docs/design/admin-scheduling.md` cập nhật breakpoint. PASS qua file:// với 15 tin dài tại 360/768/1280, 1280 × 600 và reflow 640 × 450. Không cuộn ngang toàn trang. Mobile/tablet đo overflow-y visible cho ba vùng. Desktop cuộn chat 100px giữ form ở 0px, rồi cuộn form 100px giữ chat ở 100px. Cửa sổ 600px có nội dung trang cao 901px, vẫn cuộn được. Zoom 200% thực tế chưa chạy ở bước này, sẽ kiểm tra tại vấn đề 5. CSS chung và hai trang khách được giữ nguyên.
+- **Rejected:** Giữ chiều cao 65dvh/70dvh/100dvh cho vùng con ở mobile vì tạo cuộn lồng. Giữ body cố định bằng viewport trên desktop vì nội dung đầu/chân trang dài có thể làm vùng thao tác quá thấp.
+
+### 2026-11-11 - Vấn đề 4, tài nguyên và thời gian hội thoại
+
+- **Tool:** Codex, apply_patch, PowerShell, Python và Chrome headless qua CDP.
+- **Asked for:** Đối chiếu lịch, chat, booking và tiền mẫu, phân biệt yêu cầu/đề xuất/lịch đã xác nhận.
+- **Kept:** Bảng hai cột, lựa chọn thử giờ 15:00 sẵn có, ngày chụp và toàn bộ giá trị chuẩn của GS-1024 ở giờ 14:00.
+- **Changed:** `admin-scheduling.html` ghi Mai bận 08:00–12:00, Mai makeup, Tuấn và Phòng B chụp. Bản tĩnh ghi Chờ cọc. `js/admin-scheduling.js` cập nhật nhãn Dự kiến/Đề xuất/Đã từ chối/Đã thống nhất/Chờ cọc, thông báo ngày thiếu dữ liệu và trả bảng về giờ mẫu khi ngày không hỗ trợ. Phát hiện bốn tin hỏi/chốt lịch ngày 24/10 lại ghi 17:20–17:24 cùng ngày. Assistant chọn ngày tư vấn minh họa 23/10/2026 và ghi rõ Lịch sử tư vấn, giữ nguyên nội dung tin. Đây là quyết định triển khai do assistant chọn. Đồng bộ trạng thái hội thoại ban đầu thành Đã xác nhận và bộ đếm. Đặc tả Admin cập nhật theo code. PASS trong Chrome file:// khi JS bật/tắt cho tên tài nguyên và datetime trước buổi chụp, từng nhánh đề xuất/từ chối/đồng ý/Chờ cọc, thử giờ 15:00 và ngày ngoài mẫu. PASS kiểm tra lại cuộn ở 360/768/1280, cửa sổ thấp và nội dung dài. W3C và ảnh cuối chờ vấn đề 5.
+- **Rejected:** Thêm cột tài nguyên thứ ba vào bảng hẹp, thay vào đó ghi tên trong ô trạng thái. Triển khai giữ tài nguyên thật hoặc tự bổ sung lịch cho các ô chưa có dữ liệu.
+
+### 2026-11-11 - Vấn đề 5, kiểm chứng hồ sơ và ZIP mới
+
+- **Tool:** Codex, PowerShell, Python/BeautifulSoup/zipfile/hashlib, Chrome 157.0.8103.50 headless qua CDP, W3C Nu 26.11.10, node --check và Git chỉ đọc.
+- **Asked for:** Kiểm chứng cả ba màn, W3C/hash, ảnh, assets, báo cáo tự chấm và ZIP. Prompt nguyên văn dùng chung được lưu một lần trong brief.md.
+- **Kept:** Lịch sử prompt/log, nguồn ảnh/font và ZIP cũ. Giữ tên tiêu chí và điểm tối đa từ báo cáo trước để nhóm đối chiếu khi có rubric. Lượt này là tích hợp chung.
+- **Changed:** PASS 18 lượt file:// tại 360/768/1280 với JS bật/tắt, viewport cao 900, DPR 1. clientWidth bằng scrollWidth, ảnh hiển thị tải đủ. Chụp lại chín PNG và lưu hash trong checks/browser-review-2026-11-11.json. PASS zoom trình duyệt thực 200% với JS bật/tắt trên cả ba trang, outerWidth 1280/innerWidth 628/DPR 2. PASS reduced motion, skip link, font Merriweather và Be Vietnam Pro thực, tên dài, cuộn riêng và cửa sổ thấp. Hai HTML sửa gửi nguyên byte tới W3C đạt 0 errors/0 warnings, báo cáo Dịch vụ khớp SHA-256 hiện tại. Lượt gửi trong sandbox gặp proxy chặn, chạy lại có quyền mạng tới W3C chính thức thành công. Đã lưu báo cáo mới và static-review, interactions-review, accessibility-review trong checks/.
+
+  PASS mẫu 1/2/3, gửi bằng Enter, giữ nháp qua chuyển khách, giới hạn 3000 ký tự, từ chối/đề xuất lại/đồng ý/tạo, chặn submit lặp, cọc Hủy/Escape/Thành công, bộ lọc/reset, ảnh Escape và điều hướng liên trang khi tắt JS. PASS 40 Tab liên tiếp trên Admin mobile. Trong nghiệm thu sửa js/admin-scheduling.js để focus tiêu đề sau tạo booking tự cuộn vào viewport và xóa custom validity khi chuyển khách. Tất cả hash kiểm chứng dùng bản sau sửa. Bộ đo ảnh ban đầu gặp ảnh lazy chưa sẵn sàng, điều chỉnh chờ tải và chỉ đo ảnh thực sự hiển thị rồi chạy lại ma trận đạt. Bộ đo màu ban đầu coi color(srgb) như rgb 0–255, đã sửa chuẩn hóa và đo lại. Các bề mặt render được kiểm đạt 5,23–9,33 phần 1. PASS node --check cho ba script, git diff --check, ID/heading/alt/label/button và 189 tham chiếu cục bộ. 27 WebP có mục nguồn, ba font có file và hai giấy phép OFL.
+
+  README.md, PROTOTYPE.md và SELF_ASSESSMENT_REPORT.md dẫn minh chứng mới. Điểm hiện tại chờ nhóm chốt sau khi có rubric. ZIP cũ kiểm thực tế có 223 entry .git. ZIP mới 24120136-24120157-24120394_review-2026-11-11.zip gồm 97 file, CRC và SHA-256 từng member khớp source, đủ chín ảnh và ba validator, loại .git/thư mục tạm. Đã giải nén và thử ba trang JS tắt tại 360, tạo booking và cọc Escape/Thành công tại 768. Tên ZIP do assistant chọn theo MSSV/ngày vì thiếu rubric. JSON cùng tên tại submission/ ghi hash ZIP và toàn bộ manifest. Sau khi cập nhật tài liệu, đóng lại và kiểm lại ZIP theo cùng quy trình.
+
+  **NOT RUN** rubric PDF gốc, thiết bị thật, screen reader thủ công, toàn bộ video, in phiếu và hồi quy kéo/thả studio trong lượt này. Nguồn PA#1 GradStudio có tác giả khác nhóm vẫn cần giảng viên xác nhận. Báo cáo tổng hợp và thao tác thủ công tại checks/review-2026-11-11.md. Vấn đề 5 hoàn tất phần kỹ thuật đã kiểm, nghiệm thu chính thức còn chờ các mục nêu trên.
+- **Rejected:** Dùng validator cũ để chứng nhận HTML mới, giữ mức 100/100 khi thiếu rubric, đưa .git vào ZIP mới hoặc ghi kết quả chưa chạy thành PASS.
